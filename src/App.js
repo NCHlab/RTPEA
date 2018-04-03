@@ -43,11 +43,11 @@ const App = () => (
       </div>
 
       <Route exact path="/" component={Home} />
-      <Route path="/table" component={Table} />
-      <Route path="/upload" component={Upload} />
-      <Route path="/expression_atlas" component={Expression_Atlas} />
-      <Route path="/info" component={Info} />
-      <Route path="/project" component={Project} />
+        <Route path="/table" component={Table} />
+        <Route path="/upload" component={Upload} />
+        <Route path="/expression_atlas" component={Expression_Atlas} />
+        <Route path="/info" component={Info} />
+        <Route path="/project" component={Project} />
     </div>
   </Router>
 );

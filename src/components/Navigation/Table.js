@@ -23,12 +23,11 @@ function tableCreate(){
     }
     body.appendChild(tbl);
 }
-tableCreate();
 
 
 const Table = () => (
   <div>
-    <h2>{tableCreate()}</h2>
+    <h2>{/*tableCreate()*/}</h2>
   </div>
 );
 
