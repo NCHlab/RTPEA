@@ -1,10 +1,15 @@
 
 nav {
-  position: relative;
+  /* position: fixed; */
   width: 100%;
+  top: 0;
   height: 109px;
+  padding: 0;
+  margin: 0;
   background: linear-gradient(lightblue, skyblue);
-  
+  overflow: hidden;
+
+
   /* url(/images/Logo.png) no-repeat; */
 }
 nav .logo {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from './components/Logo/Logo';
+// import Logo from './components/Logo/Logo';
 import Navigation from './components/Navigation/Navigation';
 import Particles from 'react-particles-js';
 import './App.css';
@@ -34,18 +34,20 @@ const particlesOptions = {
 const App = () => (
   <Router>
     <div>
-      <div className="App">
+      <div className="">
         <Navigation />
-        <Logo />
+        {/* <Logo /> */}
         <Particles className="particles" params={particlesOptions} />
       </div>
 
-      <Route exact path="/" component={Home} />
-        <Route path="/table" component={Table} />
-        <Route path="/upload" component={Upload} />
-        <Route path="/expression_atlas" component={Expression_Atlas} />
-        <Route path="/info" component={Info} />
-        <Route path="/project" component={Project} />
+      <div className="paths">
+        <Route exact path="/" component={Home} />
+          <Route path="/table" component={Table} />
+          <Route path="/upload" component={Upload} />
+          <Route path="/expression_atlas" component={Expression_Atlas} />
+          <Route path="/info" component={Info} />
+          <Route path="/project" component={Project} />
+      </div>
     </div>
   </Router>
 );
