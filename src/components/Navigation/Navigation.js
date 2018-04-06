@@ -1,32 +1,36 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./Navigation.css";
 
 
 const Navigation = () => {
   return (
     <nav>
-      <ul>
+      <ul class="menu">
         <li>
-          <Link to="/">Home</Link>
+          <a><Link to="/">Home</Link></a>
         </li>
         <li>
-          <Link to="/table">Table</Link>
+          <a><Link to="/table">Table</Link></a>
         </li>
         <li>
-          <Link to="/upload">Upload</Link>
+          <a><Link to="/upload">Upload</Link></a>
         </li>
         <li>
-          <Link to="/expression_atlas">Expression Atlas</Link>
+          <a><Link to="/expression_atlas">Expression Atlas</Link></a>
         </li>
         <li>
-          <Link to="/info">Info</Link>
+          <a><Link to="/info">Info</Link></a>
         </li>
         <li>
-          <Link to="/project">Project</Link>
+          <a><Link to="/project">Project</Link></a>
         </li>
       </ul>
+
     </nav>
+
   );
 }
+
 
 export default Navigation;

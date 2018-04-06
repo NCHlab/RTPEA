@@ -35,10 +35,8 @@ const App = () => (
   <Router>
     <div>
       <div className="App">
-        <header className="App-header">
-          <Logo />
-          <Navigation />
-        </header>
+        <Navigation />
+        <Logo />
         <Particles className="particles" params={particlesOptions} />
       </div>
 
