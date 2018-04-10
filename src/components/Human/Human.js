@@ -1,13 +1,20 @@
 import React from 'react';
 import Humanimg from './Human.png';
-//import './Human.css';
+import Humanimg2 from './Human_BW.png';
+import './Human.css';
 
 
 const Human = () => {
   return (
-    <div id="" className="ma4 mt0">
-         <img src={Humanimg} className="pb6" alt="logo" height="600px" width="450px"/>
+  <div className="ma4 mt0">
+      <div class="profile-image">
+        <div class="image_hover_bg"><img src={Humanimg2} className="pb6 imghov" alt="logo" height="600px" width="450px"/></div>
+      </div>
+      <img src={Humanimg} className="pb6 imghov" alt="logo" height="600px" width="450px"/>
     </div>
+
+
+
   );
 }
 

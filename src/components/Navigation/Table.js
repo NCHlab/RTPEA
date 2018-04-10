@@ -27,7 +27,20 @@ function tableCreate(){
 
 const Table = () => (
   <div>
-    <h2>test</h2>
+    <h2>
+      test
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+    </h2>
+
+
+  <div className="page-title">
+    Table
+  </div>
   </div>
 );
 

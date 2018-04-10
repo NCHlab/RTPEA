@@ -1,24 +1,25 @@
 
 nav {
   /* position: fixed; */
+  padding-left: 10px;
+  padding-right: 0px;
   width: 100%;
-  top: 0;
-  height: 109px;
-  padding: 0;
+  height: 110px;
   margin: 0;
-  background: linear-gradient(lightblue, skyblue);
+  background: #B8DBF4; /*linear-gradient(lightblue, skyblue);*/
   overflow: hidden;
 
 
   /* url(/images/Logo.png) no-repeat; */
 }
 nav .logo {
+
   position: absolute;
   left: 0;
   top: 31px;
 }
 nav .menu {
-  margin: 38px 0 0 0;
+  margin: 38px 10px 0 0;
   padding: 0;
   list-style-type: none;
   float: right;

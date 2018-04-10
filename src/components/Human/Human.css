@@ -1,0 +1,53 @@
+/* div {
+  opacity: 1;
+}
+
+
+div:onhover {
+  opacity: 0.5;
+} */
+
+
+.image_hover_bg{
+  /* background: url("./Human_BW.png"); */
+  position: absolute;
+  display:none;
+}
+
+.profile-image:hover{
+  opacity: 0;
+}
+
+
+.image_hover_bg{display:inline;}
+
+
+
+/* #all > ul {
+	    	list-style: none;
+	    	float: left; width: 200px;
+	    	padding: 0 10px 0 0;
+	    }
+	    #all a {
+			text-decoration: none;
+			display: block;
+			padding: 10px;
+			background: #900;
+			border-radius: 20px;
+			color: white;
+			text-align: center;
+			margin: 0 0 5px 0;
+
+			-webkit-transition: all 0.2s ease;
+			-moz-transition: all 0.2s ease;
+			-o-transition: all 0.2s ease;
+	    }
+	    #all:hover a {
+			opacity: 0.2;
+	    }
+	    #all:hover ul:hover a {
+			opacity: 0.5;
+	    }
+	    #all:hover ul:hover a:hover {
+			opacity: 1;
+	    } */
