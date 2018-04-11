@@ -3,18 +3,20 @@ import Human from '../Human/Human';
 // import '../../App.css';
 
 const Home = () => (
-  <div>
+  <div className="">
     <p className="App-intro">
         <h1 className="container">Welcome to Retroelement Protein Expression Atlas</h1>
     </p>
     <body2>
-      <Human />
+
       <div className="container">
         test
+        <Human />
       </div>
 
     </body2>
-    <div class="page-title">
+    <div className="page-title">
+      <div className="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id convallis tellus. Suspendisse feugiat velit a quam viverra, ac bibendum sem laoreet. Vivamus vehicula felis a imperdiet luctus. Nulla aliquam erat tortor, at sodales est iaculis a. Donec ornare est erat, vel posuere libero vulputate id. Donec eget dui mollis, molestie nibh porttitor, porta enim. Ut iaculis volutpat risus at aliquam. Cras quis ante in ex placerat feugiat. Duis a magna sit amet mi malesuada tristique a sed lectus. Aliquam erat volutpat. Phasellus fermentum vel felis nec porta. Aliquam erat volutpat. Quisque efficitur ante eget convallis gravida. Cras vel posuere nunc, ac mollis elit. Nulla vel ullamcorper lacus.
 
       Aliquam purus diam, aliquam vitae tortor eu, imperdiet elementum massa. In dapibus, metus sit amet eleifend aliquet, quam ex lobortis magna, nec bibendum arcu risus sed erat. Maecenas posuere, mauris ut volutpat eleifend, quam sem tempor erat, nec imperdiet nisi ante id mi. Aliquam eu pharetra urna. Aliquam et nibh ac mi aliquet tempus. Suspendisse fermentum mattis nisi. Maecenas aliquam eget tellus et pretium. Nullam imperdiet ligula eu nisl pulvinar congue. Aenean euismod fringilla enim, eu tempor felis aliquam tincidunt.
@@ -25,7 +27,8 @@ const Home = () => (
 
       Suspendisse laoreet nibh et leo vestibulum facilisis. Aenean nisl massa, fermentum non lacus at, accumsan malesuada nibh. In sollicitudin laoreet dictum. Vestibulum id semper erat, vitae accumsan justo. Sed imperdiet cursus magna, sit amet faucibus urna cursus eu. Suspendisse tristique iaculis arcu, laoreet laoreet dui sagittis sed. Phasellus a commodo mauris, vitae rhoncus tortor.
     </div>
-    <div class="page-title2">
+    </div>
+    <div className="page-title2">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id convallis tellus. Suspendisse feugiat velit a quam viverra, ac bibendum sem laoreet. Vivamus vehicula felis a imperdiet luctus. Nulla aliquam erat tortor, at sodales est iaculis a. Donec ornare est erat, vel posuere libero vulputate id. Donec eget dui mollis, molestie nibh porttitor, porta enim. Ut iaculis volutpat risus at aliquam. Cras quis ante in ex placerat feugiat. Duis a magna sit amet mi malesuada tristique a sed lectus. Aliquam erat volutpat.
     </div>
 

@@ -14,13 +14,20 @@ div:onhover {
   display:none;
 }
 
-.profile-image:hover{
+.human-img:hover{
   opacity: 0;
 }
 
 
 .image_hover_bg{display:inline;}
 
+
+#Brain {
+  height: 50px;
+  width: 45px;
+  top: 20px;
+  left: 183px;
+}
 
 
 /* #all > ul {
