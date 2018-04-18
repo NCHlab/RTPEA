@@ -8,18 +8,46 @@ div:onhover {
 } */
 
 
-.image_hover_bg{
+
+.human-img{
   /* background: url("./Human_BW.png"); */
   position: absolute;
-  display:none;
+  display:inline;
+  transition: 2s;
 }
 
 .human-img:hover{
   opacity: 0;
+  transition: 2s;
 }
 
 
-.image_hover_bg{display:inline;}
+
+/*
+.image_hover_bg{
+  /* background: url("./Human_BW.png"); */
+  /* position: absolute; */
+  /* display:none;
+  display:inline;
+}
+
+
+.human-img{
+  opacity: 0;
+  display:none;
+  position: absolute;
+}
+
+.image_hover_bg:hover{
+}
+
+.human-img:hover{
+  opacity: 1;
+  display:inline;
+} */
+
+
+
 
 
 #Brain {
