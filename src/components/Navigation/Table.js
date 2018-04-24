@@ -38,7 +38,7 @@ const Table = () => (
     </h2>
 
 
-  <div className="page-title">
+  <div className="background-body">
     Table
   </div>
   </div>

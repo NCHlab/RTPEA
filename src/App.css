@@ -1,7 +1,7 @@
 body {
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #99CDF1; /*linear-gradient(to bottom left, lightblue, skyblue);*/
+  background: #FFC1A1; /*linear-gradient(to bottom left, lightblue, skyblue);*/
   height: 1000px;
 }
 
@@ -10,18 +10,18 @@ body2 {
 }
 
 
-.page-title {
+.background-body {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #66B8F2;
+    background-color: #FFA273;
     text-align: center;
 }
 
 
-.page-title2 {
+.background-body2 {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #99CDF1;
+    background-color: #FFC1A1;
     text-align: center;
 }
 

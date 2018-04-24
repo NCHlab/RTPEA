@@ -13,11 +13,11 @@ div:onhover {
   /* background: url("./Human_BW.png"); */
   position: absolute;
   display:inline;
-  transition: 2s;
+  transition: 0.5s;
 }
 
 .human-img:hover{
-  opacity: 0;
+  opacity: 1;
   transition: 2s;
 }
 

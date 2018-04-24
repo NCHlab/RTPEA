@@ -15,7 +15,7 @@ const Home = () => (
       </div>
 
     </body2>
-    <div className="page-title">
+    <div className="background-body">
       <div className="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id convallis tellus. Suspendisse feugiat velit a quam viverra, ac bibendum sem laoreet. Vivamus vehicula felis a imperdiet luctus. Nulla aliquam erat tortor, at sodales est iaculis a. Donec ornare est erat, vel posuere libero vulputate id. Donec eget dui mollis, molestie nibh porttitor, porta enim. Ut iaculis volutpat risus at aliquam. Cras quis ante in ex placerat feugiat. Duis a magna sit amet mi malesuada tristique a sed lectus. Aliquam erat volutpat. Phasellus fermentum vel felis nec porta. Aliquam erat volutpat. Quisque efficitur ante eget convallis gravida. Cras vel posuere nunc, ac mollis elit. Nulla vel ullamcorper lacus.
 
@@ -28,7 +28,7 @@ const Home = () => (
       Suspendisse laoreet nibh et leo vestibulum facilisis. Aenean nisl massa, fermentum non lacus at, accumsan malesuada nibh. In sollicitudin laoreet dictum. Vestibulum id semper erat, vitae accumsan justo. Sed imperdiet cursus magna, sit amet faucibus urna cursus eu. Suspendisse tristique iaculis arcu, laoreet laoreet dui sagittis sed. Phasellus a commodo mauris, vitae rhoncus tortor.
     </div>
     </div>
-    <div className="page-title2">
+    <div className="background-body2">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id convallis tellus. Suspendisse feugiat velit a quam viverra, ac bibendum sem laoreet. Vivamus vehicula felis a imperdiet luctus. Nulla aliquam erat tortor, at sodales est iaculis a. Donec ornare est erat, vel posuere libero vulputate id. Donec eget dui mollis, molestie nibh porttitor, porta enim. Ut iaculis volutpat risus at aliquam. Cras quis ante in ex placerat feugiat. Duis a magna sit amet mi malesuada tristique a sed lectus. Aliquam erat volutpat.
     </div>
 
