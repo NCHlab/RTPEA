@@ -46,7 +46,7 @@ class Human extends Component{
   constructor(props){
     super(props)
     this.state = {
-      loading: "true",
+      loading: "false",
       highlight: false,
     };
   }
@@ -68,12 +68,12 @@ class Human extends Component{
   }
 
   checkclick = (area, index, event) => {
-    this.setState({loading: "false"});
+    this.setState({loading: "true"});
     console.log(area,index)
   }
 
   checkclick2 = () => {
-    this.setState({loading: "true"});
+    this.setState({loading: "false"});
   }
 
   render (){
