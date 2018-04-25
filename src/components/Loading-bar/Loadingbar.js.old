@@ -24,7 +24,7 @@ class Loadingbar extends Component {
       <div>
         <Loading
           show={this.state.show}
-          color="red"
+          color="orange"
         />
 
         <button

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Human from '../Human/Human';
-import Loadingbar from '../Loading-bar/Loadingbar';
+// import Loadingbar from '../Loading-bar/Loadingbar';
 
 
 
 
 // import '../../App.css';
 
-const Home = () => (
+const Home = ({onShow, onHide}) => {
+  return (
   <div className="">
     <p className="App-intro">
         <h1 className="container">Welcome to Retroelement Protein Expression Atlas</h1>
@@ -25,7 +26,7 @@ const Home = () => (
 
       <button
           type="button"
-          onClick={this.onShow}>
+          onClick={onShow}>
           show
         </button>
 
@@ -52,5 +53,5 @@ const Home = () => (
 
   </div>
 );
-
+}
 export default Home;

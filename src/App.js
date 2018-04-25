@@ -12,7 +12,10 @@ import Upload from './components/Navigation/Upload';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Project from './components/Navigation/Project';
-import Loadingbar from './components/Loading-bar/Loadingbar';
+// import Loadingbar from './components/Loading-bar/Loadingbar';
+import Loading from 'react-loading-bar'
+import 'react-loading-bar/dist/index.css'
+
 
 
 const particlesOptions = {
@@ -34,32 +37,73 @@ const particlesOptions = {
   }
 }
 
-const App = () => (
-  <Router>
-    <div>
-      <div className="">
-      <Loadingbar
-        show={true}
-        color="red"
-        change={false}
-        showSpinner={true}/>
-        <Navigation />
-        {/* <Logo /> */}
-        <Particles className="particles" params={particlesOptions} />
-      </div>
+class App extends Component{
 
-      <div className="paths">
-        <Route exact path="/" component={Home} />
-          <Route path="/table" component={Table} />
-          <Route path="/upload" component={Upload} />
-          <Route path="/expression_atlas" component={Expression_Atlas} />
-          <Route path="/info" component={Info} />
-          <Route path="/project" component={Project} />
+  constructor(props){
+   super(props)
+   this.state = {
+    show: false
+  };
+  }
+
+  onShow = ()=> {
+    this.setState({ show: true })
+  }
+
+  onHide = ()=> {
+    this.setState({ show: false })
+  }
+
+    // <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>
+  render(){
+    return(
+    <Router>
+      <div>
+        <Loading
+          show={this.state.show}
+          color="orange"
+          showSpinner={true}
+        />
+
+        {/* <button
+          type="button"
+          onClick={this.onShow}>
+          show
+        </button>
+
+        <button
+          type="button"
+          onClick={this.onHide}>
+          hide
+        </button> */}
+        <div className="">
+          {/* <Loadingbar
+            show={true}
+            color="red"
+            change={false}
+            showSpinner={true}/> */}
+          <Navigation />
+          {/* <Logo /> */}
+          <Particles className="particles" params={particlesOptions} />
+        </div>
+
+        <div className="paths">
+          {/* <Route exact path="/" component={Home} /> */}
+          <Route path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route path={"/table"} component={() => <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route path="/upload" component={Upload} />
+            <Route path="/expression_atlas" component={Expression_Atlas} />
+            <Route path="/info" component={Info} />
+            <Route path="/project" component={Project} />
+        </div>
+
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  </Router>
-);
+    </Router>
+  );
+  }
+}
+
 
 
 

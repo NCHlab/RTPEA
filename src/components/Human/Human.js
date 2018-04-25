@@ -56,16 +56,16 @@ class Human extends Component{
 
   }
 
-  currentHighlight = () => {
-    const newHighlight = this.state.highlight.map((highlight)=>{
-      const tempUser = highlight;
-      tempUser.age -=10;
-      return tempUser;
-    })
-    this.setState({
-      newHighlight
-    })
-  }
+  // currentHighlight = () => {
+  //   const newHighlight = this.state.highlight.map((highlight)=>{
+  //     const tempUser = highlight;
+  //     tempUser.age -=10;
+  //     return tempUser;
+  //   })
+  //   this.setState({
+  //     newHighlight
+  //   })
+  // }
 
   checkclick = (area, index, event) => {
     this.setState({loading: "true"});
@@ -81,7 +81,7 @@ class Human extends Component{
     <div className="ma4 mt0">
       <div className="container c1">
         <div class="human-img">
-          <ImageMapper src={Humanimg2} map={AREAS_MAP2}  className="pb6 imghov" alt="" height={"650"} width={"450"} onMouseEnter={this.checkclick} onMouseLeave={this.checkclick2} />
+          <ImageMapper src={Humanimg} map={AREAS_MAP2} fillColor="rgba(204, 58, 38, 0.5)" className="pb6 imghov" alt="" height={"650"} width={"450"} onMouseEnter={this.checkclick} onMouseLeave={this.checkclick2} />
         </div>
         {/* fillColor="rgba(204, 58, 38, 0.5)" */}
         <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/>
