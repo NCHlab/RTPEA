@@ -1,8 +1,9 @@
 body {
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #FFC1A1; /*linear-gradient(to bottom left, lightblue, skyblue);*/
+  background: #807669; /*linear-gradient(to bottom left, lightblue, skyblue);*/
   height: 1000px;
+  font-family: "Lucida Sans Unicode", serif, "Times New Roman";
 }
 
 body2 {
@@ -10,10 +11,14 @@ body2 {
 }
 
 
+.line-seperator{
+  border: 0.5px solid rgb(0,0,0);
+}
+
 .background-body {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #FFA273;
+    background-color: #F9EAD5;
     text-align: center;
 }
 
@@ -21,7 +26,14 @@ body2 {
 .background-body2 {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #FFC1A1;
+    background-color: #FFD8A4;
+    text-align: center;
+}
+
+.background-body3 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #807669;
     text-align: center;
 }
 

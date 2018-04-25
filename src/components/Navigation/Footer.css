@@ -1,0 +1,12 @@
+.footer {
+  /* position: fixed; */
+  padding-right: 0px;
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(#4E4A45, #393631 );
+  overflow: hidden;
+  box-shadow: 3px 3px 4px rgba(4, 3, 3, 0.5);
+
+  /* background: #FF8C52; /* THIS IS NAV BAR linear-gradient(lightblue, skyblue);*/
+  /* url(/images/Logo.png) no-repeat; */
+}

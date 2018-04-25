@@ -7,7 +7,9 @@ div:onhover {
   opacity: 0.5;
 } */
 
-
+.sc1{
+  background-color: #F9EAD5
+}
 
 .human-img{
   /* background: url("./Human_BW.png"); */
@@ -17,7 +19,7 @@ div:onhover {
 }
 
 .human-img:hover{
-  opacity: 1;
+  opacity: 0;
   transition: 2s;
 }
 

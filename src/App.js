@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import Logo from './components/Logo/Logo';
 import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Navigation/Footer';
 import Particles from 'react-particles-js';
 import './App.css';
 import { render } from 'react-dom'
@@ -11,6 +12,8 @@ import Upload from './components/Navigation/Upload';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Project from './components/Navigation/Project';
+import Loadingbar from './components/Loading-bar/Loadingbar';
+
 
 const particlesOptions = {
   "particles": {
@@ -35,6 +38,11 @@ const App = () => (
   <Router>
     <div>
       <div className="">
+      <Loadingbar
+        show={true}
+        color="red"
+        change={false}
+        showSpinner={true}/>
         <Navigation />
         {/* <Logo /> */}
         <Particles className="particles" params={particlesOptions} />
@@ -48,6 +56,7 @@ const App = () => (
           <Route path="/info" component={Info} />
           <Route path="/project" component={Project} />
       </div>
+      <Footer />
     </div>
   </Router>
 );
