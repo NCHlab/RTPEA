@@ -13,14 +13,23 @@ div:onhover {
 
 .human-img{
   /* background: url("./Human_BW.png"); */
-  position: absolute;
+  position: relative;
   display:inline;
   transition: 0.5s;
+  /* width: 450px;
+  background-color: white */
 }
 
 .human-img:hover{
   opacity: 1;
   transition: 2s;
+}
+
+.inline-img{
+  display:inline;
+  position: relative;
+  left:550px;
+  top: -500px
 }
 
 

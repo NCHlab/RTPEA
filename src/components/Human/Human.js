@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Humanimg from './Human.png';
 import Humanimg2 from './Human_W.png';
 import Brain from './Brain.png';
+import brain2 from './brain2.png';
 import './Human.css';
 import imagemap from './imagemap';
 import $ from 'jquery';
@@ -48,6 +49,7 @@ class Human extends Component{
     this.state = {
       loading: "false",
       highlight: false,
+      index: ""
     };
   }
 
@@ -68,26 +70,56 @@ class Human extends Component{
   // }
 
   checkclick = (area, index, event) => {
-    this.setState({loading: "true"});
-    console.log(area,index)
+    this.setState({loading: "true",
+    index: index});
+    console.log(index);
+
   }
 
   checkclick2 = () => {
     this.setState({loading: "false"});
   }
 
-  render (){
+
+  testcheck = (index) => {
+    if (index === 0){
+      return <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>;
+    }
+  }
+
+render (){
     return (
     <div className="ma4 mt0">
+
+
       <div className="container c1">
         <div class="human-img">
           <ImageMapper src={Humanimg} map={AREAS_MAP2} fillColor="rgba(204, 58, 38, 0.5)" className="pb6 imghov" alt="" height={"650"} width={"450"} onMouseEnter={this.checkclick} onMouseLeave={this.checkclick2} />
         </div>
         {/* fillColor="rgba(204, 58, 38, 0.5)" */}
-        <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/>
+        <div className="inline-img">
+          {this.testcheck(this.state.index)}
+        </div>
+
       </div>
 
-        {this.state.loading}
+
+      {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
+
+
+
+          {/* <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/> */}
+
+        <h1>{this.state.loading} <br />
+            {this.state.index}</h1>
+
+
+          {/* <div>
+            {this.state.index ? (
+                <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>
+            ):0}
+          </div> */}
+
           {/* <ImageMapper src={Humanimg} map={AREAS_MAP2} alt="" height={"650"} width={"450"}/> */}
         {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
           {/* <img id= "Brain" src={Brain} className="pb6 imghov" alt="logo"/> */}

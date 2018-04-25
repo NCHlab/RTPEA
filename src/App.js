@@ -89,7 +89,7 @@ class App extends Component{
 
         <div className="paths">
           {/* <Route exact path="/" component={Home} /> */}
-          <Route path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+          <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path={"/table"} component={() => <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path="/upload" component={Upload} />
             <Route path="/expression_atlas" component={Expression_Atlas} />
