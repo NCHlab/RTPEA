@@ -7,6 +7,7 @@ import './App.css';
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Navigation/Home';
+import Api from './components/Navigation/Api';
 import Table from './components/Navigation/Table';
 import Upload from './components/Navigation/Upload';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
@@ -95,6 +96,7 @@ class App extends Component{
             <Route path="/expression_atlas" component={Expression_Atlas} />
             <Route path="/info" component={Info} />
             <Route path="/project" component={Project} />
+            <Route path="/api" component={Api} />
         </div>
 
         <Footer />
