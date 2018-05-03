@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Humanimg from './Human.png';
 import Humanimg2 from './Human_W.png';
 import Brain from './Brain.png';
-import brain2 from './brain2.png';
+import Plot1 from './plot1.png';
+import Plot2 from './plot2.png';
 import './Human.css';
 import imagemap from './imagemap';
 import $ from 'jquery';
@@ -83,7 +84,9 @@ class Human extends Component{
 
   testcheck = (index) => {
     if (index === 0){
-      return <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>;
+      return <img src={Plot1} className="pb6 imghov" alt="logo" height="450px" width="450px"/>;
+    } else if (index === 1){
+      return <img src={Plot2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>;
     }
   }
 
