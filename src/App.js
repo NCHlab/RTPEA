@@ -99,7 +99,7 @@ class App extends Component{
             <Route path="/api" component={Api} />
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
