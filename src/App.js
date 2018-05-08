@@ -16,6 +16,7 @@ import Project from './components/Navigation/Project';
 // import Loadingbar from './components/Loading-bar/Loadingbar';
 import Loading from 'react-loading-bar'
 import 'react-loading-bar/dist/index.css'
+import JSONPretty from 'react-json-pretty';
 
 
 
@@ -43,7 +44,8 @@ class App extends Component{
   constructor(props){
    super(props)
    this.state = {
-    show: false
+    show: false,
+    isLoading: true
   };
   }
 
@@ -93,10 +95,9 @@ class App extends Component{
           <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path={"/table"} component={() => <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path="/upload" component={Upload} />
-            <Route path="/expression_atlas" component={Expression_Atlas} />
+            <Route path={"/api"} component={Api} />
             <Route path="/info" component={Info} />
             <Route path="/project" component={Project} />
-            <Route path="/api" component={Api} />
         </div>
 
         {/* <Footer /> */}

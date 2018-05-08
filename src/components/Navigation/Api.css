@@ -1,0 +1,13 @@
+.background-body3 {
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-color: #F9EAD5;
+    text-align:  justify;
+}
+
+.background-body3-noalign {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    background-color: #F9EAD5;
+    text-align: center;
+}

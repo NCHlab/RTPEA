@@ -29,7 +29,7 @@ const Navigation = () => {
           <a><Link to="/upload">Upload</Link></a>
         </li>
         <li>
-          <a><Link to="/expression_atlas">Expression Atlas</Link></a>
+          <a><Link to="/api">API</Link></a>
         </li>
         <li>
           <a><Link to="/info">Info</Link></a>
