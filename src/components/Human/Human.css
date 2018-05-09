@@ -14,25 +14,39 @@ div:onhover {
 .human-img{
   /* background: url("./Human_BW.png"); */
   position: relative;
-  display:inline;
-  transition: 0.5s;
+  /*display:inline;*/
+  /*transition: 0.5s;*/
   /* width: 450px;
   background-color: white */
 }
 
 .human-img:hover{
-  opacity: 1;
+  opacity: 0;
   transition: 2s;
 }
 
 .inline-img{
-  display:inline;
-  position: relative;
-  left:550px;
-  top: -500px
+  /*display:inline;*/
+  position: absolute;
+  left:412px;
+  top: 210px;
 }
 
+/*.inline-img:hover{
+  opacity:1;
+}
+*/
 
+
+.image-relative-top{
+  height: 650px;
+  width: 450px;
+  /*position: relative;*/
+}
+
+.image-relative{
+  position: relative;
+}
 
 /*
 .image_hover_bg{

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import JSONPretty from 'react-json-pretty';
-import "./Api.css";
+// import "./Api.css";
 
 class Api extends Component{
   constructor(props){
@@ -57,7 +57,7 @@ class Api extends Component{
 render (){
     return (
 
-    <div className="ma4 mt0 background-body3-noalign container">
+    <div className="ma4 mt0 background-body4-noalign container">
         {this.state.isLoading ? console.log("yes") : console.log("no")}
         {this.state.isLoading}
 
@@ -75,7 +75,7 @@ render (){
 
         <br />
 
-        <div className="background-body3 ">
+        <div className="background-body4 ">
 
             Data for: {this.state.url_id}
 

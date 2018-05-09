@@ -1,9 +1,10 @@
 body {
 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #807669; /*linear-gradient(to bottom left, lightblue, skyblue);*/
+  background: #1F2830; /*linear-gradient(to bottom left, lightblue, skyblue);*/
   height: 1000px;
   font-family: "Lucida Sans Unicode", serif, "Times New Roman";
+  color: #FFFFFF;
 }
 
 body2 {
@@ -12,13 +13,14 @@ body2 {
 
 
 .line-seperator{
-  border: 0.5px solid rgb(0,0,0);
+  border: 0.5px solid rgb(255,255,255);
 }
 
 .background-body {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #F9EAD5;
+    /*background-color: #2e4a60;*/
+    background: linear-gradient(#1F2830, #1f3647);
     text-align: center;
 }
 
@@ -26,16 +28,35 @@ body2 {
 .background-body2 {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #FFD8A4;
+    background: linear-gradient(#ccd9e2, #edf1f4);
+    /*background-color: #edf1f4;*/
     text-align: center;
+    color: #000000;
 }
 
 .background-body3 {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: #807669;
+    background-color: #1F2830;
     text-align: center;
 }
+
+.background-body4 {
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-color: #dddddd;
+    text-align:  justify;
+    color: #000000;
+}
+
+.background-body4-noalign {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    background-color: #edf1f4;
+    text-align: center;
+    color: #000000;
+}
+
 
 @media (min-width: 0) {
     .page-title, .page-title2 {
@@ -60,6 +81,12 @@ body2 {
 
 .App {
   text-align: center;
+}
+
+.colour-white {
+	padding-top: 15px;
+	color: #FFFFFF;
+
 }
 
 .centre {

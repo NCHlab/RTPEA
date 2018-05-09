@@ -14,7 +14,7 @@ const Home = ({onShow, onHide}) => {
   return (
   <div className="">
     <p className="App-intro">
-        <h1 className="container">Welcome to Retroelement Protein Expression Atlas</h1>
+        <h1 className="container colour-white">Retroelement Protein Expression Atlas</h1>
     </p>
     <body2>
 
@@ -60,6 +60,7 @@ const Home = ({onShow, onHide}) => {
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id convallis tellus. Suspendisse feugiat velit a quam viverra, ac bibendum sem laoreet. Vivamus vehicula felis a imperdiet luctus. Nulla aliquam erat tortor, at sodales est iaculis a. Donec ornare est erat, vel posuere libero vulputate id. Donec eget dui mollis, molestie nibh porttitor, porta enim. Ut iaculis volutpat risus at aliquam. Cras quis ante in ex placerat feugiat. Duis a magna sit amet mi malesuada tristique a sed lectus. Aliquam erat volutpat.
     </div>
     <div className="line-seperator"></div>
+
     <div className="background-body3">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id convallis tellus. Suspendisse feugiat velit a quam viverra, ac bibendum sem laoreet. Vivamus vehicula felis a imperdiet luctus. Nulla aliquam erat tortor, at sodales est iaculis a. Donec ornare est erat, vel posuere libero vulputate id. Donec eget dui mollis, molestie nibh porttitor, porta enim. Ut iaculis volutpat risus at aliquam. Cras quis ante in ex placerat feugiat. Duis a magna sit amet mi malesuada tristique a sed lectus. Aliquam erat volutpat.
     </div>

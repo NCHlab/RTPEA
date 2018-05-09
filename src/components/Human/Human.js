@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Humanimg from './Human.png';
 import Humanimg2 from './Human_W.png';
+import Human_lung from './Human_lung.png';
 import Brain from './Brain.png';
 import Plot1 from './plot1.png';
 import Plot2 from './plot2.png';
@@ -73,7 +74,7 @@ class Human extends Component{
   checkclick = (area, index, event) => {
     this.setState({loading: "true",
     index: index});
-    console.log(index);
+    // console.log(index);
 
   }
 
@@ -82,30 +83,50 @@ class Human extends Component{
   }
 
 
+
+
   testcheck = (index) => {
     if (index === 0){
-      return <img src={Plot1} className="pb6 imghov" alt="logo" height="450px" width="450px"/>;
+      return <img src={Plot1} className="pb6 " alt="logo" height="450px" width="450px"/>;
     } else if (index === 1){
-      return <img src={Plot2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>;
+      return <img src={Human_lung} className="pb6 " alt="logo" height="650px" width="450px"/>;
     }
   }
 
 render (){
+
+
     return (
     <div className="ma4 mt0">
 
 
       <div className="container c1">
-        <div class="human-img">
-          <ImageMapper src={Humanimg} map={AREAS_MAP2} fillColor="rgba(204, 58, 38, 0.5)" className="pb6 imghov" alt="" height={"650"} width={"450"} onMouseEnter={this.checkclick} onMouseLeave={this.checkclick2} />
+        <div className="human-img">
+          <ImageMapper src={Humanimg} map={AREAS_MAP2} fillColor="rgba(204, 58, 38, 0.5)" className="pb6" alt="" height={"650"} width={"450"} onMouseEnter={this.checkclick} />
         </div>
-        {/* fillColor="rgba(204, 58, 38, 0.5)" */}
+        {/* fillColor="rgba(204, 58, 38, 0.5)" 
+
+       onMouseLeave={this.checkclick2}*/}
         <div className="inline-img">
           {this.testcheck(this.state.index)}
         </div>
 
+        
+
+
       </div>
 
+
+      {/*<div className="image-relative-top">
+           <img id="image1" src={Humanimg} width={"450"} height={"650"} alt="HumanImg" />
+           <img id="image2" style={{position: "absolute", top: "100px", left: "100px"}} src={Plot2} alt="plot2" />
+
+           
+      </div>*/}
+      
+        
+
+        
 
       {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
 
