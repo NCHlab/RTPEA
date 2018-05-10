@@ -80,8 +80,29 @@ render (){
             Data for: {this.state.url_id}
 
           <JSONPretty style={{fontSize: "1.1em"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
 
         </div>
+
+        <br />
+        <br />
+
 
 
 

@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
 // import Logo from './components/Logo/Logo';
+// import Loadingbar from './components/Loading-bar/Loadingbar';
+
+import React, { Component } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Navigation/Footer';
 import Particles from 'react-particles-js';
-import './App.css';
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Navigation/Home';
@@ -13,10 +14,12 @@ import Upload from './components/Navigation/Upload';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Project from './components/Navigation/Project';
-// import Loadingbar from './components/Loading-bar/Loadingbar';
 import Loading from 'react-loading-bar'
-import 'react-loading-bar/dist/index.css'
 import JSONPretty from 'react-json-pretty';
+
+import './App.css';
+import 'react-loading-bar/dist/index.css'
+import 'react-table/react-table.css'
 
 
 
@@ -99,8 +102,8 @@ class App extends Component{
             <Route path="/info" component={Info} />
             <Route path="/project" component={Project} />
         </div>
-
-        {/* <Footer /> */}
+        <div className="line-seperator"></div>
+        <Footer />
       </div>
     </Router>
   );

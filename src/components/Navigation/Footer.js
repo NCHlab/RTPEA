@@ -28,10 +28,7 @@ const Footer = () => {
             <a><Link to="/project">Project</Link></a>
           </li>
         </ul>
-        Footer
-        FOOTER
-        FOOTER
-        FOOTER
+
 
       </nav>
 
