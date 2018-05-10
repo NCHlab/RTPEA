@@ -52,6 +52,8 @@ body2 {
     background-color: #dddddd;
     text-align:  justify;
     color: #000000;
+    max-height: 800px;
+    overflow-y: auto;
 }
 
 .background-body4-noalign {

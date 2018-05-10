@@ -35,7 +35,7 @@ class Api extends Component{
       // "http://localhost:3001/api/PXD002233"
         .then(response => response.json())
         .then(data => {
-          if (data.includes("No ID found in database for")){
+          if (data.hasOwnProperty("Status")){
             console.log(data)
             this.setState({ data2:data});
           } else {
@@ -44,6 +44,21 @@ class Api extends Component{
           }
         })
     }
+
+    // button_click = () => {
+    //   fetch(this.searchURL())
+    //   // "http://localhost:3001/api/PXD002233"
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       if (data.includes("No ID found in database for")){
+    //         console.log(data)
+    //         this.setState({ data2:data});
+    //       } else {
+    //       console.log(data[0])
+    //       this.setState({ data2:data[0]});
+    //       }
+    //     })
+    // }
 
     returntext = () => {
       console.log("Example State has now been set via this button")
