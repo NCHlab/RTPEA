@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
 import Table from './components/Navigation/Table';
-import Upload from './components/Navigation/Upload';
+import Visualisation from './components/Navigation/Visualisation';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Project from './components/Navigation/Project';
@@ -97,7 +97,7 @@ class App extends Component{
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path={"/table"} component={() => <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
-            <Route path="/upload" component={Upload} />
+            <Route path="/Visualisation" component={Visualisation} />
             <Route path={"/api"} component={Api} />
             <Route path="/info" component={Info} />
             <Route path="/project" component={Project} />

@@ -8,6 +8,7 @@ class Api extends Component{
     this.state = {
       isLoading: true,
       data2: String,
+      error_msg: false,
       records: "This state has not been set",
       url_id: "NULL",
       data_text: "Data for "
@@ -38,9 +39,11 @@ class Api extends Component{
           if (data.hasOwnProperty("Status")){
             console.log(data)
             this.setState({ data2:data});
+            this.setState({error_msg: true})
           } else {
           console.log(data[0])
           this.setState({ data2:data[0]});
+          this.setState({error_msg: false})
           }
         })
     }
@@ -70,6 +73,8 @@ class Api extends Component{
     }
 
 render (){
+
+
     return (
 
     <div className="ma4 mt0 background-body4-noalign container">
@@ -78,9 +83,21 @@ render (){
 
         <br />
 
+        <input placeholder="Search for PXDXXXX" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} onKeyPress={(event) => {if (event.key === 'Enter') {this.button_click()}}} />
+        <button onClick={this.button_click}>Search Database</button>
 
-        <input placeholder="search" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} />
-        <button onClick={this.button_click}>Search API</button>
+        {/* onKeyPress={(e) => {(e.key === 'Enter' ? this.button_click : null)}} */}
+        {/* <input
+          placeholder="search..."
+          onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })}
+          onKeyPress={(event) => {
+                  if (e.key === 'Enter') {
+                    this.button_click
+                  }
+                }} /> */}
+                {/* onKeyPress={(event) => {if (event.key === 'Enter') {{this.button_click}}}} */}
+
+
 
         <br />
         <br />
@@ -90,11 +107,14 @@ render (){
 
         <br />
 
-        <div className="background-body4 ">
-
+        <div className="background-body4">
+          <div className="background-body4-nojson">
             Data for: {this.state.url_id}
+          </div>
+            {this.state.error_msg ?
+              <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> :
+              <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> }
 
-          <JSONPretty style={{fontSize: "1.1em"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty>
           <br />
           <br />
           <br />

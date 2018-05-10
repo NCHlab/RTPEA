@@ -56,6 +56,11 @@ body2 {
     overflow-y: auto;
 }
 
+.background-body4-nojson {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
 .background-body4-noalign {
     padding-top: 5px;
     padding-bottom: 0px;
