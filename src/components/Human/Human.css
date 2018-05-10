@@ -28,8 +28,10 @@ div:onhover {
 .inline-img{
   /*display:inline;*/
   position: absolute;
-  left:412px;
-  top: 210px;
+  left:21.65%;
+  top: 23.1%;
+  /* left:412px;
+  top: 210px; */
 }
 
 /*.inline-img:hover{
