@@ -6,10 +6,34 @@ class Table extends Component{
   constructor() {
     super();
     this.state = {
-      data: ""
+      data2: "",
+      url_id: "NULL",
+      error_msg: false
     };
   }
 
+  searchURL = () => {
+    let { url_id } = this.state;
+    let url = "http://localhost:3001/table/"
+    return url
+  }
+
+    button_click = () => {
+      fetch(this.searchURL())
+      // "http://localhost:3001/api/PXD002233"
+        .then(response => response.json())
+        .then(data => {
+          if (data.hasOwnProperty("Status")){
+            console.log(data)
+            this.setState({ data2:data});
+            this.setState({error_msg: true})
+          } else {
+          console.log(data[0])
+          this.setState({ data2:data[0]});
+          this.setState({error_msg: false})
+          }
+        })
+    }
 
 
   render (){
