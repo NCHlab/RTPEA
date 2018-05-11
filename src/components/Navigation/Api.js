@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import JSONPretty from 'react-json-pretty';
-// import "./Api.css";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 
 class Api extends Component{
   constructor(props){
     super(props)
     this.state = {
       isLoading: true,
-      data2: String,
       error_msg: false,
+      copied: false,
+      data2: String,
       records: "This state has not been set",
       url_id: "NULL",
-      data_text: "Data for "
+      data_text: "Data for ",
+
     };
     // This binding is necessary to make `this` work in the callback
     this.returntext = this.returntext.bind(this)
@@ -47,6 +50,24 @@ class Api extends Component{
           }
         })
     }
+
+  saveAs = (content, filename = this.state.url_id + ".json", type = "application/json") => {
+  let blob = new Blob([content], { type })
+  let uri = URL.createObjectURL(blob)
+
+  let link = document.createElement('a');
+  if (typeof link.download === 'string') {
+    document.body.appendChild(link);
+    link.download = filename;
+    link.href = uri;
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    window.location.replace(uri);
+  }
+}
+
+// saveAs(content, 'test.json', 'application/json');
 
     // button_click = () => {
     //   fetch(this.searchURL())
@@ -85,6 +106,9 @@ render (){
 
       <input placeholder="Search for PXDXXXX" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} onKeyPress={(event) => {if (event.key === 'Enter') {this.button_click()}}} />
       <button onClick={this.button_click}>Search Database</button>
+      <br/>
+
+
 
         {/* onKeyPress={(e) => {(e.key === 'Enter' ? this.button_click : null)}} */}
         {/* <input
@@ -110,11 +134,20 @@ render (){
         <div className="background-body4">
           <div className="background-body4-nojson">
             Data for: {this.state.url_id}
+
           </div>
+          <CopyToClipboard text={JSON.stringify(this.state.data2,null,2)}
+              onCopy={() => this.setState({copied: true})}>
+              <button>Copy Data</button>
+            </CopyToClipboard>
+            {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+
+            <button onClick={(e) => this.saveAs(JSON.stringify(this.state.data2,null,2))}>Download</button>
 
             {this.state.error_msg
               ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty>
               : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> }
+
 
           <br />
           <br />
