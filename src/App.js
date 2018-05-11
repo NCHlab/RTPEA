@@ -7,6 +7,7 @@ import Footer from './components/Navigation/Footer';
 import Particles from 'react-particles-js';
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
 import Table from './components/Navigation/Table';

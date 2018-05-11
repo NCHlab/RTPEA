@@ -83,8 +83,8 @@ render (){
 
         <br />
 
-        <input placeholder="Search for PXDXXXX" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} onKeyPress={(event) => {if (event.key === 'Enter') {this.button_click()}}} />
-        <button onClick={this.button_click}>Search Database</button>
+      <input placeholder="Search for PXDXXXX" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} onKeyPress={(event) => {if (event.key === 'Enter') {this.button_click()}}} />
+      <button onClick={this.button_click}>Search Database</button>
 
         {/* onKeyPress={(e) => {(e.key === 'Enter' ? this.button_click : null)}} */}
         {/* <input
