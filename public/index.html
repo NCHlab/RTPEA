@@ -21,13 +21,37 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <style>
+      .preload-title{
+      text-align: center;
+      }
+
+      .center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* width: 50%; */
+      }
+
+    </style>
     <title>React App</title>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div>
+        <img class="center-img" src="./loading1.gif" />
+          </div>
+          <div class="preload-title">
+            Website is currently loading!
+            Slow connections will take longer to load.
+        </div>
+
+    </div>
+
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

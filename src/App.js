@@ -49,10 +49,10 @@ class App extends Component{
    super(props)
    this.state = {
     show: false,
-    isLoading: true
+    isLoading: true,
   };
   }
-
+  
   onShow = ()=> {
     this.setState({ show: true })
   }
