@@ -28,6 +28,14 @@ class Api extends Component{
     //     return results.json();})
   }
 
+  componentWillMount= () => {
+    document.title = 'RTPEA - API'
+  }
+
+  componentWillUnmount= () => {
+    document.title = 'RTPEA'
+  }
+
   searchURL = () => {
     let { url_id } = this.state;
     let url = "http://localhost:3001/api/" + url_id
