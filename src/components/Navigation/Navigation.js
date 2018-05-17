@@ -16,15 +16,15 @@ function Navigation(props) {
             to: '/'
         },
         {
-            page: 'Table',
-            to: '/table'
+            page: 'Browse',
+            to: '/browse'
         },
         {
-            page: 'Visualisation',
-            to: '/Visualisation'
+            page: 'Visualise',
+            to: '/visualise'
         },
         {
-            page: 'Api',
+            page: 'API',
             to: '/api'
         },
         {
@@ -32,8 +32,8 @@ function Navigation(props) {
             to: '/info'
         },
         {
-            page: 'Project',
-            to: '/project'
+            page: 'Contact Us',
+            to: '/contact'
         }
     ];
 

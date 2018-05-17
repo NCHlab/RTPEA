@@ -10,11 +10,11 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
-import Table from './components/Navigation/Table';
-import Visualisation from './components/Navigation/Visualisation';
+import Browse from './components/Navigation/Browse';
+import Visualise from './components/Navigation/Visualise';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
-import Project from './components/Navigation/Project';
+import Contact from './components/Navigation/Contact';
 import Loading from 'react-loading-bar'
 import JSONPretty from 'react-json-pretty';
 
@@ -52,7 +52,7 @@ class App extends Component{
     isLoading: true,
   };
   }
-  
+
   onShow = ()=> {
     this.setState({ show: true })
   }
@@ -97,11 +97,11 @@ class App extends Component{
         <div className="paths">
           {/* <Route exact path="/" component={Home} /> */}
           <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
-            <Route path={"/table"} component={() => <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
-            <Route path="/Visualisation" component={Visualisation} />
+            <Route path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route path="/Visualise" component={Visualise} />
             <Route path={"/api"} component={Api} />
             <Route path="/info" component={Info} />
-            <Route path="/project" component={Project} />
+            <Route path="/contact" component={Contact} />
         </div>
         <div className="line-seperator"></div>
         <Footer />
