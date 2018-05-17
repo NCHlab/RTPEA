@@ -31,8 +31,8 @@ class Table extends Component{
             this.setState({ data2:data});
             this.setState({error_msg: true})
           } else {
-          console.log(data[0])
-          this.setState({ data2:JSON.stringify(data[0])});
+          // console.log(data[0])
+          this.setState({ data2:data[0]});
           this.setState({error_msg: false})
           }
         })
@@ -47,9 +47,8 @@ class Table extends Component{
 
   render (){
 
-    const data = [{
-      name: JSON.stringify(this.state.data2)
-    }
+    const data = [
+      JSON.parse(JSON.stringify(this.state.data2))
   ]
 
   const columns = [{
@@ -104,9 +103,11 @@ class Table extends Component{
             {item.PXD}
                })} */}
 
-               {this.state.data2}
+               {/* {this.state.data2} */}
                <br />
                {typeof JSON.parse(JSON.stringify(this.state.data2))}
+               {console.log(this.state.data2[0])}
+               {/* try to get the whole object into table */}
 
 
 
