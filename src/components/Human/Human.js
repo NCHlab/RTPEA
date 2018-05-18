@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import Humanimg from './Human1.png';
+import Svg1 from './human_non_colourised.svg';
+import Svg2 from './human_colourised.svg';
+import Svg3 from './human_colourised_lung_grouped.svg';
+
 import Humanimg2 from './Human_W.png';
 import Human_lung from './Human_lung.png';
 import Brain from './Brain.png';
@@ -9,6 +13,7 @@ import './Human.css';
 import imagemap from './imagemap';
 import $ from 'jquery';
 import ImageMapper from 'react-image-mapper';
+import SVG from 'react-inlinesvg';
 
 
 let AREAS_MAP = {
@@ -107,7 +112,19 @@ render (){
         <br/>
           {this.state.index}
         </h1>
+        <br/>
+        {/* <img src={Svg1} alt="svg"/> */}
 
+        {/* <object className="lung-svg" type="image/svg+xml" data={Svg1}>
+          Your browser does not support SVG
+        </object> */}
+
+
+        <SVG src={Svg3}></SVG>
+
+        {/* preloader={<Loader />} onLoad={(src) => {
+               myOnLoadHandler(src);
+           }} */}
       </div>
 
   );

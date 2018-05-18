@@ -24,6 +24,45 @@ div:onhover {
   transform: translateX(-492px);
 }
 
+.whole_human{
+  opacity: 1;
+}
+
+.brain-svg{
+  opacity:0.4;
+  transition: 0.1s;
+}
+
+.brain-svg:hover{
+  opacity:1;
+}
+
+
+.heart-svg:hover{
+  opacity:0;
+}
+
+.stomach-svg:hover{
+  opacity:0;
+}
+
+.pancreas-svg:hover{
+  opacity:0;
+}
+
+.lung-svg{
+  opacity:0.4;
+  transition: 0.1s;
+}
+
+.lung-svg:hover{
+  opacity:1;
+}
+
+.mylung2:hover{
+  opacity:0;
+}
+
 .human-img:hover{
   opacity: 1;
   transition: 2s;
@@ -45,7 +84,9 @@ div:onhover {
 */
 
 
-
+.outline{
+  opacity:1 !important;
+}
 
 
 
