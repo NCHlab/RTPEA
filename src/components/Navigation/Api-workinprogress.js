@@ -14,6 +14,7 @@ class Api extends Component{
       records: "This state has not been set",
       url_id: "NULL",
       data_text: "Data for ",
+      error_code: 200,
 
     };
     // This binding is necessary to make `this` work in the callback
@@ -38,25 +39,57 @@ class Api extends Component{
 
   searchURL = () => {
     let { url_id } = this.state;
+    let url_ebi = "https://www.ebi.ac.uk:443/pride/ws/archive/project/" + url_id
     let url = "http://localhost:3001/api/" + url_id
-    return url
+
+    // const Error_404_msg = {
+    //   Status: "Not Found",
+    //   Code: 404,
+    //   Message:  " does not exist in the database.",
+    //   moreInfoUrl: "http://www.rtpea.com/status/404"
+    // }
+    //
+    // const Error_403_msg = {
+    //   Status: "Forbidden!",
+    //   Code: 403,
+    //   Message:  "You do not have permission to access this on this erver",
+    //   moreInfoUrl: "http://www.rtpea.com/status/401"
+    // }
+    //
+    // const Error_401_msg = {
+    //   Status: "Unauthorized!",
+    //   Code: 401,
+    //   Message:  "This data is currently private.",
+    //   moreInfoUrl: "http://www.ebi.ac.uk/pride/archive/login"
+    // }
+
+    fetch(url_ebi)
+    .then(response => this.setState({ error_code:response.status}))
+    if (this.state.error_code === 200){
+      return url
+    }
+    // } else if (this.state.error_code === 401){
+    //   this.setState({ data2:Error_401_msg})
+    //   console.log(Error_401_msg)
+    // } else if (this.state.error_code === 403){
+    //   this.setState({ data2:Error_403_msg})
+    // } else if (this.state.error_code === 404){
+    //   this.setState({ data2:Error_404_msg})
+    // }
   }
 
+
+
     button_click = () => {
+
       fetch(this.searchURL())
-      // "http://localhost:3001/api/PXD002233"
         .then(response => response.json())
         .then(data => {
-          if (data.hasOwnProperty("Status")){
-            console.log(data)
-            this.setState({ data2:data});
-            this.setState({error_msg: true})
-          } else {
           console.log(data[0])
           this.setState({ data2:data[0]});
           this.setState({error_msg: false})
-          }
         })
+        // }
     }
 
   saveAs = (content, filename = this.state.url_id + ".json", type = "application/json") => {
@@ -107,14 +140,16 @@ render (){
     return (
 
     <div className="ma4 mt0 background-body4-noalign container">
-        {this.state.isLoading ? console.log("yes") : console.log("no")}
-        {this.state.isLoading}
+        {/* {this.state.isLoading ? console.log("yes") : console.log("no")}
+        {this.state.isLoading} */}
 
         <br />
 
       <input placeholder="Search for PXDXXXX" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} onKeyPress={(event) => {if (event.key === 'Enter') {this.button_click()}}} />
       <button onClick={this.button_click}>Search Database</button>
       <br/>
+
+
 
 
 
@@ -152,11 +187,27 @@ render (){
 
             <button onClick={(e) => this.saveAs(JSON.stringify(this.state.data2,null,2))}>Download</button>
 
-            {this.state.error_msg
+            {/* {this.state.error_msg
               ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty>
+              : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> } */}
+
+
+
+              <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty>
+
+              {/* {this.state.error_code === 401
+                ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_401_msg)}></JSONPretty>
+              :  }
+
+              {this.state.error_code === 403
+                ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_403_msg)}></JSONPretty>
               : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> }
 
+              {this.state.error_code === 404
+                ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_404_msg)}></JSONPretty>
+              : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> } */}
 
+                {/* <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(Error_401_msg,null,2)}></JSONPretty> */}
           <br />
           <br />
           <br />

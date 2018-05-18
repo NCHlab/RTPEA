@@ -14,6 +14,7 @@ class Api extends Component{
       records: "This state has not been set",
       url_id: "NULL",
       data_text: "Data for ",
+      error_code: 200,
 
     };
     // This binding is necessary to make `this` work in the callback
@@ -38,13 +39,34 @@ class Api extends Component{
 
   searchURL = () => {
     let { url_id } = this.state;
+    let url_ebi = "https://www.ebi.ac.uk:443/pride/ws/archive/project/" + url_id
     let url = "http://localhost:3001/api/" + url_id
-    return url
-  }
+    fetch(url_ebi)
+    .then(response => response.json())
+    .then(data => {
+
+      if (data.hasOwnProperty("code") & data.code === 401){
+        this.setState({ error_code:401});
+        console.log(data)
+        console.log(this.state.error_code)
+    //     this.setState({ data2:data[0]});
+    //   } else {
+        return url
+      }
+        }
+      )}
+
+    //   })
+    // }
+
 
     button_click = () => {
+      //
       fetch(this.searchURL())
       // "http://localhost:3001/api/PXD002233"
+    //   .then(if (this.error_code === 200){
+    //     console.log("ok")
+    // })
         .then(response => response.json())
         .then(data => {
           if (data.hasOwnProperty("Status")){
@@ -57,6 +79,7 @@ class Api extends Component{
           this.setState({error_msg: false})
           }
         })
+        // }
     }
 
   saveAs = (content, filename = this.state.url_id + ".json", type = "application/json") => {
@@ -102,7 +125,26 @@ class Api extends Component{
     }
 
 render (){
+    const Error_404_msg = {
+      Status: "Not Found",
+      Code: 404,
+      Message:  " does not exist in the database.",
+      moreInfoUrl: "http://www.rtpea.com/status/404"
+    };
 
+    const Error_403_msg = {
+      Status: "Forbidden!",
+      Code: 403,
+      Message:  "You do not have permission to access this on this erver",
+      moreInfoUrl: "http://www.rtpea.com/status/401"
+    };
+
+    const Error_401_msg = {
+      Status: "Unauthorized!",
+      Code: 404,
+      Message:  "This data is currently private.",
+      moreInfoUrl: "http://www.ebi.ac.uk/pride/archive/login"
+    };
 
     return (
 
@@ -115,6 +157,8 @@ render (){
       <input placeholder="Search for PXDXXXX" onChange={(e) => this.setState({ url_id: e.target.value.toUpperCase() })} onKeyPress={(event) => {if (event.key === 'Enter') {this.button_click()}}} />
       <button onClick={this.button_click}>Search Database</button>
       <br/>
+
+
 
 
 
@@ -157,6 +201,11 @@ render (){
               : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> }
 
 
+              {this.state.error_code === 401
+                ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_401_msg)}></JSONPretty>
+                : <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_404_msg)}></JSONPretty>}
+
+                {/* <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(Error_401_msg,null,2)}></JSONPretty> */}
           <br />
           <br />
           <br />
