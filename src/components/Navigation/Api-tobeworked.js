@@ -42,46 +42,55 @@ class Api extends Component{
     let url_ebi = "https://www.ebi.ac.uk:443/pride/ws/archive/project/" + url_id
     let url = "http://localhost:3001/api/" + url_id
 
-    // const Error_404_msg = {
-    //   Status: "Not Found",
-    //   Code: 404,
-    //   Message:  " does not exist in the database.",
-    //   moreInfoUrl: "http://www.rtpea.com/status/404"
-    // }
-    //
-    // const Error_403_msg = {
-    //   Status: "Forbidden!",
-    //   Code: 403,
-    //   Message:  "You do not have permission to access this on this erver",
-    //   moreInfoUrl: "http://www.rtpea.com/status/401"
-    // }
-    //
-    // const Error_401_msg = {
-    //   Status: "Unauthorized!",
-    //   Code: 401,
-    //   Message:  "This data is currently private.",
-    //   moreInfoUrl: "http://www.ebi.ac.uk/pride/archive/login"
-    // }
+
 
     fetch(url_ebi)
     .then(response => this.setState({ error_code:response.status}))
     if (this.state.error_code === 200){
       return url
-    }
-    // } else if (this.state.error_code === 401){
-    //   this.setState({ data2:Error_401_msg})
-    //   console.log(Error_401_msg)
+    // }
+    } else if (this.state.error_code === 401){
+      this.Error_func(401)
+      // console.log(Error_401_msg)
     // } else if (this.state.error_code === 403){
     //   this.setState({ data2:Error_403_msg})
     // } else if (this.state.error_code === 404){
     //   this.setState({ data2:Error_404_msg})
-    // }
+    }
+  }
+
+
+  Error_func = (code) => {
+    const Error_404_msg = {
+      Status: "Not Found",
+      Code: 404,
+      Message:  " does not exist in the database.",
+      moreInfoUrl: "http://www.rtpea.com/status/404"
+    }
+
+    const Error_403_msg = {
+      Status: "Forbidden!",
+      Code: 403,
+      Message:  "You do not have permission to access this on this erver",
+      moreInfoUrl: "http://www.rtpea.com/status/401"
+    }
+
+    const Error_401_msg = {
+      Status: "Unauthorized!",
+      Code: 401,
+      Message:  "This data is currently private.",
+      moreInfoUrl: "http://www.ebi.ac.uk/pride/archive/login"
+    }
+    
+    if (code === 401){
+      this.setState({ data2:Error_401_msg})
+      console.log(Error_401_msg)
+    }
   }
 
 
 
     button_click = () => {
-
       fetch(this.searchURL())
         .then(response => response.json())
         .then(data => {
@@ -197,15 +206,15 @@ render (){
 
               {/* {this.state.error_code === 401
                 ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_401_msg)}></JSONPretty>
-              :  }
+              : "" }
 
               {this.state.error_code === 403
                 ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_403_msg)}></JSONPretty>
-              : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> }
+              : "" }
 
               {this.state.error_code === 404
                 ? <JSONPretty style={{fontSize: "1.6em", color: "#af0603"}} id="json-pretty" json={JSON.stringify(Error_404_msg)}></JSONPretty>
-              : <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(this.state.data2)}></JSONPretty> } */}
+              : "" } */}
 
                 {/* <JSONPretty style={{fontSize: "1.2em", color: "#000000"}} id="json-pretty" json={JSON.stringify(Error_401_msg,null,2)}></JSONPretty> */}
           <br />

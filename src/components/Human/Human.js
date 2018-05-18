@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Humanimg from './Human.png';
+import Humanimg from './Human1.png';
 import Humanimg2 from './Human_W.png';
 import Human_lung from './Human_lung.png';
 import Brain from './Brain.png';
@@ -56,40 +56,34 @@ class Human extends Component{
   }
 
   componentDidMount = () => {
-    // onMouseEnter(map1,0,this.handlestatechange)
+
 
   }
 
-  // currentHighlight = () => {
-  //   const newHighlight = this.state.highlight.map((highlight)=>{
-  //     const tempUser = highlight;
-  //     tempUser.age -=10;
-  //     return tempUser;
-  //   })
-  //   this.setState({
-  //     newHighlight
-  //   })
-  // }
 
-  checkclick = (area, index, event) => {
+
+  MouseEnter = (area, index, event) => {
     this.setState({loading: "true",
     index: index});
     // console.log(index);
 
   }
 
-  checkclick2 = () => {
+  MouseLeave = () => {
     this.setState({loading: "false"});
   }
 
 
 
 
-  testcheck = (index) => {
+  ImageArray = (index) => {
     if (index === 0){
       return <img src={Plot1} className="pb6 " alt="logo" height="450px" width="450px"/>;
     } else if (index === 1){
-      return <img src={Human_lung} className="pb6 " alt="logo" height="650px" width="450px"/>;
+      return(
+      <div className="moveleft">
+        <img src={Human_lung} className="pb6 " alt="logo" height="650px" width="450px"/>;
+      </div>)
     }
   }
 
@@ -98,55 +92,21 @@ render (){
 
     return (
     <div className="ma4 mt0">
-
-
       <div className="container c1">
         <div className="human-img">
-          <ImageMapper src={Humanimg} map={AREAS_MAP2} fillColor="rgba(204, 58, 38, 0.5)" className="pb6" alt="" height={"650"} width={"450"} onMouseEnter={this.checkclick} />
+          <ImageMapper src={Humanimg} map={AREAS_MAP2} fillColor="rgba(204, 58, 38, 0.5)" className="pb6" alt="" height={"650"} width={"450"} onMouseEnter={this.MouseEnter} />
         </div>
-        {/* fillColor="rgba(204, 58, 38, 0.5)" 
 
-       onMouseLeave={this.checkclick2}*/}
         <div className="inline-img">
-          {this.testcheck(this.state.index)}
+          {this.ImageArray(this.state.index)}
         </div>
-
-        
-
-
       </div>
 
-
-      {/*<div className="image-relative-top">
-           <img id="image1" src={Humanimg} width={"450"} height={"650"} alt="HumanImg" />
-           <img id="image2" style={{position: "absolute", top: "100px", left: "100px"}} src={Plot2} alt="plot2" />
-
-           
-      </div>*/}
-      
-        
-
-        
-
-      {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
-
-
-
-          {/* <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/> */}
-
-        <h1>{this.state.loading} <br />
-            {this.state.index}</h1>
-
-
-          {/* <div>
-            {this.state.index ? (
-                <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>
-            ):0}
-          </div> */}
-
-          {/* <ImageMapper src={Humanimg} map={AREAS_MAP2} alt="" height={"650"} width={"450"}/> */}
-        {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
-          {/* <img id= "Brain" src={Brain} className="pb6 imghov" alt="logo"/> */}
+        <h1>
+          {this.state.loading}
+        <br/>
+          {this.state.index}
+        </h1>
 
       </div>
 
@@ -154,35 +114,37 @@ render (){
 }
 }
 
-{/* <div class="human-img">
-  <img src={Humanimg2} className="pb6 imghov" alt="logo" height="650px" width="450px"/>
-</div>
-<img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/>
-  <img id= "Brain" src={Brain} className="pb6 imghov" alt="logo"/> */}
-
 export default Human;
-// const Human = () => {
-//   return (
-//   <div className="ma4 mt0">
-//     <img src={Humanimg2} className="pb6 imghov image_hover_bg" alt="logo" height="650px" width="450px"/>
-//     <img src={Humanimg} className="pb6 imghov human-img" alt="logo" height="650px" width="450px"/>
-//     <img id= "Brain" src={Brain} className="pb6 imghov" alt="logo"/>
-//
-//     </div>
-//
-//
-//
-//   );
-// }
+
+        //   {/* <div>
+        //     {this.state.index ? (
+        //         <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/>
+        //     ):0}
+        //   </div> */}
+        //
+        //   {/* <ImageMapper src={Humanimg} map={AREAS_MAP2} alt="" height={"650"} width={"450"}/> */}
+        // {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
+        //   {/* <img id= "Brain" src={Brain} className="pb6 imghov" alt="logo"/> */}
+
+              // {/*<div className="image-relative-top">
+              //      <img id="image1" src={Humanimg} width={"450"} height={"650"} alt="HumanImg" />
+              //      <img id="image2" style={{position: "absolute", top: "100px", left: "100px"}} src={Plot2} alt="plot2" />
+              // </div>*/}
+              // {/* <img src={Humanimg} className="pb6 imghov" alt="logo" height="650px" width="450px"/> */}
+              //     {/* <img src={brain2} className="pb6 imghov" alt="logo" height="450px" width="450px"/> */}
+              //     {/* fillColor="rgba(204, 58, 38, 0.5)"
+              //
+              //    onMouseLeave={this.checkclick2}*/}
 
 
-
-{/* <div style="width: 200px; height: 1000px; position: relative;">
-   <img id="image1" style="position: relative;" src="..." alt="..." />
-   <img id="image2" style="position: absolute; top: <y>px; left: <x>px;" src="..." alt="..." />
-</div> */}
-//
-// Where <y> is (1000 - height of image2) / 2
-// And <x> is (200 - width of image2) / 2
-//
-// As long as the surrounding div stays 1000 * 200 this should work
+    // onMouseEnter(map1,0,this.handlestatechange)
+                  // currentHighlight = () => {
+                  //   const newHighlight = this.state.highlight.map((highlight)=>{
+                  //     const tempUser = highlight;
+                  //     tempUser.age -=10;
+                  //     return tempUser;
+                  //   })
+                  //   this.setState({
+                  //     newHighlight
+                  //   })
+                  // }

@@ -20,24 +20,37 @@ div:onhover {
   background-color: white */
 }
 
+.moveleft{
+  transform: translateX(-492px);
+}
+
 .human-img:hover{
-  opacity: 0;
+  opacity: 1;
   transition: 2s;
+  /* transform: translateX(-1000px); */
 }
 
 .inline-img{
-  /*display:inline;*/
+  display:inline;
   position: absolute;
-  left:21.65%;
-  top: 23.1%;
-  /* left:412px;
-  top: 210px; */
+  left:14.5%;
+  top: 29.1%;
+  left:712px;
+  top: 212px;
 }
 
 /*.inline-img:hover{
   opacity:1;
 }
 */
+
+
+
+
+
+
+
+
 
 
 .image-relative-top{
