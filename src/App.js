@@ -24,7 +24,7 @@ import 'react-loading-bar/dist/index.css'
 import 'react-table/react-table.css'
 
 
-
+// Particle options used for background dynamic movement of particles
 const particlesOptions = {
   "particles": {
     "number": {
@@ -54,11 +54,13 @@ class App extends Component{
   };
   }
 
-  onShow = ()=> {
+  // sets state to true, which then displays the loading bar
+  onShow = () => {
     this.setState({ show: true })
   }
 
-  onHide = ()=> {
+// sets state to false, which then removes the loading bar
+  onHide = () => {
     this.setState({ show: false })
   }
 
@@ -85,18 +87,16 @@ class App extends Component{
           hide
         </button> */}
         <div className="">
-          {/* <Loadingbar
-            show={true}
-            color="red"
-            change={false}
-            showSpinner={true}/> */}
+          {/* Displays the Navigation modules, which contains the logo and all links to the website*/}
           <Navigation />
-          {/* <Logo /> */}
+
+          {/* Displays the particles that was defined earlier */}
           <Particles className="particles" params={particlesOptions} />
         </div>
 
+        {/* Route defined, different paths lead to different JS files to be displayed.
+          Some Props have also been passed through so that it is accessible in the other JS files */}
         <div className="paths">
-          {/* <Route exact path="/" component={Home} /> */}
           <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path="/Visualise" component={Visualise} />
@@ -119,37 +119,5 @@ class App extends Component{
 
 
 
-//export default BasicExample;
-
-
-
-// class App extends Component {
-//   componentDidMount() {
-//     fetch("http://localhost:3000/")
-//       .then(response => response.json())
-//       .then(console.log)
-//   }
-//
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <Logo />
-//           <Navigation />
-//         </header>
-//         <p className="App-intro">
-//             <h1 className="">Welcome to Retro Data Portal</h1>
-//             <Particles className="particles" params={particlesOptions} />
-//         { /*<Human />*/}
-//         </p>
-//       </div>
-//     );
-//   }
-// }
 
 export default App;
-
-
-
-{/* this.state.route === "homepage" ?
-    <homepage />*/}
