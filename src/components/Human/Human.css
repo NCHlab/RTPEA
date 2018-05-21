@@ -28,40 +28,16 @@ div:onhover {
   opacity: 1;
 }
 
-.brain-svg{
-  opacity:0.4;
-  transition: 0.1s;
+.organ-svg{
+  opacity:0.1;
+  transition: 0.6s;
 }
 
-.brain-svg:hover{
+.organ-svg:hover{
   opacity:1;
 }
 
 
-.heart-svg:hover{
-  opacity:0;
-}
-
-.stomach-svg:hover{
-  opacity:0;
-}
-
-.pancreas-svg:hover{
-  opacity:0;
-}
-
-.lung-svg{
-  opacity:0.4;
-  transition: 0.1s;
-}
-
-.lung-svg:hover{
-  opacity:1;
-}
-
-.mylung2:hover{
-  opacity:0;
-}
 
 .human-img:hover{
   opacity: 1;
