@@ -32,7 +32,7 @@ class Table extends Component{
             this.setState({error_msg: true})
           } else {
           // console.log(data[0])
-          this.setState({ data2:data[0]});
+          this.setState({ data2:data});
           this.setState({error_msg: false})
           }
         })
@@ -47,22 +47,33 @@ class Table extends Component{
 
   render (){
 
-    const data = [
-      JSON.parse(JSON.stringify(this.state.data2))
-  ]
+    const json_data = [this.state.data2]
+
+
+  // accessor: "sample.0.1.0.file_name"
+  // accessor: "0.sample[0].1[0].file_name"
 
   const columns = [{
     Header: 'DB ID',
-    accessor: "_id" // String-based value accessors!
+    id: "data_id",
+    accessor: '_id' // String-based value accessors!
   }, {
-    PXD: 'Age',
-    accessor: 'PXD'
+    Header: 'PXD',
+    id: "data_pxd",
+    accessor: (d) => d.PXD
   }, {
-    PXD: 'study',
+    Header: 'study',
     accessor: 'study'
   }, {
-    PXD: 'disease',
+    Header: 'disease',
     accessor: 'disease'
+  // ,{
+  //   id: 'data_sample',
+  //   Header: 'sample',
+  //   accessor: data.map(function(data){
+  //     return data.sample
+  //   })
+    // "sample.0.1.0.file_name"
   }]
     // const columns = [{
     //   Header: 'ID',
@@ -99,24 +110,31 @@ class Table extends Component{
 
       return (
         <div>
+          <br/>
+          <br/>
+          {JSON.stringify(this.state.data2)}
+        <div className="background-body2">
           {/* {this.state.data2.map((item) => {
             {item.PXD}
                })} */}
 
                {/* {this.state.data2} */}
                <br />
-               {typeof JSON.parse(JSON.stringify(this.state.data2))}
+               {typeof this.state.data2}
                {console.log(this.state.data2[0])}
                {/* try to get the whole object into table */}
 
-
+{/* data={json_data} */}
+  {/* resolveData={json_data.map(data => data)} */}
 
       <ReactTable
-        data={data}
+        data={this.state.data2}
+        resolveData={json_data.map(data => data.PXD)}
         columns={columns}
+      />
 
-    />
     </div>
+  </div>
 )
   }
 

@@ -40,7 +40,9 @@ class Human extends Component{
     this.state = {
       loading: "false",
       highlight: false,
-      index: ""
+      index: "",
+      x: 0,
+      y: 0
     };
   }
 
@@ -62,6 +64,9 @@ class Human extends Component{
     this.setState({loading: "false"});
   }
 
+  _onMouseMove = (e) => {
+    this.setState({ x: e.screenX, y: e.screenY });
+  }
 
 
 
@@ -76,16 +81,55 @@ class Human extends Component{
     }
   }
 
+
+  showimg = () => {
+    if (this.state.x > -995 && this.state.x < -960 && this.state.y > 355 && this.state.y < 395 ){
+      return <img src={Plot1} className="pb6 " alt="logo" height="450px" width="450px"/>;
+    }
+  }
+
+
+  getid = () => {
+    var coordsDiv = document.getElementById('lung');
+    console.log(coordsDiv)
+    console.log("hi")
+  }
+
 render (){
 
+  // var coordsDiv = document.getElementById('coords');
+  // var el1 = document.getElementById('win-frame');
+  // el1.onmousemove = function(evt) {
+  // coordsDiv.value = evt.clientX + ' ' + evt.clientY;
+  // }
+  //
+  // var rects = document.querySelectorAll( 'lung' );
+  //
+  // // for( var rect of rects ) {
+  // //     rect.addEventListener( 'mouseover', cb );
+  // // }
+  //
+  // function cb(){
+  //   // the "this" object is your reference to the rect hovered over
+  //   console.log( this );
+  // }
 
+  const { x, y } = this.state;
     return (
+  <div onMouseMove={this._onMouseMove.bind(this)}>
     <div className="ma4 mt0">
       <div className="container c1">
         <div className="human-img">
           {/* <ImageMapper src={Humanimg} map={AREAS_MAP} fillColor="rgba(204, 58, 38, 0.5)" className="pb6" alt="" height={"650"} width={"450"} onMouseEnter={this.MouseEnter} /> */}
           <SVG src={Svg3}></SVG>
         </div>
+        {this.getid()}
+
+        {this.showimg()}
+
+
+          <h1>Mouse coordinates: { x } { y }</h1>
+
 
         <div className="inline-img">
           {this.ImageArray(this.state.index)}
@@ -110,6 +154,7 @@ render (){
         {/* preloader={<Loader />} onLoad={(src) => {
                myOnLoadHandler(src);
            }} */}
+      </div>
       </div>
 
   );
