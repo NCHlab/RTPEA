@@ -18,6 +18,7 @@ import Contact from './components/Navigation/Contact';
 import Loading from 'react-loading-bar'
 import JSONPretty from 'react-json-pretty';
 import SVG from 'react-inlinesvg';
+import Loader from 'react-loader';
 
 import './App.css';
 import 'react-loading-bar/dist/index.css'

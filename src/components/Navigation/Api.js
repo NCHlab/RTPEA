@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import JSONPretty from "react-json-pretty";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Loader from 'react-loader';
 
 class Api extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
+      loaded: true,
       error_msg: false,
       copied: false,
       data2: String,
@@ -47,6 +49,7 @@ class Api extends Component {
   // otherwise the first array of the object is saved to state data2
 
   button_click = () => {
+    this.setState({ loaded: false });
     fetch(this.searchURL())
       // "http://localhost:3001/api/PXD002233"
       .then(response => response.json())
@@ -54,10 +57,12 @@ class Api extends Component {
         if (data.hasOwnProperty("Status")) {
           console.log(data);
           this.setState({ data2: data });
+          this.setState({ loaded: true });
           this.setState({ error_msg: true });
         } else {
           console.log(data[0]);
           this.setState({ data2: data[0] });
+          this.setState({ loaded: true });
           this.setState({ error_msg: false });
         }
       });
@@ -101,6 +106,28 @@ class Api extends Component {
 
 
   render() {
+
+    var options = {
+    lines: 13,
+    length: 20,
+    width: 10,
+    radius: 30,
+    scale: 1.00,
+    corners: 1,
+    color: '#000',
+    opacity: 0.25,
+    rotate: 0,
+    direction: 1,
+    speed: 1,
+    trail: 60,
+    fps: 20,
+    zIndex: 2e9,
+    top: '50%',
+    left: '50%',
+    shadow: true,
+    hwaccel: false,
+    position: 'absolute'
+  };
 
     return (
       <div className="ma4 mt0 background-body4-noalign container">
@@ -162,6 +189,8 @@ class Api extends Component {
           {/* If error_msg is true, then the colour is changed to red and the
             data is displayed
             otherwise the data is displayed in black */}
+          <Loader loaded={this.state.loaded} options={options} className="spinner">
+
           {this.state.error_msg ? (
             <JSONPretty
               style={{ fontSize: "1.6em", color: "#af0603" }}
@@ -175,6 +204,7 @@ class Api extends Component {
               json={JSON.stringify(this.state.data2)}
             />
           )}
+          </Loader>
 
           <br />
           <br />
