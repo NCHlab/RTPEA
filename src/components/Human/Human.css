@@ -29,12 +29,13 @@ div:onhover {
 }
 
 .organ-svg{
-  opacity:0.1;
-  transition: 0.2s;
+  opacity:0.3;
+  transition: 1s;
 }
 
 .organ-svg:hover{
   opacity:1;
+  transition: 0.1s;
 }
 
 
