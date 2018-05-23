@@ -48,7 +48,10 @@ class Table extends Component{
 
   const mynum = 20
 
-  const columns = [{
+  const main_columns = [{
+    Header: 'Data by Study',
+  headerClassName: 'my-favorites-column-header-group',
+  columns: [{
     Header: 'PXD',
     id: "data_pxd",
     accessor: (d) => d.PXD // String-based value accessors!
@@ -59,6 +62,24 @@ class Table extends Component{
     Header: 'No. of Samples',
     id: "data_num",
     accessor: (d) => mynum
+  }, {
+    Header: 'Disease',
+    accessor: 'disease'
+  }, {
+    Header: 'Tissue',
+    accessor: 'sample[0].1[0].tissue_type'
+  }]
+  }]
+
+  const sec_columns = [{
+    Header: '',
+    accessor: '-' // String-based value accessors!
+  }, {
+    Header: '',
+    accessor: '-'
+  }, {
+    Header: 'Sample Number',
+    accessor: 'sample[0].1[0].phenotype'
   }, {
     Header: 'Disease',
     accessor: 'disease'
@@ -80,10 +101,26 @@ class Table extends Component{
             <ReactTable
               loading={false}
               data={this.state.data2}
-              columns={columns}
+              columns={main_columns}
+              noDataText="No Data Has been found, the API server may be down. Please contact the Developers."
               defaultPageSize={20}
               showPaginationTop={true}
-              pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}/>
+              className="-striped -highlight"
+              pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
+              SubComponent={row => {
+                return (
+                    <ReactTable
+                      data={this.state.data2}
+                      columns={sec_columns}
+                      defaultPageSize={3}
+                      showPagination={false}/>
+                    );
+                  }}
+                />
+
+
+
+
 
           </div>
         </div>
