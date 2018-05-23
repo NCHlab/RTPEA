@@ -12,7 +12,8 @@ class Api extends Component {
       data2: String,
       records: "This state has not been set",
       url_id: "NULL",
-      data_text: "Data for "
+      data_text: "Data for ",
+      color_black: true
     };
     // This binding is necessary to make `this` work in the callback
     this.returntext = this.returntext.bind(this);
@@ -83,6 +84,10 @@ class Api extends Component {
     }
   };
 
+  changeColor = () =>{
+        this.setState({color_black: !this.state.color_black})
+    };
+
   // useless code
   returntext = () => {
     console.log("Example State has now been set via this button");
@@ -93,7 +98,10 @@ class Api extends Component {
     }
   };
 
+
+
   render() {
+
     return (
       <div className="ma4 mt0 background-body4-noalign container">
         {this.state.isLoading ? console.log("yes") : console.log("no")}
@@ -105,15 +113,12 @@ class Api extends Component {
            function upon enter button being pressed or button being clicked */}
         <input
           placeholder="Search for PXDXXXX"
-          onChange={e =>
-            this.setState({ url_id: e.target.value.toUpperCase() })
-          }
-          onKeyPress={event => {
-            if (event.key === "Enter") {
+          onChange={e => this.setState({ url_id: e.target.value.toUpperCase() })}
+          onKeyPress={event => {if (event.key === "Enter") {
               this.button_click();
             }
-          }}
-        />
+          }}/>
+
         <button onClick={this.button_click}>Search Database</button>
 
         <br />
@@ -124,6 +129,8 @@ class Api extends Component {
         {this.state.records}
 
         <br />
+        <input type="button" onClick={document.bgColor="red"} value="red"/>
+         <button style={{backgroundColor: document.bgColor}} onClick={this.changeColor.bind(this)}>Button</button>
 
         <div className="background-body4">
           <div className="background-body4-nojson">
@@ -133,8 +140,7 @@ class Api extends Component {
           {/* Copies the displayed data (data in the state component) to the users clipboard */}
           <CopyToClipboard
             text={JSON.stringify(this.state.data2, null, 2)}
-            onCopy={() => this.setState({ copied: true })}
-          >
+            onCopy={() => this.setState({ copied: true })}>
             <button>Copy Data</button>
           </CopyToClipboard>
 
