@@ -42,101 +42,67 @@ class Table extends Component{
   //   JSON.stringify(this.state.data2)
   // ]}
 
-
-
-
   render (){
-
-    const json_data = [this.state.data2]
-
-
   // accessor: "sample.0.1.0.file_name"
   // accessor: "0.sample[0].1[0].file_name"
 
+  const mynum = 20
+
   const columns = [{
-    Header: 'DB ID',
-    id: "data_id",
-    accessor: '_id' // String-based value accessors!
-  }, {
     Header: 'PXD',
     id: "data_pxd",
-    accessor: (d) => d.PXD
+    accessor: (d) => d.PXD // String-based value accessors!
   }, {
-    Header: 'study',
+    Header: 'Study',
     accessor: 'study'
   }, {
-    Header: 'disease',
+    Header: 'No. of Samples',
+    id: "data_num",
+    accessor: (d) => mynum
+  }, {
+    Header: 'Disease',
     accessor: 'disease'
-  // ,{
-  //   id: 'data_sample',
-  //   Header: 'sample',
-  //   accessor: data.map(function(data){
-  //     return data.sample
-  //   })
-    // "sample.0.1.0.file_name"
+  }, {
+    Header: 'Tissue',
+    accessor: 'sample[0].1[0].tissue_type'
   }]
-    // const columns = [{
-    //   Header: 'ID',
-    //   accessor: 'name' // String-based value accessors!
-    // }, {
-    //   Header: 'Study',
-    //   accessor: 'age'
-    // }, {
-    //   id: 'friendName', // Required because our accessor is not a string
-    //   Header: 'Friend Name',
-    //   accessor: 'name' // Custom value accessors!
-    // }, {
-    //   Header: "test", // Custom header components!
-    //   accessor: 'friend.age'
-    // }]
-
-
-    // const columns = [{
-    //   Header: 'Name',
-    //   accessor: 'name' // String-based value accessors!
-    // }, {
-    //   Header: 'Age',
-    //   accessor: 'age',
-    //   Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    // }, {
-    //   id: 'friendName', // Required because our accessor is not a string
-    //   Header: 'Friend Name',
-    //   accessor: d => d.friend.name // Custom value accessors!
-    // }, {
-    //   Header: props => <span>Friend Age</span>, // Custom header components!
-    //   accessor: 'friend.age'
-    // }]
 
 
       return (
         <div>
           <br/>
           <br/>
-          {JSON.stringify(this.state.data2)}
-        <div className="background-body2">
-          {/* {this.state.data2.map((item) => {
-            {item.PXD}
-               })} */}
+          <div className="background-body2">
 
-               {/* {this.state.data2} */}
-               <br />
-               {typeof this.state.data2}
-               {console.log(this.state.data2[0])}
-               {/* try to get the whole object into table */}
 
-{/* data={json_data} */}
-  {/* resolveData={json_data.map(data => data)} */}
+            <br />
 
-      <ReactTable
-        data={this.state.data2}
-        resolveData={json_data.map(data => data.PXD)}
-        columns={columns}
-      />
+            <ReactTable
+              loading={false}
+              data={this.state.data2}
+              columns={columns}
+              defaultPageSize={20}
+              showPaginationTop={true}
+              pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}/>
 
-    </div>
-  </div>
+          </div>
+        </div>
 )
   }
 
 }
 export default Table;
+
+// {/* {JSON.stringify(this.state.data2)} */}
+//
+// {/* {this.state.data2.map((item) => {
+//   {item.PXD}
+//      })} */}
+//
+// {/* {typeof this.state.data2}
+// {console.log(this.state.data2[0])} */}
+// {/* try to get the whole object into table */}
+//
+// {/* data={json_data} */}
+// {/* resolveData={json_data.map(data => data)} */}
+// {/* resolveData={json_data.map(data => data.PXD)} */}
