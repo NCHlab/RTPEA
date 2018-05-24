@@ -82,13 +82,14 @@ class Table extends Component{
     accessor: '-'
   }, {
     Header: 'Sample Number',
-    accessor: 'sample[0].1[0].phenotype'
+    accessor: '-'
   }, {
     Header: 'Disease',
     accessor: '-'
   }, {
     Header: 'Tissue',
-    accessor: 'sample[0].1[0].tissue_type'
+    id: "num2",
+    accessor: (d) => mynum
   }]
 
 
@@ -129,7 +130,7 @@ class Table extends Component{
                   <div style={{ border: "4px", borderStyle: "dotted solid solid solid", borderColor: "rgb(0, 83, 140)" }}>
                     {console.log(row)}
                     <ReactTable
-                      data={this.state.data2}
+                      data={this.row}
                       columns={sec_columns}
                       defaultPageSize={3}
                       showPagination={false}
