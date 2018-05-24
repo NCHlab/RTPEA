@@ -41,7 +41,7 @@ function Footer(props) {
 
 
     return (
-			<div className="inline-text">
+			<div className="whole-footer">
 				<div id="">
 					<Link to="/"><img src={retrologo} height={200} width={500} className="pb6" alt="logo"/></Link>
 				</div>

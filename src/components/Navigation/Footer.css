@@ -13,12 +13,12 @@
   /* overflow: hidden; */
   /* box-shadow: 3px 3px 4px rgba(4, 3, 3, 0.5); */
   /* color: #FFFFFF; */
-  font-weight: bold;
+  /* font-weight: bold;
   font-size: 18px;
   text-decoration: none;
   display: inline;
   margin: 0 9px 0 10px;
-  list-style-type: none;
+  list-style-type: none; */
 
 
 
@@ -26,7 +26,11 @@
   /* background: #FF8C52; /* THIS IS div BAR linear-gradient(lightblue, skyblue);*/
   /* url(/images/Logo.png) no-repeat; */
 }
-.inline-text {
+.whole-footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   background: linear-gradient(#1F2830, #1f3647);
 }
