@@ -8,7 +8,8 @@ class Table extends Component{
     this.state = {
       data2: [],
       url_id: "NULL",
-      error_msg: false
+      error_msg: false,
+      table_loading: true
     };
     // this.data = this.data.bind(this)
   }
@@ -30,10 +31,12 @@ class Table extends Component{
             console.log(data)
             this.setState({ data2:data});
             this.setState({error_msg: true})
+            this.setState({table_loading: false})
           } else {
           // console.log(data[0])
           this.setState({ data2:data});
           this.setState({error_msg: false})
+          this.setState({table_loading: false})
           }
         })
     }
@@ -82,7 +85,7 @@ class Table extends Component{
     accessor: 'sample[0].1[0].phenotype'
   }, {
     Header: 'Disease',
-    accessor: 'disease'
+    accessor: '-'
   }, {
     Header: 'Tissue',
     accessor: 'sample[0].1[0].tissue_type'
@@ -98,22 +101,40 @@ class Table extends Component{
 
             <br />
 
+            {/* getTdProps={(state, rowInfo, column, instance) => {
+          return {
+            onMouseEnter: e =>
+              console.log("Cell - onMouseEnter", {
+                state,
+                rowInfo,
+                column,
+                instance,
+                event: e
+              })
+          };
+        }} */}
+
             <ReactTable
-              loading={false}
+              loading={this.state.table_loading}
               data={this.state.data2}
               columns={main_columns}
               noDataText="No Data Has been found, the API server may be down. Please contact the Developers."
-              defaultPageSize={20}
+              loadingText="Please Wait. Data is Loading...."
+              defaultPageSize={5}
               showPaginationTop={true}
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
               SubComponent={row => {
                 return (
+                  <div style={{ border: "4px", borderStyle: "dotted solid solid solid", borderColor: "rgb(0, 83, 140)" }}>
+                    {console.log(row)}
                     <ReactTable
                       data={this.state.data2}
                       columns={sec_columns}
                       defaultPageSize={3}
-                      showPagination={false}/>
+                      showPagination={false}
+                      />
+                    </div>
                     );
                   }}
                 />
