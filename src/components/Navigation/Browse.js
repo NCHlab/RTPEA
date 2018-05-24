@@ -84,8 +84,8 @@ class Table extends Component{
     Header: 'Sample Number',
     accessor: '-'
   }, {
-    Header: 'Disease',
-    accessor: '-'
+    Header: 'ORFP2',
+    accessor: 'sample[0].1[0].ORF2p.confidence'
   }, {
     Header: 'Tissue',
     id: "num2",
@@ -128,9 +128,9 @@ class Table extends Component{
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "dotted solid solid solid", borderColor: "rgb(0, 83, 140)" }}>
-                    {console.log(row)}
+                    {console.log(row.original)}
                     <ReactTable
-                      data={this.row}
+                      data={[row.original]}
                       columns={sec_columns}
                       defaultPageSize={3}
                       showPagination={false}
@@ -140,7 +140,7 @@ class Table extends Component{
                   }}
                 />
 
-
+{/* data={row.row._original[0]} */}
 
 
 
