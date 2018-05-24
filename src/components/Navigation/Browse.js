@@ -230,13 +230,13 @@ class Table extends Component{
               loading={this.state.table_loading}
               data={this.state.data2}
               columns={main_columns}
-              noDataText="No Data Has been found, the API server may be down. Please contact the Developers."
+              noDataText="No Data Has been found, Please re-filter your search parameters or the API server may be down."
               loadingText="Please Wait. Data is Loading...."
               defaultPageSize={5}
               showPaginationTop={true}
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
-
+              filterable
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "dotted solid solid solid", borderColor: "rgb(0, 83, 140)" }}>
@@ -247,6 +247,7 @@ class Table extends Component{
                       columns={sec_columns}
                       defaultPageSize={3}
                       showPagination={false}
+                      
                       />
                     </div>
                     );
