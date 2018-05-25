@@ -118,6 +118,22 @@ class Table extends Component{
 // You would just need to make a new item in the array you pass in
 // for each additional row you want to display
 
+const sample_no = [1,2,3,4,5,6]
+
+// const random_data = [{PXD: "PXD1402",
+//           study: "kinases",
+//           disease: "diseased"},
+//         {PXD: "PXD1686",
+//           study: "species",
+//           disease: "virus"}]
+//
+// const random_data = [{PXD: "PXD1402",
+//           study: "kinases",
+//           disease: "diseased"},
+//         {PXD: "PXD1686",
+//           study: "species",
+//           disease: "virus"}]
+
   const sec_columns = [{
     Header: '',
     accessor: '-' // String-based value accessors!
@@ -127,16 +143,8 @@ class Table extends Component{
   }, {
     Header: 'Sample Number',
     id: "Sample_num",
-      accessor: data => {var mylist=[]
-                          for (var i in data.sample[0]){
-                          mylist.push(i)
-                          // console.log(i)
+    accessor: "Snumber"
 
-                        }
-
-                          // console.log(mylist)
-                          return mylist
-                        }
                         // console.log(data.sample.length);
                         // data.sample[0][1][0].replicate
     }, {
@@ -144,19 +152,20 @@ class Table extends Component{
     accessor: 'disease'
   }, {
     Header: 'Tissue',
-    id: "tiss_data",
-    accessor: data =>{
-      // console.log(data.sample[0][1][0].tissue_type)
-                        return data.sample[0][1][0].tissue_type
-                      }
+    accessor: "tissue_type"
+    // id: "tiss_data",
+    // accessor: data =>{
+    //   // console.log(data.sample[0][1][0].tissue_type)
+    //                     return data[1][0].tissue_type
+    //                   }
     // accessor: 'sample[0].1[0].tissue_type'
   }, {
     Header: 'ORF1p',
-    accessor: "sample[0].1[0].ORF1p.confidence"
+    accessor: "ORF1p.confidence"
   }, {
     Header: 'ORF2p',
     id: "ORF_data",
-    accessor: "sample[0].1[0].ORF2p.confidence",
+    accessor: "ORF2p.confidence",
     Cell: row => (
           <div
             style={{
@@ -190,16 +199,16 @@ class Table extends Component{
     // "sample[0].1[0].ORF1p.confidence" && "sample[0].1[0].ORF2p.confidence"
   , {
     Header: 'ORF0',
-    accessor: "sample[0].1[0].ORF0.confidence"
+    accessor: "ORF0.confidence"
   }, {
     Header: 'HERV-K',
-    accessor: "sample[0].1[0].HERV-K.confidence"
+    accessor: "HERV-K.confidence"
   }, {
     Header: 'HERV-A',
-    accessor: "sample[0].1[0].HERV-A.confidence"
+    accessor: "HERV-A.confidence"
   }, {
     Header: 'HERV-V',
-    accessor: "sample[0].1[0].HERV-V.confidence"
+    accessor: "HERV-V.confidence"
   }]
 
 
@@ -240,14 +249,14 @@ class Table extends Component{
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "dotted solid solid solid", borderColor: "rgb(0, 83, 140)" }}>
-                    {console.log(row.original)}
+                    {console.log(row.original.sample)}
                     <ReactTable
-                      data={[row.original]}
+                      data={row.original.sample}
 
                       columns={sec_columns}
                       defaultPageSize={3}
                       showPagination={false}
-                      
+
                       />
                     </div>
                     );
