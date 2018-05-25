@@ -19,6 +19,15 @@ div:onhover {
   /* width: 450px;
   background-color: white */
 }
+.human-invisible{
+  opacity: 0;
+}
+
+.go-left{
+  position: relative;
+    left: -310px;
+    top: -20px;
+}
 
 .moveleft{
   transform: translateX(-492px);

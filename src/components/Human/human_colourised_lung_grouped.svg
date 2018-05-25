@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" id="Layer_1"  id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
@@ -25,7 +25,7 @@
 	.st19{fill:none;stroke:#E29E95;stroke-miterlimit:10;}
 </style>
 <g>
-	
+
 		<image style="overflow:visible;opacity:0.5;" width="205" height="700" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAAK8CAYAAABMXTskAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAMH5JREFUeNrsnYmTHMd15rNreg7c
 IEDcIBkUAJKwg7RJiZKstWMl6+9eH7tex4q2KIepEGESFEzchwDOEBhiejCY3szol5qamj6qqruq
@@ -247,7 +247,7 @@ nmkjTb7y4gmUzz++E2eeJ6dZFqI8ErsoRMpjS0LFz6z9UQi8q2DAeSHP+3/FcS9PeLf7QpgvcrnG
 onKaReVLQVSmYkBvAe+Vmf23EZwoqJYfQfP5jJZ43L3bIbP/poVx77ZRyNXmeTfVBEmBNIt0rmkL
 CfMhhqp4PPJ3gzSBq5bmETTmd2sc/1+AAQAsZuvvyER//AAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 419 34)">
 	</image>
-	<g class="whole_human">
+	<g class="whole_human" id="human-svg-1">
 		<g>
 			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="587.9941" y1="716.6128" x2="455.9946" y2="50.6133">
 				<stop  offset="0.5638" style="stop-color:#FFFFFF"/>
@@ -280,13 +280,13 @@ CfMhhqp4PPJ3gzSBq5bmETTmd2sc/1+AAQAsZuvvyER//AAAAABJRU5ErkJggg==" transform="mat
 		</g>
 		<defs>
 			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="421.6" y="36.5" width="197.8" height="693">
-				
+
 					<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
 			</filter>
 		</defs>
 		<mask maskUnits="userSpaceOnUse" x="421.6" y="36.5" width="197.8" height="693" id="SVGID_2_">
 			<g class="st1">
-				
+
 					<image style="overflow:visible;" width="203" height="698" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEASABIAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
 EAMCAwYAAAaPAAAOwQAAIVn/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
 Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
@@ -468,7 +468,7 @@ xSgNOdtJ7nvkZlQ5FVgSWIwAx0aRzmdyWY8pJqdmfyy5kCFW7yHMQBQ/UB7dO+urhQpNAE67EnkC
 	</g>
 </g>
 <g>
-	
+
 		<image style="overflow:visible;opacity:0.5;" width="184" height="668" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAAKcCAYAAABbkXDOAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAKYJJREFUeNrsnflzHTd2hdHNJ5IS
 ZVKLJZvaXB5TjpyUKrE9tqvmh0yc/N3ZJ5OyYnsSKxN7JDke7RIpyuRIlPgokh0gvDCh57d0vwbQ
@@ -689,13 +689,13 @@ yVadp47Yo2Ouhhzb9oD1qHK/wIjD9igJnsGXM3W9oKtUo18aJXGxGQCPpOyDnrhLRSzGXLfs1XpY
 		</g>
 		<defs>
 			<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="685.5" y="68.7" width="177.3" height="660.9">
-				
+
 					<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
 			</filter>
 		</defs>
 		<mask maskUnits="userSpaceOnUse" x="685.5" y="68.7" width="177.3" height="660.9" id="SVGID_4_">
 			<g class="st5">
-				
+
 					<image style="overflow:visible;" width="182" height="666" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEASABIAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
 EAMCAwYAAAYTAAANoAAAHvX/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
 Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
@@ -1009,7 +1009,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 		</g>
 	</g>
 
-	
+
 	<g>
 		<path class="st12" d="M484.8,254.6c-0.3,0-0.6-0.2-0.6-0.5c0-0.1-0.2-3.6,7-5.6c5.6-1.6,15-5.6,15.6-14.7c0.1-1.5,0.2-3.1,0.3-4.6
 			c0.5-7.9,1-15.4,2.9-18.3c1.8-2.6,2.4-16.4,2.5-21.5c0-0.3,0.3-0.6,0.6-0.6c0,0,0,0,0,0c0.3,0,0.6,0.3,0.6,0.6
@@ -1068,7 +1068,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 			c0,0.2,0,0.4,0,0.6c0,0.6,0,1.3,0.1,2C529,190.8,528.8,191,528.4,191.1C528.4,191.1,528.4,191.1,528.4,191.1z"/>
 	</g>
 
-	
+
 	<g>
 		<path class="st12" d="M520.3,184.4c-1.1,0-2.2-0.6-3.2-1.9c-0.2-0.3-0.2-0.6,0.1-0.8c0.3-0.2,0.6-0.2,0.8,0.1
 			c0.7,1,1.5,1.4,2.3,1.4c1.3,0,2.4-1.5,2.4-1.6c0.2-0.3,0.6-0.3,0.8-0.2c0.3,0.2,0.3,0.6,0.2,0.8
@@ -1107,24 +1107,24 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 			c0.3-11.3-1.4-16.2-2.8-18.4c-2.2-3.2-3-7.6-3.8-14c-0.4-3.3-6.1-8.3-10.3-11.9c-2.8-2.4-4.9-4.3-5.8-5.7
 			C536.7,186.7,535.1,185.7,533.3,185.7z"/>
 	</g>
-	
-	
+
+
 <g class="organ-svg uterus">
-	<polygon class="st13" points="742.1,370.4 747.6,362.3 747.1,360.1 741.8,358.4 742.4,355.2 750.2,354 757.3,357.7 763,370.1 
-		768.1,382.3 766.4,383.5 770.4,404.1 771.6,407.9 773.9,409.1 778.1,408.8 779.8,406.2 780.7,393.4 783.5,383.2 781.5,382.3 
-		790.7,361.5 796.1,355.7 808.1,354.4 809.1,357.2 804.4,360.5 802,359.9 805.1,368.6 808.6,370.3 814.6,364.8 815.6,357.6 
+	<polygon class="st13" points="742.1,370.4 747.6,362.3 747.1,360.1 741.8,358.4 742.4,355.2 750.2,354 757.3,357.7 763,370.1
+		768.1,382.3 766.4,383.5 770.4,404.1 771.6,407.9 773.9,409.1 778.1,408.8 779.8,406.2 780.7,393.4 783.5,383.2 781.5,382.3
+		790.7,361.5 796.1,355.7 808.1,354.4 809.1,357.2 804.4,360.5 802,359.9 805.1,368.6 808.6,370.3 814.6,364.8 815.6,357.6
 		812,351.1 806.6,349.6 794.3,353 775.6,348.7 757.2,353.9 742,349.3 736.1,353.5 734,359.8 736.6,366.2 	"/>
 	<path class="st8" d="M758.5,360.6l-3.6,2.6l-4,0.6l-1.9-1.6l-2.8,0.3l-3.8,5.8l1.3,2.1c0,0,3-0.2,3.2-0.1s0.7-0.3,0.7-0.3
 		s1.4,0.4,1.5,0.4c0.2,0,1.8-0.3,1.8-0.3l1.1-3.9l4-2.7l3.9-0.6L758.5,360.6z"/>
-	<polygon class="st8" points="807.7,368 804.1,362.5 800.8,362.3 799.5,363.6 796,363.5 791.2,360.7 790.7,362.5 795.3,364.2 
+	<polygon class="st8" points="807.7,368 804.1,362.5 800.8,362.3 799.5,363.6 796,363.5 791.2,360.7 790.7,362.5 795.3,364.2
 		798.3,366.3 798.4,367.6 799,370 801.5,370.4 802.8,369.9 804.9,370.7 807.8,369.7 	"/>
 	<path class="st14" d="M757.8,355.8c0,0,15.1,7.4,34.2-0.1c-4.8,4.4-6.9,5.4-6.9,5.4s-2.4,0.5-3.7,2.7c-1.3,2.2-4.1,10.5-4.1,10.5
 		l-0.7,2.9l-0.1,4.9l-0.1,2.2l-0.2,2.2l1,1.3l3.5-3.2l0.5,4.3l-2.7,3.1v2.6l-1.1,1.2l0.4,2l-0.8,1.7l0.4,2.7l-0.8,1.6l1.2,2.5
 		l-0.8,2l-3.7-0.4l-0.5-2.4l0.7-1.7l-0.6-2l0.5-2.2l-0.9-1.6l0.4-2l-1.1-2v-2.1l-1.8-2.2l-1-3.3l0.5-2l2.2,2.7l1.6,0.3l0.6-0.3
 		l0.4-1.8l-0.9-1.8l0.6-2.9v-2l-0.8-4.3l-2.2-6.2l-2-4.8l-1.3-1.4l-3.1-2L757.8,355.8z"/>
 	<g>
-		
-		
+
+
 		<g>
 			<path class="st12" d="M773.3,408.5C773.3,408.5,773.2,408.5,773.3,408.5c-0.4-0.1-0.6-0.4-0.6-0.7c0-0.2,0-0.3-0.1-0.5
 				c-0.2-0.3-0.4-0.7-0.4-1.5c0-0.4,0.2-0.7,0.4-1.1c0.2-0.3,0.3-0.6,0.3-0.8c0-0.1-0.1-0.4-0.3-0.6c-0.2-0.4-0.4-0.8-0.5-1.3
@@ -1180,8 +1180,8 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 				c-0.2,0-0.4-0.1-0.5-0.4c-0.1-0.3,0-0.6,0.3-0.8c2.5-1.1,4.7-1.2,4.8-1.2c0.3,0,0.6,0.2,0.6,0.6c0,0.3-0.2,0.6-0.6,0.6
 				c0,0-2.1,0.1-4.3,1.1C755.9,364.3,755.8,364.3,755.7,364.3z"/>
 		</g>
-		
-		
+
+
 		<g>
 			<path class="st12" d="M776.8,408.5c-0.3,0-0.5-0.2-0.6-0.5c-0.1-0.7,0.1-1,0.3-1.3c0.1-0.2,0.2-0.3,0.2-0.8
 				c0-0.1-0.1-0.3-0.3-0.5c-0.2-0.4-0.5-0.9-0.5-1.4c0-0.4,0.2-0.9,0.4-1.2c0.1-0.3,0.3-0.5,0.3-0.8c0-0.2-0.1-0.4-0.2-0.7
@@ -1228,7 +1228,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 				c-0.1,0-0.2,0-0.2-0.1c-2.3-1-4.3-1.1-4.3-1.1c-0.3,0-0.6-0.3-0.6-0.6c0-0.3,0.3-0.6,0.6-0.6c0.1,0,2.3,0.1,4.8,1.2
 				c0.3,0.1,0.4,0.5,0.3,0.8C794.9,364.1,794.6,364.3,794.4,364.3z"/>
 		</g>
-		
+
 	</g>
 </g>
 
@@ -1250,7 +1250,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 			<path class="st12" d="M745.3,368.8c-3.4,0-5.1-1.9-5.2-1.9c-0.5-0.6-0.5-1.4,0.1-1.9c0.6-0.5,1.4-0.5,1.9,0.1
 				c0.1,0.1,1.2,1.1,3.5,1.1c0.7,0,1.4,0.6,1.4,1.3c0,0.8-0.6,1.4-1.3,1.4C745.5,368.8,745.4,368.8,745.3,368.8z"/>
 		</g>
-		
+
 <g>
 			<path class="st12" d="M742.7,372.2c-0.2,0-0.4,0-0.5-0.1c-3.8-1.6-10.7-6.7-9.1-14.2c0.8-3.8,2.5-6.6,5.2-8.1
 				c2.9-1.7,6.7-1.9,11.2-0.5c1.9,0.6,3.3,1.2,4.4,1.7c2.7,1.2,3.7,1.6,8.2-0.1c6.8-2.6,9.4-3.6,13.9-3.5c0.8,0,1.4,0.6,1.3,1.4
@@ -1301,12 +1301,12 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 	<polygon class="st8" points="790.1,205.4 792.4,207.6 792,212.1 790.5,212.5 787.3,210.6 787.3,208.4 	"/>
 	<path class="st9" d="M789.1,206.5c0,0,2.1,1.5,1.4,5.5c1.1,0.3,1.9-0.2,1.9-0.2l-0.3-4.7l-2.2-1.7L789.1,206.5z"/>
 
-<polygon class="st16" points="781.3,198.4 781.8,196.2 783.1,194.1 783.9,194.3 783.1,196.1 783,198.8 783.7,198.7 784,196.3 
+<polygon class="st16" points="781.3,198.4 781.8,196.2 783.1,194.1 783.9,194.3 783.1,196.1 783,198.8 783.7,198.7 784,196.3
 	784.7,195.3 785.5,195.6 785,197.1 784.9,199.4 781.1,199.7 "/>
-<polygon class="st14" points="792,212 792.5,214 787.4,225.2 784.1,229.7 781.5,231.1 777.5,228.8 772,220.5 769.8,216.8 
-	769.3,212.5 771.5,210.4 774.8,209.7 776.2,206.9 776.5,204.4 775.5,203.2 776.6,201.6 778,199.5 781.4,198.4 785.6,199.7 
-	786.5,201.2 783.7,202.5 780.8,201.6 779.4,203.5 779.8,206.4 778.7,207.4 778.5,211.9 779,212.5 782.3,213 783.1,212.3 
-	783.5,210.8 784.8,209.4 784.8,208.3 785.2,206.1 789.3,203.6 791.6,203.1 792.5,203.5 792.8,204.2 791.2,205.9 789.6,205.2 
+<polygon class="st14" points="792,212 792.5,214 787.4,225.2 784.1,229.7 781.5,231.1 777.5,228.8 772,220.5 769.8,216.8
+	769.3,212.5 771.5,210.4 774.8,209.7 776.2,206.9 776.5,204.4 775.5,203.2 776.6,201.6 778,199.5 781.4,198.4 785.6,199.7
+	786.5,201.2 783.7,202.5 780.8,201.6 779.4,203.5 779.8,206.4 778.7,207.4 778.5,211.9 779,212.5 782.3,213 783.1,212.3
+	783.5,210.8 784.8,209.4 784.8,208.3 785.2,206.1 789.3,203.6 791.6,203.1 792.5,203.5 792.8,204.2 791.2,205.9 789.6,205.2
 	786.9,209.5 788.2,211.1 790.5,212.3 "/>
 <path class="st13" d="M778.4,229.2c0,0,4,2.3,5.4-1.8c1.4-4.1,5.9-15,4.7-15.8c2.7,0.3,3.4,0.5,3.4,0.5l0.1,2.5l-2.7,6l-1.9,4.8
 	l-4,5.4l-2.6,0.3L778.4,229.2z"/>
@@ -1562,9 +1562,9 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 			c0,0.1,0.1,0.3,0.1,0.3c0.1,0.1,0.1,0.1,0.2,0.1c0,0,0.1,0,0.1,0C518.2,403.2,518.4,402.9,518.3,402.7z"/>
 	</g>
 	<g>
-		
-	
-	
+
+
+
 		<g>
 			<path class="st12" d="M524.5,380.7C524.5,380.7,524.5,380.7,524.5,380.7c-5.4-0.3-6.9-4.9-6.9-5.1c-0.2-0.6,0.1-1.2,0.8-1.4
 				c0.6-0.2,1.2,0.1,1.4,0.7c0,0.2,1.1,3.3,4.8,3.5c0.6,0,1.1,0.6,1.1,1.2C525.6,380.2,525.1,380.7,524.5,380.7z"/>
@@ -1836,9 +1836,9 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 			C746.2,311.4,746.1,311.4,746,311.4z"/>
 	</g>
 	<g>
-		
+
 	</g>
-	
+
 	<g>
 		<path class="st12" d="M795.2,327.3c-0.1,0-0.2,0-0.2-0.1c-0.1-0.1-0.2-0.4,0-0.5c1-1.1,2.7-1.2,2.8-1.2c0.2,0,0.4,0.1,0.4,0.3
 			c0,0.2-0.1,0.4-0.3,0.4l0,0c0,0-1.6,0.1-2.3,1C795.4,327.2,795.3,327.3,795.2,327.3z"/>
@@ -1900,8 +1900,8 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 
 
 
-<g class="organ-svg brain">
-	<polygon class="st9" points="520.7,43.3 516.6,43 511.3,44.6 507.7,46 505.3,50.3 503.5,53.5 503,57.4 500.9,61.3 501,64.4 
+<g class="organ-svg brain" id="brain">
+	<polygon class="st9" points="520.7,43.3 516.6,43 511.3,44.6 507.7,46 505.3,50.3 503.5,53.5 503,57.4 500.9,61.3 501,64.4
 		500.2,68 501.1,71.8 502,78.1 503.9,82.7 506.7,88.2 511.1,92.8 516.3,93.8 520.7,91.4 520.4,83.4 520.3,74.8 520.5,56.8 	"/>
 	<path class="st8" d="M517.7,43.1L517.7,43.1c-0.4,0-0.8,0-1.1,0.2l-3.6,1.3c-0.1,0-0.2,0.1-0.3,0.1l-1.9,0.9
 		c-0.6,0.3-1.1,0.8-1.4,1.5l-1.5,3.2l-1.3,2.8c-0.2,0.3-0.3,0.7-0.3,1l-0.3,2.9c0,0.3-0.1,0.7-0.3,1l-1.2,2.7
@@ -1925,8 +1925,8 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 				c0.3,1.9,0.4,3.8,0.3,5.2c0.8,2.2,1.1,6.9,0.3,10.1c0,1,0,5.6-1.3,8.5c0,1.3-0.2,4.2-1.9,6c0,0,0,0.1,0,0.1
 				c-0.2,1.2-0.5,2.1-3.1,4.7C525.7,93.9,524.6,94.6,523.6,94.6z"/>
 		</g>
-	
-	
+
+
 		<g>
 			<path class="st12" d="M520.3,76.6c-0.2,0-0.3-0.1-0.4-0.3c0,0-0.6-1.4-1.6-2.5c-0.2-0.2-0.2-0.4,0-0.6c0.2-0.2,0.4-0.2,0.6,0
 				c1.2,1.2,1.8,2.7,1.8,2.8c0.1,0.2,0,0.4-0.2,0.5C520.4,76.6,520.4,76.6,520.3,76.6z M517.6,73.1c-0.1,0-0.1,0-0.2-0.1
@@ -2297,7 +2297,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 				c-0.1,2.2-0.3,6.4,0.1,7.2c0.2,0.2,0.2,0.4,0.2,0.7c-0.1,1.2-0.7,10.4-0.6,11.6c0,0.1,0.5,6.1-0.1,8.1c0.5,5,0.3,6.5,0,7.2
 				C521.4,83.4,521.3,86.2,521.3,86.6z"/>
 		</g>
-		
+
 			<g>
 			<path class="st12" d="M516.1,94.6c-0.6,0-1.2,0-1.8-0.2c-6-0.9-7.7-4.6-8.1-5.8c-1.7-1.4-3.2-4.5-3.3-5.7c0,0,0,0,0-0.1
 				c-1.9-2.7-3.2-8.2-2.7-11c-1.3-3.1-0.8-6.3-0.1-7.6c-0.5-2.5,0.3-5.3,1.8-7.2c-0.1-3.5,1.3-6.2,2.7-7.5c1-3.6,3.7-5.9,6.6-5.7
@@ -2313,7 +2313,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 
 
 <g class="organ-svg pancreas">
-	<polygon class="st8" points="516,319.1 518.6,316.1 521.9,315 529.9,313.4 534.5,313.6 540.1,312.8 544.7,313.4 544.8,314.9 
+	<polygon class="st8" points="516,319.1 518.6,316.1 521.9,315 529.9,313.4 534.5,313.6 540.1,312.8 544.7,313.4 544.8,314.9
 		543.4,316.7 540.1,319.1 534.6,320.9 529.7,322.4 527.3,324.9 520.5,329 513.9,324.8 	"/>
 	<path class="st9" d="M523.8,323.3c0,0,17.3-4.5,17.5-10.1c2.1,0.1,3.4,0.3,3.4,0.3l0.3,1.4l-3.7,3.6l-4.5,1.6l-4.9,1.6l-2.7,1.1
 		L523.8,323.3z"/>
@@ -2324,10 +2324,10 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 		l-4.3,0.6c0,0-0.3,4.7-5.1,4.5c-4.8-0.3-6.2-3-4.7-8.7C515.5,318.3,514.7,318,514.7,318z"/>
 	<polygon class="st13" points="534.1,328.1 530.7,328.3 528.8,330.2 529.1,330.8 532,330.9 534.4,329 	"/>
 	<g>
-		
-		
-		
-		
+
+
+
+
 		<g>
 			<path class="st12" d="M530.2,331.7L530.2,331.7c-0.9,0-1.5-0.3-1.8-0.9c-0.1-0.3-0.2-1,0.5-1.8c0.5-0.5,1.2-1,2-1.3
 				c0.7-0.3,1.5-0.5,2.1-0.5c0.9,0,1.5,0.3,1.8,0.9c0.1,0.3,0.2,1-0.5,1.8c-0.5,0.5-1.2,1-2,1.3
@@ -2506,7 +2506,7 @@ x4uXdsW7POizxoEmUnLRlGOB0eFpTPOgrkiFRXkzbq6PDYRC1jbDxCc0lCPcDoZJWLu3zMxJJ9pP
 <path class="st18" d="M771.7,235.8c0.1,0,0.5,0,0.5,0c1.1-2.5,1.1-4.7,1.1-4.7h-0.4C772.9,232.2,772.3,234.6,771.7,235.8z"/>
 <path class="st18" d="M734.1,230.8c-0.1,0-0.5,0-0.5,0c0.1,2.5,0.9,5,0.9,5l0.6,0C734.6,234.7,734,231.8,734.1,230.8z"/>
 <g>
-	
+
 </g>
 <path class="st18" d="M733.6,230.9c-0.1,0-0.5,0-0.5,0c0.1,2.5,1,5.8,1,5.8l0.5-0.8C734.2,234.7,733.6,231.8,733.6,230.9z"/>
 <circle class="st13" cx="794.6" cy="237" r="3"/>

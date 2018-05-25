@@ -14,6 +14,7 @@ import imagemap from './imagemap';
 import $ from 'jquery';
 import ImageMapper from 'react-image-mapper';
 import SVG from 'react-inlinesvg';
+import Loader from 'react-loader';
 
 
   let AREAS_MAP = {
@@ -44,7 +45,9 @@ class Human extends Component{
       x: 0,
       y: 0
     };
+
   }
+
 
   componentDidMount = () => {
 
@@ -76,26 +79,42 @@ class Human extends Component{
     } else if (index === 1){
       return(
       <div className="moveleft">
-        <img src={Human_lung} className="pb6 " alt="logo" height="650px" width="450px"/>;
+        <img src={Plot1} className="pb6 " alt="logo" height="650px" width="450px"/>;
       </div>)
     }
   }
 
 
   showimg = () => {
-    if (this.state.x > -995 && this.state.x < -960 && this.state.y > 355 && this.state.y < 395 ){
-      return <img src={Plot1} className="pb6 " alt="logo" height="450px" width="450px"/>;
-    }
+    // if (this.state.x > 600 && this.state.x < 650 && this.state.y > 140 && this.state.y < 180 ){
+    //   return <img src={Plot1} className="pb6 " alt="logo" height="450px" width="450px"/>;
+    // }
   }
 
 
   getid = () => {
     var coordsDiv = document.getElementById('lung');
     console.log(coordsDiv)
-    console.log("hi")
+    // console.log("hi")
   }
 
 render (){
+  // var a = document.getElementById("human-svg-1");
+  // 
+  //           // It's important to add an load event listener to the object,
+  //           // as it will load the svg doc asynchronously
+  //           a.addEventListener("load",function(){
+  //
+  // // get the inner DOM of alpha.svg
+  //     var svgDoc = a.contentDocument;
+  //     // get the inner element by id
+  //     var brain_svg = svgDoc.getElementById("brain");
+  //     // add behaviour
+  //         brain_svg.addEventListener("mouseenter",function(){
+  //                 alert('hello world!')
+  //         }, false);
+  //       }, false);
+
 
   // var coordsDiv = document.getElementById('coords');
   // var el1 = document.getElementById('win-frame');
@@ -116,12 +135,27 @@ render (){
 
   const { x, y } = this.state;
     return (
-  <div onMouseMove={this._onMouseMove.bind(this)}>
+  // <div onMouseMove={this._onMouseMove.bind(this)}>
+
     <div className="ma4 mt0">
+      {/* {console.log(brain_svg)} */}
+
       <div className="container c1">
         <div className="human-img">
-          {/* <ImageMapper src={Humanimg} map={AREAS_MAP} fillColor="rgba(204, 58, 38, 0.5)" className="pb6" alt="" height={"650"} width={"450"} onMouseEnter={this.MouseEnter} /> */}
-          <SVG src={Svg3}></SVG>
+
+          <div className="go-left">
+            <div id="human-svg-1">
+            <SVG
+              src={Svg3}
+               onMouseEnter={console.log("clickkkkk")}
+
+              ></SVG>
+              </div>
+                       {/* onMouseLeave={console.log("mouse left")} */}
+          </div>
+          {/* <div className="human-invisible">
+            <ImageMapper src={Humanimg}  map={AREAS_MAP} fillColor="rgba(204, 58, 38, 0.5)" className="pb6" alt="" height={"500"} width={"300"} onMouseEnter={this.MouseEnter} />
+          </div> */}
         </div>
         {this.getid()}
 
@@ -155,7 +189,7 @@ render (){
                myOnLoadHandler(src);
            }} */}
       </div>
-      </div>
+      // </div>
 
   );
 }
