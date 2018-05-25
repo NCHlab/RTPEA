@@ -65,13 +65,28 @@ class Table extends Component{
   }, {
     Header: 'No. of Samples',
     id: "data_num",
-    accessor: (d) => mynum
+    accessor: (d) => d.sample.length
   }, {
     Header: 'Disease',
     accessor: 'disease'
   }, {
     Header: 'Tissue',
-    accessor: 'sample[0].1[0].tissue_type'
+    id: "tiss",
+    accessor: data => {var mylist=[]
+                          for (var i in data.sample[0]){
+                            if (i === "tissue_type"){
+                              mylist.push([i])
+                              console.log([i.key])
+                            }
+
+
+                        }
+
+                          console.log(mylist)
+                          return mylist
+                        }
+                        // console.log(data.sample.length);
+                        // data.sample[0][1][0].replicate
   // }, {
   //   Header: 'ORF1p',
   //   accessor: "-"
