@@ -70,6 +70,43 @@ body2 {
     color: #000000;
 }
 
+/* CONTACT US PAGE */
+.contact_container {
+	display: flex;
+  position: relative;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.contact_h1 {
+	font-family: fantasy;
+	font-size: 3em;
+	border-bottom: 2px solid pink;
+	border-right: 2px solid pink;
+	width: 400px;
+	text-align: center;
+	-moz-box-shadow:4px 4px 5px #888888;
+	-ms-box-shadow: 4px 4px 5px #888888;
+	-webkit-box-shadow: 4px 4px 5px #888888;
+	-o-box-shadow: 4px 4px 5px #888888;
+	box-shadow: 4px 4px 5px #888888;
+	margin-top: 10px;
+}
+
+.contact_img {
+	width: 600px;
+	height: 300px;
+	margin: 10px;
+  opacity: 0.6;
+	transition: all 1s;
+}
+
+.contact_img:hover {
+	transform: scale(1.1);
+  opacity: 1;
+}
+/*  */
+
 
 @media (min-width: 0) {
     .page-title, .page-title2 {
