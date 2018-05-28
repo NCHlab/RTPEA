@@ -16,36 +16,44 @@ const Project = () => (
     </div> */}
 	<div className="contact_container">
 
-    <div className="contact_img">
-      <div className="contact_h1">
-        <h1>Website Created by: Nayam Chowdhury</h1>
+        <div className="contact_img">
+          <div className="contact_h1">
+            <h1>Website Created by: Nayam Chowdhury</h1>
+          </div>
+          <div className="nchlab_container">
+
+          <a href="http://github.com/nchlab">
+            <img className="contact_img" src={nchlab} width="500px" height="250px"/>
+          </a>
+          <img className="contact_img" src={linkedin_logo} width="500px" height="250px"/>
+        </div>
+        <br/>
       </div>
-      <div className="nchlab_container">
-
-      <a href="http://github.com/nchlab">
-        <img className="contact_img" src={nchlab} width="600px" height="300px"/>
-      </a>
-      <img className="contact_img" src={linkedin_logo} width="600px" height="300px"/>
-    </div>
-    <br/>
-  </div>
 
 
-    <div className="contact_container">
-      <div className="contact_img">
-      <div className="contact_h1">
-        <h1>with help from Nazrath Nawaz</h1>
+        <div className="contact_container">
+          <div className="contact_img">
+          <div className="contact_h1">
+            <h1>Assistance from: Nazrath Nawaz</h1>
+          </div>
+        <div className="nazrath10r_container">
+
+          <a href="http://github.com/nazrath10r">
+            <img className="contact_img" src={nazrath10r} width="500px" height="250px"/>
+          </a>
+          <img className="contact_img" src={linkedin_logo} width="500px" height="250px"/>
+        </div>
       </div>
-    <div className="nazrath10r_container">
+    </div>
 
-      <a href="http://github.com/nazrath10r">
-        <img className="contact_img" src={nazrath10r} width="600px" height="300px"/>
-      </a>
-      <img className="contact_img" src={linkedin_logo} width="600px" height="300px"/>
-    </div>
-  </div>
-    </div>
+
 	</div>
+
+  <div className="container">
+    <h2>Created at Queen Mary University of London, BessantLab, SBCS</h2>
+    
+    <h2>MSC - BioInformatics</h2>
+  </div>
   <br/>
   <br/>
   <br/>

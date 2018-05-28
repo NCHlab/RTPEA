@@ -81,8 +81,8 @@ body2 {
 .contact_h1 {
 	font-family: fantasy;
 	font-size: 3em;
-	border-bottom: 2px solid pink;
-	border-right: 2px solid pink;
+	border-top: 2px solid pink;
+	border-left: 2px solid pink;
 	width: 400px;
 	text-align: center;
 	-moz-box-shadow:4px 4px 5px #888888;
