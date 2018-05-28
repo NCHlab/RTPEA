@@ -94,16 +94,34 @@ body2 {
 }
 
 .contact_img {
-	width: 600px;
-	height: 300px;
+  background: #1F2830;
 	margin: 10px;
   opacity: 0.6;
-	transition: all 1s;
+  transition: all 1s;
+
+
 }
 
 .contact_img:hover {
 	transform: scale(1.1);
   opacity: 1;
+  /* background: linear-gradient(#1F2830, #1f3647); */
+  /* transition: background-color 2s ease-out; */
+  /* transition: all 1s; */
+
+}
+
+
+.nchlab_container{
+  border-bottom: 2px solid pink;
+	border-right: 2px solid pink;
+  box-shadow: 4px 4px 5px #888888;
+}
+
+.nazrath10r_container{
+  border-bottom: 2px solid pink;
+  border-right: 2px solid pink;
+  box-shadow: 4px 4px 5px #888888;
 }
 /*  */
 

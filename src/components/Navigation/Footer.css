@@ -27,7 +27,7 @@
   /* url(/images/Logo.png) no-repeat; */
 }
 .whole-footer {
-  position: relative;
+  position: static;
   right: 0;
   bottom: 0;
   left: 0;
