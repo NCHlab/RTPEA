@@ -58,10 +58,10 @@ div:onhover {
 .inline-img{
   display:inline;
   position: absolute;
-  left:14.5%;
+  left:50.5%;
   top: 29.1%;
-  left:712px;
-  top: 212px;
+  /* left:712px;
+  top: 212px; */
 }
 
 /*.inline-img:hover{

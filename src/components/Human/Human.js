@@ -9,6 +9,9 @@ import Human_lung from "./Human_lung.png";
 import Brain from "./Brain.png";
 import Plot1 from "./plot1.png";
 import Plot3 from "./plot3.png";
+import Plot4 from "./plot4.png";
+import Plot5 from "./plot5.png";
+import Plot6 from "./plot6.png";
 import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
@@ -69,7 +72,41 @@ class Human extends Component {
             className="pb6 "
             alt="logo"
             height="450px"
-            width="450px"/>
+            width="450px"
+          />
+      );
+    } else if (svgType === "liver") {
+      console.log("lung has been identified");
+      return (
+          <img
+            src={Plot4}
+            className="pb6 "
+            alt="logo"
+            height="450px"
+            width="650px"
+          />
+      );
+    } else if (svgType === "heart") {
+      console.log("lung has been identified");
+      return (
+          <img
+            src={Plot5}
+            className="pb6 "
+            alt="logo"
+            height="450px"
+            width="650px"
+          />
+      );
+    } else if (svgType === "uterus") {
+      console.log("lung has been identified");
+      return (
+          <img
+            src={Plot6}
+            className="pb6 "
+            alt="logo"
+            height="450px"
+            width="650px"
+          />
       );
     }
   };
@@ -118,7 +155,7 @@ class Human extends Component {
       // <div onMouseMove={this._onMouseMove.bind(this)}>
       <div>
       <input type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
-        <label> Enable Click to display?</label>
+        <label> Enable Click to display</label>
       <br/>
       <br/>
       <div className="ma4 mt0">
