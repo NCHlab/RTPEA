@@ -41,6 +41,7 @@ class Human extends Component {
       loading: "false",
       highlight: false,
       index: "",
+      svgType: "",
       x: 0,
       y: 0
     };
@@ -109,28 +110,32 @@ class Human extends Component {
     // }
   };
 
-  getid = () => {
-    var coordsDiv = document.getElementById("lung");
-    console.log(coordsDiv);
-    // console.log("hi")
-  };
 
   detectSvg = svgType => {
     if (svgType === "brain") {
-      console.log("Brain has been identified");
+      console.log("Brain has been identified")
+      return (
+        <img
+          src={Plot1}
+          className="pb6 "
+          alt="logo"
+          height="450px"
+          width="450px"
+        />
+      );
     } else if (svgType === "lung") {
       console.log("lung has been identified");
     }
   };
 
   onClickHandler = e => {
+    this.setState({ svgType: e.target.classList[1]});
+    // this.detectSvg()
     // console.log("I'm clicked");
-    var result_svg = e.target
     // console.log(result_svg);
-    console.log(result_svg.classList[1]);
+    // console.log(e.target.classList[1]);
     // console.log(result_svg.className.animVal);
     // console.log(result_svg.attributes[0].value);
-
   };
 
   svgWrapper = ({ dangerouslySetInnerHTML, className }) => {
@@ -139,6 +144,7 @@ class Human extends Component {
         onClick={e => this.onClickHandler(e)}
         dangerouslySetInnerHTML={dangerouslySetInnerHTML}
         className={className}
+
       />
     );
   };
@@ -155,22 +161,21 @@ class Human extends Component {
               <div id="human-svg-1">
                 <SVG
                   src={Svg3}
-                  uniquifyIDs={false}
-                  className="foo"
+                  uniquifyIDs={true}
                   wrapper={this.svgWrapper}
                 />
               </div>
             </div>
           </div>
-          {this.getid()}
 
           {this.showimg()}
+
 
           <h1>
             Mouse coordinates: {x} {y}
           </h1>
 
-          <div className="inline-img">{this.ImageArray(this.state.index)}</div>
+          <div className="inline-img">{this.detectSvg(this.state.svgType)}</div>
         </div>
 
         <h1>
