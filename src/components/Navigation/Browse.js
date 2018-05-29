@@ -196,7 +196,7 @@ const sample_no = [1,2,3,4,5,6]
                 width: `${row.value}%`,
                 height: '100%',
                 backgroundColor: row.value > 80 ? '#85cc00'
-                  : row.value > 20 ? '#ffbf00'
+                  : row.value > 40 ? '#ffbf00'
                   : '#ff2e00',
                 borderRadius: '2px',
                 transition: 'all .2s ease-out'
@@ -226,6 +226,7 @@ const sample_no = [1,2,3,4,5,6]
     accessor: "HERV-V.confidence"
   }]
 
+// const LoadingMS =
 
       return (
         <div>
@@ -254,9 +255,9 @@ const sample_no = [1,2,3,4,5,6]
               loading={this.state.table_loading}
               data={this.state.data2}
               columns={main_columns}
-              noDataText="No Data Has been found, Please re-filter your search parameters or the API server may be down."
-              loadingText="Please Wait. Data is Loading...."
-              defaultPageSize={5}
+              noDataText="No Data Has been found, Please re-filter your search parameters."
+              loadingText="Please Wait. Data is Loading....If no data is returned the API server may be down."
+              defaultPageSize={10}
               showPaginationTop={true}
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
