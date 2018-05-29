@@ -70,6 +70,16 @@ body2 {
     color: #000000;
 }
 
+
+.background-body-vis {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: linear-gradient(#416782, #093d63);
+    /*background-color: #edf1f4;*/
+    text-align: center;
+    color: #000000;
+}
+
 /* CONTACT US PAGE */
 .contact_container {
 	display: flex;

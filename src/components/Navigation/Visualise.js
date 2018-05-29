@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ProtVista from "ProtVista";
+import 'ProtVista/style/main.css';
 
 class Visualisation extends Component {
 	constructor(props) {
@@ -6,40 +8,41 @@ class Visualisation extends Component {
 		this.state = {
 			data: { name: "bob" }
 		};
+
+			// this.arrayOfMessageObjects = this.arrayOfMessageObjects.bind(this)
 	}
 
-	// this.arrayOfMessageObjects = this.arrayOfMessageObjects.bind(this)
+	componentDidMount = () => {
+        // const script = document.createElement("script");
+				//
+        // script.src = "https://use.typekit.net/foobar.js";
+        // script.async = true;
+				//
+        // document.body.appendChild(script);
 
-	welcome = props => {
-		return <h1>Hello, {props.name}</h1>;
-	};
+				var yourDiv = document.getElementById('protvis');
+        var instance = new ProtVista({
+            el: yourDiv,
+            uniprotacc: 'P05067'
+        });
+    }
 
 
 
-	// arrayOfMessageObjects = () => {
-	// 	[{
-	// 		message: 'Tanner Linsley',
-	// 		id: 26
-	// 	},
-	// 	{
-	// 		message: 'boy Linsley',
-	// 		id: 16,
-	// }]
-	// }
+
+	// instance = () => new ProtVista({
+  //           el: "yourDiv",
+  //           uniprotacc: 'P05067'
+  //       });
 
 	render() {
 		return (
-			<div>
-				<this.welcome name="Phase 1" />
-				<this.welcome name="Phase 2" />
-				<this.welcome name="Phase 3" />
+			<div className="background-body-vis">
+				<div className="container">
+					<div id="protvis">
 
-				<div>
-					<ul>{["first", "second", "third"].map(item => <li>{item}</li>)}</ul>
-
-					<br />
-					<br />
-
+					</div>
+					{/* {JSON.stringify(this.instance())} */}
 				</div>
 			</div>
 		);
@@ -47,6 +50,19 @@ class Visualisation extends Component {
 }
 
 export default Visualisation;
+
+// welcome = props => {
+// 	return <h1>Hello, {props.name}</h1>;
+// };
+// <this.welcome name="Phase 1" />
+// <this.welcome name="Phase 2" />
+// <this.welcome name="Phase 3" />
+//
+// <div>
+// 	<ul>{["first", "second", "third"].map(item => <li>{item}</li>)}</ul>
+//
+// 	<br />
+// 	<br />
 
 //
 //
