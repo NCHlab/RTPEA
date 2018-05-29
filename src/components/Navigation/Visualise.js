@@ -6,7 +6,7 @@ class Visualisation extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: { name: "bob" }
+			uniprotacc: "P05067"
 		};
 
 			// this.arrayOfMessageObjects = this.arrayOfMessageObjects.bind(this)
@@ -23,10 +23,15 @@ class Visualisation extends Component {
 				var yourDiv = document.getElementById('protvis');
         var instance = new ProtVista({
             el: yourDiv,
-            uniprotacc: 'P05067'
+            uniprotacc: this.state.uniprotacc,
+						// exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING']
         });
     }
 
+
+  button_click = () => {
+
+	}
 
 
 
@@ -38,9 +43,18 @@ class Visualisation extends Component {
 	render() {
 		return (
 			<div className="background-body-vis">
+
+				<input
+          placeholder=""
+          onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
+          onKeyPress={event => {if (event.key === "Enter") {
+              this.button_click();
+            }
+          }}/>
+
 				<div className="container">
 					<div id="protvis">
-
+						{/* ProtVista Loads Here */}
 					</div>
 					{/* {JSON.stringify(this.instance())} */}
 				</div>
