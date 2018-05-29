@@ -124,9 +124,9 @@ class Human extends Component {
   };
 
   onClickHandler = e => {
-    console.log("I'm clicked");
+    // console.log("I'm clicked");
     var result_svg = e.target
-    console.log(result_svg);
+    // console.log(result_svg);
     console.log(result_svg.classList[1]);
     // console.log(result_svg.className.animVal);
     // console.log(result_svg.attributes[0].value);
