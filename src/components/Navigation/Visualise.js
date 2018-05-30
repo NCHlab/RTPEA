@@ -22,6 +22,7 @@ class Visualisation extends Component {
         var instance = new ProtVista({
             el: yourDiv,
             uniprotacc: this.state.uniprotacc,
+						// defaultSources: false
 						// exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING']
         });
     }

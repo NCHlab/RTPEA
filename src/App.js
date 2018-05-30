@@ -19,6 +19,7 @@ import Loading from 'react-loading-bar'
 import JSONPretty from 'react-json-pretty';
 import SVG from 'react-inlinesvg';
 import Loader from 'react-loader';
+// import 'tachyons/css/tachyons.css';
 
 import './App.css';
 import 'react-loading-bar/dist/index.css'
