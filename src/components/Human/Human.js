@@ -3,7 +3,6 @@ import Humanimg from "./Human1.png";
 import Svg1 from "./human_non_colourised.svg";
 import Svg2 from "./human_colourised.svg";
 import Svg3 from "./human_colourised_lung_grouped.svg";
-
 import Humanimg2 from "./Human_W.png";
 import Human_lung from "./Human_lung.png";
 import Brain from "./Brain.png";
@@ -76,7 +75,7 @@ class Human extends Component {
           />
       );
     } else if (svgType === "liver") {
-      console.log("lung has been identified");
+      console.log("liver has been identified");
       return (
           <img
             src={Plot4}
@@ -87,7 +86,7 @@ class Human extends Component {
           />
       );
     } else if (svgType === "heart") {
-      console.log("lung has been identified");
+      console.log("heart has been identified");
       return (
           <img
             src={Plot5}
@@ -98,7 +97,7 @@ class Human extends Component {
           />
       );
     } else if (svgType === "uterus") {
-      console.log("lung has been identified");
+      console.log("uterus has been identified");
       return (
           <img
             src={Plot6}
@@ -150,9 +149,8 @@ class Human extends Component {
 
 
   render() {
-    const { x, y } = this.state;
+
     return (
-      // <div onMouseMove={this._onMouseMove.bind(this)}>
       <div>
       <input type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
         <label> Enable Click to display</label>
@@ -177,9 +175,8 @@ class Human extends Component {
         </div>
 
         <h1>
-          {this.state.loading}
           <br />
-          {this.state.index}
+
            <button type="button" onClick={() => console.log(this.state.checked)}>Click Me!</button>
 
         </h1>
