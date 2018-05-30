@@ -263,7 +263,7 @@ const orf2p_column = [{
               minRows={0}
               SubComponent={row => {
                 return (
-                  <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
+                  <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
                     {/* {console.log(row.original.sample)} */}
                     <ReactTable
                       data={row.original.sample}
@@ -279,6 +279,7 @@ const orf2p_column = [{
                                 data={row.original.ORF1p_variants}
                                 columns={orf1p_column}
                                 defaultPageSize={3}
+                                pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
                                 showPaginationTop={true}
                                 showPaginationBottom= {false}
@@ -291,6 +292,7 @@ const orf2p_column = [{
                                 data={row.original.ORF2p_variants}
                                 columns={orf2p_column}
                                 defaultPageSize={3}
+                                pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
                                 minRows={0}
                                 className="-striped -highlight"/>
