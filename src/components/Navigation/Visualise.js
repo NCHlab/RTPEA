@@ -23,7 +23,7 @@ class Visualisation extends Component {
             el: yourDiv,
             uniprotacc: this.state.uniprotacc,
 						// defaultSources: false
-						// exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING']
+						exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING']
         });
     }
 
@@ -36,6 +36,10 @@ class Visualisation extends Component {
 		return (
 			<div className="background-body-vis">
 
+				<div className="container">
+					<hr/>
+				</div>
+				Enter PXD:
 				<input
           placeholder=""
           onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
@@ -44,11 +48,34 @@ class Visualisation extends Component {
             }
           }}/>
 
+					<br/>
+					<br/>
+					<div className="container">
+						<hr/>
+					</div>
+
 				<div className="container">
 					<div id="protvis">
 						{/* ProtVista Loads Here */}
 					</div>
 				</div>
+
+
+
+
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+
 			</div>
 		);
 	}
