@@ -85,69 +85,11 @@ class Table extends Component{
                           console.log(mylist)
                           return mylist
                         }
-                        // console.log(data.sample.length);
-                        // data.sample[0][1][0].replicate
-  // }, {
-  //   Header: 'ORF1p',
-  //   accessor: "-"
-  // }, {
-  //   Header: 'ORF2p',
-  //   accessor: "-"
-  // }, {
-  //   Header: 'ORF0',
-  //   accessor: "-"
-  // }, {
-  //   Header: 'HERV-K',
-  //   accessor: "-"
-  // }, {
-  //   Header: 'HERV-A',
-  //   accessor: "-"
-  // }, {
-  //   Header: 'HERV-V',
-  //   accessor: "-"
+
   }]
   }]
-  var mylist = [{"1":2,"2":2,"3":3}]
 
 
-//   Header: 'Sample Number',
-//   id: "Sample_num",
-//   accessor: data => {var mylist=[]
-//                       for (var i in data.sample[0]){
-//                       mylist.push([i])
-//                       console.log([i])
-//
-//                     }
-//
-//                       console.log(mylist)
-//                       return mylist
-//                     }
-//                     // console.log(data.sample.length);
-//                     // data.sample[0][1][0].replicate
-// }, {
-
-// You would need to materialize 2 separate rows
-// You would have to create an additional row in your array for each item
-// You cannot materialize additional rows from within a column accessor
-// This is more of a javascript question
-// You would just need to make a new item in the array you pass in
-// for each additional row you want to display
-
-const sample_no = [1,2,3,4,5,6]
-
-// const random_data = [{PXD: "PXD1402",
-//           study: "kinases",
-//           disease: "diseased"},
-//         {PXD: "PXD1686",
-//           study: "species",
-//           disease: "virus"}]
-//
-// const random_data = [{PXD: "PXD1402",
-//           study: "kinases",
-//           disease: "diseased"},
-//         {PXD: "PXD1686",
-//           study: "species",
-//           disease: "virus"}]
 
   const sec_columns = [{
     Header: '',
@@ -228,6 +170,61 @@ const sample_no = [1,2,3,4,5,6]
 
 // const LoadingMS =
 
+
+const orf1p_column = [{
+  Header: '',
+  accessor: '-'
+},{
+  Header: '',
+  accessor: '-'
+},{
+  Header: 'ORF1p Variants',
+  accessor: 'name'
+}, {
+  Header: 'ORF1p Confidence',
+  accessor: 'confidence'
+},{
+  Header: '',
+  accessor: '-'
+},{
+  Header: '',
+  accessor: '-'
+}]
+
+const orf2p_column = [{
+  Header: '',
+  accessor: '-'
+},{
+  Header: '',
+  accessor: '-'
+},{
+  Header: 'ORF2p Variants',
+  accessor: 'name'
+}, {
+  Header: 'ORF2p Confidence',
+  accessor: 'confidence'
+},{
+  Header: '',
+  accessor: '-'
+},{
+  Header: '',
+  accessor: '-'
+}]
+
+// const tri_column = [{
+//   Header: 'ORF1p Variant Name',
+//   accessor: 'ORF1p_variants.name' // String-based value accessors!
+// }, {
+//   Header: 'ORF1p Confidence',
+//   accessor: 'ORF1p_variants.confidence'
+// },{
+//   Header: 'ORF2p Variant Name',
+//   accessor: 'ORF2p_variants.name' // String-based value accessors!
+// }, {
+//   Header: 'ORF2p Confidence',
+//   accessor: 'ORF2p_variants.confidence'
+// }]
+
       return (
         <div>
           <br/>
@@ -251,6 +248,7 @@ const sample_no = [1,2,3,4,5,6]
         }} */}
         {/* pivotBy={["Sample_num", "ORF_data"]} */}
 {/* pivotBy={["disease"]} */}
+{/* 0, 83, 140 */}
             <ReactTable
               loading={this.state.table_loading}
               data={this.state.data2}
@@ -259,25 +257,52 @@ const sample_no = [1,2,3,4,5,6]
               loadingText="Please Wait. Data is Loading....If no data is returned the API server may be down."
               defaultPageSize={10}
               showPaginationTop={true}
-              className="-striped -highlight"
+              className="-highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
-              filterable
+              filterable={true}
+              minRows={0}
               SubComponent={row => {
                 return (
-                  <div style={{ border: "4px", borderStyle: "dotted solid solid solid", borderColor: "rgb(0, 83, 140)" }}>
-                    {console.log(row.original.sample)}
+                  <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
+                    {/* {console.log(row.original.sample)} */}
                     <ReactTable
                       data={row.original.sample}
-
                       columns={sec_columns}
                       defaultPageSize={3}
                       showPagination={false}
-
-                      />
-                    </div>
-                    );
-                  }}
-                />
+                      SubComponent={row => {
+                        return (
+                          <div>
+                            <div style={{ border: "4px", borderStyle: "solid none solid none", borderColor: "rgb(5, 183, 112)" }}>
+                              {/* {console.log(row.original)} */}
+                              <ReactTable
+                                data={row.original.ORF1p_variants}
+                                columns={orf1p_column}
+                                defaultPageSize={3}
+                                showPagination={true}
+                                showPaginationTop={true}
+                                showPaginationBottom= {false}
+                                minRows={0}
+                                className="-striped -highlight"/>
+                            </div>
+                            <div style={{ border: "4px", borderStyle: "none none solid none", borderColor: "rgb(5, 183, 112)" }}>
+                              {/* {console.log(row.original)} */}
+                              <ReactTable
+                                data={row.original.ORF2p_variants}
+                                columns={orf2p_column}
+                                defaultPageSize={3}
+                                showPagination={true}
+                                minRows={0}
+                                className="-striped -highlight"/>
+                            </div>
+                          </div>
+                        );
+                      }}
+                  />
+                </div>
+                );
+              }}
+            />
   {/* resolveData={data => data.map(row => row)} */}
 {/* data={row.row._original[0]} */}
 
