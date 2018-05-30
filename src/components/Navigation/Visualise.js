@@ -8,8 +8,6 @@ class Visualisation extends Component {
 		this.state = {
 			uniprotacc: "P05067"
 		};
-
-			// this.arrayOfMessageObjects = this.arrayOfMessageObjects.bind(this)
 	}
 
 	componentDidMount = () => {
@@ -28,17 +26,10 @@ class Visualisation extends Component {
         });
     }
 
-
-  button_click = () => {
-
+  button_click = (e) => {
+		console.log(e)
+		this.setState({ uniprotacc: e })
 	}
-
-
-
-	// instance = () => new ProtVista({
-  //           el: "yourDiv",
-  //           uniprotacc: 'P05067'
-  //       });
 
 	render() {
 		return (
@@ -48,7 +39,7 @@ class Visualisation extends Component {
           placeholder=""
           onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
-              this.button_click();
+              this.button_click(event.target.value.toUpperCase());
             }
           }}/>
 
@@ -56,7 +47,6 @@ class Visualisation extends Component {
 					<div id="protvis">
 						{/* ProtVista Loads Here */}
 					</div>
-					{/* {JSON.stringify(this.instance())} */}
 				</div>
 			</div>
 		);
@@ -64,46 +54,3 @@ class Visualisation extends Component {
 }
 
 export default Visualisation;
-
-// welcome = props => {
-// 	return <h1>Hello, {props.name}</h1>;
-// };
-// <this.welcome name="Phase 1" />
-// <this.welcome name="Phase 2" />
-// <this.welcome name="Phase 3" />
-//
-// <div>
-// 	<ul>{["first", "second", "third"].map(item => <li>{item}</li>)}</ul>
-//
-// 	<br />
-// 	<br />
-
-//
-//
-// class Visualisation extends Component{
-//
-// 	constructor() {
-// 		super();
-// 		this.state = {
-// 			data: {name: "bob"}
-// 		};
-// 	}
-//
-// welcome = (props) => {
-//   return <h1>Hello, {props.name}</h1>;
-// }
-//
-// render (){
-// 	// const element = <Welcome name="Sara" />;
-// 	return(
-// 	<div>
-// 		<h2>This is the Visualisation page</h2>
-//
-// 		{this.welcome(name="sara")}
-// 	{/* {this.welcome()} */}
-// 	</div>
-// 	)
-// }
-// };
-//
-// export default Visualisation;
