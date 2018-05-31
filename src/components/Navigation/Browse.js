@@ -146,10 +146,6 @@ class Table extends Component{
             >
               {row.value}
             </div>
-
-
-
-
         </div>
         )
     }
@@ -178,11 +174,43 @@ const orf1p_column = [{
   Header: '',
   accessor: '-'
 },{
+  Header: '',
+  accessor: '-'
+},{
   Header: 'ORF1p Variants',
   accessor: 'name'
 }, {
   Header: 'ORF1p Confidence',
-  accessor: 'confidence'
+  id: "ORF1p_var",
+  accessor: 'confidence',
+  Cell: row => (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#dadada',
+            borderRadius: '2px'
+          }}
+        >
+          {/* {row.value} */}
+          <div
+            style={{
+              width: `${row.value}%`,
+              height: '100%',
+              backgroundColor: row.value > 80 ? '#85cc00'
+                : row.value > 40 ? '#ffbf00'
+                : '#ff2e00',
+              borderRadius: '2px',
+              transition: 'all 1s ease-out'
+            }}
+          >
+            {row.value}
+          </div>
+      </div>
+      )
+},{
+  Header: '',
+  accessor: '-'
 },{
   Header: '',
   accessor: '-'
@@ -198,11 +226,43 @@ const orf2p_column = [{
   Header: '',
   accessor: '-'
 },{
+  Header: '',
+  accessor: '-'
+},{
   Header: 'ORF2p Variants',
   accessor: 'name'
 }, {
   Header: 'ORF2p Confidence',
-  accessor: 'confidence'
+  id: "ORF2p_var",
+  accessor: 'confidence',
+  Cell: row => (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#dadada',
+            borderRadius: '2px'
+          }}
+        >
+          {/* {row.value} */}
+          <div
+            style={{
+              width: `${row.value}%`,
+              height: '100%',
+              backgroundColor: row.value > 80 ? '#85cc00'
+                : row.value > 40 ? '#ffbf00'
+                : '#ff2e00',
+              borderRadius: '2px',
+              transition: 'all 1s ease-out'
+            }}
+          >
+            {row.value}
+          </div>
+      </div>
+      )
+},{
+  Header: '',
+  accessor: '-'
 },{
   Header: '',
   accessor: '-'
@@ -227,9 +287,8 @@ const orf2p_column = [{
 
       return (
         <div>
-          <br/>
-          <br/>
-          <div className="background-body2">
+
+          <div className="background-body2 col-md-10 offset-md-1">
 
 
             <br />
