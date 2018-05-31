@@ -130,7 +130,7 @@ class Api extends Component {
   };
 
     return (
-      <div className="ma4 mt0 background-body4-noalign container">
+      <div className="ma4 mt0 background-body4-noalign container col-md-9">
         {this.state.isLoading ? console.log("yes") : console.log("no")}
         {this.state.isLoading}
 
