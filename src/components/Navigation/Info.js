@@ -114,6 +114,7 @@ class Info extends Component {
 
         <div className="line-seperator" />
 
+	
         <br />
         <br />
         <br />
