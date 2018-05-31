@@ -55,7 +55,7 @@ const Home = ({ onShow, onHide }) => {
               form one of the two subclasses of transposons, where the others
               are DNA transposons, which does not involve an RNA intermediate.
             </div>
-            <div className="col-md-6">EXTRA TEXT OR IMAGES GO HERE</div>
+            <div className="col-md-6 font-italic">EXTRA TEXT OR IMAGES GO HERE</div>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ const Home = ({ onShow, onHide }) => {
       <div className="background-body2">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">EXTRA TEXT OR IMAGES GO HERE</div>
+            <div className="col-md-6 font-italic">EXTRA TEXT OR IMAGES GO HERE</div>
             <div className="col-md-6 text-justify">
               The retrotransposons' replicative mode of transposition by means
               of an RNA intermediate rapidly increases the copy numbers of
@@ -104,7 +104,7 @@ const Home = ({ onShow, onHide }) => {
               well as number and types of open reading frames, encoding domains
               and target site duplication lengths
             </div>
-            <div className="col-md-6">EXTRA TEXT OR IMAGES GO HERE</div>
+            <div className="col-md-6 font-italic">EXTRA TEXT OR IMAGES GO HERE</div>
           </div>
         </div>
       </div>
