@@ -11,6 +11,7 @@ import { withRouter } from 'react-router-dom';
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
 import Browse from './components/Navigation/Browse';
+import BrowseDemo from './components/Navigation/Browse-demo';
 import Visualise from './components/Navigation/Visualise';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
@@ -102,6 +103,7 @@ class App extends Component{
           <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route path="/Visualise" component={Visualise} />
+            <Route path="/BrowseDemo" component={BrowseDemo} />
             <Route path={"/api"} component={Api} />
             <Route path="/info" component={Info} />
             <Route path="/contact" component={Contact} />

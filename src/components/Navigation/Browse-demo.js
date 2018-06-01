@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
+import rtpea_img from "../Logo/rtpea_img1.png"
 
 
 class Table extends Component{
@@ -18,7 +19,7 @@ class Table extends Component{
 
   searchURL = () => {
     let { url_id } = this.state;
-    let url = "http://localhost:3001/table/"
+    let url = "http://localhost:3001/table-demo/"
     return url
   }
 
@@ -121,7 +122,7 @@ class Table extends Component{
     accessor: "ORF1p.confidence"
   }, {
     Header: 'ORF2p',
-    id: "ORF2p_data",
+    id: "ORF_data",
     accessor: "ORF2p.confidence",
     Cell: row => (
           <div
@@ -151,9 +152,38 @@ class Table extends Component{
     }
     // "sample[0].1[0].ORF1p.confidence" && "sample[0].1[0].ORF2p.confidence"
   , {
-    Header: 'ORF0',
-    id:"ORF0_data",
-    accessor: "ORF0.confidence",
+  Header: 'ORF0',
+  id:"ORF0_data",
+  accessor: "ORF0.confidence",
+  Cell: row => (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#dadada',
+            borderRadius: '2px'
+          }}
+        >
+          {/* {row.value} */}
+          <div
+            style={{
+              width: `${row.value}%`,
+              height: '100%',
+              backgroundColor: row.value > 80 ? '#85cc00'
+                : row.value > 40 ? '#ffbf00'
+                : '#ff2e00',
+              borderRadius: '2px',
+              transition: 'all .2s ease-out'
+            }}
+          >
+            {row.value}
+          </div>
+      </div>
+      )
+  }, {
+    Header: 'HERV-K',
+    id:"HERVK_data",
+    accessor: "HERV-K.confidence",
     Cell: row => (
           <div
             style={{
@@ -180,14 +210,63 @@ class Table extends Component{
         </div>
         )
   }, {
-    Header: 'HERV-K',
-    accessor: "HERV-K.confidence"
-  }, {
     Header: 'HERV-A',
-    accessor: "HERV-A.confidence"
+    id:"HERVA_data",
+    accessor: "HERV-A.confidence",
+    Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: '#dadada',
+              borderRadius: '2px'
+            }}
+          >
+            {/* {row.value} */}
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 80 ? '#85cc00'
+                  : row.value > 40 ? '#ffbf00'
+                  : '#ff2e00',
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            >
+              {row.value}
+            </div>
+        </div>
+        )
   }, {
     Header: 'HERV-V',
-    accessor: "HERV-V.confidence"
+    id:"HERVV_data",
+    accessor: "HERV-V.confidence",
+    Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: '#dadada',
+              borderRadius: '2px'
+            }}
+          >
+            {/* {row.value} */}
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 80 ? '#85cc00'
+                  : row.value > 40 ? '#ffbf00'
+                  : '#ff2e00',
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            >
+              {row.value}
+            </div>
+        </div>
+        )
   }]
 
 // const LoadingMS =
@@ -386,6 +465,7 @@ const orf2p_column = [{
                                 minRows={0}
                                 showPageJump={false}
                                 className="-striped -highlight"/>
+                                <img src={rtpea_img} height="auto" width="1400px" alt="logo"/>
                             </div>
                           </div>
                         );
