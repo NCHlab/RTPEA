@@ -147,6 +147,9 @@ class Human extends Component {
     );
   };
 
+check_event = (e) =>{
+  console.log(e)
+}
 
 
   render() {
@@ -196,7 +199,7 @@ class Human extends Component {
       <BarChart />
 
       <div className="background-body2">
-        <LineChart width={600} height={300} data={data}
+        <LineChart width={600} height={300} data={data} onClick={e => this.check_event(e)}
               margin={{top: 5, right: 30, left: 20, bottom: 5}}>
          <XAxis dataKey="name"/>
          <YAxis/>
