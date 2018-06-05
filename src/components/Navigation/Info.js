@@ -5,9 +5,10 @@ import ImageMapper from "react-image-mapper";
 let Soft_map = {
   name: "software architecture map",
   areas: [
-    { shape: "rect", coords: [1, 24, 363, 600] /* View */ },
-    { shape: "rect", coords: [364, 24, 545, 600] /* Controller */ },
-    { shape: "rect", coords: [546, 24, 908, 600] /* Model */ }
+    { shape: "rect", coords: [1, 0, 749, 20] /* Architecture */ },
+    { shape: "rect", coords: [1, 21, 299, 600] /* View */ },
+    { shape: "rect", coords: [300, 21, 449, 600] /* Controller */ },
+    { shape: "rect", coords: [450, 21, 749, 600] /* Model */ }
   ]
 };
 //[Left,Top,Right,Bottom]
@@ -43,24 +44,69 @@ class Info extends Component {
     if (index === 0) {
       return (
         <div>
-          This consists of the View made by using ReactJs
+          Websites are typically created with a MVC (Model, View, Controller) in
+          mind.
           <br />
-          -
+          <br />
+          It is a software architectural design pattern which essentially
+          seperates application functionality into different sections.
+          <br />
+          <br />
+          It also seperates the logic and the interface in an application. This
+          promotes organized programming and allows multiple developers to work
+          on projects without issues of overlapping. As a group of devs can work
+          on the model, how it is structured, the data format etc, while people
+          working on the controller work on the logic of how to communicate to
+          the database.
         </div>
       );
     } else if (index === 1) {
+      return <div>
+                This consists of the View made by using ReactJs.
+                <br/>
+                <br/>
+                Essentially it is what the user sees (user interface) and interacts with. It is made up of HTML and CSS.
+                The type of templating engine used to render information is essential in providing dynamic data.
+                <br/>
+                <br/>
+                HTML does not come with any logic built in as such it is not possible to conduct If statements and for loops without the use of a templating engine.
+                <br/>
+                <br/>
+                ReactJs allows for data to be parsed and displayed dynamically using javascript inside of the HTML document.
+                <br/>
+                <br/>
+                A user is able to interact with the website, depending on the actions the view is able to display what the user wants
+                otherwise the API server is contacted in order for requested data to be handled.
+
+
+            </div>;
+    } else if (index === 2) {
       return (
-        <div>
+        <div className="">
           This consists of the Controller which is where the API server is
-          located. All data is processed through the controller.
+          located.
+          <br/>
+          All data is processed through the controller.
+          <br/>
+          <br/>
+          The controller recieves input from the view and processes the requests that can involve GET, POST, PUT, DELETE requests.
+          <br/>
+          <br/>
+          The controller communicates with the model to grab data and then is able to pass the data to the view.
+          It essentially acts the the brains connecting the two sides (view and model) together.
+
         </div>
       );
-    } else if (index === 2) {
+    } else if (index === 3) {
       return (
         <div>
           This consists of the Model where the data is handled and stored.
-          <br />
-          -
+          It is the brain of the application, and consists of data related logic.
+          <br/>
+          <br/>
+          Interactions with the database include, SELECT, ISNERT, UPDATE and DELETE functions.
+          It usually communicates with only the controller and in a well defined MVC application, it will not update the view. as that is the controllers job to do.
+
         </div>
       );
     }
@@ -84,19 +130,19 @@ class Info extends Component {
         <div className="background-body2">
           <div className="container">
             <div className="row">
-              <div className="col-md-9">
+              <div className="col-md-8">
                 <ImageMapper
                   src={Flowchart}
                   map={Soft_map}
                   fillColor="rgba(0, 0, 0, 0.1)"
                   className="pb6"
                   alt=""
-                  height={"450"}
-                  width={"817"}
+                  height={"413"}
+                  width={"750"}
                   onMouseEnter={this.MouseEnter}
                 />
               </div>
-              <div className="col-md-3">
+              <div className="col-md-4 text-left">
                 {this.ImageArray(this.state.index)}
               </div>
             </div>
@@ -113,14 +159,16 @@ class Info extends Component {
         </div>
 
         <div className="line-seperator" />
+        <div className="background-body2">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+        <div className="line-seperator" />
 
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     );
   }
