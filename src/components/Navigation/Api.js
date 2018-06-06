@@ -15,11 +15,16 @@ class Api extends Component {
       records: "This state has not been set",
       url_id: "NULL",
       data_text: "Data for ",
-      color_black: true
+      colour_dark: false,
+      background_colour:"#dddddd",
+      text_colour:"#000000",
+      text_colour_err: "#af0603",
+      button_msg: "Darkify"
     };
     // This binding is necessary to make `this` work in the callback
     this.returntext = this.returntext.bind(this);
     this.button_click = this.button_click.bind(this);
+    this.changeColour =  this.changeColour.bind(this);
   }
   componentDidMount = () => {
     this.setState({ isLoading: false });
@@ -89,8 +94,20 @@ class Api extends Component {
     }
   };
 
-  changeColor = () =>{
-        this.setState({color_black: !this.state.color_black})
+  changeColour = () =>{
+        // this.setState({colour_dark: !this.state.color_black})
+        if (this.state.background_colour === "#dddddd"){
+          this.setState({background_colour: "#4f5256"})
+          this.setState({text_colour: "#ffffff"})
+          this.setState({text_colour_err: "#ef0b07"})
+          this.setState({button_msg: "Brighten"})
+        } else if (this.state.background_colour !== "#dddddd"){
+          this.setState({background_colour: "#dddddd"})
+          this.setState({text_colour: "#000000"})
+          this.setState({text_colour_err: "#af0603"})
+          this.setState({button_msg: "Darkify"})
+
+        }
     };
 
   // useless code
@@ -150,17 +167,11 @@ class Api extends Component {
 
         <br />
         <br />
-        <br />
 
-        <button onClick={this.returntext}>returntext</button>
-        {this.state.records}
+         <button onClick={() => this.changeColour()}>{this.state.button_msg}</button>
 
-        <br />
-        <input type="button" onClick={document.bgColor="red"} value="red"/>
-         <button style={{backgroundColor: document.bgColor}} onClick={this.changeColor.bind(this)}>Button</button>
-
-        <div className="background-body4">
-          <div className="background-body4-nojson">
+        <div className="background-body4" style={{backgroundColor: this.state.background_colour}}>
+          <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
             Data for: {this.state.url_id}
           </div>
 
@@ -191,15 +202,21 @@ class Api extends Component {
             otherwise the data is displayed in black */}
           <Loader loaded={this.state.loaded} options={options} className="spinner">
 
+
+
+
+
+
+
           {this.state.error_msg ? (
             <JSONPretty
-              style={{ fontSize: "1.6em", color: "#af0603" }}
+              style={{ fontSize: "1.6em", color: this.state.text_colour_err }}
               id="json-pretty"
               json={JSON.stringify(this.state.data2)}
             />
           ) : (
             <JSONPretty
-              style={{ fontSize: "1.2em", color: "#000000" }}
+              style={{ fontSize: "1.2em", color: this.state.text_colour }}
               id="json-pretty"
               json={JSON.stringify(this.state.data2)}
             />
