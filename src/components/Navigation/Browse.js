@@ -118,8 +118,34 @@ class Table extends Component{
     // accessor: 'sample[0].1[0].tissue_type'
   }, {
     Header: 'ORF1p',
-    accessor: "ORF1p.confidence"
-  }, {
+    id: "ORF1p_data",
+    accessor: "ORF1p.confidence",
+    Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: '#dadada',
+              borderRadius: '2px'
+            }}
+          >
+            {/* {row.value} */}
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 80 ? '#85cc00'
+                  : row.value > 40 ? '#ffbf00'
+                  : '#ff2e00',
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            >
+              {row.value}
+            </div>
+        </div>
+        )
+    }, {
     Header: 'ORF2p',
     id: "ORF2p_data",
     accessor: "ORF2p.confidence",
