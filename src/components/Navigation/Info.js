@@ -119,13 +119,6 @@ class Info extends Component {
           <h1>RTPEA Flowchart</h1>
         </div>
 
-        {/* <img src={Flowchart} alt="FlowChart" height="600px" width="1090px" /> */}
-
-        <br />
-        <br />
-        <br />
-        <br />
-
         <div className="line-seperator" />
         <div className="background-body2">
           <div className="container">
