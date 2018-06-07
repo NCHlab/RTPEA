@@ -69,24 +69,26 @@ class Table extends Component{
   }, {
     Header: 'Disease',
     accessor: 'disease'
-  }, {
-    Header: 'Tissue',
-    id: "tiss",
-    accessor: data => {var mylist=[]
-                          for (var i in data.sample[0]){
-                            if (i === "tissue_type"){
-                              mylist.push([i])
-                              console.log([i.key])
-                            }
-
-
-                        }
-
-                          console.log(mylist)
-                          return mylist
-                        }
-
-  }]
+  }
+  // }, {
+  //   Header: 'Tissue',
+  //   id: "tiss",
+  //   accessor: data => {var mylist=[]
+  //                         for (var i in data.sample[0]){
+  //                           if (i === "tissue_type"){
+  //                             mylist.push([i])
+  //                             console.log([i.key])
+  //                           }
+  //
+  //
+  //                       }
+  //
+  //                         console.log(mylist)
+  //                         return mylist
+  //                       }
+  //
+  // }]
+]
   }]
 
 
@@ -104,9 +106,9 @@ class Table extends Component{
 
                         // console.log(data.sample.length);
                         // data.sample[0][1][0].replicate
-    }, {
-    Header: 'Disease',
-    accessor: 'disease'
+    // }, {
+    // Header: 'Disease',
+    // accessor: 'disease'
   }, {
     Header: 'Tissue',
     accessor: "tissue_type"
@@ -206,13 +208,39 @@ class Table extends Component{
         </div>
         )
   }, {
-    Header: 'HERV-K',
-    accessor: "HERV-K.confidence"
+    Header: 'HERV',
+    id:"HERV_data",
+    accessor: "HERV.confidence",
+    Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: '#dadada',
+              borderRadius: '2px'
+            }}
+          >
+            {/* {row.value} */}
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 80 ? '#85cc00'
+                  : row.value > 40 ? '#ffbf00'
+                  : '#ff2e00',
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            >
+              {row.value}
+            </div>
+        </div>
+        )
   }, {
-    Header: 'HERV-A',
+    Header: 'HERV-?',
     accessor: "HERV-A.confidence"
   }, {
-    Header: 'HERV-V',
+    Header: 'HERV-??',
     accessor: "HERV-V.confidence"
   }]
 
