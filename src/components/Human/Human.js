@@ -58,7 +58,7 @@ class Human extends Component {
       return (
         <img
           src={Plot1}
-          className="pb6 "
+          className="pb6 nice-smooth"
           alt="logo"
           height="450px"
           width="450px"

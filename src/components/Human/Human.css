@@ -7,6 +7,12 @@ div:onhover {
   opacity: 0.5;
 } */
 
+.nice-smooth{
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+
 .sc1{
   background-color: #F9EAD5
 }
