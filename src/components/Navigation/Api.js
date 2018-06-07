@@ -16,7 +16,8 @@ class Api extends Component {
       url_id: "NULL",
       data_text: "Data for ",
       colour_dark: false,
-      background_colour:"#dddddd",
+      background_colour:"#edf1f4",
+      data_background_colour:"#dddddd",
       text_colour:"#000000",
       text_colour_err: "#af0603",
       button_msg: "Darkify"
@@ -96,13 +97,15 @@ class Api extends Component {
 
   changeColour = () =>{
         // this.setState({colour_dark: !this.state.color_black})
-        if (this.state.background_colour === "#dddddd"){
+        if (this.state.data_background_colour === "#dddddd"){
           this.setState({background_colour: "#4f5256"})
+          this.setState({data_background_colour: "#25282d"})
           this.setState({text_colour: "#ffffff"})
           this.setState({text_colour_err: "#ef0b07"})
           this.setState({button_msg: "Brighten"})
-        } else if (this.state.background_colour !== "#dddddd"){
-          this.setState({background_colour: "#dddddd"})
+        } else if (this.state.data_background_colour !== "#dddddd"){
+          this.setState({background_colour: "#edf1f4"})
+          this.setState({data_background_colour: "#dddddd"})
           this.setState({text_colour: "#000000"})
           this.setState({text_colour_err: "#af0603"})
           this.setState({button_msg: "Darkify"})
@@ -147,7 +150,7 @@ class Api extends Component {
   };
 
     return (
-      <div className="ma4 mt0 background-body4-noalign container col-md-9">
+      <div className="ma4 mt0 background-body4-noalign container col-md-9" style={{backgroundColor: this.state.background_colour}}>
         {this.state.isLoading ? console.log("yes") : console.log("no")}
         {this.state.isLoading}
 
@@ -156,7 +159,7 @@ class Api extends Component {
         {/* Searchbox which converts the text to uppercase and calls the button_click
            function upon enter button being pressed or button being clicked */}
         <input
-          placeholder="Search for PXDXXXX"
+          placeholder="PXDXXXXXX..."
           onChange={e => this.setState({ url_id: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
               this.button_click();
@@ -170,7 +173,7 @@ class Api extends Component {
 
          <button onClick={() => this.changeColour()}>{this.state.button_msg}</button>
 
-        <div className="background-body4" style={{backgroundColor: this.state.background_colour}}>
+        <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
           <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
             Data for: {this.state.url_id}
           </div>
