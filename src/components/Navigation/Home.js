@@ -81,17 +81,20 @@ class Home extends Component {
                 are usually composed of retrotransposons. Retrotransposons are
                 RNA based mobile genetic elements which have the ability to
                 duplicate thus are found in many locations of DNA in eukaryotic
-                organsism. Two subclasses of transposons exist, retrotransposons
-                and DNA transposons. Retrotransposons are similar to DNA based
+                organsism.
+                <br />
+                <br />
+                Two subclasses of transposons exist, retrotransposons and DNA
+                transposons. Retrotransposons are similar to DNA based
                 transposons, however there is one big difference.
               </div>
               <div className="col-md-6 font-italic">
                 <img alt="L1HS" src={L1HS} height="300" />
                 <br />
-                Fig 1 - Proportion of L1-Human-specific elements in the human reference
-                genome.
+                Fig 1 - Proportion of L1-Human-specific elements in the human
+                reference genome.
                 <a href="https://www.ncbi.nlm.nih.gov/pubmed/20980553">
-                  <br />Ewing et al. 2011{" "}
+                  <br />Ewing et al. 2011
                 </a>
               </div>
             </div>
@@ -106,7 +109,7 @@ class Home extends Component {
                 <br />
                 Fig 2 - L1 life-cycle
                 <a href="https://www.ncbi.nlm.nih.gov/pubmed/24818067">
-                  <br />Viollet et al. 2014{" "}
+                  <br />Viollet et al. 2014
                 </a>
               </div>
               <div className="col-md-6 text-justify">
