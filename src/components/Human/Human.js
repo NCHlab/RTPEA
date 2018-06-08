@@ -191,14 +191,14 @@ check_event = (e) =>{
         <h1>
           <br />
 
-           <button type="button" onClick={() => console.log(this.state.checked)}>Click Me!</button>
+           {/* <button type="button" onClick={() => console.log(this.state.checked)}>Click Me!</button> */}
 
         </h1>
         <br />
       </div>
       <BarChart />
 
-      <div className="background-body2">
+      {/* <div className="background-body2">
         <LineChart width={600} height={300} data={data} onClick={e => this.check_event(e)}
               margin={{top: 5, right: 30, left: 20, bottom: 5}}>
          <XAxis dataKey="name"/>
@@ -210,7 +210,7 @@ check_event = (e) =>{
          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
          <Line type="monotone" dataKey="amt" stroke="#82ca9d" />
         </LineChart>
-      </div>
+      </div> */}
     </div>
     );
   }
