@@ -172,7 +172,7 @@ class Api extends Component {
         <br />
         <br />
 
-         <button type="button" className="btn btn-primary" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
+         <button type="button" className="btn btn-outline-primary" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
 
         <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
           <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
