@@ -166,12 +166,13 @@ class Api extends Component {
             }
           }}/>
 
-        <button onClick={this.button_click}>Search Database</button>
+        <button className="btn btn-outline-primary" onClick={this.button_click}>Search Database</button>
+        {/* <span className="glyphicon glyphicon-search">test</span> */}
 
         <br />
         <br />
 
-         <button onClick={() => this.changeColour()}>{this.state.button_msg}</button>
+         <button type="button" className="btn btn-primary" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
 
         <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
           <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
@@ -182,7 +183,7 @@ class Api extends Component {
           <CopyToClipboard
             text={JSON.stringify(this.state.data2, null, 2)}
             onCopy={() => this.setState({ copied: true })}>
-            <button>Copy Data</button>
+            <button className="btn btn-outline-info">Copy Data</button>
           </CopyToClipboard>
 
           {/* If the data has been copied, then text tells the user the result */}
@@ -192,7 +193,7 @@ class Api extends Component {
 
           {/* On click, saveAs function is called which lets users
             download the data */}
-          <button
+          <button className="btn btn-outline-info"
             onClick={e =>
               this.saveAs(JSON.stringify(this.state.data2, null, 2))
             }
@@ -204,6 +205,14 @@ class Api extends Component {
             data is displayed
             otherwise the data is displayed in black */}
           <Loader loaded={this.state.loaded} options={options} className="spinner">
+
+            {/* <div className="progress">
+             <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width:"100%"}}>
+               100%
+             </div>
+            </div> */}
+
 
 
 
