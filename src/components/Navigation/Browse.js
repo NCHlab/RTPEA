@@ -9,7 +9,14 @@ class Table extends Component{
       data2: [],
       url_id: "NULL",
       error_msg: false,
-      table_loading: true
+      table_loading: true,
+      background_colour:"#edf1f4",
+      text_colour:"#000000",
+      high_conf_colour:"#85cc00",
+      med_conf_colour:"#ffbf00",
+      low_conf_colour:"#ff2e00",
+      background_conf_colour:"#dadada",
+      button_msg: "Darkify"
     };
     // this.data = this.data.bind(this)
   }
@@ -40,6 +47,28 @@ class Table extends Component{
           }
         })
     }
+
+    changeColour = () =>{
+          // this.setState({colour_dark: !this.state.color_black})
+          if (this.state.background_colour === "#edf1f4"){
+            this.setState({background_colour: "#5f6060"})
+            this.setState({text_colour: "#ffffff"})
+            this.setState({button_msg: "Brighten"})
+            this.setState({high_conf_colour:"#6a9618"})
+            this.setState({med_conf_colour:"#c47f0b"})
+            this.setState({low_conf_colour:"#c12200"})
+            this.setState({background_conf_colour:"#777f84"})
+          } else if (this.state.background_colour !== "#edf1f4"){
+            this.setState({background_colour: "#edf1f4"})
+            this.setState({text_colour: "#000000"})
+            this.setState({button_msg: "Darkify"})
+            this.setState({high_conf_colour:"#85cc00"})
+            this.setState({med_conf_colour:"#ffbf00"})
+            this.setState({low_conf_colour:"#ff2e00"})
+            this.setState({background_conf_colour:"#dadada"})
+
+          }
+      };
 
   // data = () => {[
   //   JSON.stringify(this.state.data2)
@@ -127,7 +156,7 @@ class Table extends Component{
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#dadada',
+              backgroundColor: this.state.background_conf_colour,
               borderRadius: '2px'
             }}
           >
@@ -136,9 +165,9 @@ class Table extends Component{
               style={{
                 width: `${row.value}%`,
                 height: '100%',
-                backgroundColor: row.value > 80 ? '#85cc00'
-                  : row.value > 40 ? '#ffbf00'
-                  : '#ff2e00',
+                backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                  : row.value > 40 ? this.state.med_conf_colour
+                  : this.state.low_conf_colour,
                 borderRadius: '2px',
                 transition: 'all .2s ease-out'
               }}
@@ -156,7 +185,7 @@ class Table extends Component{
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#dadada',
+              backgroundColor: this.state.background_conf_colour,
               borderRadius: '2px'
             }}
           >
@@ -165,9 +194,9 @@ class Table extends Component{
               style={{
                 width: `${row.value}%`,
                 height: '100%',
-                backgroundColor: row.value > 80 ? '#85cc00'
-                  : row.value > 40 ? '#ffbf00'
-                  : '#ff2e00',
+                backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                  : row.value > 40 ? this.state.med_conf_colour
+                  : this.state.low_conf_colour,
                 borderRadius: '2px',
                 transition: 'all .2s ease-out'
               }}
@@ -187,7 +216,7 @@ class Table extends Component{
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#dadada',
+              backgroundColor: this.state.background_conf_colour,
               borderRadius: '2px'
             }}
           >
@@ -196,9 +225,9 @@ class Table extends Component{
               style={{
                 width: `${row.value}%`,
                 height: '100%',
-                backgroundColor: row.value > 80 ? '#85cc00'
-                  : row.value > 40 ? '#ffbf00'
-                  : '#ff2e00',
+                backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                  : row.value > 40 ? this.state.med_conf_colour
+                  : this.state.low_conf_colour,
                 borderRadius: '2px',
                 transition: 'all .2s ease-out'
               }}
@@ -216,7 +245,7 @@ class Table extends Component{
             style={{
               width: '100%',
               height: '100%',
-              backgroundColor: '#dadada',
+              backgroundColor: this.state.background_conf_colour,
               borderRadius: '2px'
             }}
           >
@@ -225,9 +254,9 @@ class Table extends Component{
               style={{
                 width: `${row.value}%`,
                 height: '100%',
-                backgroundColor: row.value > 80 ? '#85cc00'
-                  : row.value > 40 ? '#ffbf00'
-                  : '#ff2e00',
+                backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                  : row.value > 40 ? this.state.med_conf_colour
+                  : this.state.low_conf_colour,
                 borderRadius: '2px',
                 transition: 'all .2s ease-out'
               }}
@@ -268,7 +297,7 @@ const orf1p_column = [{
           style={{
             width: '100%',
             height: '100%',
-            backgroundColor: '#dadada',
+            backgroundColor: this.state.background_conf_colour,
             borderRadius: '2px'
           }}
         >
@@ -277,9 +306,9 @@ const orf1p_column = [{
             style={{
               width: `${row.value}%`,
               height: '100%',
-              backgroundColor: row.value > 80 ? '#85cc00'
-                : row.value > 40 ? '#ffbf00'
-                : '#ff2e00',
+              backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                : row.value > 40 ? this.state.med_conf_colour
+                : this.state.low_conf_colour,
               borderRadius: '2px',
               transition: 'all 1s ease-out'
             }}
@@ -320,7 +349,7 @@ const orf2p_column = [{
           style={{
             width: '100%',
             height: '100%',
-            backgroundColor: '#dadada',
+            backgroundColor: this.state.background_conf_colour,
             borderRadius: '2px'
           }}
         >
@@ -329,9 +358,9 @@ const orf2p_column = [{
             style={{
               width: `${row.value}%`,
               height: '100%',
-              backgroundColor: row.value > 80 ? '#85cc00'
-                : row.value > 40 ? '#ffbf00'
-                : '#ff2e00',
+              backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                : row.value > 40 ? this.state.med_conf_colour
+                : this.state.low_conf_colour,
               borderRadius: '2px',
               transition: 'all 1s ease-out'
             }}
@@ -368,9 +397,10 @@ const orf2p_column = [{
       return (
         <div>
 
-          <div className="background-body2 col-md-10 offset-md-1">
+          <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
+            {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
-
+            <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
@@ -396,7 +426,7 @@ const orf2p_column = [{
               loadingText="Please Wait. Data is Loading....If no data is returned the API server may be down."
               defaultPageSize={10}
               showPaginationTop={true}
-              className="-highlight"
+              className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
               filterable={true}
               minRows={0}
@@ -453,7 +483,7 @@ const orf2p_column = [{
 {/* data={row.row._original[0]} */}
 
 
-
+{/* </div> */}
           </div>
         </div>
 )
