@@ -83,9 +83,13 @@ class Home extends Component {
                   unbiased proteomic approaches to reanalyse PRIDE data to
                   detect retroelement proteins. This allows for protein
                   expressions levels to be analysed and see where diseases may
-                  be linked to higher levels of expression
-                  <br/>
-                  <hr style={{borderColor: "#000000"}}/>
+                  be linked to higher levels of expression.
+                  <br />
+                  This website will also host proteomic data (not just RT data)
+                  related to humans thus be accessible to all types of
+                  biologists looking at protein expressions
+                  <br />
+                  <hr style={{ borderColor: "#000000" }} />
                   <table>
                     <tr>
                       <th />
@@ -130,27 +134,12 @@ class Home extends Component {
                       </td>
                     </tr>
                   </table>
-                  <hr style={{borderColor: "#000000"}}/>
-                  {/* <br />
-                  <br />
-                  <br />
-                  <br /> */}
-                  {/* Visualise:
-                  <br />
-                  Browse:<i>Search by dataset and by proteins</i>
-                  <br />
-                  API:<i>Retrieve data located on the database for a specific ID</i>
-                  <br />
-                  Genoverse: <i>Maps identified pepetides to the genome</i>
-                  <br />
-                  Protvista: <i>A viewer for protein sequence features</i> */}
-
+                  <hr style={{ borderColor: "#000000" }} />
                   RTPEA is dedicated to displaying experimental parameters and
                   metadata free to use for anyone interested in protein datasets
                   and re-analysis using our API.
                   <br />
                   <br />
-
                 </div>
                 <div className="col-md-6 font-italic">
                   <LineChart
@@ -191,6 +180,7 @@ class Home extends Component {
                   <br />Ewing et al. 2011
                 </a>
               </div>
+
               <div className="col-md-6 text-justify">
                 Repetitive DNA accounts for half of our genome. These repeats
                 are usually composed of retrotransposons. Retrotransposons are
@@ -198,7 +188,8 @@ class Home extends Component {
                 duplicate thus are found in many locations of DNA in eukaryotic
                 organsism.
                 <br />
-                <br />
+                <hr align="center" width="60%"/>
+
                 Two subclasses of transposons exist, retrotransposons and DNA
                 transposons. Retrotransposons are similar to DNA based
                 transposons, however there is one big difference.
@@ -217,7 +208,7 @@ class Home extends Component {
                 transcription that occured previously and creates a double
                 stranded DNA copy of the RNA.
                 <br />
-                <br />
+                <hr style={{ borderColor: "#000000" }} align="center" width="60%"/>
                 The new duplicated retrotransposon can then inserted into the
                 same chromosome or another chromosome at a new location. This
                 new replicated DNA, itself is able to be replicated. This is due
