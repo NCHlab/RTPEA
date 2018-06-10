@@ -107,6 +107,9 @@ class Info extends Component {
           Interactions with the database include, SELECT, ISNERT, UPDATE and DELETE functions.
           It usually communicates with only the controller and in a well defined MVC application, it will not update the view. as that is the controllers job to do.
 
+          MongoDB is our database of choice allowing us to display
+          results to this web portal. It utilises the noSQL architecture
+          reducing the complexity of dealing with SQL based servers.
         </div>
       );
     }
