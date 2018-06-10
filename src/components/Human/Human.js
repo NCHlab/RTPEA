@@ -15,7 +15,7 @@ import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
 import Loader from "react-loader";
-import { LineChart, Line, BarChart, YAxis, XAxis,CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, BarChart, Bar, YAxis, XAxis,CartesianGrid, Tooltip, Legend } from 'recharts';
 
 
 
@@ -164,6 +164,14 @@ check_event = (e) =>{
       {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
 ];
 
+const data2 = [
+  {A:[100,999],B:200,C:300,D:400},
+  {A:200,B:200,C:300,D:400},
+  {A:50,B:800,C:300,D:400},
+];
+
+
+
     return (
       <div>
       <input type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
@@ -185,7 +193,25 @@ check_event = (e) =>{
             </div>
           </div>
 
-          <div className="inline-img">{this.detectSvg(this.state.svgType)}</div>
+          <div className="inline-img">{this.detectSvg(this.state.svgType)}
+
+            <LineChart className="background-body" width={400} height={400} data={data2} margin={{ top: 5, right: 20, bottom: 50, left: 0 }}>
+              <Line type="monotone" dataKey="A" stroke="#8884d8" />
+              <Line type="monotone" dataKey="B" stroke="#8884d8" />
+              <CartesianGrid stroke="#fff" strokeDasharray="5 5"/>
+              <XAxis stroke="#fff" dataKey="name" />
+              <YAxis stroke="#fff"/>
+              <Tooltip />
+            </LineChart>
+
+            <BarChart width={600} height={300} data={data2}>
+              <XAxis dataKey="name"  />
+              <YAxis />
+              <Tooltip />
+              <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" label="value:test"/>
+              <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test"/>
+            </BarChart>
+          </div>
         </div>
 
         <h1>
