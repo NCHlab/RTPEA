@@ -157,6 +157,38 @@ class Home extends Component {
                   <br />
                 </div>
                 <div className="col-md-6">
+                  <table className="text-justify" align="center" width="44%" border="4" >
+                    <tr>
+                      <th> Server </th>
+                      <th> Status</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>API Server:</b>
+                      </td>
+                      <td>
+                        <img src={onlineimg} alt="Online!" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>MongoDB Server:</b>
+                      </td>
+                      <td>
+                        <img src={onlineimg} alt="Online!" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>Test Server:</b>
+                      </td>
+                      <td>
+                        <img src={offlineimg} alt="Online!" />
+                      </td>
+                    </tr>
+                  </table>
+                  <br />
+                  <br />
                   <div className="font-italic">
                     <LineChart
                       width={600}
@@ -180,39 +212,9 @@ class Home extends Component {
                       <Line type="monotone" dataKey="amt" stroke="#82ca9d" />
                     </LineChart>
                   </div>
-                  <br />
-                  <br />
 
-                  <table align="center" width="44%" border="4">
-                    <tr>
-                      <th> Server </th>
-                      <th> Status</th>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>API Server:</b>
-                      </td>
-                      <td>
-                        <img src={onlineimg} alt="Online!" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>MongoDB Server:</b>
-                      </td>
-                      <td>
-                        <img src={onlineimg} alt="Online!" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Test Offline:</b>
-                      </td>
-                      <td>
-                        <img src={offlineimg} alt="Online!" />
-                      </td>
-                    </tr>
-                  </table>
+
+
 
                   {/* Server Status:
                   <br />

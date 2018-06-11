@@ -164,17 +164,30 @@ check_event = (e) =>{
       {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
 ];
 
+// const data2 = [
+//   {name: "Brain", A:100,B:200,C:300,D:400},
+//   {name: "Lung", A:200,B:200,C:300,D:400},
+//   {name: "Liver", A:50,B:800,C:300,D:400},
+//   {name: "Pancreas", A:880,B:599,C:345,D:755},
+//   {name: "Intestine", A:236,B:734,C:356,D:844},
+//   {name: "Testes", A:464,B:733,C:345,D:263},
+//   {name: "Heart", A:880,B:263,C:664,D:573},
+//   {name: "Breasts", A:533,B:599,C:125,D:755},
+//   {name: "Kidney", A:464,B:664,C:345,D:464},
+//   {name: "Uterus", A:263,B:564,C:623,D:664}
+// ];
+
 const data2 = [
-  {name: "Brain", A:100,B:200,C:300,D:400},
-  {name: "Lung", A:200,B:200,C:300,D:400},
-  {name: "Liver", A:50,B:800,C:300,D:400},
-  {name: "Pancreas", A:880,B:599,C:345,D:755},
-  {name: "Intestine", A:236,B:734,C:356,D:844},
-  {name: "Testes", A:464,B:733,C:345,D:263},
-  {name: "Heart", A:880,B:263,C:664,D:573},
-  {name: "Breasts", A:533,B:599,C:125,D:755},
-  {name: "Kidney", A:464,B:664,C:345,D:464},
-  {name: "Uterus", A:263,B:564,C:623,D:664}
+  {name: "Brain", A:100},
+  {name: "Lung", A:200},
+  {name: "Liver", A:50},
+  {name: "Pancreas", A:880},
+  {name: "Intestine", A:236},
+  {name: "Testes", A:464},
+  {name: "Heart", A:880},
+  {name: "Breasts", A:533},
+  {name: "Kidney", A:464},
+  {name: "Uterus", A:263}
 ];
 
 const data3 = [
