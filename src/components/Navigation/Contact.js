@@ -34,6 +34,7 @@ const Project = () => (
     <div className="container">
       <hr />
     </div>
+
     <div className="contact_container">
       <div className="contact_img">
         <div className="contact_h1">

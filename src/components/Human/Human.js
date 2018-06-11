@@ -165,10 +165,26 @@ check_event = (e) =>{
 ];
 
 const data2 = [
-  {A:[100,999],B:200,C:300,D:400},
-  {A:200,B:200,C:300,D:400},
-  {A:50,B:800,C:300,D:400},
+  {name: "Brain", A:100,B:200,C:300,D:400},
+  {name: "Lung", A:200,B:200,C:300,D:400},
+  {name: "Liver", A:50,B:800,C:300,D:400},
+  {name: "Pancreas", A:880,B:599,C:345,D:755},
+  {name: "Intestine", A:236,B:734,C:356,D:844},
+  {name: "Testes", A:464,B:733,C:345,D:263},
+  {name: "Heart", A:880,B:263,C:664,D:573},
+  {name: "Breasts", A:533,B:599,C:125,D:755},
+  {name: "Kidney", A:464,B:664,C:345,D:464},
+  {name: "Uterus", A:263,B:564,C:623,D:664}
 ];
+
+const data3 = [
+  {name: "test1",A:100},
+{name: "test2",B:200},
+{name: "test3",C:50},
+{name: "test4",D:880}
+];
+
+// const Xlabel=[{Test1:1,Test2:1,Test3:1,Test4:1}]
 
 
 
@@ -195,21 +211,23 @@ const data2 = [
 
           <div className="inline-img">{this.detectSvg(this.state.svgType)}
 
-            <LineChart className="background-body" width={400} height={400} data={data2} margin={{ top: 5, right: 20, bottom: 50, left: 0 }}>
+            {/* <LineChart className="background-body" width={400} height={400} data={data2} margin={{ top: 5, right: 20, bottom: 50, left: 0 }}>
               <Line type="monotone" dataKey="A" stroke="#8884d8" />
               <Line type="monotone" dataKey="B" stroke="#8884d8" />
               <CartesianGrid stroke="#fff" strokeDasharray="5 5"/>
               <XAxis stroke="#fff" dataKey="name" />
               <YAxis stroke="#fff"/>
               <Tooltip />
-            </LineChart>
+            </LineChart> */}
 
-            <BarChart width={600} height={300} data={data2}>
-              <XAxis dataKey="name"  />
-              <YAxis />
+            <BarChart layout="vertical"  width={800} height={600} data={data2}>
+              <XAxis  type="number"/>
+              <YAxis dataKey="name" type="category"/>
               <Tooltip />
-              <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" label="value:test"/>
-              <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test"/>
+              <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+              <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+              <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+              <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
             </BarChart>
           </div>
         </div>
