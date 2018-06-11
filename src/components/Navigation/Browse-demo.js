@@ -10,7 +10,14 @@ class Table extends Component{
       data2: [],
       url_id: "NULL",
       error_msg: false,
-      table_loading: true
+      table_loading: true,
+      background_colour:"#edf1f4",
+      text_colour:"#000000",
+      high_conf_colour:"#85cc00",
+      med_conf_colour:"#ffbf00",
+      low_conf_colour:"#ff2e00",
+      background_conf_colour:"#dadada",
+      button_msg: "Darkify"
     };
     // this.data = this.data.bind(this)
   }
@@ -42,6 +49,28 @@ class Table extends Component{
         })
     }
 
+    changeColour = () =>{
+          // this.setState({colour_dark: !this.state.color_black})
+          if (this.state.background_colour === "#edf1f4"){
+            this.setState({background_colour: "#5f6060"})
+            this.setState({text_colour: "#ffffff"})
+            this.setState({button_msg: "Brighten"})
+            this.setState({high_conf_colour:"#6a9618"})
+            this.setState({med_conf_colour:"#c47f0b"})
+            this.setState({low_conf_colour:"#c12200"})
+            this.setState({background_conf_colour:"#777f84"})
+          } else if (this.state.background_colour !== "#edf1f4"){
+            this.setState({background_colour: "#edf1f4"})
+            this.setState({text_colour: "#000000"})
+            this.setState({button_msg: "Darkify"})
+            this.setState({high_conf_colour:"#85cc00"})
+            this.setState({med_conf_colour:"#ffbf00"})
+            this.setState({low_conf_colour:"#ff2e00"})
+            this.setState({background_conf_colour:"#dadada"})
+
+          }
+      };
+
   // data = () => {[
   //   JSON.stringify(this.state.data2)
   // ]}
@@ -70,22 +99,7 @@ class Table extends Component{
   }, {
     Header: 'Disease',
     accessor: 'disease'
-  }, {
-    Header: 'Tissue',
-    id: "tiss",
-    accessor: data => {var mylist=[]
-                          for (var i in data.sample[0]){
-                            if (i === "tissue_type"){
-                              mylist.push([i])
-                              console.log([i.key])
-                            }
 
-
-                        }
-
-                          console.log(mylist)
-                          return mylist
-                        }
 
   }]
   }]
@@ -106,9 +120,6 @@ class Table extends Component{
                         // console.log(data.sample.length);
                         // data.sample[0][1][0].replicate
     }, {
-    Header: 'Disease',
-    accessor: 'disease'
-  }, {
     Header: 'Tissue',
     accessor: "tissue_type"
     // id: "tiss_data",
@@ -145,7 +156,7 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {row.value !== 0 ? row.value : row.value + " (Pos. Variants)"}
             </div>
         </div>
         )
@@ -176,7 +187,7 @@ class Table extends Component{
               transition: 'all .2s ease-out'
             }}
           >
-            {row.value}
+            {row.value !== 0 ? row.value : row.value + " (Pos. Variants)"}
           </div>
       </div>
       )
@@ -393,9 +404,10 @@ const orf2p_column = [{
       return (
         <div>
 
-          <div className="background-body2 col-md-10 offset-md-1">
+          <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
+            {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
-
+            <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {

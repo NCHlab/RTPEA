@@ -141,7 +141,7 @@ class Home extends Component {
                         <b>Genoverse:</b>
                       </td>
                       <td>
-                        -<i>Maps identified pepetides to the genome</i>
+                        -<i>Maps identified peptides to the genome</i>
                       </td>
                     </tr>
                   </table>

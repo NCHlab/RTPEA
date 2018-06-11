@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
-
+import _ from "lodash";
 
 class Table extends Component{
   constructor() {
@@ -172,7 +172,7 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {row.value !== 0 ? row.value : row.value + " (Pos. Variants)"}
             </div>
         </div>
         )
@@ -180,6 +180,8 @@ class Table extends Component{
     Header: 'ORF2p',
     id: "ORF2p_data",
     accessor: "ORF2p.confidence",
+    aggregate: vals => _.sum(vals),
+    // Aggregated: row => (
     Cell: row => (
           <div
             style={{
@@ -201,7 +203,7 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {row.value !== 0 ? row.value : row.value + " (Pos. Variants)"}
             </div>
         </div>
         )

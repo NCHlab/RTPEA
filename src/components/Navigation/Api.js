@@ -57,7 +57,6 @@ class Api extends Component {
   button_click = () => {
     this.setState({ loaded: false });
     fetch(this.searchURL())
-      // "http://localhost:3001/api/PXD002233"
       .then(response => response.json())
       .then(data => {
         if (data.hasOwnProperty("Status")) {
