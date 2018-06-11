@@ -101,13 +101,13 @@ class Home extends Component {
               <div className="col-md-6">
                 <h1>
                   {/* # of Orf1: */}
-                  <CountTo to={1608424} speed={3000} />
+                  <CountTo to={1608424} speed={6000} />
                 </h1>
               </div>
               <div className="col-md-6">
                 <h1>
                   {/* # of Orf2: */}
-                  <CountTo to={2934451} speed={3000} />
+                  <CountTo to={2934450} speed={6000} />
                   {/* onComplete={onHide} */}
                 </h1>
               </div>
