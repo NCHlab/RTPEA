@@ -22,10 +22,50 @@ import offlineimg from "../Images/offline.png";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      mongodb_status: "Offline",
+      api_status: "Offline"
+    };
   }
 
-  componentDidMount = () => {};
+  componentDidMount = () => {
+
+    fetch("http://localhost:3001/dbcheck")
+      .then(response => {
+        if (response.status === 200){
+          this.setState({api_status: "Online"})
+        } else {
+          this.setState({api_status: "Offline"})
+        }
+        return response.json()
+      })
+      .then(data => {
+        if (data.Status === "Online"){
+          this.setState({mongodb_status: "Online"})
+        } else {
+          this.setState({mongodb_status: "Offline"})
+        }
+      })
+
+        // fetch("http://localhost:3001/dbcheck")
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     if (data.Status === "Online"){
+        //       this.setState({mongodb_status: "Online"})
+        //     } else {
+        //       this.setState({mongodb_status: "Offline"})
+        //     }
+        //   })
+        //
+        //   fetch("http://localhost:3001/")
+        //     .then(response => {
+        //       if (response.status === 200){
+        //         this.setState({api_status: "Online"})
+        //       } else {
+        //         this.setState({api_status: "Offline"})
+        //       }
+        //     })
+  };
 
   render() {
     const data = [
@@ -167,7 +207,7 @@ class Home extends Component {
                         <b>API Server:</b>
                       </td>
                       <td>
-                        <img src={onlineimg} alt="Online!" />
+                        {this.state.api_status === "Online" ? <img src={onlineimg} alt="Online!" /> : <img src={offlineimg} alt="Online!" />}
                       </td>
                     </tr>
                     <tr>
@@ -175,12 +215,12 @@ class Home extends Component {
                         <b>MongoDB Server:</b>
                       </td>
                       <td>
-                        <img src={onlineimg} alt="Online!" />
+                        {this.state.mongodb_status === "Online" ? <img src={onlineimg} alt="Online!" /> : <img src={offlineimg} alt="Online!" />}
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <b>Test Server:</b>
+                        <b>Experimental Server:</b>
                       </td>
                       <td>
                         <img src={offlineimg} alt="Online!" />
