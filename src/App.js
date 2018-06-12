@@ -7,7 +7,7 @@ import Footer from './components/Navigation/Footer';
 import Particles from 'react-particles-js';
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { withRouter } from 'react-router-dom';
+import { withRouter, Switch } from 'react-router-dom';
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
 import Browse from './components/Navigation/Browse';
@@ -16,6 +16,8 @@ import Visualise from './components/Navigation/Visualise';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
+import Status from './components/Navigation/Status';
+
 import Loading from 'react-loading-bar'
 import JSONPretty from 'react-json-pretty';
 import SVG from 'react-inlinesvg';
@@ -100,13 +102,19 @@ class App extends Component{
         {/* Route defined, different paths lead to different JS files to be displayed.
           Some Props have also been passed through so that it is accessible in the other JS files */}
         <div className="paths">
-          <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
-            <Route path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
-            <Route path="/Visualise" component={Visualise} />
-            <Route path="/BrowseDemo" component={BrowseDemo} />
-            <Route path={"/api"} component={Api} />
-            <Route path="/info" component={Info} />
-            <Route path="/contact" component={Contact} />
+          <Switch>
+            <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route exact path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route exact path="/Visualise" component={Visualise} />
+            <Route exact path="/BrowseDemo" component={BrowseDemo} />
+            <Route exact path={"/api"} component={Api} />
+            <Route exact path="/info" component={Info} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/status" component={() => <Status error_code={200}/>}/>
+            <Route exact path="/status/403" component={() => <Status error_code={403}/>}/>
+            <Route exact path="/status/404" component={() => <Status error_code={404}/>}/>
+            <Route path="*" component={() => <Status error_code={404.1}/>}/>
+          </Switch>
         </div>
         <div className="line-seperator"></div>
         <Footer />
