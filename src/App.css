@@ -16,7 +16,13 @@ body2 {
   background: #66B8F2,#B8DBF4;
 }
 
+.switch-colour{
+  background: #000000;
+}
 
+.switch.on{
+  background: cornflowerblue;
+}
 
 .line-seperator{
   border: 2px solid rgba(43, 198, 255,0.5);

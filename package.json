@@ -21,6 +21,7 @@
     "react-scripts": "1.1.1",
     "react-table": "^6.8.2",
     "react-tilt": "^0.1.4",
+    "react-toggle-switch": "^3.0.4",
     "recharts": "^1.0.0-beta.10",
     "tachyons": "^4.9.1"
   },

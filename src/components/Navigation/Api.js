@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import JSONPretty from "react-json-pretty";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Loader from 'react-loader';
+import Switch from 'react-toggle-switch';
+import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
 
 class Api extends Component {
   constructor(props) {
@@ -20,7 +22,8 @@ class Api extends Component {
       data_background_colour:"#dddddd",
       text_colour:"#000000",
       text_colour_err: "#af0603",
-      button_msg: "Darkify"
+      button_msg: "Darkify",
+      switched: true
     };
     // This binding is necessary to make `this` work in the callback
     this.returntext = this.returntext.bind(this);
@@ -94,8 +97,13 @@ class Api extends Component {
     }
   };
 
-  changeColour = () =>{
+  changeColour = (checked) =>{
         // this.setState({colour_dark: !this.state.color_black})
+        this.setState(prevState => {
+        return {
+          switched: !prevState.switched
+        };
+        });
         if (this.state.data_background_colour === "#dddddd"){
           this.setState({background_colour: "#4f5256"})
           this.setState({data_background_colour: "#25282d"})
@@ -165,13 +173,20 @@ class Api extends Component {
             }
           }}/>
 
+
+
         <button className="btn btn-outline-primary" onClick={this.button_click}>Search Database</button>
         {/* <span className="glyphicon glyphicon-search">test</span> */}
 
         <br />
         <br />
 
-         <button type="button" className="btn btn-outline-primary" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
+         {/* <button type="button" className="btn btn-outline-primary" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
+         <br/> */}
+
+
+         <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
+
 
         <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
           <div className="background-body4-nojson" style={{color: this.state.text_colour}}>

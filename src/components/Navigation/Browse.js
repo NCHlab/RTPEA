@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import _ from "lodash";
+import Switch from 'react-toggle-switch';
+import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
 
 class Table extends Component{
   constructor() {
@@ -16,7 +18,8 @@ class Table extends Component{
       med_conf_colour:"#ffbf00",
       low_conf_colour:"#ff2e00",
       background_conf_colour:"#dadada",
-      button_msg: "Darkify"
+      button_msg: "Darkify",
+      switched: true
     };
     // this.data = this.data.bind(this)
   }
@@ -49,6 +52,11 @@ class Table extends Component{
     }
 
     changeColour = () =>{
+          this.setState(prevState => {
+          return {
+            switched: !prevState.switched
+          };
+          });
           // this.setState({colour_dark: !this.state.color_black})
           if (this.state.background_colour === "#edf1f4"){
             this.setState({background_colour: "#5f6060"})
@@ -402,7 +410,8 @@ const orf2p_column = [{
           <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
-            <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
+            {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
+            <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
