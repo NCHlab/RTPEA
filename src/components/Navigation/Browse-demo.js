@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import rtpea_img from "../Logo/rtpea_img1.png"
-
+import Switch from 'react-toggle-switch';
+import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
 
 class Table extends Component{
   constructor() {
@@ -17,7 +18,8 @@ class Table extends Component{
       med_conf_colour:"#ffbf00",
       low_conf_colour:"#ff2e00",
       background_conf_colour:"#dadada",
-      button_msg: "Darkify"
+      button_msg: "Darkify",
+      switched: true
     };
     // this.data = this.data.bind(this)
   }
@@ -50,6 +52,11 @@ class Table extends Component{
     }
 
     changeColour = () =>{
+          this.setState(prevState => {
+          return {
+            switched: !prevState.switched
+          };
+          });
           // this.setState({colour_dark: !this.state.color_black})
           if (this.state.background_colour === "#edf1f4"){
             this.setState({background_colour: "#5f6060"})
@@ -129,8 +136,34 @@ class Table extends Component{
     //                   }
     // accessor: 'sample[0].1[0].tissue_type'
   }, {
-    Header: 'ORF1p',
-    accessor: "ORF1p.confidence"
+  Header: 'ORF1p',
+  id: "ORF1_data",
+  accessor: "ORF1p.confidence",
+  Cell: row => (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#dadada',
+            borderRadius: '2px'
+          }}
+        >
+          {/* {row.value} */}
+          <div
+            style={{
+              width: `${row.value}%`,
+              height: '100%',
+              backgroundColor: row.value > 80 ? '#85cc00'
+                : row.value > 40 ? '#ffbf00'
+                : '#ff2e00',
+              borderRadius: '2px',
+              transition: 'all .2s ease-out'
+            }}
+          >
+            {row.value !== 0 ? row.value : row.value + " (Pos. Variants)"}
+          </div>
+      </div>
+      )
   }, {
     Header: 'ORF2p',
     id: "ORF_data",
@@ -407,7 +440,7 @@ const orf2p_column = [{
           <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
-            <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
+            <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
@@ -477,7 +510,7 @@ const orf2p_column = [{
                                 minRows={0}
                                 showPageJump={false}
                                 className="-striped -highlight"/>
-                                <img src={rtpea_img} height="auto" width="1400px" alt="logo"/>
+
                             </div>
                           </div>
                         );
