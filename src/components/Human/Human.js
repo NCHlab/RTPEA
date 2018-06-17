@@ -5,6 +5,7 @@ import Svg2 from "./human_colourised.svg";
 import Svg3 from "./human_colourised_lung_grouped.svg";
 import Humanimg2 from "./Human_W.png";
 import Human_lung from "./Human_lung.png";
+import L1Chart from "../Images/L1-Identifications.png";
 import Brain from "./Brain.png";
 import Plot1 from "./plot1.png";
 import Plot3 from "./plot3.png";
@@ -31,6 +32,67 @@ class Human extends Component {
       svgType: "",
       x: 0,
       y: 0,
+      data2_s:[
+        {name: "Brain", A:100},
+        {name: "Lung", A:200},
+        {name: "Liver", A:50},
+        {name: "Pancreas", A:880},
+        {name: "Intestine", A:236},
+        {name: "Testes", A:464},
+        {name: "Heart", A:880},
+        {name: "Breasts", A:533},
+        {name: "Kidney", A:464},
+        {name: "Uterus", A:263}
+      ],
+      data3_s:[
+        {name: "Brain", A:200},
+        {name: "Lung", A:120},
+        {name: "Liver", A:80},
+        {name: "Pancreas", A:600},
+        {name: "Intestine", A:36},
+        {name: "Testes", A:200},
+        {name: "Heart", A:500},
+        {name: "Breasts", A:588},
+        {name: "Kidney", A:400},
+        {name: "Uterus", A:600}
+      ],
+      data4_s:[
+        {name: "Brain", A:800},
+        {name: "Lung", A:300},
+        {name: "Liver", A:500},
+        {name: "Pancreas", A:870},
+        {name: "Intestine", A:526},
+        {name: "Testes", A:120},
+        {name: "Heart", A:200},
+        {name: "Breasts", A:35},
+        {name: "Kidney", A:257},
+        {name: "Uterus", A:500}
+      ],
+      data5_s:[
+        {name: "Brain", A:645},
+        {name: "Lung", A:782},
+        {name: "Liver", A:567},
+        {name: "Pancreas", A:75},
+        {name: "Intestine", A:265},
+        {name: "Testes", A:154},
+        {name: "Heart", A:314},
+        {name: "Breasts", A:483},
+        {name: "Kidney", A:251},
+        {name: "Uterus", A:786}
+      ],
+      data_default:[
+        {name: "Brain", A:245},
+        {name: "Lung", A:182},
+        {name: "Liver", A:367},
+        {name: "Pancreas", A:75},
+        {name: "Intestine", A:165},
+        {name: "Testes", A:154},
+        {name: "Heart", A:314},
+        {name: "Breasts", A:273},
+        {name: "Kidney", A:251},
+        {name: "Uterus", A:486}
+      ],
+
 
     };
 
@@ -55,61 +117,148 @@ class Human extends Component {
   detectSvg = svgType => {
     if (svgType === "brain") {
       console.log("Brain has been identified")
+
       return (
-        <img
-          src={Plot1}
-          className="pb6 nice-smooth"
-          alt="logo"
-          height="450px"
-          width="450px"
-        />
+        <div>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data2_s}>
+            <XAxis  type="number"/>
+            <YAxis dataKey="name" type="category"/>
+            <Tooltip />
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+          </BarChart>
+        </div>
+        // <img
+        //   src={Plot1}
+        //   className="pb6 nice-smooth"
+        //   alt="logo"
+        //   height="450px"
+        //   width="450px"
+        // />
       );
     } else if (svgType === "lung") {
       console.log("lung has been identified");
       return (
-          <img
-            src={Plot3}
-            className="pb6 "
-            alt="logo"
-            height="450px"
-            width="450px"
-          />
+        <div>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data3_s}>
+            <XAxis  type="number"/>
+            <YAxis dataKey="name" type="category"/>
+            <Tooltip />
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+          </BarChart>
+        </div>
+          // <img
+          //   src={Plot3}
+          //   className="pb6 "
+          //   alt="logo"
+          //   height="450px"
+          //   width="450px"
+          // />
       );
     } else if (svgType === "liver") {
       console.log("liver has been identified");
       return (
-          <img
-            src={Plot4}
-            className="pb6 "
-            alt="logo"
-            height="450px"
-            width="650px"
-          />
+        <div>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data4_s}>
+            <XAxis  type="number"/>
+            <YAxis dataKey="name" type="category"/>
+            <Tooltip />
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+          </BarChart>
+        </div>
+          // <img
+          //   src={Plot4}
+          //   className="pb6 "
+          //   alt="logo"
+          //   height="450px"
+          //   width="650px"
+          // />
       );
-    } else if (svgType === "heart") {
-      console.log("heart has been identified");
+    // } else if (svgType === "heart") {
+    //   console.log("heart has been identified");
+    //   return (
+    //       <img
+    //         src={Plot5}
+    //         className="pb6 "
+    //         alt="logo"
+    //         height="450px"
+    //         width="650px"
+    //       />
+    //   );
+    } else if (svgType === "breasts") {
+      console.log("breast has been identified");
       return (
           <img
-            src={Plot5}
+            src={L1Chart}
             className="pb6 "
             alt="logo"
-            height="450px"
-            width="650px"
+            height="650px"
+            width="715px"
           />
       );
+
     } else if (svgType === "uterus") {
       console.log("uterus has been identified");
       return (
-          <img
-            src={Plot6}
-            className="pb6 "
-            alt="logo"
-            height="450px"
-            width="650px"
-          />
+        <div>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data5_s}>
+            <XAxis  type="number"/>
+            <YAxis dataKey="name" type="category"/>
+            <Tooltip />
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+          </BarChart>
+        </div>
+          // <img
+          //   src={Plot6}
+          //   className="pb6 "
+          //   alt="logo"
+          //   height="450px"
+          //   width="650px"
+          // />
+      );
+    } else if (svgType !== "heart") {
+      console.log("breast has been identified");
+      return (
+        <div>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data_default}>
+            <XAxis  type="number"/>
+            <YAxis dataKey="name" type="category"/>
+            <Tooltip />
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+          </BarChart>
+        </div>
       );
     }
   };
+
+  graphChange = () => {
+    var data2 = [
+      {name: "Brain", A:100},
+      {name: "Lung", A:200},
+      {name: "Liver", A:50},
+      {name: "Pancreas", A:880},
+      {name: "Intestine", A:236},
+      {name: "Testes", A:464},
+      {name: "Heart", A:880},
+      {name: "Breasts", A:533},
+      {name: "Kidney", A:464},
+      {name: "Uterus", A:263}
+    ]
+  }
 
   handleChange= () => {
    this.setState({
@@ -190,7 +339,35 @@ const data2 = [
   {name: "Uterus", A:263}
 ];
 
+
 const data3 = [
+  {name: "Brain", A:200},
+  {name: "Lung", A:120},
+  {name: "Liver", A:80},
+  {name: "Pancreas", A:600},
+  {name: "Intestine", A:36},
+  {name: "Testes", A:200},
+  {name: "Heart", A:500},
+  {name: "Breasts", A:588},
+  {name: "Kidney", A:400},
+  {name: "Uterus", A:600}
+]
+
+
+const data4 = [
+  {name: "Brain", A:280},
+  {name: "Lung", A:170},
+  {name: "Liver", A:280},
+  {name: "Pancreas", A:400},
+  {name: "Intestine", A:354},
+  {name: "Testes", A:564},
+  {name: "Heart", A:721},
+  {name: "Breasts", A:128},
+  {name: "Kidney", A:387},
+  {name: "Uterus", A:654}
+]
+
+const data11 = [
   {name: "test1",A:100},
 {name: "test2",B:200},
 {name: "test3",C:50},
@@ -233,7 +410,7 @@ const data3 = [
               <Tooltip />
             </LineChart> */}
 
-            <BarChart layout="vertical"  width={800} height={600} data={data2}>
+            {/* <BarChart layout="vertical"  width={600} height={600} data={data2}>
               <XAxis  type="number"/>
               <YAxis dataKey="name" type="category"/>
               <Tooltip />
@@ -241,7 +418,7 @@ const data3 = [
               <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
               <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
               <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-            </BarChart>
+            </BarChart> */}
           </div>
         </div>
 
