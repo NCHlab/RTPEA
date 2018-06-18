@@ -204,7 +204,7 @@ class Human extends Component {
             alt="logo"
             height="650px"
             width="715px"
-            onClick={() => window.location.assign("http://localhost:3000/browse")}
+            onClick={() => window.location.assign("http://localhost:3000/browsedemo")}
           />
       );
 
@@ -234,7 +234,7 @@ class Human extends Component {
       // console.log("breast has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data_default} onClick={() => window.location.assign("http://localhost:3000/browse")}>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data_default} onClick={() => window.location.assign("http://localhost:3000/browsedemo")}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category"/>
             <Tooltip />
