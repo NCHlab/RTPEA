@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Humanimg from "./Human1.png";
 import Svg1 from "./human_non_colourised.svg";
 import Svg2 from "./human_colourised.svg";
@@ -17,6 +18,7 @@ import $ from "jquery";
 import SVG from "react-inlinesvg";
 import Loader from "react-loader";
 import { LineChart, Line, BarChart, Bar, YAxis, XAxis,CartesianGrid, Tooltip, Legend } from 'recharts';
+import Browse from '../Navigation/Browse';
 
 
 
@@ -202,6 +204,7 @@ class Human extends Component {
             alt="logo"
             height="650px"
             width="715px"
+            onClick={() => window.location.assign("http://localhost:3000/browse")}
           />
       );
 
@@ -228,14 +231,14 @@ class Human extends Component {
           // />
       );
     } else if (svgType !== "heart") {
-      console.log("breast has been identified");
+      // console.log("breast has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data_default}>
+          <BarChart layout="vertical"  width={600} height={600} data={this.state.data_default} onClick={() => window.location.assign("http://localhost:3000/browse")}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category"/>
             <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" />
             <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
             <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
             <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
