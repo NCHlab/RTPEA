@@ -107,6 +107,7 @@ class App extends Component{
             <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route exact path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route exact path="/Visualise" component={Visualise} />
+            <Route exact path="/Visualise/:id" component={Visualise} />
             <Route exact path="/Visualisedemo" component={Visualisedemo} />
             <Route exact path="/BrowseDemo" component={BrowseDemo} />
             <Route exact path={"/api"} component={Api} />

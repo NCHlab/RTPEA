@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
-import jsontest from "./externalFeatures_P05067.json";
+// import jsontest from "./externalFeatures_P05067.json";
 
 class Visualisation extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			uniprotacc: "visualise",
+			uniprotacc: this.props.match.params.id,
 			information1: "",
 		};
+
 	}
+
 
 	componentDidMount = () => {
         // const script = document.createElement("script");
@@ -22,6 +24,8 @@ class Visualisation extends Component {
 				// fetch("http://localhost:3001/P05067.json")
 				// .then(response => response.json())
 				// .then(data => this.setState({information1: data}))
+
+
 
 				var yourDiv = document.getElementById('protvis');
         var instance = new ProtVista({
@@ -46,9 +50,9 @@ class Visualisation extends Component {
 						// overwritePredictions: true,
 						defaultSources: false,
 						customDataSource: {
-		        url: 'http://localhost:3001/',
+		        url: 'http://localhost:3001/visualise/',
 		        source: 'my_data',
-		        useExtension: true
+		        useExtension: false
 						},
 						// customConfig: './data/externalConfig.json',
         });
@@ -64,7 +68,7 @@ class Visualisation extends Component {
 			<div className="background-body-vis">
 
 				<div className="container">
-					{console.log(jsontest)}
+					{/* {console.log(jsontest)} */}
 					{/* {console.log(this.state.information1)} */}
 					<hr/>
 				</div>
@@ -88,6 +92,8 @@ class Visualisation extends Component {
 						{/* ProtVista Loads Here */}
 					</div>
 				</div>
+
+				{console.log(this.props.match.params.id)}
 
 
 
