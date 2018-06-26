@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
+import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
 
 class Visualisation extends Component {
@@ -48,12 +49,15 @@ class Visualisation extends Component {
 		        // useExtension: true
 						// },
 						// overwritePredictions: true,
+
 						defaultSources: false,
 						customDataSource: {
 		        url: 'http://localhost:3001/visualise/',
 		        source: 'my_data',
 		        useExtension: false
 						},
+						// customConfig: "ProtVista/src/config.json"
+						customConfig: 'http://localhost:3001/visualise_config.json/'
 						// customConfig: './data/externalConfig.json',
         });
     }
@@ -66,6 +70,7 @@ class Visualisation extends Component {
 	render() {
 		return (
 			<div className="background-body-vis">
+				{console.log(configFile)}
 
 				<div className="container">
 					{/* {console.log(jsontest)} */}

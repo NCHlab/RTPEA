@@ -3,7 +3,8 @@ import JSONPretty from "react-json-pretty";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Loader from 'react-loader';
 import Switch from 'react-toggle-switch';
-import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
+import "react-toggle-switch/dist/css/switch.min.css";
+// ../../../node_modules/
 
 class Api extends Component {
   constructor(props) {
