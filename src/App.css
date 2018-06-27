@@ -80,7 +80,9 @@ body2 {
 .background-body-vis {
     padding-top: 50px;
     padding-bottom: 50px;
-    background: linear-gradient(#416782, #093d63);
+    background: linear-gradient(#345a7c, #99cdff);
+    /* background: linear-gradient(#919599, #b7bbbf); */
+    /* background: linear-gradient(#416782, #093d63); */
     /*background-color: #edf1f4;*/
     text-align: center;
     color: #000000;
