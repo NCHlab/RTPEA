@@ -39,15 +39,18 @@ class Ideogram_c extends Component {
       container: '#ideo-container'
     });
 		})
-		// console.log(this.state.annotation_data)
   }
 
   render() {
     return (
 			<div>
-				{JSON.stringify(this.state.annotation_data)}
+				<div className="text-center">
+					<h1>Chromosome Centric Mapper</h1>
+
+				</div>
+				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
-				{JSON.stringify(this.state.annotation_data[0])}
+				{JSON.stringify(this.state.annotation_data[0])} */}
       <div id="ideo-container" className="black_text"></div>
 			<br />
 			<br />
