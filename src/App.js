@@ -18,6 +18,7 @@ import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
+import Ideogram from './components/Navigation/Ideogram';
 
 import Loading from 'react-loading-bar'
 import JSONPretty from 'react-json-pretty';
@@ -113,6 +114,7 @@ class App extends Component{
             <Route exact path={"/api"} component={Api} />
             <Route exact path="/info" component={Info} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/ideogram" component={Ideogram} />
             <Route exact path="/status" component={() => <Status error_code={200}/>}/>
             <Route exact path="/status/403" component={() => <Status error_code={403}/>}/>
             <Route exact path="/status/404" component={() => <Status error_code={404}/>}/>

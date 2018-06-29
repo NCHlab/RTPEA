@@ -129,6 +129,13 @@ body2 {
 
 }
 
+#ideo-container {
+  height: 600px;
+}
+
+.black_text{
+  color:black;
+}
 
 .nchlab_container{
   border-bottom: 2px solid pink;
