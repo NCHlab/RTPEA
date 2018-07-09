@@ -93,18 +93,18 @@ class Table extends Component{
     Header: 'Data by Study',
   headerClassName: 'my-favorites-column-header-group',
   columns: [{
-    Header: 'PXD',
+    Header: <b>PXD</b>,
     id: "data_pxd",
     accessor: (d) => d.PXD // String-based value accessors!
   }, {
-    Header: 'Study',
+    Header: <b>STUDY</b>,
     accessor: 'study'
   }, {
-    Header: 'No. of Samples',
+    Header: <b>No. OF SAMPLES</b>,
     id: "data_num",
     accessor: (d) => d.sample.length
   }, {
-    Header: 'Disease',
+    Header: <b>DISEASE</b>,
     accessor: 'disease'
   }
   // }, {
@@ -276,11 +276,8 @@ class Table extends Component{
         </div>
         )
   }, {
-    Header: 'HERV-?',
-    accessor: "HERV-A.confidence"
-  }, {
-    Header: 'HERV-??',
-    accessor: "HERV-V.confidence"
+    Header: 'Top Expr. Variant',
+    accessor: "TEV"
   }]
 
 // const LoadingMS =
@@ -451,6 +448,28 @@ const orf2p_column = [{
                       defaultPageSize={5}
                       showPagination={true}
                       minRows={0}
+                      getTdProps={(state, rowInfo, column, instance) => {
+                         return {
+                           onClick: (e, handleOriginal) => {
+                             {/* console.log("It was in this column:", column); */}
+                             const { expanded } = state;
+                             const path = rowInfo.nestingPath[0];
+                             const diff = { [path]: expanded[path] ? false : true };
+                             {/* console.log(rowInfo) */}
+                              if (handleOriginal) {
+                                handleOriginal();
+                              }
+                             instance.setState({
+                               expanded: {
+                                 ...expanded,
+                                 ...diff
+                               }
+                             });
+                           }
+                         };
+                       }
+                     }
+
                       SubComponent={row => {
                         return (
                           <div>
