@@ -63,9 +63,9 @@ class Visualisation extends Component {
         });
     }
 
-  button_click = (e) => {
+  button_click = (event) => {
 		// console.log(e)
-		this.setState({ uniprotacc: e })
+		this.setState({ uniprotacc: event })
 	}
 
 	render() {
@@ -78,14 +78,27 @@ class Visualisation extends Component {
 					{/* {console.log(this.state.information1)} */}
 					<hr/>
 				</div>
-				Enter PXD:
+				Enter Protein:
 				<input
           placeholder=""
           onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
-              this.button_click(event.target.value.toUpperCase());
+						if (window.location.pathname === "/visualise"){
+							window.location = "visualise/" + event.target.value.toUpperCase();
+						} else {
+							window.location = event.target.value.toUpperCase();
+						}
+
             }
           }}/>
+
+					{/* <input
+	          placeholder=""
+	          onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
+	          onKeyPress={event => {if (event.key === "Enter") {
+	              this.button_click(event.target.value.toUpperCase());
+	            }
+	          }}/> */}
 
 					<br/>
 					<br/>
