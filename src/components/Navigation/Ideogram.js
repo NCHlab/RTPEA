@@ -51,7 +51,7 @@ class Ideogram_c extends Component {
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}
-      <div id="ideo-container" className="black_text container"></div>
+      <div id="ideo-container" className="black_text margin-left-ideogram"></div>
 			<br />
 			<br />
 			<br />

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import Ideogram from './Ideogram';
 // import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
 
@@ -70,7 +73,27 @@ class Visualisation extends Component {
 
 	render() {
 		return (
+			<div>
+
+
 			<div className="background-body-vis">
+				<Tabs>
+			    <TabList>
+			      <Tab>Protein Centric</Tab>
+			      <Tab>Chromosome Centric</Tab>
+			    </TabList>
+
+			    <TabPanel forceRender={true}>
+
+
+				{/* <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+				  <Tab eventKey={1} title="Protein Centric">
+				    Tab 1 content
+				  </Tab>
+				  <Tab eventKey={2} title="Chromosome Centric">
+				    tea
+				  </Tab>
+				</Tabs> */}
 				{/* {console.log(configFile)} */}
 
 				<div className="container">
@@ -129,8 +152,13 @@ class Visualisation extends Component {
 				<br/>
 				<br/>
 				<br/>
-
+			</TabPanel>
+			<TabPanel>
+			<Ideogram/>
+			</TabPanel>
+		</Tabs>
 			</div>
+		</div>
 		);
 	}
 }
