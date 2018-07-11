@@ -8,6 +8,11 @@ class Ideogram_c extends Component {
 			annotation_data: [{
 
 	    }],
+			annotationTracks:[
+      {id: 'pathogenicTrack', displayName: 'Pathogenic', color: '#F00', shape: "Triangle"},
+      {id: 'uncertainSignificanceTrack', displayName: 'Uncertain significance', color: '#CCC', shape: "Triangle"},
+      {id: 'benignTrack',  displayName: 'Benign', color: '#8D4', shape: "Triangle"}],
+
 		};
 
 
@@ -21,11 +26,15 @@ class Ideogram_c extends Component {
 	// }]
 
 		componentDidMount = () => {
-		// 	var annotationTracks = [
-    //   {id: 'pathogenicTrack', displayName: 'Pathogenic', color: '#F00', shape: "traingle"},
-    //   {id: 'uncertainSignificanceTrack', displayName: 'Uncertain significance', color: '#CCC', shape: "traingle"},
-    //   {id: 'benignTrack',  displayName: 'Benign', color: '#8D4', shape: "traingle"}
-    // ];
+			// var annotationTracks =
+
+		function 	hyperlinkProtein(annot) {
+    // var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
+    var url = 'https://www.uniprot.org/uniprot/?query=' + annot.name.substring(0,6) + '&sort=score';
+    annot.displayName =
+      '<a target="_blank" href="' + url + '">' + annot.name + '</a>';
+    return annot
+  }
 
 			fetch("http://localhost:3001/ideogram")
 			.then(response => response.json())
@@ -35,6 +44,16 @@ class Ideogram_c extends Component {
       organism: 'human',
       dataDir: 'https://unpkg.com/ideogram@0.13.0/dist/data/bands/native/',
 			annotations: this.state.annotation_data,
+			annotationsLayout: "tracks",
+			onWillShowAnnotTooltip: hyperlinkProtein,
+			// chromosome: "10",
+			// orientation: 'horizontal',
+			// brush: 'chr1',
+
+			// brush: 'chr10:104325484-119977655',
+			// annotationsDisplayedTracks: [0,1, 2,3],
+			// annotationTracks: this.state.annotationTracks,
+			// annotationsPath: "http://localhost:3001/ideogram",
 			// annotationsColor: "#F00",
 			// annotationsLayout: annotationTracks,
 		// 	annotations: [{
