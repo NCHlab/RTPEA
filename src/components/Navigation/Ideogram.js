@@ -46,8 +46,12 @@ class Ideogram_c extends Component {
 			annotations: this.state.annotation_data,
 			annotationsLayout: "tracks",
 			onWillShowAnnotTooltip: hyperlinkProtein,
+			rotatable: true,
+
+			// chrHeight: 400,
 			// chromosome: "10",
-			// orientation: 'horizontal',
+			// orientation: 'vertical',
+			// showBandLabels: true,
 			// brush: 'chr1',
 
 			// brush: 'chr10:104325484-119977655',
