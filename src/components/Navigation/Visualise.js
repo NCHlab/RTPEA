@@ -4,6 +4,7 @@ import 'ProtVista/style/main.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Ideogram from './Ideogram';
+import Sequence from './Sequence';
 // import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
 
@@ -81,6 +82,7 @@ class Visualisation extends Component {
 			    <TabList>
 			      <Tab>Protein Centric</Tab>
 			      <Tab>Chromosome Centric</Tab>
+						<Tab>Sequence Viewer</Tab>
 			    </TabList>
 
 			    <TabPanel forceRender={true}>
@@ -155,6 +157,9 @@ class Visualisation extends Component {
 			</TabPanel>
 			<TabPanel>
 			<Ideogram/>
+			</TabPanel>
+			<TabPanel>
+			<Sequence/>
 			</TabPanel>
 		</Tabs>
 			</div>
