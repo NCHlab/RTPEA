@@ -288,7 +288,7 @@ class Ideogram_c extends Component {
 				Enter Family:
 				<input
 					style={{"width" : "400px"}}
-          placeholder="e.g LINE_1_HS_101, PA2_34, LINE_1_PA2_25_ORF1p"
+          placeholder="e.g LINE_1_HS_101, HS_4, PA2_34, LINE_1_PA2_25_ORF1p"
           onChange={e => this.setState({ prot_seq: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
 						if (window.location.pathname === "/ideogram"){
