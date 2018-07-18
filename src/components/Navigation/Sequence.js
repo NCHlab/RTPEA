@@ -5,11 +5,12 @@ class Sequence_view extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			annotation_data: [{
+			// prot_seq: this.props.match.params.id === undefined ? this.setState({prot_seq:"1"}) : this.props.match.params.id,
+			seq_data: [{
 
 	    }],
 		};
-
+		// this.searchURL = this.searchURL.bind(this)
 
 	}
 	// [{
@@ -22,6 +23,19 @@ class Sequence_view extends Component {
 
 		componentDidMount = () => {
 			// var annotationTracks =
+			// console.log("http://localhost:3001/sequence/" + this.state.prot_seq)
+			// var prot_seq = (this.props.match.params.id === undefined) ? "1" : this.props.match.params.id
+			var prot_seq = "1"
+			// console.log(this.props)
+			// if (this.props === null){
+			// 	var prot_seq = "1"
+			// } else {
+			// 	var prot_seq = this.props.match.params.id
+			// }
+			fetch("http://localhost:3001/sequence/" + prot_seq)
+			.then(response => response.json())
+			.then(data => {this.setState({seq_data: data})})
+			.then(data => {
 
 			var seq1 = new Sequence('MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN');
 			// You can add some rendering options
@@ -35,6 +49,26 @@ class Sequence_view extends Component {
 			"sequenceMaxHeight": "500px",
 			"badge": false
 			});
+			seq1.selection(20, 43, 'red');
+
+			var onclickFun = function(e) {
+			  console.log("Region clicked");
+			}
+
+			//Coverage list
+			var exempleSequenceCoverage = [
+			    {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
+			    {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
+			    {start: 47, end: 54, color: "#ff0000", underscore: true},
+			    {start: 54, end: 55, color: "#ff0000", underscore: false},
+			    {start: 55, end: 56, color: "black", underscore: false},
+			    {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
+			    {start: 89, end: 90, color: "black", underscore: false},
+			    {start: 90, end: 110, color: "#ff0000", underscore: false}
+			];
+
+
+			seq1.coverage(exempleSequenceCoverage);
 
 		// 	fetch("http://localhost:3001/ideogram")
 		// 	.then(response => response.json())
@@ -51,7 +85,10 @@ class Sequence_view extends Component {
     //   container: '#ideo-container'
     // });
 		// })
-  }
+	}
+
+
+)}
 
   render() {
     return (
