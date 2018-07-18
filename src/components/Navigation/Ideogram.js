@@ -5,6 +5,7 @@ class Ideogram_c extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			prot_seq: this.props.match.params.id,
 			annotation_data: [{
 
 	    }],
@@ -36,7 +37,7 @@ class Ideogram_c extends Component {
     return annot
   }
 
-			fetch("http://localhost:3001/ideogram")
+			fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
 			.then(response => response.json())
 			.then(data => {this.setState({annotation_data: data})})
 			.then( data => {
@@ -74,7 +75,7 @@ class Ideogram_c extends Component {
 
   render() {
     return (
-			<div>
+			<div className="background-body-vis">
 				<div className="text-center">
 					<h1>Chromosome Centric Mapper</h1>
 

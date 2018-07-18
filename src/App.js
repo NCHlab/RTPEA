@@ -116,6 +116,7 @@ class App extends Component{
             <Route exact path="/info" component={Info} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/ideogram" component={Ideogram} />
+            <Route exact path="/ideogram/:id" component={Ideogram} />
             <Route exact path="/sequence" component={Sequence} />
             <Route exact path="/sequence/:id" component={Sequence} />
             <Route exact path="/status" component={() => <Status error_code={200}/>}/>
