@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Ideogram from './Ideogram';
 import Sequence from './Sequence';
+import NavVis from "./NavVis.js";
+
 // import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
 
@@ -78,14 +80,19 @@ class Visualisation extends Component {
 
 
 			<div className="background-body-vis">
-				<Tabs>
+				<NavVis/>
+				<div className="text-center">
+					<h1>ProtVister Protein Viewer</h1>
+
+				</div>
+				{/* <Tabs>
 			    <TabList>
 			      <Tab>Protein Centric</Tab>
 			      <Tab>Chromosome Centric</Tab>
 						<Tab>Sequence Viewer</Tab>
-			    </TabList>
+			    </TabList> */}
 
-			    <TabPanel forceRender={true}>
+			    {/* <TabPanel forceRender={true}> */}
 
 
 				{/* <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
@@ -126,7 +133,6 @@ class Visualisation extends Component {
 	          }}/> */}
 
 					<br/>
-					<br/>
 					<div className="container">
 						<hr/>
 					</div>
@@ -154,14 +160,14 @@ class Visualisation extends Component {
 				<br/>
 				<br/>
 				<br/>
-			</TabPanel>
+			{/* </TabPanel>
 			<TabPanel>
 			<Ideogram/>
 			</TabPanel>
 			<TabPanel>
 			<Sequence/>
 			</TabPanel>
-		</Tabs>
+		</Tabs> */}
 			</div>
 		</div>
 		);

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Ideogram from "ideogram";
+import NavVis from "./NavVis.js";
 
 class Ideogram_c extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			prot_seq: this.props.match.params.id,
+			// prot_seq: this.props.match.params.id  == undefined ? 1 : this.props.match.params.id,
 			annotation_data: [{
 
 	    }],
@@ -76,10 +78,38 @@ class Ideogram_c extends Component {
   render() {
     return (
 			<div className="background-body-vis">
+
+				<NavVis/>
 				<div className="text-center">
 					<h1>Chromosome Centric Mapper</h1>
 
 				</div>
+				<div className="container">
+					{/* {console.log(jsontest)} */}
+					{/* {console.log(this.state.information1)} */}
+					<hr/>
+				</div>
+				Enter Family:
+				<input
+					style={{"width" : "400px"}}
+          placeholder="e.g LINE_1_HS_101, PA2_34, LINE_1_PA2_25_ORF1p"
+          onChange={e => this.setState({ prot_seq: e.target.value.toUpperCase() })}
+          onKeyPress={event => {if (event.key === "Enter") {
+						if (window.location.pathname === "/ideogram"){
+							window.location = "ideogram/" + event.target.value.toUpperCase();
+						} else {
+							window.location = event.target.value.toUpperCase();
+						}
+
+            }
+          }}/>
+					<br/>
+				  <sup style={{"color":"white"}}>^ Separate families with comma or space ^</sup>
+
+					<br/>
+					<div className="container">
+						<hr/>
+					</div>
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}

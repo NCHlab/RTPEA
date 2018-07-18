@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Sequence from "sequence-viewer";
+import NavVis from "./NavVis.js";
+
 
 class Sequence_view extends Component {
 	constructor(props) {
@@ -93,6 +95,7 @@ class Sequence_view extends Component {
   render() {
     return (
 			<div className="background-body-vis">
+				<NavVis/>
 
 				<div className="text-center">
 					<h1>Protein Sequence Viewer</h1>
