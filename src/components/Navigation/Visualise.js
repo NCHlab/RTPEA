@@ -112,7 +112,7 @@ class Visualisation extends Component {
 				</div>
 				Enter Protein:
 				<input
-          placeholder=""
+          placeholder="e.g. ORF1p"
           onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
 						if (window.location.pathname === "/visualise"){
