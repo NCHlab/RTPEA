@@ -35,15 +35,24 @@ class Ideogram_c extends Component {
 		componentDidMount = () => {
 			// var annotationTracks =
 
-		function 	hyperlinkProtein(annot) {
-    // var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
-		// Substring used to only search for LINE_1
-    var url = 'https://www.uniprot.org/uniprot/?query=' + annot.name.substring(0,6) + '&sort=score';
-    annot.displayName =
-      '<a target="_blank" href="' + url + '">' + annot.name + '</a>';
-			// console.log(annot.testdata)
-    return annot
-  }
+	// 	function 	hyperlinkProtein(annot) {
+  //   // var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
+	// 	// Substring used to only search for LINE_1
+  //   var url = 'https://www.uniprot.org/uniprot/?query=' + annot.name.substring(0,6) + '&sort=score';
+  //   annot.displayName =
+  //     '<a target="_blank" href="' + url + '">' + annot.name + '</a>';
+	// 		// console.log(annot.testdata)
+  //   return annot
+  // }
+			function 	hyperlinkProtein(annot) {
+			// var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
+			// Substring used to only search for LINE_1
+			var url = 'http://localhost:3000/sequence/' + annot.name + "_ORF1p";
+			annot.displayName =
+				'<a target="_blank" href="' + url + '">' + annot.name + '</a>';
+				// console.log(annot.testdata)
+			return annot
+		}
 
 			fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
 			.then(response => response.json())
