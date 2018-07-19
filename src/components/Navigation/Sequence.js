@@ -38,7 +38,7 @@ class Sequence_view extends Component {
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data: data})})
 			.then(data => {
-				console.log(this.state.seq_data[0])
+				// console.log(this.state.seq_data[0])
 
 			var seq1 = new Sequence(this.state.seq_data[0].Sequence);
 			// You can add some rendering options
@@ -74,7 +74,7 @@ class Sequence_view extends Component {
 			seq1.coverage(exampleSequenceCoverage);
 
 			var exampleLegend = [
-		    {name: "Mature Protein", color: "#ff0000", underscore: false},
+		    {name: "???? Protein", color: "#ff0000", underscore: false},
 		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
 		    {name: "Synthetic peptide",color: "#fff",underscore: true}
 		    ];
