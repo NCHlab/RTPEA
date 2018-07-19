@@ -1,10 +1,10 @@
 {
-  "name": "retrodp",
+  "name": "RTPEA",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "ProtVista": "^2.0.9",
-    "ideogram": "^1.1.1",
+    "ideogram": "^1.2.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "react": "^16.2.0",

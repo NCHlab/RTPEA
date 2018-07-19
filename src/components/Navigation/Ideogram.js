@@ -37,9 +37,11 @@ class Ideogram_c extends Component {
 
 		function 	hyperlinkProtein(annot) {
     // var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
+		// Substring used to only search for LINE_1
     var url = 'https://www.uniprot.org/uniprot/?query=' + annot.name.substring(0,6) + '&sort=score';
     annot.displayName =
       '<a target="_blank" href="' + url + '">' + annot.name + '</a>';
+			// console.log(annot.testdata)
     return annot
   }
 
