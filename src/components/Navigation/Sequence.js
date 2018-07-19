@@ -67,7 +67,8 @@ class Sequence_view extends Component {
 			    {start: 55, end: 56, color: "black", underscore: false},
 			    {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
 			    {start: 89, end: 90, color: "black", underscore: false},
-			    {start: 90, end: 110, color: "#ff0000", underscore: false}
+			    {start: 1000, end: 1100, color: "#ff0000", underscore: false},
+					{start: 1200, end: 1240, color: "#7cff26", underscore: false}
 			];
 
 
