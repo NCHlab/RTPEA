@@ -7,6 +7,7 @@ class Sequence_view extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			prot_seq: this.props.match.params.id,
 			// prot_seq: this.props.match.params.id === undefined ? this.setState({prot_seq:"1"}) : this.props.match.params.id,
 			seq_data: [{
 
@@ -27,19 +28,19 @@ class Sequence_view extends Component {
 			// var annotationTracks =
 			// console.log("http://localhost:3001/sequence/" + this.state.prot_seq)
 			// var prot_seq = (this.props.match.params.id === undefined) ? "1" : this.props.match.params.id
-			var prot_seq = "1"
 			// console.log(this.props)
 			// if (this.props === null){
 			// 	var prot_seq = "1"
 			// } else {
 			// 	var prot_seq = this.props.match.params.id
 			// }
-			fetch("http://localhost:3001/sequence/" + prot_seq)
+			fetch("http://localhost:3001/sequence/" + this.state.prot_seq)
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data: data})})
 			.then(data => {
+				console.log(this.state.seq_data[0])
 
-			var seq1 = new Sequence('MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCNMALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN');
+			var seq1 = new Sequence(this.state.seq_data[0].Sequence);
 			// You can add some rendering options
 			seq1.render("#sequence-viewer", {
 			"showLineNumbers": true,
@@ -54,11 +55,11 @@ class Sequence_view extends Component {
 			seq1.selection(20, 43, 'red');
 
 			var onclickFun = function(e) {
-			  console.log("Region clicked");
+			  console.log(e.target.textContent);
 			}
 
 			//Coverage list
-			var exempleSequenceCoverage = [
+			var exampleSequenceCoverage = [
 			    {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
 			    {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
 			    {start: 47, end: 54, color: "#ff0000", underscore: true},
@@ -70,7 +71,23 @@ class Sequence_view extends Component {
 			];
 
 
-			seq1.coverage(exempleSequenceCoverage);
+			seq1.coverage(exampleSequenceCoverage);
+
+			var exampleLegend = [
+		    {name: "Mature Protein", color: "#ff0000", underscore: false},
+		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
+		    {name: "Synthetic peptide",color: "#fff",underscore: true}
+		    ];
+			seq1.addLegend(exampleLegend);
+
+			seq1.onMouseSelection(function(elem){
+        console.log(elem.detail);
+			    }
+			);
+			seq1.onSubpartSelected(function(elem){
+			        console.log(elem.detail);
+			    }
+			);
 
 		// 	fetch("http://localhost:3001/ideogram")
 		// 	.then(response => response.json())
