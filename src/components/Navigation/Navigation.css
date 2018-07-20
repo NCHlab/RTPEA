@@ -9,6 +9,7 @@ nav {
   background: linear-gradient(#1F2830, #21282d );
   overflow: hidden;
   box-shadow: 3px 1px 4px rgba(207, 209, 211, 0.5);
+  /* font-size: 20px; */
 
   /* background: #FF8C52; /* THIS IS NAV BAR linear-gradient(lightblue, skyblue);*/
   /* url(/images/Logo.png) no-repeat; */
@@ -32,13 +33,20 @@ nav .menu li {
 }
 nav .menu li a {
   color: #FFFFFF;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: normal;
+  font-size: 24px;
   text-decoration: none;
   display: inline;
-  margin: 0 9px 0 10px;
+  margin: 0 15px 0 10px;
 
 }
+
+nav .menu li a .active {
+  font-size: 26px;
+  font-weight: bold;
+  border-bottom: 3px solid #ffffff;
+  }
+
 nav .menu li a:hover {
   color: #FFAA39;
 }

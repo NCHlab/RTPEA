@@ -16,6 +16,11 @@ body2 {
   background: #66B8F2,#B8DBF4;
 }
 
+.white-background {
+  background: #ffffff;
+}
+
+
 .margin-left-ideogram {
   margin-left: 12%;
 }

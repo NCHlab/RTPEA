@@ -15,18 +15,18 @@ function NavVis(props) {
         {
             page: 'Chromosome Centric',
             to: '/ideogram'
-        },
-        {
-            page: 'Sequence Viewer',
-            to: '/sequence'
         }
+        // {
+        //     page: 'Sequence Viewer',
+        //     to: '/sequence'
+        // }
     ];
 
 
     return (
 
       <div className="nav2">
-          <ul className="menu">
+          <ul className="menu  Tabs tab">
             <li><a>
               {links.map(({ page, to }) => (
                window.location.href.includes(to)

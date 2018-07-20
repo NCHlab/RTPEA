@@ -53,7 +53,7 @@ function Navigation(props) {
             <li><a>
                 {links.map(({ page, to }) => (
                   window.location.href.includes(to)
-                  ? <a href={to}>{page}</a>
+                  ? <a href={to} className="active">{page}</a>
                   : <Link to={to}>{page}</Link>))}
                 </a>
               </li>

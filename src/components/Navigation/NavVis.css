@@ -47,6 +47,70 @@
 
 .nav2 .menu li a .active {
   color: #FFAA39;
+
+  border-bottom: 3px solid #ffffff;
+    /* padding: 10px; */
+  /* box-shadow: 0px 2px 0px 0px #32cfff; */
+  /* box-shadow: 0px 2px 10px 0px #32cfff; */
   /* background-color: #FFAA39;
   text-decoration-color: red; */
 }
+
+/*
+.Tabs {
+	position: relative;
+	/* background-color: #FFAA39;
+	&:after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	&__tab {
+		float: left;
+		width: 33.333%;
+		text-align: center;
+		&:first-child.active ~ .Tabs__presentation-slider {
+			left: 0;
+		}
+		&:nth-child(2).active ~ .Tabs__presentation-slider {
+			left: 33.333%;
+		}
+		&:nth-child(3).active ~ .Tabs__presentation-slider {
+			left: calc(33.333% * 2);
+		}
+	}
+	&__presentation-slider {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 33.333%;
+		height: 2px;
+		background-color: #4A66F4;
+		transition: left .25s;
+	}
+}
+
+.Tab {
+	font-family: 'Roboto Slab';
+	> a {
+		display: block;
+		padding: 10px 12px;
+		text-decoration: none;
+		color: #666;
+		transition: color .15s;
+	}
+	&.active {
+		> a {
+			color: #222;
+		}
+	}
+	&:hover {
+		> a {
+			color: #222;
+		}
+	}
+}
+*/

@@ -112,13 +112,34 @@ class Sequence_view extends Component {
 
   render() {
     return (
-			<div className="background-body-vis">
-				<NavVis/>
+			<div className="white-background">
 
 				<div className="text-center">
 					<h1>Protein Sequence Viewer</h1>
 
 				</div>
+				<div className="container">
+				<hr/>
+				</div>
+				Enter Protein Family:
+				<input
+					style={{"width" : "310px"}}
+          placeholder="e.g LINE_1_HS_1, HS_1, LINE_1_HS_1_ORF1p"
+          onChange={e => this.setState({ prot_seq: e.target.value.slice(0,-1).toUpperCase()+e.target.value.slice(-1).toLowerCase() })}
+          onKeyPress={e => {if (e.key === "Enter") {
+						if (window.location.pathname === "/sequence"){
+							window.location = "sequence/" + e.target.value.slice(0,-1).toUpperCase()+e.target.value.slice(-1).toLowerCase();
+						} else {
+							window.location = e.target.value.slice(0,-1).toUpperCase()+e.target.value.slice(-1).toLowerCase();
+							 {/* e.target.value.slice(0,-1).toUpperCase()+e.target.value.slice(-1) */}
+						}
+
+            }
+          }}/>
+					<br/>
+					<div className="container">
+					<hr/>
+					</div>
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}
