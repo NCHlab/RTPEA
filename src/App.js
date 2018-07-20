@@ -20,6 +20,7 @@ import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
 import Ideogram from './components/Navigation/Ideogram';
 import Sequence from './components/Navigation/Sequence';
+import Homeredirect from './components/Navigation/Homeredirect';
 
 import Loading from 'react-loading-bar'
 import JSONPretty from 'react-json-pretty';
@@ -106,7 +107,8 @@ class App extends Component{
           Some Props have also been passed through so that it is accessible in the other JS files */}
         <div className="paths">
           <Switch>
-            <Route exact path={"/"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route exact path={"/"} component={Homeredirect} />
+            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route exact path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route exact path="/Visualise" component={Visualise} />
             <Route exact path="/Visualise/:id" component={Visualise} />

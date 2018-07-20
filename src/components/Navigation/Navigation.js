@@ -13,7 +13,7 @@ function Navigation(props) {
     const links = [
             {
             page: 'Home',
-            to: '/'
+            to: '/home'
         },
         {
             page: 'Browse',
