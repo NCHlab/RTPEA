@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Sequence from "sequence-viewer";
 import NavVis from "./NavVis.js";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 
 class Sequence_view extends Component {
@@ -13,6 +14,9 @@ class Sequence_view extends Component {
 
 	    }],
 		};
+		if (this.state.seq_data[0].Sequence === undefined){
+			this.setState({seq_data: [["test"]]})
+		}
 		// this.searchURL = this.searchURL.bind(this)
 
 	}
@@ -47,8 +51,8 @@ class Sequence_view extends Component {
 			"wrapAminoAcids": true,
 			"charsPerLine": 100,
 			"toolbar": false,
-			"search": true,
-			"title" : "Sequence View",
+			"search": false,
+			// "title" : "Sequence View",
 			"sequenceMaxHeight": "500px",
 			"badge": false
 			});
@@ -108,20 +112,47 @@ class Sequence_view extends Component {
 	}
 
 
-)}
+)
+
+}
+// This function allows the user to save the data as a file.
+saveAs = (
+	content,
+	filename = this.state.seq_data[0].Family + ".fasta",
+	type = "application/json"
+) => {
+	let blob = new Blob([content], { type });
+	let uri = URL.createObjectURL(blob);
+
+	let link = document.createElement("a");
+	if (typeof link.download === "string") {
+		document.body.appendChild(link);
+		link.download = filename;
+		link.href = uri;
+		link.click();
+		document.body.removeChild(link);
+	} else {
+		window.location.replace(uri);
+	}
+};
 
   render() {
+
+
+
     return (
 			<div className="white-background">
-
-				<div className="text-center">
+				{console.log(this.state.seq_data[0])}
+				<div className="text-center" style={{color:"black"}}>
 					<h1>Protein Sequence Viewer</h1>
 
 				</div>
 				<div className="container">
-				<hr/>
+				<hr style={{borderColor:"black"}}/>
+				<div style={{color:"black"}}>
+					Enter Protein Family:
 				</div>
-				Enter Protein Family:
+
 				<input
 					style={{"width" : "310px"}}
           placeholder="e.g LINE_1_HS_1, HS_1, LINE_1_HS_1_ORF1p"
@@ -136,14 +167,48 @@ class Sequence_view extends Component {
 
             }
           }}/>
+
+{/* text={this.state.seq_data[0].Sequence}> */}
+
+					<CopyToClipboard
+            text={this.state.seq_data[0]}>
+            <button className="btn btn-outline-info">Copy Sequence</button>
+          </CopyToClipboard>
+
+					<button className="btn btn-outline-info"
+            onClick={e =>
+              this.saveAs(">"+this.state.seq_data[0].Family+"\n"+this.state.seq_data[0].Sequence)
+            }
+          >
+            Download
+          </button>
+
 					<br/>
+					</div>
 					<div className="container">
-					<hr/>
+					<hr style={{borderColor:"black"}}/>
 					</div>
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}
       <div id="sequence-viewer" className="container black_text"></div>
+			<div className="container">
+				<hr style={{borderColor:"black"}}/>
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 			<br />
 			<br />
 			<br />
