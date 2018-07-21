@@ -12,11 +12,13 @@ class Sequence_view extends Component {
 			// prot_seq: this.props.match.params.id === undefined ? this.setState({prot_seq:"1"}) : this.props.match.params.id,
 			seq_data: [{
 
-	    }],
+		}],
 		};
-		if (this.state.seq_data[0].Sequence === undefined){
-			this.setState({seq_data: [["test"]]})
-		}
+		// if (this.state.seq_data[0].Sequence === undefined){
+		// 	this.setState({seq_data: {"Family":"NA",
+		// 															"Sequence":"You Did Not Request Any Data"}})
+		// }
+
 		// this.searchURL = this.searchURL.bind(this)
 
 	}
@@ -142,7 +144,7 @@ saveAs = (
 
     return (
 			<div className="white-background">
-				{console.log(this.state.seq_data[0])}
+			<div className="white-darker-background">
 				<div className="text-center" style={{color:"black"}}>
 					<h1>Protein Sequence Viewer</h1>
 
@@ -171,7 +173,7 @@ saveAs = (
 {/* text={this.state.seq_data[0].Sequence}> */}
 
 					<CopyToClipboard
-            text={this.state.seq_data[0]}>
+            text={this.state.seq_data[0].Sequence}>
             <button className="btn btn-outline-info">Copy Sequence</button>
           </CopyToClipboard>
 
@@ -188,6 +190,8 @@ saveAs = (
 					<div className="container">
 					<hr style={{borderColor:"black"}}/>
 					</div>
+				</div>
+			<div className="white-background">
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}
@@ -216,6 +220,7 @@ saveAs = (
 			<br />
 			<br />
 			<br />
+		</div>
 		</div>
     );
   }

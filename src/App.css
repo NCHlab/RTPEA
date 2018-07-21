@@ -17,8 +17,12 @@ body2 {
 }
 
 /*Sequence Viewer*/
+.white-darker-background {
+  background: #edeaea;
+}
+
 .white-background {
-  background: #c3c6cc;
+  background: #fefff9;
 }
 
 
