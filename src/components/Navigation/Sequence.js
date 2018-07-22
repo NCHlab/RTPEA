@@ -157,7 +157,7 @@ saveAs = (
 
 				<input
 					style={{"width" : "310px"}}
-          placeholder="e.g LINE_1_HS_1, HS_1, LINE_1_HS_1_ORF1p"
+          placeholder="e.g HS_1_ORF1p, LINE_1_HS_1_ORF1p"
           onChange={e => this.setState({ prot_seq: e.target.value.slice(0,-1).toUpperCase()+e.target.value.slice(-1).toLowerCase() })}
           onKeyPress={e => {if (e.key === "Enter") {
 						if (window.location.pathname === "/sequence"){
@@ -186,6 +186,7 @@ saveAs = (
           </button>
 
 					<br/>
+					<sup style={{"color":"black"}}>^ You must provide ORF1p or ORF2p at the end ^</sup>
 					</div>
 					<div className="container">
 					<hr style={{borderColor:"black"}}/>
