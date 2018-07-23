@@ -15,7 +15,7 @@ class Visualisation extends Component {
 		super(props);
 		this.state = {
 			uniprotacc: this.props.match.params.id,
-			information1: "",
+			data_info: "",
 		};
 
 	}
@@ -33,11 +33,23 @@ class Visualisation extends Component {
 				// .then(data => this.setState({information1: data}))
 
 
+				// .then(data =>{return
+			// fetch("http://localhost:3001/visualise/" + this.props.match.params.id)
+			// .then(response => response.json())
+			// .then(data => this.setState({data_info: data}))
 
-				var yourDiv = document.getElementById('protvis');
-        var instance = new ProtVista({
+
+
+			 var yourDiv = document.getElementById('protvis');
+       var instance = new ProtVista({
             el: yourDiv,
             uniprotacc: this.state.uniprotacc,
+						selectedFeature: {
+            begin: 117,
+            end: 117,
+            type: "variant",
+						alternativeSequence:"Q"
+					},
 						// uniprotacc : 'P05067',
 						// defaultSources: false
 						exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
@@ -67,7 +79,15 @@ class Visualisation extends Component {
 						customConfig: 'http://localhost:3001/visualise_config.json/'
 						// customConfig: './data/externalConfig.json',
         });
+			// }))
+				//
+				// instance.selectFeature('variant', 108, 108, 'K')
     }
+
+		// componentDidUpdate = () => {
+		// 	instance.selectFeature("variant", 125, 128, 'VAS');
+		// }
+
 
   button_click = (event) => {
 		// console.log(e)
@@ -78,13 +98,14 @@ class Visualisation extends Component {
 		return (
 			<div>
 
-
+				{console.log(this.state.data_info)}
 			<div className="background-body-vis">
 				<NavVis/>
 				<div className="text-center">
 					<h1>ProtVister Protein Viewer</h1>
 
 				</div>
+
 				{/* <Tabs>
 			    <TabList>
 			      <Tab>Protein Centric</Tab>

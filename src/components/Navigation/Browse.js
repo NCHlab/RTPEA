@@ -485,6 +485,23 @@ const orf2p_column = [{
                                 showPaginationTop={true}
                                 showPaginationBottom= {false}
                                 minRows={0}
+                                getTdProps={(state, rowInfo, column, instance) => {
+                                   return {
+                                     onClick: (e, handleOriginal) => {
+                                       {/* console.log("It was in this column:", column); */}
+                                       console.log(rowInfo.original.name)
+                                       console.log(rowInfo.original.confidence)
+                                       if (rowInfo.original.name !== "NA"){
+                                         window.location = "visualise/" + rowInfo.original.name.slice(0,5)
+                                       }
+                                       {/* console.log(rowInfo) */}
+                                        if (handleOriginal) {
+                                          handleOriginal();
+                                        }
+                                     }
+                                   };
+                                 }
+                               }
                                 showPageJump={false}
                                 className="-striped -highlight"/>
                             </div>
@@ -498,6 +515,23 @@ const orf2p_column = [{
                                 pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
                                 minRows={0}
+                                getTdProps={(state, rowInfo, column, instance) => {
+                                   return {
+                                     onClick: (e, handleOriginal) => {
+                                       {/* console.log("It was in this column:", column); */}
+                                       console.log(rowInfo.original.name)
+                                       console.log(rowInfo.original.confidence)
+                                       if (rowInfo.original.name !== "NA"){
+                                         window.location = "visualise/" + rowInfo.original.name.slice(0,5)
+                                       }
+                                       {/* console.log(rowInfo) */}
+                                        if (handleOriginal) {
+                                          handleOriginal();
+                                        }
+                                     }
+                                   };
+                                 }
+                               }
                                 showPageJump={false}
                                 className="-striped -highlight"/>
                             </div>

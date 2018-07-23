@@ -11,9 +11,9 @@ import { withRouter, Switch } from 'react-router-dom';
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
 import Browse from './components/Navigation/Browse';
-import BrowseDemo from './components/Navigation/Browse-demo';
+// import BrowseDemo from './components/Navigation/Browse-demo';
 import Visualise from './components/Navigation/Visualise';
-import Visualisedemo from './components/Navigation/Visualisedemo';
+// import Visualisedemo from './components/Navigation/Visualisedemo';
 import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
@@ -112,8 +112,8 @@ class App extends Component{
             <Route exact path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route exact path="/Visualise" component={Visualise} />
             <Route exact path="/Visualise/:id" component={Visualise} />
-            <Route exact path="/Visualisedemo" component={Visualisedemo} />
-            <Route exact path="/BrowseDemo" component={BrowseDemo} />
+            {/* <Route exact path="/Visualisedemo" component={Visualisedemo} /> */}
+            {/* <Route exact path="/BrowseDemo" component={BrowseDemo} /> */}
             <Route exact path={"/api"} component={Api} />
             <Route exact path="/info" component={Info} />
             <Route exact path="/contact" component={Contact} />

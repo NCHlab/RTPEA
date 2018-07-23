@@ -82,7 +82,7 @@ class Status extends Component {
     return (
       <div className="container background-body2">
         <div>
-          {this.props.error_code}
+          {/* {this.props.error_code} */}
           {this.Error_code(this.props.error_code)}
         </div>
 
@@ -129,6 +129,16 @@ class Status extends Component {
             </tr>
           </table>
         </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
       </div>
     );
   }
