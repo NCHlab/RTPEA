@@ -20,7 +20,7 @@ class Table extends Component{
       background_conf_colour:"#dadada",
       button_msg: "Darkify",
       switched: true,
-      filtered1: "",
+      filtered1: window.location.href,
     };
     // this.data = this.data.bind(this)
   }
@@ -404,12 +404,15 @@ const orf2p_column = [{
 
       return (
         <div>
-
+          {console.log(this.props)}
           <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
+            <br/>
+            <hr style={{borderColor:"black"}}/>
+            If Search Function is not working: Click <a href="../browse">HERE</a>
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
@@ -428,10 +431,7 @@ const orf2p_column = [{
 {/* pivotBy={["disease"]} */}
 {/* 0, 83, 140 */}
 
-{/* filtered = {[{
-  id: 'disease',
-  value: this.state.filtered1}]
-} */}
+
 
 {/* onFilteredChange={(filtered, column) => {
   this.setState({filtered1: filtered.value})
@@ -449,7 +449,10 @@ const orf2p_column = [{
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
               filterable={true}
-
+              filtered = {[{
+                id: 'disease',
+                value: this.props.match.params.id}]
+              }
 
               minRows={0}
               SubComponent={row => {
