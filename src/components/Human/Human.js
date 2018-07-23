@@ -37,7 +37,7 @@ class Human extends Component {
       chartWidth:800,
       chartHeight: 600,
       yWidth: 120,
-      whiteFill:{ fill: 'white' },
+      whiteFill:{ fill: 'white', fontSize: 14},
       data2_s:[
         {name: "Total Samples", A:100},
         {name: "Disease datasets", A:200},
@@ -81,6 +81,17 @@ class Human extends Component {
         {name: "Samples w/ Strong Identifications", A:314},
         {name: "Variant Proteins w/ Strong Identifications", A:483},
         {name: "Size of Spectral Files Mined (Mb)", A:251}
+      ],
+      data_breast:[
+        {name: "Total Samples", A:345},
+        {name: "Disease datasets", A:182},
+        {name: "Disease samples", A:467},
+        {name: "Normal Datasets", A:755},
+        {name: "Normal Samples", A:345},
+        {name: "Samples w/ Protein Identifications", A:754},
+        {name: "Samples w/ Strong Identifications", A:344},
+        {name: "Variant Proteins w/ Strong Identifications", A:283},
+        {name: "Size of Spectral Files Mined (Mb)", A:651}
       ],
       data_default:[
         {name: "Total Samples", A:245},
@@ -197,14 +208,25 @@ class Human extends Component {
     } else if (svgType === "breasts") {
       console.log("breast has been identified");
       return (
-          <img
-            src={L1Chart}
-            className="pb6 "
-            alt="logo"
-            height="650px"
-            width="715px"
-            onClick={() => window.location.assign("http://localhost:3000/browse")}
-          />
+        <div>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data_breast} onClick={() => window.location.assign("http://localhost:3000/browse/breast")}>
+            <XAxis  type="number"/>
+            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+            <Tooltip />
+            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+          </BarChart>
+        </div>
+          // <img
+          //   src={L1Chart}
+          //   className="pb6 "
+          //   alt="logo"
+          //   height="650px"
+          //   width="715px"
+          //   onClick={() => window.location.assign("http://localhost:3000/browse/breast")}
+          // />
       );
 
     } else if (svgType === "uterus") {
