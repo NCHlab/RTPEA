@@ -34,65 +34,64 @@ class Human extends Component {
       svgType: "",
       x: 0,
       y: 0,
+      chartWidth:800,
+      chartHeight: 600,
+      yWidth: 120,
+      whiteFill:{ fill: 'white' },
       data2_s:[
         {name: "Total Samples", A:100},
         {name: "Disease datasets", A:200},
         {name: "Disease samples", A:50},
-        {name: "normal datasets", A:880},
-        {name: "normal samples", A:236},
-        {name: "samples w/ protein identifications", A:464},
-        {name: "samples w/ strong identifications", A:880},
-        {name: "variant proteins w/ strong identifications", A:533},
-        {name: "size of spectral files mined", A:464},
-        {name: "Uterus", A:263}
+        {name: "Normal Datasets", A:880},
+        {name: "Normal Samples", A:236},
+        {name: "Samples w/ Protein Identifications", A:464},
+        {name: "Samples w/ Strong Identifications", A:880},
+        {name: "Variant Proteins w/ Strong Identifications", A:533},
+        {name: "Size of Spectral Files Mined (Mb)", A:464},
       ],
       data3_s:[
-        {name: "Brain", A:200},
-        {name: "Lung", A:120},
-        {name: "Liver", A:80},
-        {name: "Pancreas", A:600},
-        {name: "Intestine", A:36},
-        {name: "Testes", A:200},
-        {name: "Heart", A:500},
-        {name: "Breasts", A:588},
-        {name: "Kidney", A:400},
-        {name: "Uterus", A:600}
+        {name: "Total Samples", A:200},
+        {name: "Disease datasets", A:120},
+        {name: "Disease samples", A:80},
+        {name: "Normal Datasets", A:600},
+        {name: "Normal Samples", A:36},
+        {name: "Samples w/ Protein Identifications", A:200},
+        {name: "Samples w/ Strong Identifications", A:500},
+        {name: "Variant Proteins w/ Strong Identifications", A:588},
+        {name: "Size of Spectral Files Mined (Mb)", A:400}
       ],
       data4_s:[
-        {name: "Brain", A:800},
-        {name: "Lung", A:300},
-        {name: "Liver", A:500},
-        {name: "Pancreas", A:870},
-        {name: "Intestine", A:526},
-        {name: "Testes", A:120},
-        {name: "Heart", A:200},
-        {name: "Breasts", A:35},
-        {name: "Kidney", A:257},
-        {name: "Uterus", A:500}
+        {name: "Total Samples", A:800},
+        {name: "Disease datasets", A:300},
+        {name: "Disease samples", A:500},
+        {name: "Normal Datasets", A:870},
+        {name: "Normal Samples", A:526},
+        {name: "Samples w/ Protein Identifications", A:120},
+        {name: "Samples w/ Strong Identifications", A:200},
+        {name: "Variant Proteins w/ Strong Identifications", A:35},
+        {name: "Size of Spectral Files Mined (Mb)", A:257}
       ],
       data5_s:[
-        {name: "Brain", A:645},
-        {name: "Lung", A:782},
-        {name: "Liver", A:567},
-        {name: "Pancreas", A:75},
-        {name: "Intestine", A:265},
-        {name: "Testes", A:154},
-        {name: "Heart", A:314},
-        {name: "Breasts", A:483},
-        {name: "Kidney", A:251},
-        {name: "Uterus", A:786}
+        {name: "Total Samples", A:645},
+        {name: "Disease datasets", A:782},
+        {name: "Disease samples", A:567},
+        {name: "Normal Datasets", A:75},
+        {name: "Normal Samples", A:265},
+        {name: "Samples w/ Protein Identifications", A:154},
+        {name: "Samples w/ Strong Identifications", A:314},
+        {name: "Variant Proteins w/ Strong Identifications", A:483},
+        {name: "Size of Spectral Files Mined (Mb)", A:251}
       ],
       data_default:[
-        {name: "Brain", A:245},
-        {name: "Lung", A:182},
-        {name: "Liver", A:367},
-        {name: "Pancreas", A:75},
-        {name: "Intestine", A:165},
-        {name: "Testes", A:154},
-        {name: "Heart", A:314},
-        {name: "Breasts", A:273},
-        {name: "Kidney", A:251},
-        {name: "Uterus", A:486}
+        {name: "Total Samples", A:245},
+        {name: "Disease datasets", A:182},
+        {name: "Disease samples", A:367},
+        {name: "Normal Datasets", A:75},
+        {name: "Normal Samples", A:165},
+        {name: "Samples w/ Protein Identifications", A:154},
+        {name: "Samples w/ Strong Identifications", A:314},
+        {name: "Variant Proteins w/ Strong Identifications", A:273},
+        {name: "Size of Spectral Files Mined (Mb)", A:251}
       ],
 
 
@@ -122,9 +121,9 @@ class Human extends Component {
 
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data2_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data2_s}>
             <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category"/>
+            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
             <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
             <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
@@ -144,9 +143,9 @@ class Human extends Component {
       console.log("lung has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data3_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data3_s}>
             <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category"/>
+            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
             <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
             <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
@@ -166,9 +165,9 @@ class Human extends Component {
       console.log("liver has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data4_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data4_s}>
             <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category"/>
+            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
             <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
             <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
@@ -212,9 +211,9 @@ class Human extends Component {
       console.log("uterus has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data5_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data5_s}>
             <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category"/>
+            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
             <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
             <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
@@ -234,9 +233,9 @@ class Human extends Component {
       // console.log("breast has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={600} height={600} data={this.state.data_default} onClick={() => window.location.assign("http://localhost:3000/browse")}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data_default} onClick={() => window.location.assign("http://localhost:3000/browse")}>
             <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category"/>
+            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
             <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" />
             <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
@@ -401,8 +400,8 @@ const data11 = [
               </div>
             </div>
           </div>
-
-          <div className="inline-img">{this.detectSvg(this.state.svgType)}
+{/* style={{background:"#d8ecff",Color:"white"} */}
+          <div className="inline-img" >{this.detectSvg(this.state.svgType)}
 
             {/* <LineChart className="background-body" width={400} height={400} data={data2} margin={{ top: 5, right: 20, bottom: 50, left: 0 }}>
               <Line type="monotone" dataKey="A" stroke="#8884d8" />

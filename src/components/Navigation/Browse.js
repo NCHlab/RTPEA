@@ -12,7 +12,8 @@ class Table extends Component{
       url_id: "NULL",
       error_msg: false,
       table_loading: true,
-      background_colour:"#edf1f4",
+      // background_colour:"#edf1f4",
+      background_colour:"linear-gradient(to bottom, #edf1f4, #bdbfbf)",
       text_colour:"#000000",
       high_conf_colour:"#85cc00",
       med_conf_colour:"#ffbf00",
@@ -59,7 +60,7 @@ class Table extends Component{
           };
           });
           // this.setState({colour_dark: !this.state.color_black})
-          if (this.state.background_colour === "#edf1f4"){
+          if (this.state.background_colour === "linear-gradient(to bottom, #edf1f4, #bdbfbf)"){
             this.setState({background_colour: "#5f6060"})
             this.setState({text_colour: "#ffffff"})
             this.setState({button_msg: "Brighten"})
@@ -67,8 +68,8 @@ class Table extends Component{
             this.setState({med_conf_colour:"#c47f0b"})
             this.setState({low_conf_colour:"#c12200"})
             this.setState({background_conf_colour:"#777f84"})
-          } else if (this.state.background_colour !== "#edf1f4"){
-            this.setState({background_colour: "#edf1f4"})
+          } else if (this.state.background_colour !== "linear-gradient(to bottom, #edf1f4, #bdbfbf)"){
+            this.setState({background_colour: "linear-gradient(to bottom, #edf1f4, #bdbfbf)"})
             this.setState({text_colour: "#000000"})
             this.setState({button_msg: "Darkify"})
             this.setState({high_conf_colour:"#85cc00"})
@@ -405,7 +406,9 @@ const orf2p_column = [{
       return (
         <div>
 
-          <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
+          <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
+            {/* <div className="col-md-10 offset-md-1" style={{background: 'linear-gradient(to bottom, #d9e0e2, #abadad)', color: this.state.text_colour}}> */}
+
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
