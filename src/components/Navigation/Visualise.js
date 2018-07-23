@@ -45,8 +45,8 @@ class Visualisation extends Component {
             el: yourDiv,
             uniprotacc: this.state.uniprotacc,
 						selectedFeature: {
-            begin: 117,
-            end: 117,
+            begin: 166,
+            end: 166,
             type: "variant",
 						alternativeSequence:"Q"
 					},
