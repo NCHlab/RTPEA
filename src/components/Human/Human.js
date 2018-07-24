@@ -405,7 +405,7 @@ const data11 = [
     return (
       <div>
       <input type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
-        <label> Enable Click to display</label>
+        <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>Enable to Browse by clicking tissue</b></label>
       <br/>
       <br/>
       <div className="ma4 mt0">

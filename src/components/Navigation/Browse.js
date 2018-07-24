@@ -65,7 +65,7 @@ class Table extends Component{
           });
           // this.setState({colour_dark: !this.state.color_black})
           if (this.state.background_colour === "linear-gradient(to bottom, #9cb7e2, #bfd2ef)"){
-            this.setState({background_colour: "#5f6060"})
+            this.setState({background_colour: "#444444"})
             this.setState({text_colour: "#ffffff"})
             this.setState({button_msg: "Brighten"})
             this.setState({high_conf_colour:"#6a9618"})
@@ -499,7 +499,7 @@ const orf2p_column = [{
               noDataText="No Data Has been found, Please re-filter your search parameters."
               loadingText="Please Wait. Data is Loading....If no data is returned the API server may be down."
               defaultPageSize={10}
-              showPaginationTop={true}
+              showPaginationTop={false}
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
               filterable={true}
@@ -529,7 +529,7 @@ const orf2p_column = [{
              }
               SubComponent={row => {
                 return (
-                  <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
+                  <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(186, 0, 0)" }}>
                     {/* {console.log(row.original.sample)} */}
                     <ReactTable
                       data={row.original.sample}
@@ -562,7 +562,7 @@ const orf2p_column = [{
                       SubComponent={row => {
                         return (
                           <div>
-                            <div style={{ border: "4px", borderStyle: "solid none solid none", borderColor: "rgb(5, 183, 112)" }}>
+                            <div style={{ border: "4px", borderStyle: "solid solid none solid", borderColor: "rgb(214, 188, 0)" }}>
                               {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF1p_variants}
@@ -594,7 +594,7 @@ const orf2p_column = [{
                                 showPageJump={false}
                                 className="-striped -highlight"/>
                             </div>
-                            <div style={{ border: "4px", borderStyle: "none none solid none", borderColor: "rgb(5, 183, 112)" }}>
+                            <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(214, 188, 0)" }}>
                               {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF2p_variants}
