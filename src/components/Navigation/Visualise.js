@@ -6,6 +6,8 @@ import 'react-tabs/style/react-tabs.css';
 import Ideogram from './Ideogram';
 import Sequence from './Sequence';
 import NavVis from "./NavVis.js";
+import Popup from "reactjs-popup";
+import Protvis_example from "../Images/protvis_example.png"
 
 // import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
@@ -102,8 +104,32 @@ class Visualisation extends Component {
 			<div className="background-body-vis">
 				<NavVis/>
 				<div className="text-center">
-					<h1>ProtVister Protein Viewer</h1>
+					<h1>ProtVista Protein Viewer</h1>
+					<div className="" style={{color:"black"}}>
+						<Popup trigger={<button className="btn btn-outline-warning"> Information! </button>} modal>
+							{close => (
+								<div className="">
+									<a className="close" onClick={close}>
+										&times;
+									</a>
+									<div className="header"> ProtVista </div>
+									<div className="content">
+										{/* {" "} */}
+										To view variants, click the variant tab.
+										<br/>
+										<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
+										<br />
+										<div className="header"></div>
+										Example Usage:
+										<br />
+										<img src={Protvis_example} alt="protvis_example!" />
 
+										<div className="header"></div>
+									</div>
+								</div>
+							)}
+						</Popup>
+						</div>
 				</div>
 
 				{/* <Tabs>
