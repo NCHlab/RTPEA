@@ -15,6 +15,7 @@ import L1HS from "../Images/L1HS_figure.png";
 import L1cycle from "../Images/L1-lifecycle.png";
 import onlineimg from "../Images/online.png";
 import offlineimg from "../Images/offline.png";
+import Popup from "reactjs-popup";
 
 // Displays the Home page using JSX
 // const  = ({ onShow, onHide }) => {
@@ -84,6 +85,10 @@ class Home extends Component {
           <h1 className="container colour-white">
             Retroelement Protein Expression Atlas
           </h1>
+          <br/>
+          <Popup trigger={<button> Read Me!</button>} position="right center">
+            <div>Popup content here !!</div>
+          </Popup>
         </p>
         <body2>
           <div className="container">
