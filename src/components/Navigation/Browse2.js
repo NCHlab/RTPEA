@@ -12,7 +12,7 @@ class Table extends Component{
       url_id: "NULL",
       error_msg: false,
       table_loading: true,
-      background_colour:"#edf1f4",
+      background_colour:"linear-gradient(to bottom, #9cb7e2, #bfd2ef)",
       text_colour:"#000000",
       high_conf_colour:"#85cc00",
       med_conf_colour:"#ffbf00",
@@ -59,7 +59,7 @@ class Table extends Component{
           };
           });
           // this.setState({colour_dark: !this.state.color_black})
-          if (this.state.background_colour === "#edf1f4"){
+          if (this.state.background_colour === "linear-gradient(to bottom, #9cb7e2, #bfd2ef)"){
             this.setState({background_colour: "#5f6060"})
             this.setState({text_colour: "#ffffff"})
             this.setState({button_msg: "Brighten"})
@@ -67,8 +67,8 @@ class Table extends Component{
             this.setState({med_conf_colour:"#c47f0b"})
             this.setState({low_conf_colour:"#c12200"})
             this.setState({background_conf_colour:"#777f84"})
-          } else if (this.state.background_colour !== "#edf1f4"){
-            this.setState({background_colour: "#edf1f4"})
+          } else if (this.state.background_colour !== "linear-gradient(to bottom, #9cb7e2, #bfd2ef)"){
+            this.setState({background_colour: "linear-gradient(to bottom, #9cb7e2, #bfd2ef)"})
             this.setState({text_colour: "#000000"})
             this.setState({button_msg: "Darkify"})
             this.setState({high_conf_colour:"#85cc00"})
@@ -138,7 +138,7 @@ class Table extends Component{
     Header: '',
     accessor: '-'
   }, {
-    Header: 'Sample Number',
+    Header: <b>Sample Number</b>,
     id: "Sample_num",
     accessor: "Snumber"
 
@@ -148,7 +148,7 @@ class Table extends Component{
     // Header: 'Disease',
     // accessor: 'disease'
   }, {
-    Header: 'Tissue',
+    Header: <b>Tissue</b>,
     accessor: "tissue_type"
     // id: "tiss_data",
     // accessor: data =>{
@@ -157,7 +157,7 @@ class Table extends Component{
     //                   }
     // accessor: 'sample[0].1[0].tissue_type'
   }, {
-    Header: 'ORF1p',
+    Header: <b>ORF1p</b>,
     id: "ORF1p_data",
     accessor: "ORF1p.confidence",
     Cell: row => (
@@ -186,7 +186,7 @@ class Table extends Component{
         </div>
         )
     }, {
-    Header: 'ORF2p',
+    Header: <b>ORF2p</b>,
     id: "ORF2p_data",
     accessor: "ORF2p.confidence",
     aggregate: vals => _.sum(vals),
@@ -219,7 +219,7 @@ class Table extends Component{
     }
     // "sample[0].1[0].ORF1p.confidence" && "sample[0].1[0].ORF2p.confidence"
   , {
-    Header: 'ORF0',
+    Header: <b>ORF0</b>,
     id:"ORF0_data",
     accessor: "ORF0.confidence",
     Cell: row => (
@@ -248,7 +248,7 @@ class Table extends Component{
         </div>
         )
   }, {
-    Header: 'HERV',
+    Header: <b>HERV</b>,
     id:"HERV_data",
     accessor: "HERV.confidence",
     Cell: row => (
@@ -277,7 +277,7 @@ class Table extends Component{
         </div>
         )
   }, {
-    Header: 'Top Expr. Variant',
+    Header: <b>Top Expr. Variant</b>,
     accessor: "TEV"
   }]
 
@@ -294,10 +294,10 @@ const orf1p_column = [{
   Header: '',
   accessor: '-'
 },{
-  Header: 'ORF1p Variants',
+  Header: <b>ORF1p Variants</b>,
   accessor: 'name'
 }, {
-  Header: 'ORF1p Confidence',
+  Header: <b>ORF1p Confidence</b>,
   id: "ORF1p_var",
   accessor: 'confidence',
   Cell: row => (
@@ -346,10 +346,10 @@ const orf2p_column = [{
   Header: '',
   accessor: '-'
 },{
-  Header: 'ORF2p Variants',
+  Header: <b>ORF2p Variants</b>,
   accessor: 'name'
 }, {
-  Header: 'ORF2p Confidence',
+  Header: <b>ORF2p Confidence</b>,
   id: "ORF2p_var",
   accessor: 'confidence',
   Cell: row => (
@@ -405,7 +405,7 @@ const orf2p_column = [{
       return (
         <div>
           {console.log(this.props)}
-          <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
+          <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
