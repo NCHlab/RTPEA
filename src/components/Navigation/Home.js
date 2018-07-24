@@ -16,6 +16,7 @@ import L1cycle from "../Images/L1-lifecycle.png";
 import onlineimg from "../Images/online.png";
 import offlineimg from "../Images/offline.png";
 import Popup from "reactjs-popup";
+// import '../../App.css';
 
 // Displays the Home page using JSX
 // const  = ({ onShow, onHide }) => {
@@ -85,11 +86,65 @@ class Home extends Component {
           <h1 className="container colour-white">
             Retroelement Protein Expression Atlas
           </h1>
-          <br/>
-          <Popup trigger={<button> Read Me!</button>} position="right center">
-            <div>Popup content here !!</div>
-          </Popup>
         </p>
+        {/* <div className="container" style={{color:"black"}}>
+          <Popup trigger={<button className="btn btn-outline-primary"> Read Me!</button>} modal closeOnDocumentClick position="right center">
+            <div style={{color:"black"}}>Popup content here !! say whatever you need it to say</div>
+          </Popup>
+        </div> */}
+
+          <div className="container" style={{color:"black"}}>
+            <Popup trigger={<button className="btn btn-outline-warning"> Information! </button>} modal>
+              {close => (
+                <div className="">
+                  <a className="close" onClick={close}>
+                    &times;
+                  </a>
+                  <div className="header"> How to use Interactive Image {"&"} Graph </div>
+                  <div className="content">
+                    {/* {" "} */}
+                    By Default you can hover over the images to visualise the graph
+                    <br />
+
+                    <div className="header"></div>
+                    <br />
+                    TO CLICK THE TISSUE:
+                    <br />
+                    Ticking the box allows you to now select each tissue without the graph auto changing on hover.
+                    <br />
+                    <br />
+                    You can also <b>click the graph</b> to transfer you to the table for that tissue type selected
+                  </div>
+                  {/* <div className="actions">
+                    <Popup
+                      trigger={<button className="button"> Trigger </button>}
+                      position="top center"
+                      closeOnDocumentClick
+                    >
+                      <span>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
+                        nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
+                        deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.
+                      </span>
+                    </Popup>
+                    <button
+                      className="button"
+                      onClick={() => {
+                        console.log('modal closed ')
+                        close()
+                      }}
+                    >
+                      close modal
+                    </button>
+                 </div> */}
+                </div>
+              )}
+            </Popup>
+                  </div>
+
+
+
+
         <body2>
           <div className="container">
             {/* Displays the human image + data retrieved from the human component */}

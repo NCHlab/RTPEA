@@ -3,6 +3,10 @@ import ReactTable from "react-table";
 import _ from "lodash";
 import Switch from 'react-toggle-switch';
 import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
+import Popup from "reactjs-popup";
+import highconf from "../Images/highconf.png";
+import medconf from "../Images/medconf.png";
+import lowconf from "../Images/lowconf.png";
 
 class Table extends Component{
   constructor() {
@@ -413,6 +417,53 @@ const orf2p_column = [{
 
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
+
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                  <div className="container" style={{color:"black"}}>
+                    <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
+                      {close => (
+                        <div className="">
+                          <a className="close" onClick={close}>
+                            &times;
+                          </a>
+                          <div className="header"> Using the Table </div>
+                          <div className="content">
+                            {/* {" "} */}
+                            Use your mouse! If you see it, you can probably click it
+                            <br />
+                            <div className="header"></div>
+                            Legend:
+                            <br />
+                            <img src={highconf} alt="Online!" /> = High confidence
+                            <br />
+                            <img src={medconf} alt="Online!" /> = Med confidence
+                            <br />
+                            <img src={lowconf} alt="Online!" /> = Low Confidence
+                            <div className="header"></div>
+                            <br />
+                            If Search Breaks; Refresh the page
+                            <br />
+                            The Table displays data by PXD (by default) which is a dataset identifier set by the PRIDE Database team
+                            <br />
+                            The first section of the table displays the sample number, along with and ORF1/2 Identifications
+                            <br />
+                            The sub-table for the samples display the variants that may occur
+                          </div>
+                        </div>
+                      )}
+                    </Popup>
+                          </div>
+                </div>
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
@@ -455,6 +506,27 @@ const orf2p_column = [{
 
 
               minRows={0}
+              getTdProps={(state, rowInfo, column, instance) => {
+                 return {
+                   onClick: (e, handleOriginal) => {
+                     {/* console.log("It was in this column:", column); */}
+                     const { expanded } = state;
+                     const path = rowInfo.nestingPath[0];
+                     const diff = { [path]: expanded[path] ? false : true };
+                     {/* console.log(rowInfo) */}
+                      if (handleOriginal) {
+                        handleOriginal();
+                      }
+                     instance.setState({
+                       expanded: {
+                         ...expanded,
+                         ...diff
+                       }
+                     });
+                   }
+                 };
+               }
+             }
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
