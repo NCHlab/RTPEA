@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Ideogram from "ideogram";
 import NavVis from "./NavVis.js";
+import Popup from "reactjs-popup";
 
 class Ideogram_c extends Component {
 	constructor(props) {
@@ -23,6 +24,8 @@ class Ideogram_c extends Component {
 		this.PA2_family = this.PA2_family.bind(this);
 		this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+		this.button_click_ideo = this.button_click_ideo.bind(this);
+
 	}
 	// [{
 	// 	"_id": "5b364f11cf72732a72cb47c1",
@@ -99,6 +102,15 @@ class Ideogram_c extends Component {
 		 // window.location = '/ideogram/'+PA2_fam
 
 }
+
+button_click_ideo = () => {
+	if (window.location.pathname === "/ideogram"){
+		window.location = "ideogram/" + this.state.prot_seq;
+	} else {
+		window.location = this.state.prot_seq;
+	}
+}
+
 	 handleChange = (event) => {
 	  this.setState({value: event.target.value});
 	 }
@@ -289,7 +301,33 @@ class Ideogram_c extends Component {
 				<NavVis/>
 				<div className="text-center">
 					<h1>Chromosome Centric Mapper</h1>
+					<div className="" style={{color:"black"}}>
+						<Popup trigger={<button className="btn btn-outline-warning"> Information! </button>} modal>
+							{close => (
+								<div className="">
+									<a className="close" onClick={close}>
+										&times;
+									</a>
+									<div className="header"> ProtVista </div>
+									<div className="content">
+										{/* {" "} */}
+										Click the Chromosomes to view Larger version
+										<br/>
+										<b>To find the <u>SEQUENCE</u>, hover over the annotation and click the link</b>
+										<br />
+										<div className="header"></div>
+										Legend:
+										<br />
+										HS = Red
+										<br />
+										PA = Blue
 
+										<div className="header"></div>
+									</div>
+								</div>
+							)}
+						</Popup>
+						</div>
 				</div>
 				<div className="container">
 					{/* {console.log(jsontest)} */}
@@ -310,16 +348,17 @@ class Ideogram_c extends Component {
 
             }
           }}/>
+					<button className="" style={{marginLeft:"2px"}} onClick={this.button_click_ideo}>Search Database</button>
 					<br/>
 				  <sup style={{"color":"white"}}>^ Separate families with comma or space ^</sup>
 
-					<br/>
+					{/* <br/> */}
 {/* onChange={() => this.PA2_family()}/> */}
 					 {/* <input type="checkbox"
 						 checked={ this.state.checked }
 						 onChange={e => this.setState({ prot_seq: PA2_fam })}/> */}
-
-
+						 <hr align="center" width="20%" />
+						 <div style={{"color":"white"}}>Sort by Family:</div>
 			 <form onSubmit={this.handleSubmit}>
 	        <label>
 						<select value={this.state.value} onChange={this.handleChange}>
