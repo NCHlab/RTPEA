@@ -418,53 +418,43 @@ const orf2p_column = [{
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
 
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                </div>
-                <div class="col">
-                  <div className="container" style={{color:"black"}}>
-                    <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
-                      {close => (
-                        <div className="">
-                          <a className="close" onClick={close}>
-                            &times;
-                          </a>
-                          <div className="header"> Using the Table </div>
-                          <div className="content">
-                            {/* {" "} */}
-                            Use your mouse! If you see it, you can probably click it
-                            <br />
-                            <div className="header"></div>
-                            Legend:
-                            <br />
-                            <img src={highconf} alt="Online!" /> = High confidence
-                            <br />
-                            <img src={medconf} alt="Online!" /> = Med confidence
-                            <br />
-                            <img src={lowconf} alt="Online!" /> = Low Confidence
-                            <div className="header"></div>
-                            <br />
-                            If Search Breaks; Refresh the page or click the <a href="/browse">Link</a> - Make sure to clear all search boxes if data not showing
-                            <br />
-                            The Table displays data by PXD (by default) which is a dataset identifier set by the PRIDE Database team
-                            <br />
-                            The first section of the table displays the sample number, along with and ORF1/2 Identifications
-                            <br />
-                            The sub-table for the samples display the variants that may occur
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                          </div>
-                </div>
-                <div class="col">
-                </div>
+            <div className="" style={{color:"black"}}>
+              <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
+                {close => (
+                  <div className="">
+                    <a className="close" onClick={close}>
+                      &times;
+                    </a>
+                    <div className="header"> Using the Table </div>
+                    <div className="content">
+                      {/* {" "} */}
+                      Use your mouse! If you see it, you can probably click it
+                      <br />
+                      <div className="header"></div>
+                      Legend:
+                      <br />
+                      <img src={highconf} alt="Online!" /> = High confidence
+                      <br />
+                      <img src={medconf} alt="Online!" /> = Med confidence
+                      <br />
+                      <img src={lowconf} alt="Online!" /> = Low Confidence
+                      <div className="header"></div>
+                      <br />
+                      If Search Breaks; Refresh the page or click the <a href="/browse">Link</a> - Make sure to clear all search boxes if data not showing
+                      <br />
+                      The Table displays data by PXD (by default) which is a dataset identifier set by the PRIDE Database team
+                      <br />
+                      The first section of the table displays the sample number, along with and ORF1/2 Identifications
+                      <br />
+                      The sub-table for the samples display the variants that may occur
+                    </div>
+                  </div>
+                )}
+              </Popup>
               </div>
-            </div>
 
 
-            <br />
+          <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
           return {

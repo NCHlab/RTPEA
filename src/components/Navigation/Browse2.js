@@ -3,6 +3,11 @@ import ReactTable from "react-table";
 import _ from "lodash";
 import Switch from 'react-toggle-switch';
 import "../../../node_modules/react-toggle-switch/dist/css/switch.min.css";
+import Popup from "reactjs-popup";
+import highconf from "../Images/highconf.png";
+import medconf from "../Images/medconf.png";
+import lowconf from "../Images/lowconf.png";
+
 
 class Table extends Component{
   constructor() {
@@ -413,6 +418,42 @@ const orf2p_column = [{
             <br/>
             <hr style={{borderColor:"black"}}/>
             If Search Function is not working: Click <a href="../browse">HERE</a>
+              <div className="" style={{color:"black"}}>
+                <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
+                  {close => (
+                    <div className="">
+                      <a className="close" onClick={close}>
+                        &times;
+                      </a>
+                      <div className="header"> Using the Table </div>
+                      <div className="content">
+                        {/* {" "} */}
+                        Use your mouse! If you see it, you can probably click it
+                        <br />
+                        <div className="header"></div>
+                        Legend:
+                        <br />
+                        <img src={highconf} alt="Online!" /> = High confidence
+                        <br />
+                        <img src={medconf} alt="Online!" /> = Med confidence
+                        <br />
+                        <img src={lowconf} alt="Online!" /> = Low Confidence
+                        <div className="header"></div>
+                        <br />
+                        If Search Breaks; Refresh the page or click the <a href="/browse">Link</a> - Make sure to clear all search boxes if data not showing
+                        <br />
+                        The Table displays data by PXD (by default) which is a dataset identifier set by the PRIDE Database team
+                        <br />
+                        The first section of the table displays the sample number, along with and ORF1/2 Identifications
+                        <br />
+                        The sub-table for the samples display the variants that may occur
+                      </div>
+                    </div>
+                  )}
+                </Popup>
+                </div>
+
+
             <br />
 
             {/* getTdProps={(state, rowInfo, column, instance) => {
