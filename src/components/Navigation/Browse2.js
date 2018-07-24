@@ -455,6 +455,27 @@ const orf2p_column = [{
               }
 
               minRows={0}
+              getTdProps={(state, rowInfo, column, instance) => {
+                 return {
+                   onClick: (e, handleOriginal) => {
+                     {/* console.log("It was in this column:", column); */}
+                     const { expanded } = state;
+                     const path = rowInfo.nestingPath[0];
+                     const diff = { [path]: expanded[path] ? false : true };
+                     {/* console.log(rowInfo) */}
+                      if (handleOriginal) {
+                        handleOriginal();
+                      }
+                     instance.setState({
+                       expanded: {
+                         ...expanded,
+                         ...diff
+                       }
+                     });
+                   }
+                 };
+               }
+             }
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
@@ -509,7 +530,7 @@ const orf2p_column = [{
                                        console.log(rowInfo.original.name)
                                        console.log(rowInfo.original.confidence)
                                        if (rowInfo.original.name !== "NA"){
-                                         window.location = "visualise/" + rowInfo.original.name.slice(0,5)
+                                         window.location = "../visualise/" + rowInfo.original.name.slice(0,5)
                                        }
                                        {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
@@ -538,8 +559,12 @@ const orf2p_column = [{
                                        {/* console.log("It was in this column:", column); */}
                                        console.log(rowInfo.original.name)
                                        console.log(rowInfo.original.confidence)
-                                       if (rowInfo.original.name !== "NA"){
-                                         window.location = "visualise/" + rowInfo.original.name.slice(0,5)
+                                       if (rowInfo.original.name === "ORF2p_HS_58"){
+                                         window.location = "../visualise/test2"
+                                       } else if (rowInfo.original.name === "ORF2p_HS_111"){
+                                         window.location = "../visualise/"
+                                       } else if (rowInfo.original.name !== "NA"){
+                                         window.location = "../visualise/" + rowInfo.original.name.slice(0,5)
                                        }
                                        {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
