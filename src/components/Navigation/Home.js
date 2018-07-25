@@ -158,17 +158,30 @@ class Home extends Component {
         </button> */}
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-4">
+                Number of PRIDE datasets mined
+              </div>
+              <div className="col-md-4">
+                Number of Samples re-analysed
+              </div>
+              <div className="col-md-4">
+                Total size of spectral files
+              </div>
+              <div className="col-md-4">
                 <h1>
-                  {/* # of Orf1: */}
-                  <CountTo to={1608424} speed={6000} />
+                  <CountTo to={130} speed={6000} />
                 </h1>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-4">
                 <h1>
                   {/* # of Orf2: */}
-                  <CountTo to={2934450} speed={6000} />
+                  <CountTo to={500} speed={6000} />
                   {/* onComplete={onHide} */}
+                </h1>
+              </div>
+              <div className="col-md-4">
+                <h1>
+                  <CountTo to={500} speed={6000} /> GB
                 </h1>
               </div>
             </div>
