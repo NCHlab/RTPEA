@@ -23,6 +23,7 @@ import intestine_data from "../Files/intestine.json";
 import kidney_data from "../Files/kidney.json";
 import pancreas_data from "../Files/pancreas.json";
 import testes_data from "../Files/testes.json";
+import general_data from "../Files/general.json";
 import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
@@ -58,6 +59,9 @@ class Human extends Component {
       kidney_data:kidney_data,
       pancreas_data:pancreas_data,
       testes_data:testes_data,
+      general_data: general_data,
+      data_type: testes_data,
+
 
 
     };
@@ -81,160 +85,190 @@ class Human extends Component {
   componentDidMount = () => {};
 
   detectSvg = svgType => {
-    // return (
-    //   <div>
-    //     <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.svgType+"_data"}>
-    //       <XAxis  type="number"/>
-    //       <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //       <Tooltip />
-    //       <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-    //       <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-    //       <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-    //       <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-    //     </BarChart>
-    //   </div>
-
-
-    if (svgType === "brain") {
-      console.log("Brain has been identified")
-
-      return (
-        <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.brain_data}>
-            <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-            <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-          </BarChart>
-        </div>
-        // <img
-        //   src={Plot1}
-        //   className="pb6 nice-smooth"
-        //   alt="logo"
-        //   height="450px"
-        //   width="450px"
-        // />
-      );
-    } else if (svgType === "lung") {
-      console.log("lung has been identified");
-      return (
-        <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.lung_data}>
-            <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-            <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-          </BarChart>
-        </div>
-          // <img
-          //   src={Plot3}
-          //   className="pb6 "
-          //   alt="logo"
-          //   height="450px"
-          //   width="450px"
-          // />
-      );
-    } else if (svgType === "liver") {
-      console.log("liver has been identified");
-      return (
-        <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.liver_data}>
-            <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-            <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-          </BarChart>
-        </div>
-          // <img
-          //   src={Plot4}
-          //   className="pb6 "
-          //   alt="logo"
-          //   height="450px"
-          //   width="650px"
-          // />
-      );
+    var data_type = []
+    if (svgType === "liver") {
+      data_type= this.state.liver_data
+    } else if (svgType === "lung"){
+      data_type= this.state.lung_data
+    }else if (svgType === "uterus"){
+      data_type= this.state.uterus_data
+    }else if (svgType === "testes"){
+      data_type= this.state.testes_data
+    }else if (svgType === "pancreas"){
+      data_type= this.state.pancreas_data
+    }else if (svgType === "kidney"){
+      data_type= this.state.kidney_data
+    }else if (svgType === "intestine"){
+      data_type= this.state.intestine_data
+    }else if (svgType === "heart"){
+      data_type= this.state.heart_data
+    }else if (svgType === "breasts"){
+      data_type= this.state.breast_data
+    }else if (svgType === "brain"){
+      data_type= this.state.brain_data
+    } else {
+        data_type= this.state.general_data
+      }
+    return (
+      <div>
+        <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type}>
+          <XAxis  type="number"/>
+          <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+          <Tooltip />
+          <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+        </BarChart>
+      </div>
+    )
+    // if (svgType === "liver") {
+    //   console.log(svgType)
+    // } else if (svgType === "pancreas") {
+    //   console.log(svgType)
+    // } else if (svgType === "kidney") {
+    //   console.log(svgType)
+    // } else if (svgType === "intestine") {
+    //   console.log(svgType)
     // } else if (svgType === "heart") {
-    //   console.log("heart has been identified");
+    //   console.log(svgType)
+    // } else if (svgType === "testes") {
+    //   console.log(svgType)
+    // } else if (svgType === "brain") {
+    //   console.log("Brain has been identified")
+    //
     //   return (
-    //       <img
-    //         src={Plot5}
-    //         className="pb6 "
-    //         alt="logo"
-    //         height="450px"
-    //         width="650px"
-    //       />
+    //     <div>
+    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.brain_data}>
+    //         <XAxis  type="number"/>
+    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //         <Tooltip />
+    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+    //
+    //       </BarChart>
+    //     </div>
+    //     // <img
+    //     //   src={Plot1}
+    //     //   className="pb6 nice-smooth"
+    //     //   alt="logo"
+    //     //   height="450px"
+    //     //   width="450px"
+    //     // />
     //   );
-    } else if (svgType === "breasts") {
-      console.log("breast has been identified");
-      return (
-        <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.breast_data} onClick={() => window.location.assign("http://localhost:3000/browse/breast")}>
-            <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-            <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-          </BarChart>
-        </div>
-          // <img
-          //   src={L1Chart}
-          //   className="pb6 "
-          //   alt="logo"
-          //   height="650px"
-          //   width="715px"
-          //   onClick={() => window.location.assign("http://localhost:3000/browse/breast")}
-          // />
-      );
-
-    } else if (svgType === "uterus") {
-      console.log("uterus has been identified");
-      return (
-        <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.uterus_data}>
-            <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-            <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-          </BarChart>
-        </div>
-          // <img
-          //   src={Plot6}
-          //   className="pb6 "
-          //   alt="logo"
-          //   height="450px"
-          //   width="650px"
-          // />
-      );
-    } else if (svgType !== "heart") {
-      // console.log("breast has been identified");
-      return (
-        <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.heart_data} onClick={() => window.location.assign("http://localhost:3000/browse")}>
-            <XAxis  type="number"/>
-            <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-            <Tooltip />
-            <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" />
-            <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-            <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-          </BarChart>
-        </div>
-      );
-    }
+    // } else if (svgType === "lung") {
+    //   console.log("lung has been identified");
+    //   return (
+    //     <div>
+    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.lung_data}>
+    //         <XAxis  type="number"/>
+    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //         <Tooltip />
+    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+    //       </BarChart>
+    //     </div>
+    //       // <img
+    //       //   src={Plot3}
+    //       //   className="pb6 "
+    //       //   alt="logo"
+    //       //   height="450px"
+    //       //   width="450px"
+    //       // />
+    //   );
+    // } else if (svgType === "liver") {
+    //   console.log("liver has been identified");
+    //   return (
+    //     <div>
+    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.liver_data}>
+    //         <XAxis  type="number"/>
+    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //         <Tooltip />
+    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+    //       </BarChart>
+    //     </div>
+    //       // <img
+    //       //   src={Plot4}
+    //       //   className="pb6 "
+    //       //   alt="logo"
+    //       //   height="450px"
+    //       //   width="650px"
+    //       // />
+    //   );
+    // // } else if (svgType === "heart") {
+    // //   console.log("heart has been identified");
+    // //   return (
+    // //       <img
+    // //         src={Plot5}
+    // //         className="pb6 "
+    // //         alt="logo"
+    // //         height="450px"
+    // //         width="650px"
+    // //       />
+    // //   );
+    // } else if (svgType === "breasts") {
+    //   console.log("breast has been identified");
+    //   return (
+    //     <div>
+    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.breast_data} onClick={() => window.location.assign("http://localhost:3000/browse/breast")}>
+    //         <XAxis  type="number"/>
+    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //         <Tooltip />
+    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+    //       </BarChart>
+    //     </div>
+    //       // <img
+    //       //   src={L1Chart}
+    //       //   className="pb6 "
+    //       //   alt="logo"
+    //       //   height="650px"
+    //       //   width="715px"
+    //       //   onClick={() => window.location.assign("http://localhost:3000/browse/breast")}
+    //       // />
+    //   );
+    //
+    // } else if (svgType === "uterus") {
+    //   console.log("uterus has been identified");
+    //   return (
+    //     <div>
+    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.uterus_data}>
+    //         <XAxis  type="number"/>
+    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //         <Tooltip />
+    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+    //       </BarChart>
+    //     </div>
+    //       // <img
+    //       //   src={Plot6}
+    //       //   className="pb6 "
+    //       //   alt="logo"
+    //       //   height="450px"
+    //       //   width="650px"
+    //       // />
+    //   );
+    // } else if (svgType !== "heart") {
+    //   // console.log("breast has been identified");
+    //   return (
+    //     <div>
+    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.heart_data} onClick={() => window.location.assign("http://localhost:3000/browse")}>
+    //         <XAxis  type="number"/>
+    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //         <Tooltip />
+    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" />
+    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+    //       </BarChart>
+    //     </div>
+    //   );
+    // }
   };
 
   // graphChange = () => {
@@ -391,7 +425,10 @@ check_event = (e) =>{
             </div>
           </div>
 {/* style={{background:"#d8ecff",Color:"white"} */}
-          <div className="inline-img" >{this.detectSvg(this.state.svgType)}
+
+          <div className="inline-img" >
+
+            {this.detectSvg(this.state.svgType)}
 
             {/* <LineChart className="background-body" width={400} height={400} data={data2} margin={{ top: 5, right: 20, bottom: 50, left: 0 }}>
               <Line type="monotone" dataKey="A" stroke="#8884d8" />
