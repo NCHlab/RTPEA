@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Ideogram from "ideogram";
 import NavVis from "./NavVis.js";
 import Popup from "reactjs-popup";
+import ideogram_example from "../Images/ideogram_example.png"
 
 class Ideogram_c extends Component {
 	constructor(props) {
@@ -315,6 +316,7 @@ button_click_ideo = () => {
 										<br/>
 										<b>To find the <u>SEQUENCE</u>, hover over the annotation and click the link</b>
 										<br />
+										<img src={ideogram_example} alt="ideogram_example"/>
 										<div className="header"></div>
 										Legend:
 										<br />
