@@ -61,6 +61,8 @@ class Human extends Component {
       testes_data:testes_data,
       general_data: general_data,
       data_type: testes_data,
+      hovertochange:"Disable to Browse by hovering over tissue",
+      clicktochange:"Enable to Browse by clicking on tissue",
 
 
 
@@ -122,172 +124,7 @@ class Human extends Component {
         </BarChart>
       </div>
     )
-    // if (svgType === "liver") {
-    //   console.log(svgType)
-    // } else if (svgType === "pancreas") {
-    //   console.log(svgType)
-    // } else if (svgType === "kidney") {
-    //   console.log(svgType)
-    // } else if (svgType === "intestine") {
-    //   console.log(svgType)
-    // } else if (svgType === "heart") {
-    //   console.log(svgType)
-    // } else if (svgType === "testes") {
-    //   console.log(svgType)
-    // } else if (svgType === "brain") {
-    //   console.log("Brain has been identified")
-    //
-    //   return (
-    //     <div>
-    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.brain_data}>
-    //         <XAxis  type="number"/>
-    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //         <Tooltip />
-    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-    //
-    //       </BarChart>
-    //     </div>
-    //     // <img
-    //     //   src={Plot1}
-    //     //   className="pb6 nice-smooth"
-    //     //   alt="logo"
-    //     //   height="450px"
-    //     //   width="450px"
-    //     // />
-    //   );
-    // } else if (svgType === "lung") {
-    //   console.log("lung has been identified");
-    //   return (
-    //     <div>
-    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.lung_data}>
-    //         <XAxis  type="number"/>
-    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //         <Tooltip />
-    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-    //       </BarChart>
-    //     </div>
-    //       // <img
-    //       //   src={Plot3}
-    //       //   className="pb6 "
-    //       //   alt="logo"
-    //       //   height="450px"
-    //       //   width="450px"
-    //       // />
-    //   );
-    // } else if (svgType === "liver") {
-    //   console.log("liver has been identified");
-    //   return (
-    //     <div>
-    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.liver_data}>
-    //         <XAxis  type="number"/>
-    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //         <Tooltip />
-    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-    //       </BarChart>
-    //     </div>
-    //       // <img
-    //       //   src={Plot4}
-    //       //   className="pb6 "
-    //       //   alt="logo"
-    //       //   height="450px"
-    //       //   width="650px"
-    //       // />
-    //   );
-    // // } else if (svgType === "heart") {
-    // //   console.log("heart has been identified");
-    // //   return (
-    // //       <img
-    // //         src={Plot5}
-    // //         className="pb6 "
-    // //         alt="logo"
-    // //         height="450px"
-    // //         width="650px"
-    // //       />
-    // //   );
-    // } else if (svgType === "breasts") {
-    //   console.log("breast has been identified");
-    //   return (
-    //     <div>
-    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.breast_data} onClick={() => window.location.assign("http://localhost:3000/browse/breast")}>
-    //         <XAxis  type="number"/>
-    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //         <Tooltip />
-    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-    //       </BarChart>
-    //     </div>
-    //       // <img
-    //       //   src={L1Chart}
-    //       //   className="pb6 "
-    //       //   alt="logo"
-    //       //   height="650px"
-    //       //   width="715px"
-    //       //   onClick={() => window.location.assign("http://localhost:3000/browse/breast")}
-    //       // />
-    //   );
-    //
-    // } else if (svgType === "uterus") {
-    //   console.log("uterus has been identified");
-    //   return (
-    //     <div>
-    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.uterus_data}>
-    //         <XAxis  type="number"/>
-    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //         <Tooltip />
-    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-    //       </BarChart>
-    //     </div>
-    //       // <img
-    //       //   src={Plot6}
-    //       //   className="pb6 "
-    //       //   alt="logo"
-    //       //   height="450px"
-    //       //   width="650px"
-    //       // />
-    //   );
-    // } else if (svgType !== "heart") {
-    //   // console.log("breast has been identified");
-    //   return (
-    //     <div>
-    //       <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.heart_data} onClick={() => window.location.assign("http://localhost:3000/browse")}>
-    //         <XAxis  type="number"/>
-    //         <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-    //         <Tooltip />
-    //         <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8" />
-    //         <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-    //         <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-    //       </BarChart>
-    //     </div>
-    //   );
-    // }
   };
-
-  // graphChange = () => {
-  //   var data2 = [
-  //     {name: "Brain", A:100},
-  //     {name: "Lung", A:200},
-  //     {name: "Liver", A:50},
-  //     {name: "Pancreas", A:880},
-  //     {name: "Intestine", A:236},
-  //     {name: "Testes", A:464},
-  //     {name: "Heart", A:880},
-  //     {name: "Breasts", A:533},
-  //     {name: "Kidney", A:464},
-  //     {name: "Uterus", A:263}
-  //   ]
-  // }
 
   handleChange= () => {
    this.setState({
@@ -342,75 +179,19 @@ check_event = (e) =>{
       {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
 ];
 
-// const data2 = [
-//   {name: "Brain", A:100,B:200,C:300,D:400},
-//   {name: "Lung", A:200,B:200,C:300,D:400},
-//   {name: "Liver", A:50,B:800,C:300,D:400},
-//   {name: "Pancreas", A:880,B:599,C:345,D:755},
-//   {name: "Intestine", A:236,B:734,C:356,D:844},
-//   {name: "Testes", A:464,B:733,C:345,D:263},
-//   {name: "Heart", A:880,B:263,C:664,D:573},
-//   {name: "Breasts", A:533,B:599,C:125,D:755},
-//   {name: "Kidney", A:464,B:664,C:345,D:464},
-//   {name: "Uterus", A:263,B:564,C:623,D:664}
-// ];
-
-// const data2 = [
-//   {name: "Brain", A:100},
-//   {name: "Lung", A:200},
-//   {name: "Liver", A:50},
-//   {name: "Pancreas", A:880},
-//   {name: "Intestine", A:236},
-//   {name: "Testes", A:464},
-//   {name: "Heart", A:880},
-//   {name: "Breasts", A:533},
-//   {name: "Kidney", A:464},
-//   {name: "Uterus", A:263}
-// ];
-//
-//
-// const data3 = [
-//   {name: "Brain", A:200},
-//   {name: "Lung", A:120},
-//   {name: "Liver", A:80},
-//   {name: "Pancreas", A:600},
-//   {name: "Intestine", A:36},
-//   {name: "Testes", A:200},
-//   {name: "Heart", A:500},
-//   {name: "Breasts", A:588},
-//   {name: "Kidney", A:400},
-//   {name: "Uterus", A:600}
-// ]
-//
-//
-// const data4 = [
-//   {name: "Brain", A:280},
-//   {name: "Lung", A:170},
-//   {name: "Liver", A:280},
-//   {name: "Pancreas", A:400},
-//   {name: "Intestine", A:354},
-//   {name: "Testes", A:564},
-//   {name: "Heart", A:721},
-//   {name: "Breasts", A:128},
-//   {name: "Kidney", A:387},
-//   {name: "Uterus", A:654}
-// ]
-//
-// const data11 = [
-//   {name: "test1",A:100},
-// {name: "test2",B:200},
-// {name: "test3",C:50},
-// {name: "test4",D:880}
-// ];
-
-// const Xlabel=[{Test1:1,Test2:1,Test3:1,Test4:1}]
-
-
-
     return (
       <div>
-      <input style={{cursor:'pointer'}} type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
-        <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>Enable to Browse by clicking tissue</b></label>
+        {/* style={{cursor:'pointer'}} */}
+        {/* <input checked data-toggle="toggle" type="checkbox"/> */}
+      <button style={{float:"left", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Enabled": "Disabled"} </button>
+
+      {/* <input   type="button" data-on="Enabled" data-off="Disabled" checked={ this.state.checked } onClick={() => {this.handleChange()
+      console.log(this.state.checked)}}/> */}
+      <br/>
+      <br/>
+      <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>{this.state.checked ? this.state.hovertochange : this.state.clicktochange}</b></label>
+        {/* <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>Enable to Browse by clicking tissue</b></label> */}
+
       <br/>
       <br/>
       <div className="ma4 mt0">
@@ -430,53 +211,14 @@ check_event = (e) =>{
 {/* style={{background:"#d8ecff",Color:"white"} */}
 
           <div className="inline-img" >
-
             {this.detectSvg(this.state.svgType)}
-
-            {/* <LineChart className="background-body" width={400} height={400} data={data2} margin={{ top: 5, right: 20, bottom: 50, left: 0 }}>
-              <Line type="monotone" dataKey="A" stroke="#8884d8" />
-              <Line type="monotone" dataKey="B" stroke="#8884d8" />
-              <CartesianGrid stroke="#fff" strokeDasharray="5 5"/>
-              <XAxis stroke="#fff" dataKey="name" />
-              <YAxis stroke="#fff"/>
-              <Tooltip />
-            </LineChart> */}
-
-            {/* <BarChart layout="vertical"  width={600} height={600} data={data2}>
-              <XAxis  type="number"/>
-              <YAxis dataKey="name" type="category"/>
-              <Tooltip />
-              <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
-              <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
-              <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
-              <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
-            </BarChart> */}
           </div>
         </div>
-
-        <h1>
-          <br />
-
-           {/* <button type="button" onClick={() => console.log(this.state.checked)}>Click Me!</button> */}
-
-        </h1>
+        <br />
         <br />
       </div>
-      <BarChart />
+      {/* <BarChart /> */}
 
-      {/* <div className="background-body2">
-        <LineChart width={600} height={300} data={data} onClick={e => this.check_event(e)}
-              margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-         <XAxis dataKey="name"/>
-         <YAxis/>
-         <CartesianGrid strokeDasharray="3 3"/>
-         <Tooltip/>
-         <Legend />
-         <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-         <Line type="monotone" dataKey="amt" stroke="#82ca9d" />
-        </LineChart>
-      </div> */}
     </div>
     );
   }
