@@ -3,39 +3,39 @@
 [
    {
       "name": "Total Samples",
-      "A": 100
+      "Number": 100
    },
    {
       "name": "Disease datasets",
-      "A": 200
+      "Number": 200
    },
    {
       "name": "Disease samples",
-      "A": 50
+      "Number": 50
    },
    {
       "name": "Normal Datasets",
-      "A": 880
+      "Number": 880
    },
    {
       "name": "Normal Samples",
-      "A": 236
+      "Number": 236
    },
    {
       "name": "Samples w/ Protein Identifications",
-      "A": 464
+      "Number": 464
    },
    {
       "name": "Samples w/ Strong Identifications",
-      "A": 880
+      "Number": 880
    },
    {
       "name": "Variant Proteins w/ Strong Identifications",
-      "A": 533
+      "Number": 533
    },
    {
       "name": "Size of Spectral Files Mined (Mb)",
-      "A": 464
+      "Number": 464
    }
 ]
 

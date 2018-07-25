@@ -86,36 +86,39 @@ class Human extends Component {
 
   detectSvg = svgType => {
     var data_type = []
+    var urlstate = ""
     if (svgType === "liver") {
-      data_type= this.state.liver_data
+      data_type = this.state.liver_data
     } else if (svgType === "lung"){
-      data_type= this.state.lung_data
+      data_type = this.state.lung_data
     }else if (svgType === "uterus"){
-      data_type= this.state.uterus_data
+      data_type = this.state.uterus_data
     }else if (svgType === "testes"){
-      data_type= this.state.testes_data
+      data_type = this.state.testes_data
     }else if (svgType === "pancreas"){
-      data_type= this.state.pancreas_data
+      data_type = this.state.pancreas_data
     }else if (svgType === "kidney"){
-      data_type= this.state.kidney_data
+      data_type = this.state.kidney_data
     }else if (svgType === "intestine"){
-      data_type= this.state.intestine_data
+      data_type = this.state.intestine_data
     }else if (svgType === "heart"){
-      data_type= this.state.heart_data
+      data_type = this.state.heart_data
     }else if (svgType === "breasts"){
-      data_type= this.state.breast_data
+      data_type = this.state.breast_data
+      urlstate = "breast"
     }else if (svgType === "brain"){
-      data_type= this.state.brain_data
+      data_type = this.state.brain_data
     } else {
         data_type= this.state.general_data
       }
     return (
-      <div>
-        <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type}>
-          <XAxis  type="number"/>
+      // #8884d8
+      <div >
+        <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign("http://localhost:3000/browse/"+urlstate)}>
+          <XAxis type="number" tick={this.state.whiteFill}/>
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
-          <Tooltip />
-          <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+          <Tooltip cursor={{cursor:'pointer'}} wrapperStyle={{color:"black"}} itemStyle={{color:"#001fbf"}}/>
+          <Bar type="monotone" dataKey="Number" barSize={25} fill="#53b4d8" onMouseOver={{cursor:'pointer'}}/>
         </BarChart>
       </div>
     )
@@ -406,7 +409,7 @@ check_event = (e) =>{
 
     return (
       <div>
-      <input type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
+      <input style={{cursor:'pointer'}} type="checkbox" checked={ this.state.checked } onChange={this.handleChange}/>
         <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>Enable to Browse by clicking tissue</b></label>
       <br/>
       <br/>
