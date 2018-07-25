@@ -418,7 +418,7 @@ const orf2p_column = [{
             <br/>
             {/* <hr style={{borderColor:"black"}}/> */}
             {/* If Search Function is not working: Click <a href="../browse">HERE</a> */}
-            <button style={{float:"right", display: "inline"}} className="btn btn-outline-danger" onClick={() => window.location = "../browse"}> Refresh Search </button>
+            <button style={{float:"right", display: "inline"}} className="btn btn-danger" onClick={() => window.location = "../browse"}> Refresh Search </button>
 
               <div className="" style={{color:"black"}}>
                 <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>

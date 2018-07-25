@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Humanimg from "./Human1.png";
-import Svg1 from "./human_non_colourised.svg";
-import Svg2 from "./human_colourised.svg";
+// import Humanimg from "./Human1.png";
+// import Svg1 from "./human_non_colourised.svg";
+// import Svg2 from "./human_colourised.svg";
 import Svg3 from "./human_colourised_lung_grouped.svg";
-import Humanimg2 from "./Human_W.png";
-import Human_lung from "./Human_lung.png";
+// import Humanimg2 from "./Human_W.png";
+// import Human_lung from "./Human_lung.png";
 import L1Chart from "../Images/L1-Identifications.png";
-import Brain from "./Brain.png";
-import Plot1 from "./plot1.png";
-import Plot3 from "./plot3.png";
-import Plot4 from "./plot4.png";
-import Plot5 from "./plot5.png";
-import Plot6 from "./plot6.png";
+// import Brain from "./Brain.png";
+// import Plot1 from "./plot1.png";
+// import Plot3 from "./plot3.png";
+// import Plot4 from "./plot4.png";
+// import Plot5 from "./plot5.png";
+// import Plot6 from "./plot6.png";
+import brain_data from "../Files/brain.json";
+import lung_data from "../Files/lung.json";
+import liver_data from "../Files/liver.json";
+import uterus_data from "../Files/uterus.json";
+import breast_data from "../Files/breast.json";
+import heart_data from "../Files/heart.json";
+import intestine_data from "../Files/intestine.json";
+import kidney_data from "../Files/kidney.json";
+import pancreas_data from "../Files/pancreas.json";
+import testes_data from "../Files/testes.json";
 import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
@@ -38,72 +48,16 @@ class Human extends Component {
       chartHeight: 600,
       yWidth: 120,
       whiteFill:{ fill: 'white', fontSize: 14},
-      data2_s:[
-        {name: "Total Samples", A:100},
-        {name: "Disease datasets", A:200},
-        {name: "Disease samples", A:50},
-        {name: "Normal Datasets", A:880},
-        {name: "Normal Samples", A:236},
-        {name: "Samples w/ Protein Identifications", A:464},
-        {name: "Samples w/ Strong Identifications", A:880},
-        {name: "Variant Proteins w/ Strong Identifications", A:533},
-        {name: "Size of Spectral Files Mined (Mb)", A:464},
-      ],
-      data3_s:[
-        {name: "Total Samples", A:200},
-        {name: "Disease datasets", A:120},
-        {name: "Disease samples", A:80},
-        {name: "Normal Datasets", A:600},
-        {name: "Normal Samples", A:36},
-        {name: "Samples w/ Protein Identifications", A:200},
-        {name: "Samples w/ Strong Identifications", A:500},
-        {name: "Variant Proteins w/ Strong Identifications", A:588},
-        {name: "Size of Spectral Files Mined (Mb)", A:400}
-      ],
-      data4_s:[
-        {name: "Total Samples", A:800},
-        {name: "Disease datasets", A:300},
-        {name: "Disease samples", A:500},
-        {name: "Normal Datasets", A:870},
-        {name: "Normal Samples", A:526},
-        {name: "Samples w/ Protein Identifications", A:120},
-        {name: "Samples w/ Strong Identifications", A:200},
-        {name: "Variant Proteins w/ Strong Identifications", A:35},
-        {name: "Size of Spectral Files Mined (Mb)", A:257}
-      ],
-      data5_s:[
-        {name: "Total Samples", A:645},
-        {name: "Disease datasets", A:782},
-        {name: "Disease samples", A:567},
-        {name: "Normal Datasets", A:75},
-        {name: "Normal Samples", A:265},
-        {name: "Samples w/ Protein Identifications", A:154},
-        {name: "Samples w/ Strong Identifications", A:314},
-        {name: "Variant Proteins w/ Strong Identifications", A:483},
-        {name: "Size of Spectral Files Mined (Mb)", A:251}
-      ],
-      data_breast:[
-        {name: "Total Samples", A:345},
-        {name: "Disease datasets", A:182},
-        {name: "Disease samples", A:467},
-        {name: "Normal Datasets", A:755},
-        {name: "Normal Samples", A:345},
-        {name: "Samples w/ Protein Identifications", A:754},
-        {name: "Samples w/ Strong Identifications", A:344},
-        {name: "Variant Proteins w/ Strong Identifications", A:283},
-        {name: "Size of Spectral Files Mined (Mb)", A:651}
-      ],
-      data_default:[
-        {name: "Total Samples", A:245},
-        {name: "Disease datasets", A:182},
-        {name: "Disease samples", A:367},
-        {name: "Normal Datasets", A:75},
-        {name: "Normal Samples", A:165},
-        {name: "Samples w/ Protein Identifications", A:154},
-        {name: "Samples w/ Strong Identifications", A:314},
-        {name: "Variant Proteins w/ Strong Identifications", A:273},
-        {name: "Size of Spectral Files Mined (Mb)", A:251}
-      ],
+      brain_data:brain_data,
+      lung_data:lung_data,
+      liver_data:liver_data,
+      uterus_data:uterus_data,
+      breast_data:breast_data,
+      heart_data:heart_data,
+      intestine_data:intestine_data,
+      kidney_data:kidney_data,
+      pancreas_data:pancreas_data,
+      testes_data:testes_data,
 
 
     };
@@ -127,12 +81,26 @@ class Human extends Component {
   componentDidMount = () => {};
 
   detectSvg = svgType => {
+    // return (
+    //   <div>
+    //     <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.svgType+"_data"}>
+    //       <XAxis  type="number"/>
+    //       <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
+    //       <Tooltip />
+    //       <Bar type="monotone" dataKey="A" barSize={30} fill="#8884d8"/>
+    //       <Bar type="monotone" dataKey="B" barSize={30} fill="#8884d8" label="test" />
+    //       <Bar type="monotone" dataKey="C" barSize={30} fill="#8884d8" label="test" />
+    //       <Bar type="monotone" dataKey="D" barSize={30} fill="#8884d8" label="test" />
+    //     </BarChart>
+    //   </div>
+
+
     if (svgType === "brain") {
       console.log("Brain has been identified")
 
       return (
         <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data2_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.brain_data}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
@@ -154,7 +122,7 @@ class Human extends Component {
       console.log("lung has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data3_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.lung_data}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
@@ -176,7 +144,7 @@ class Human extends Component {
       console.log("liver has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data4_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.liver_data}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
@@ -209,7 +177,7 @@ class Human extends Component {
       console.log("breast has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data_breast} onClick={() => window.location.assign("http://localhost:3000/browse/breast")}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.breast_data} onClick={() => window.location.assign("http://localhost:3000/browse/breast")}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
@@ -233,7 +201,7 @@ class Human extends Component {
       console.log("uterus has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data5_s}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.uterus_data}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
@@ -255,7 +223,7 @@ class Human extends Component {
       // console.log("breast has been identified");
       return (
         <div>
-          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.data_default} onClick={() => window.location.assign("http://localhost:3000/browse")}>
+          <BarChart layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={this.state.heart_data} onClick={() => window.location.assign("http://localhost:3000/browse")}>
             <XAxis  type="number"/>
             <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
             <Tooltip />
@@ -269,20 +237,20 @@ class Human extends Component {
     }
   };
 
-  graphChange = () => {
-    var data2 = [
-      {name: "Brain", A:100},
-      {name: "Lung", A:200},
-      {name: "Liver", A:50},
-      {name: "Pancreas", A:880},
-      {name: "Intestine", A:236},
-      {name: "Testes", A:464},
-      {name: "Heart", A:880},
-      {name: "Breasts", A:533},
-      {name: "Kidney", A:464},
-      {name: "Uterus", A:263}
-    ]
-  }
+  // graphChange = () => {
+  //   var data2 = [
+  //     {name: "Brain", A:100},
+  //     {name: "Lung", A:200},
+  //     {name: "Liver", A:50},
+  //     {name: "Pancreas", A:880},
+  //     {name: "Intestine", A:236},
+  //     {name: "Testes", A:464},
+  //     {name: "Heart", A:880},
+  //     {name: "Breasts", A:533},
+  //     {name: "Kidney", A:464},
+  //     {name: "Uterus", A:263}
+  //   ]
+  // }
 
   handleChange= () => {
    this.setState({
@@ -350,53 +318,53 @@ check_event = (e) =>{
 //   {name: "Uterus", A:263,B:564,C:623,D:664}
 // ];
 
-const data2 = [
-  {name: "Brain", A:100},
-  {name: "Lung", A:200},
-  {name: "Liver", A:50},
-  {name: "Pancreas", A:880},
-  {name: "Intestine", A:236},
-  {name: "Testes", A:464},
-  {name: "Heart", A:880},
-  {name: "Breasts", A:533},
-  {name: "Kidney", A:464},
-  {name: "Uterus", A:263}
-];
-
-
-const data3 = [
-  {name: "Brain", A:200},
-  {name: "Lung", A:120},
-  {name: "Liver", A:80},
-  {name: "Pancreas", A:600},
-  {name: "Intestine", A:36},
-  {name: "Testes", A:200},
-  {name: "Heart", A:500},
-  {name: "Breasts", A:588},
-  {name: "Kidney", A:400},
-  {name: "Uterus", A:600}
-]
-
-
-const data4 = [
-  {name: "Brain", A:280},
-  {name: "Lung", A:170},
-  {name: "Liver", A:280},
-  {name: "Pancreas", A:400},
-  {name: "Intestine", A:354},
-  {name: "Testes", A:564},
-  {name: "Heart", A:721},
-  {name: "Breasts", A:128},
-  {name: "Kidney", A:387},
-  {name: "Uterus", A:654}
-]
-
-const data11 = [
-  {name: "test1",A:100},
-{name: "test2",B:200},
-{name: "test3",C:50},
-{name: "test4",D:880}
-];
+// const data2 = [
+//   {name: "Brain", A:100},
+//   {name: "Lung", A:200},
+//   {name: "Liver", A:50},
+//   {name: "Pancreas", A:880},
+//   {name: "Intestine", A:236},
+//   {name: "Testes", A:464},
+//   {name: "Heart", A:880},
+//   {name: "Breasts", A:533},
+//   {name: "Kidney", A:464},
+//   {name: "Uterus", A:263}
+// ];
+//
+//
+// const data3 = [
+//   {name: "Brain", A:200},
+//   {name: "Lung", A:120},
+//   {name: "Liver", A:80},
+//   {name: "Pancreas", A:600},
+//   {name: "Intestine", A:36},
+//   {name: "Testes", A:200},
+//   {name: "Heart", A:500},
+//   {name: "Breasts", A:588},
+//   {name: "Kidney", A:400},
+//   {name: "Uterus", A:600}
+// ]
+//
+//
+// const data4 = [
+//   {name: "Brain", A:280},
+//   {name: "Lung", A:170},
+//   {name: "Liver", A:280},
+//   {name: "Pancreas", A:400},
+//   {name: "Intestine", A:354},
+//   {name: "Testes", A:564},
+//   {name: "Heart", A:721},
+//   {name: "Breasts", A:128},
+//   {name: "Kidney", A:387},
+//   {name: "Uterus", A:654}
+// ]
+//
+// const data11 = [
+//   {name: "test1",A:100},
+// {name: "test2",B:200},
+// {name: "test3",C:50},
+// {name: "test4",D:880}
+// ];
 
 // const Xlabel=[{Test1:1,Test2:1,Test3:1,Test4:1}]
 

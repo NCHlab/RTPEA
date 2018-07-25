@@ -94,7 +94,7 @@ class Home extends Component {
         </div> */}
 
           <div className="container" style={{color:"black"}}>
-            <Popup trigger={<button className="btn btn-outline-warning"> Information! </button>} modal>
+            <Popup trigger={<button style={{float:"right", display: "inline"}} className="btn btn-outline-warning"> Information! </button>} modal>
               {close => (
                 <div className="">
                   <a className="close" onClick={close}>
