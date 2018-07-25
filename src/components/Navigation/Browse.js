@@ -417,6 +417,8 @@ const orf2p_column = [{
 
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
+            <br/>
+            <button style={{float:"right", display: "inline"}} className="btn btn-outline-danger" onClick={() => window.location = "/browse"}> Refresh Search </button>
 
             <div className="" style={{color:"black"}}>
               <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>

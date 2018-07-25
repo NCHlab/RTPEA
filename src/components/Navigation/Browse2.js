@@ -416,8 +416,10 @@ const orf2p_column = [{
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
             <br/>
-            <hr style={{borderColor:"black"}}/>
-            If Search Function is not working: Click <a href="../browse">HERE</a>
+            {/* <hr style={{borderColor:"black"}}/> */}
+            {/* If Search Function is not working: Click <a href="../browse">HERE</a> */}
+            <button style={{float:"right", display: "inline"}} className="btn btn-outline-danger" onClick={() => window.location = "../browse"}> Refresh Search </button>
+
               <div className="" style={{color:"black"}}>
                 <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
                   {close => (
