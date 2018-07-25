@@ -7,8 +7,8 @@ import Ideogram from './Ideogram';
 import Sequence from './Sequence';
 import NavVis from "./NavVis.js";
 import Popup from "reactjs-popup";
-import Protvis_example from "../Images/protvis_example.png"
-
+import protvis_example from "../Images/protvis_example.png"
+import protvis_filter from "../Images/protvis_filter.png"
 // import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
 
@@ -119,12 +119,15 @@ class Visualisation extends Component {
 										<br/>
 										<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
 										<br />
+										<img src={protvis_filter} alt="protvis_example!" />
 										<div className="header"></div>
 										Example Usage:
 										<br />
-										<img src={Protvis_example} alt="protvis_example!" />
+										<img src={protvis_example} alt="protvis_example!" />
 
 										<div className="header"></div>
+
+
 									</div>
 								</div>
 							)}
