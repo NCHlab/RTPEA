@@ -9,6 +9,8 @@ import NavVis from "./NavVis.js";
 import Popup from "reactjs-popup";
 import protvis_example from "../Images/protvis_example.png"
 import protvis_filter from "../Images/protvis_filter.png"
+import protvis_conf from "../Images/protvis_conf.png"
+
 // import configFile from "./config.json"
 // import jsontest from "./externalFeatures_P05067.json";
 
@@ -157,7 +159,7 @@ class Visualisation extends Component {
 									<a className="close" onClick={close}>
 										&times;
 									</a>
-									<div className="header"> ProtVista </div>
+									<div className="header"> <b>ProtVista</b> </div>
 									<div className="content">
 										{/* {" "} */}
 										To view variants, click the variant tab.
@@ -166,7 +168,15 @@ class Visualisation extends Component {
 										<br />
 										<img src={protvis_filter} alt="protvis_example!" />
 										<div className="header"></div>
-										Example Usage:
+										<b>Colour Gradient:</b>
+										<br/>
+										<img src={protvis_conf} alt="protvis_example!" />
+										<br/>
+										Darker version of colour = Higher confidence
+										<br/>
+										Lighter version of colour = Lower confidence
+										<div className="header"></div>
+										<b>Variant Example</b>:
 										<br />
 										<img src={protvis_example} alt="protvis_example!" />
 
