@@ -9,6 +9,7 @@ class Sequence_view extends Component {
 		super(props);
 		this.state = {
 			prot_seq: this.props.match.params.id,
+			hs_pa: "",
 			// prot_seq: this.props.match.params.id === undefined ? this.setState({prot_seq:"1"}) : this.props.match.params.id,
 			seq_data: [{
 
@@ -138,6 +139,27 @@ saveAs = (
 	}
 };
 
+// UISED FOR DOWNLOADING PA AND HS DATA
+saveAs2 = (
+	content,
+	filename = this.state.hs_pa + ".fasta",
+	type = "application/json"
+) => {
+	let blob = new Blob([content], { type });
+	let uri = URL.createObjectURL(blob);
+
+	let link = document.createElement("a");
+	if (typeof link.download === "string") {
+		document.body.appendChild(link);
+		link.download = filename;
+		link.href = uri;
+		link.click();
+		document.body.removeChild(link);
+	} else {
+		window.location.replace(uri);
+	}
+};
+
   render() {
 
 
@@ -187,6 +209,8 @@ saveAs = (
 
 					<br/>
 					<sup style={{"color":"black"}}>^ You must provide ORF1p or ORF2p at the end ^</sup>
+					<br/>
+
 					</div>
 					<div className="container">
 					<hr style={{borderColor:"black"}}/>
@@ -199,6 +223,49 @@ saveAs = (
       <div id="sequence-viewer" className="container black_text"></div>
 			<div className="container">
 				<hr style={{borderColor:"black"}}/>
+			</div>
+			<div className="container">
+				<button className="btn btn-outline-info"
+					onClick={e =>{
+						this.setState({hs_pa: "HS"})
+						fetch("http://localhost:3001/sequence/Hs")
+						.then(response => response.json())
+						.then(data => {
+							var list_data = []
+							{/* var joined_data = "" */}
+							for (var i = 0; i < data.length; i++) {
+								list_data.push(">"+data[i].Family+"\n"+data[i].Sequence)
+							}
+							{/* var joined_data = list_data.join().replace(/,/g,"\n") */}
+							 this.saveAs2(list_data.join().replace(/,/g,"\n"))
+							 {/* this.saveAs(joined_data) */}
+					})
+				}
+				}
+				>
+					Download ALL HS
+				</button>
+
+				<button className="btn btn-outline-info"
+					onClick={e =>{
+						this.setState({hs_pa: "PA"})
+						fetch("http://localhost:3001/sequence/Pa")
+						.then(response => response.json())
+						.then(data => {
+							var list_data = []
+							{/* var joined_data = "" */}
+							for (var i = 0; i < data.length; i++) {
+								list_data.push(">"+data[i].Family+"\n"+data[i].Sequence)
+							}
+							{/* var joined_data = list_data.join().replace(/,/g,"\n") */}
+							 this.saveAs2(list_data.join().replace(/,/g,"\n"))
+							 {/* this.saveAs(joined_data) */}
+					})
+				}
+				}
+				>
+					Download ALL PA
+				</button>
 			</div>
 			<br />
 			<br />
