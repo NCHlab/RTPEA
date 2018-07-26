@@ -535,7 +535,7 @@ const orf2p_column = [{
             {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
             <br/>
-            <button style={{float:"right", display: "inline"}} className="btn btn-outline-danger" onClick={() => window.location = "/browse"}> Refresh Search </button>
+            <button style={{float:"right", display: "inline"}} className="btn btn-outline-danger" onClick={() => window.location = "/browse"}> <b>Refresh Search</b> </button>
 
             <div className="" style={{color:"black"}}>
               <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
@@ -671,7 +671,7 @@ const orf2p_column = [{
                       SubComponent={row => {
                         return (
                           <div>
-                            <div style={{ border: "4px", borderStyle: "solid solid none solid", borderColor: "rgb(214, 188, 0)" }}>
+                            <div style={{ border: "4px", borderStyle: "solid solid none solid", borderColor: "rgb(0,0,0)" }}>
                               {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF1p_variants}
@@ -703,7 +703,7 @@ const orf2p_column = [{
                                 showPageJump={false}
                                 className="-striped -highlight"/>
                             </div>
-                            <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(214, 188, 0)" }}>
+                            <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(0,0,0)" }}>
                               {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF2p_variants}
