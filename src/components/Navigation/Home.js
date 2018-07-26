@@ -169,19 +169,19 @@ class Home extends Component {
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={130} speed={6000} />
+                  <CountTo to={30} speed={6000} />
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
                   {/* # of Orf2: */}
-                  <CountTo to={500} speed={6000} />
+                  <CountTo to={1000} speed={6000} />
                   {/* onComplete={onHide} */}
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={500} speed={6000} /> GB
+                  <CountTo to={300} speed={6000} /> GB
                 </h1>
               </div>
             </div>
