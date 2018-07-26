@@ -304,11 +304,12 @@ class Home extends Component {
                   <br />
                   <br />
                   <div className="font-italic">
+                    {/* onClick={e => this.check_event(e)} */}
                     <LineChart
                       width={600}
                       height={300}
                       data={homepage_barchart}
-                      onClick={e => this.check_event(e)}
+
                       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                     >
                       <XAxis dataKey="confidence" />
