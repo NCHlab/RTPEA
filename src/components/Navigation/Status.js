@@ -13,6 +13,7 @@ class Status extends Component {
   }
 
   componentDidMount = () => {
+    // fetch("http://rtpea.com/dbcheck")
     fetch("http://localhost:3001/dbcheck")
       .then(response => {
         if (response.status === 200) {

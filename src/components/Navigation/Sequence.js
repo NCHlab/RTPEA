@@ -41,6 +41,9 @@ class Sequence_view extends Component {
 			// } else {
 			// 	var prot_seq = this.props.match.params.id
 			// }
+
+
+			// fetch("http://rtpea.com/sequence/" + this.state.prot_seq)
 			fetch("http://localhost:3001/sequence/" + this.state.prot_seq)
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data: data})})
@@ -229,6 +232,7 @@ saveAs2 = (
 					onClick={e =>{
 						this.setState({hs_pa: "HS"})
 						fetch("http://localhost:3001/sequence/Hs")
+						// fetch("http://rtpea.com/sequence/Hs")
 						.then(response => response.json())
 						.then(data => {
 							var list_data = []
@@ -250,6 +254,7 @@ saveAs2 = (
 					onClick={e =>{
 						this.setState({hs_pa: "PA"})
 						fetch("http://localhost:3001/sequence/Pa")
+						// fetch("http://rtpea.com/sequence/Pa")
 						.then(response => response.json())
 						.then(data => {
 							var list_data = []

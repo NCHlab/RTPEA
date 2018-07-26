@@ -32,7 +32,7 @@ class Home extends Component {
   }
 
   componentDidMount = () => {
-
+    // fetch("http://rtpea.com/dbcheck")
     fetch("http://localhost:3001/dbcheck")
       .then(response => {
         if (response.status === 200){
@@ -83,6 +83,7 @@ class Home extends Component {
 
     return (
       <div className="">
+        {console.log(this.props.mytestvar)}
         <p className="App-intro">
           <h1 className="container colour-white">
             Retroelement Protein Expression Atlas

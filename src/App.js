@@ -109,7 +109,7 @@ class App extends Component{
         <div className="paths">
           <Switch>
             <Route exact path={"/"} component={Homeredirect} />
-            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
+            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} />}/>
             <Route exact path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
             <Route exact path="/browse/:id" component={Browse2} />
             <Route exact path="/Visualise" component={Visualise} />
