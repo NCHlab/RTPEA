@@ -379,7 +379,7 @@ check_expr_orf2 = (d) => {
             >
               {/* {row.value} */}
               {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
-              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name}</span>
+              {row.value} &emsp;-&emsp; <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name === "NA" ? row.original.ORF2p_variants[0].name : row.original.ORF2p_variants[0].name.slice(6) }</span>
             </div>
         </div>
         )
