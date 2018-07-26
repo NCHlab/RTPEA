@@ -190,6 +190,11 @@ class Visualisation extends Component {
 										<img src={protvis_example} alt="protvis_example!" />
 
 										<div className="header"></div>
+										ProtVista was made possible thanks to the <a href="http://ebi-uniprot.github.io/ProtVista/">uniprot team</a> and Xavier Watkins for its creation.
+										<br/>
+										ProtVista was heavily modified by RTPEA to produce the visualisations that we require.
+										<div className="header"></div>
+									 	ProtVista: visualization of protein sequence annotations (doi: <a href="https://academic.oup.com/bioinformatics/article/33/13/2040/3063132">10.1093/bioinformatics/btx120</a>)
 
 
 									</div>
