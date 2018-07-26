@@ -27,7 +27,7 @@ class Table extends Component{
       switched: true,
       filtered1: "",
     };
-    // this.data = this.data.bind(this)
+    this.check_expr_orf2 = this.check_expr_orf2.bind(this)
   }
 
 
@@ -84,6 +84,23 @@ class Table extends Component{
           }
       };
 
+check_expr_orf2 = (d) => {
+
+      var prevconf = 2
+      console.log(d.ORF2p.confidence)
+    //   for (var i = 0; i < d.length; i++) {
+    //
+    //     for (var j = 0; j < d[i].ORF2p_variants.length; j++) {
+    //
+    //         if (d[i].ORF2p_variants[j].confidence > prevconf){
+    //           prevconf = d[i].ORF2p_variants[j].confidence
+    //         }
+    //     }
+    // }
+    return prevconf
+
+    }
+
   // data = () => {[
   //   JSON.stringify(this.state.data2)
   // ]}
@@ -139,10 +156,8 @@ class Table extends Component{
   const sec_columns = [{
     Header: '',
     accessor: '-' // String-based value accessors!
-  }, {
-    Header: '',
-    accessor: '-'
-  }, {
+  },
+  {
     Header: <b>Sample Number</b>,
     id: "Sample_num",
     accessor: "Snumber"
@@ -223,36 +238,37 @@ class Table extends Component{
         )
     }
     // "sample[0].1[0].ORF1p.confidence" && "sample[0].1[0].ORF2p.confidence"
+  // , {
+  //   Header: <b>ORF0</b>,
+  //   id:"ORF0_data",
+  //   accessor: "ORF0.confidence",
+  //   Cell: row => (
+  //         <div
+  //           style={{
+  //             width: '100%',
+  //             height: '100%',
+  //             backgroundColor: this.state.background_conf_colour,
+  //             borderRadius: '2px'
+  //           }}
+  //         >
+  //           {/* {row.value} */}
+  //           <div
+  //             style={{
+  //               width: `${row.value}%`,
+  //               height: '100%',
+  //               backgroundColor: row.value > 80 ? this.state.high_conf_colour
+  //                 : row.value > 40 ? this.state.med_conf_colour
+  //                 : this.state.low_conf_colour,
+  //               borderRadius: '2px',
+  //               transition: 'all .2s ease-out'
+  //             }}
+  //           >
+  //             {row.value}
+  //           </div>
+  //       </div>
+  //       )
+  // }
   , {
-    Header: <b>ORF0</b>,
-    id:"ORF0_data",
-    accessor: "ORF0.confidence",
-    Cell: row => (
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              backgroundColor: this.state.background_conf_colour,
-              borderRadius: '2px'
-            }}
-          >
-            {/* {row.value} */}
-            <div
-              style={{
-                width: `${row.value}%`,
-                height: '100%',
-                backgroundColor: row.value > 80 ? this.state.high_conf_colour
-                  : row.value > 40 ? this.state.med_conf_colour
-                  : this.state.low_conf_colour,
-                borderRadius: '2px',
-                transition: 'all .2s ease-out'
-              }}
-            >
-              {row.value}
-            </div>
-        </div>
-        )
-  }, {
     Header: <b>HERV</b>,
     id:"HERV_data",
     accessor: "HERV.confidence",
@@ -282,9 +298,104 @@ class Table extends Component{
         </div>
         )
   }, {
-    Header: <b>Top Expr. Variant</b>,
-    accessor: "TEV"
+    Header: <b>Top Expr. Var. ORF1</b>,
+    id: "top_expr_orf1",
+    accessor: (d) => {
+      var all_list1 = []
+      all_list1.push(d.ORF1p_variants[0].confidence)
+      all_list1.sort(function(a, b){return b - a});
+      return all_list1[0]
+      // this.check_expr_orf2(d)
+
+    },
+    Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: this.state.background_conf_colour,
+              borderRadius: '2px'
+            }}
+          >
+            {/* {row.value} */}
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                  : row.value > 40 ? this.state.med_conf_colour
+                  : this.state.low_conf_colour,
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            >
+              {row.value}
+            </div>
+        </div>
+        )
+  }, {
+    Header: <b>Top Expr. Var. ORF2</b>,
+    id: "top_expr_orf2",
+    accessor: (d) => {
+      //Only looking at [0] because data already ordered highest to lowest
+      // console.log(d.ORF2p_variants)
+      // console.log(d.ORF2p_variants[0].confidence)
+      // console.log(d.ORF2p_variants[1].confidence)
+    //   for (var i = 0; i < 109; i++) {
+    //   console.log(d.ORF2p_variants[i].confidence)
+    // }
+
+
+      // console.log(d)s
+      var all_list2 = []
+      all_list2.push(d.ORF2p_variants[0].confidence)
+      all_list2.sort(function(a, b){return b - a});
+      return all_list2[0]
+      // this.check_expr_orf2(d)
+
+    },
+    Cell: row => (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              backgroundColor: this.state.background_conf_colour,
+              borderRadius: '2px'
+            }}
+          >
+            {/* {row.value} */}
+            <div
+              style={{
+                width: `${row.value}%`,
+                height: '100%',
+                backgroundColor: row.value > 80 ? this.state.high_conf_colour
+                  : row.value > 40 ? this.state.med_conf_colour
+                  : this.state.low_conf_colour,
+                borderRadius: '2px',
+                transition: 'all .2s ease-out'
+              }}
+            >
+              {row.value}
+            </div>
+        </div>
+        )
   }]
+
+
+//   Header: <b>Top Expr. Variant</b>,
+//   id: "top_expr_orf1",
+//   accessor: (d) => {
+//     var prevconf = 2
+//     for (var i = 0; i < d.length; i++) {
+//       for (var j = 0; j < d[i].ORF2p_variants.length; j++) {
+//           if (d[i].ORF2p_variants[j].confidence > prevconf){
+//             prevconf = d[i].ORF2p_variants[j].confidence
+//           }
+//       }
+//   }
+//   return prevconf
+// }
+// }]
 
 // const LoadingMS =
 
@@ -409,6 +520,8 @@ const orf2p_column = [{
 
       return (
         <div>
+
+          {console.log(this.state.data2)}
 
           <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div className="col-md-10 offset-md-1" style={{background: 'linear-gradient(to bottom, #d9e0e2, #abadad)', color: this.state.text_colour}}> */}
