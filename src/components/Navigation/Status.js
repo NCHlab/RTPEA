@@ -14,7 +14,8 @@ class Status extends Component {
 
   componentDidMount = () => {
     // fetch("http://rtpea.com/dbcheck")
-    fetch("http://localhost:3001/dbcheck")
+    // fetch("http://localhost:3001/dbcheck")
+    fetch(this.props.urlSource+"/dbcheck")
       .then(response => {
         if (response.status === 200) {
           this.setState({ api_status: "Online" });

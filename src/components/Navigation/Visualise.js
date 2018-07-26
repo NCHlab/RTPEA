@@ -77,14 +77,16 @@ class Visualisation extends Component {
 						defaultSources: false,
 						customDataSource: {
 						// url: 'https://rtpea.com/visualise/',
-		        url: 'http://localhost:3001/visualise/',
+		        // url: 'http://localhost:3001/visualise/',
+						url: this.props.urlSource+'/visualise/',
 		        source: 'Proteomics_QMUL',
 		        useExtension: false,
 						overwritePredictions: true
 					},
 						// customConfig: "ProtVista/src/config.json"
 						// customConfig: 'https://rtpea.com/visualise_config.json/'
-						customConfig: 'http://localhost:3001/visualise_config.json/'
+						// customConfig: 'http://localhost:3001/visualise_config.json/'
+						customConfig: this.props.urlSource+'/visualise_config.json/'
 						// customConfig: './data/externalConfig.json',
         });
 			// }))

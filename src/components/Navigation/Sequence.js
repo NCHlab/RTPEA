@@ -44,7 +44,8 @@ class Sequence_view extends Component {
 
 
 			// fetch("http://rtpea.com/sequence/" + this.state.prot_seq)
-			fetch("http://localhost:3001/sequence/" + this.state.prot_seq)
+			// fetch("http://localhost:3001/sequence/" + this.state.prot_seq)
+			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq)
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data: data})})
 			.then(data => {
@@ -231,7 +232,8 @@ saveAs2 = (
 				<button className="btn btn-outline-info"
 					onClick={e =>{
 						this.setState({hs_pa: "HS"})
-						fetch("http://localhost:3001/sequence/Hs")
+						fetch(this.props.urlSource+"/sequence/Hs")
+						// fetch("http://localhost:3001/sequence/Hs")
 						// fetch("http://rtpea.com/sequence/Hs")
 						.then(response => response.json())
 						.then(data => {
@@ -253,7 +255,8 @@ saveAs2 = (
 				<button className="btn btn-outline-info"
 					onClick={e =>{
 						this.setState({hs_pa: "PA"})
-						fetch("http://localhost:3001/sequence/Pa")
+						fetch(this.props.urlSource+"/sequence/Pa")
+						// fetch("http://localhost:3001/sequence/Pa")
 						// fetch("http://rtpea.com/sequence/Pa")
 						.then(response => response.json())
 						.then(data => {

@@ -34,7 +34,8 @@ class Table extends Component{
 
   searchURL = () => {
     let { url_id } = this.state;
-    let url = "http://localhost:3001/table/"
+    let url = this.props.urlSource+"/table/"
+    // let url = "http://localhost:3001/table/"
     // let url = "http://rtpea.com/table/"
     return url
   }
@@ -493,7 +494,7 @@ const orf2p_column = [{
 
       return (
         <div>
-          {console.log(this.props)}
+          {/* {console.log(this.props)} */}
           <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 

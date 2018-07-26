@@ -61,6 +61,8 @@ class App extends Component{
    this.state = {
     show: false,
     isLoading: true,
+    urlSource:"http://localhost:3001",
+    // urlSource:"http://rtpea.com"
   };
   }
 
@@ -109,13 +111,50 @@ class App extends Component{
         <div className="paths">
           <Switch>
             <Route exact path={"/"} component={Homeredirect} />
-            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} />}/>
-            <Route exact path={"/browse"} component={() => <Browse show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>}/>
-            <Route exact path="/browse/:id" component={Browse2} />
-            <Route exact path="/Visualise" component={Visualise} />
-            <Route exact path="/Visualise/:id" component={Visualise} />
+            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource}/>}/>
+            {/* <Route exact path={"/browse"} component={() => <Browse/>}/> */}
+            <Route exact path={"/browse"} render={(props) => (<Browse {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/browse/:id" component={Browse2} urlSource={this.state.urlSource}/> */}
+            <Route exact path="/browse/:id" render={(props) => (<Browse2 {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/Visualise" component={Visualise} /> */}
+            <Route exact path="/Visualise" render={(props) => (<Visualise {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/Visualise/:id" component={Visualise} /> */}
+            <Route exact path="/Visualise/:id" render={(props) => (<Visualise {...props} urlSource={this.state.urlSource} />)}/>
             {/* <Route exact path="/Visualisedemo" component={Visualisedemo} /> */}
             {/* <Route exact path="/BrowseDemo" component={BrowseDemo} /> */}
+            {/* <Route exact path={"/api"} component={Api} /> */}
+            <Route exact path="/api" render={(props) => (<Api {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/info" component={Info} />
+            <Route exact path="/contact" component={Contact} />
+            {/* <Route exact path="/ideogram" component={Ideogram} /> */}
+            <Route exact path="/ideogram" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/ideogram/:id" component={Ideogram} /> */}
+            <Route exact path="/ideogram/:id" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/sequence" component={Sequence} /> */}
+            <Route exact path="/sequence" render={(props) => (<Sequence {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/sequence/:id" component={Sequence} /> */}
+            <Route exact path="/sequence/:id" render={(props) => (<Sequence {...props} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/status" component={() => <Status error_code={200}/>}/> */}
+            <Route exact path="/status" render={(props) => (<Status {...props} error_code={200} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/status/403" component={() => <Status error_code={403}/>}/> */}
+            <Route exact path="/status/403" render={(props) => (<Status {...props} error_code={403} urlSource={this.state.urlSource} />)}/>
+            {/* <Route exact path="/status/404" component={() => <Status error_code={404}/>}/> */}
+            <Route exact path="/status/404" render={(props) => (<Status {...props} error_code={404} urlSource={this.state.urlSource} />)}/>
+            {/* <Route path="*" component={() => <Status error_code={404.1}/>}/> */}
+            <Route exact path="*" render={(props) => (<Status {...props} error_code={404.1} urlSource={this.state.urlSource} />)}/>
+          </Switch>
+
+          {/* <Switch>
+            <Route exact path={"/"} component={Homeredirect} />
+            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource}/>}/>
+            <Route exact path={"/browse"} component={() => <Browse/>}/>
+            <Route exact path="/browse/:id" component={Browse2} urlSource={this.state.urlSource}/>
+            <Route exact path="/browse/:id" render={(props) => (<Browse2 {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/Visualise" component={Visualise} />
+            <Route exact path="/Visualise/:id" component={Visualise} />
+            <Route exact path="/Visualise/:id" render={(props) => (<Visualise {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/Visualisedemo" component={Visualisedemo} />
+            <Route exact path="/BrowseDemo" component={BrowseDemo} />
             <Route exact path={"/api"} component={Api} />
             <Route exact path="/info" component={Info} />
             <Route exact path="/contact" component={Contact} />
@@ -127,7 +166,7 @@ class App extends Component{
             <Route exact path="/status/403" component={() => <Status error_code={403}/>}/>
             <Route exact path="/status/404" component={() => <Status error_code={404}/>}/>
             <Route path="*" component={() => <Status error_code={404.1}/>}/>
-          </Switch>
+          </Switch> */}
         </div>
         <div className="line-seperator"></div>
         <Footer />

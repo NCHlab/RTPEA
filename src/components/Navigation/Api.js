@@ -48,7 +48,8 @@ class Api extends Component {
   // retrieves the url_id from the state component and returns the new url
   searchURL = () => {
     let { url_id } = this.state;
-    let url = "http://localhost:3001/api/" + url_id;
+    // let url = "http://localhost:3001/api/" + url_id;
+    let url = this.props.urlSource+"/api/" + url_id;
     // let url = "http://rtpea.com/api/" + url_id;
     return url;
   };

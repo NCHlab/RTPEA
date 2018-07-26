@@ -51,6 +51,7 @@ class Ideogram_c extends Component {
 			function 	hyperlinkProtein(annot) {
 			// var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
 			// Substring used to only search for LINE_1
+			// var url = this.props.urlSource+'/sequence/' + annot.name + "_ORF1p";
 			var url = 'http://rtpea.com/sequence/' + annot.name + "_ORF1p";
 			// var url = 'http://localhost:3001/sequence/' + annot.name + "_ORF1p";
 			annot.displayName =
@@ -59,7 +60,8 @@ class Ideogram_c extends Component {
 			return annot
 		}
 			// fetch("http://rtpea.com/sequence/ideogram/" + this.state.prot_seq)
-			fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
+			// fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
+			fetch(this.props.urlSource+"/ideogram/" + this.state.prot_seq)
 			.then(response => response.json())
 			.then(data => {this.setState({annotation_data: data})})
 			.then( data => {
