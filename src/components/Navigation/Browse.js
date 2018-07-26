@@ -330,7 +330,8 @@ check_expr_orf2 = (d) => {
               }}
             >
               {/* {console.log(row)} */}
-              {row.value + " - " + row.original.ORF1p_variants[0].name}
+              {/* {row.value} <b> {row.original.ORF1p_variants[0].name}</b> */}
+              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span>
             </div>
         </div>
         )
@@ -377,7 +378,8 @@ check_expr_orf2 = (d) => {
               }}
             >
               {/* {row.value} */}
-              {row.value + " - " + row.original.ORF2p_variants[0].name}
+              {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
+              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name}</span>
             </div>
         </div>
         )

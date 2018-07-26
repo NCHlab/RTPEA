@@ -313,7 +313,7 @@ class Table extends Component{
               }}
             >
               {/* {row.value} */}
-              {row.value + " - " + row.original.ORF1p_variants[0].name}
+              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span>
             </div>
         </div>
         )
@@ -348,7 +348,7 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {row.value + " - " + row.original.ORF2p_variants[0].name}
+
             <div
               style={{
                 width: `${row.value}%`,
@@ -360,7 +360,9 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {/* {row.value} */}
+              {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
+              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name}</span>
 
             </div>
         </div>
