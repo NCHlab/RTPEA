@@ -61,8 +61,8 @@ class Human extends Component {
       testes_data:testes_data,
       general_data: general_data,
       data_type: testes_data,
-      hovertochange:"Disable to Browse by hovering over tissue",
-      clicktochange:"Enable to Browse by clicking on tissue",
+      clicktochange:"Hover over tissue to display graph",
+      hovertochange:"Click on tissue to display graph",
 
 
 
@@ -183,7 +183,7 @@ check_event = (e) =>{
       <div>
         {/* style={{cursor:'pointer'}} */}
         {/* <input checked data-toggle="toggle" type="checkbox"/> */}
-      <button style={{float:"left", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Enabled": "Disabled"} </button>
+      <button style={{float:"left", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Click Mode" : "Hover Mode"} </button>
 
       {/* <input   type="button" data-on="Enabled" data-off="Disabled" checked={ this.state.checked } onClick={() => {this.handleChange()
       console.log(this.state.checked)}}/> */}

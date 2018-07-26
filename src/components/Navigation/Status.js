@@ -121,10 +121,10 @@ class Status extends Component {
             </tr>
             <tr>
               <td>
-                <b>Experimental Server:</b>
+                <b>RetroMiner Server:</b>
               </td>
               <td>
-                <img src={offlineimg} alt="Online!" />
+                <img src={onlineimg} alt="Online!" />
               </td>
             </tr>
           </table>

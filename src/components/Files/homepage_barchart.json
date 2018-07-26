@@ -1,0 +1,79 @@
+[
+  {
+    "confidence": "5",
+    "ORF1p": 2,
+    "ORF2p": 8,
+    "ORF1p variant": 187,
+    "ORF2p variant": 826
+  },
+  {
+    "confidence": "10",
+    "ORF1p": 0,
+    "ORF2p": 9,
+    "ORF1p variant": 50,
+    "ORF2p variant": 204
+  },
+  {
+    "confidence": "20",
+    "ORF1p": 4,
+    "ORF2p": 7,
+    "ORF1p variant": 31,
+    "ORF2p variant": 74
+  },
+  {
+    "confidence": "30",
+    "ORF1p": 3,
+    "ORF2p": 3,
+    "ORF1p variant": 21,
+    "ORF2p variant": 42
+  },
+  {
+    "confidence": "40",
+    "ORF1p": 1,
+    "ORF2p": 4,
+    "ORF1p variant": 9,
+    "ORF2p variant": 25
+  },
+  {
+    "confidence": "50",
+    "ORF1p": 2,
+    "ORF2p": 2,
+    "ORF1p variant": 5,
+    "ORF2p variant": 36
+  },
+  {
+    "confidence": "60",
+    "ORF1p": 4,
+    "ORF2p": 0,
+    "ORF1p variant": 4,
+    "ORF2p variant": 18
+  },
+  {
+    "confidence": "70",
+    "ORF1p": 0,
+    "ORF2p": 1,
+    "ORF1p variant": 1,
+    "ORF2p variant": 8
+  },
+  {
+    "confidence": "80",
+    "ORF1p": 0,
+    "ORF2p": 1,
+    "ORF1p variant": 4,
+    "ORF2p variant": 3
+  },
+  {
+    "confidence": "90",
+    "ORF1p": 0,
+    "ORF2p": 1,
+    "ORF1p variant": 1,
+    "ORF2p variant": 3
+  },
+  {
+    "confidence": "100",
+    "ORF1p": 0,
+    "ORF2p": 0,
+    "ORF1p variant": 2,
+    "ORF2p variant": 4
+  }
+]
