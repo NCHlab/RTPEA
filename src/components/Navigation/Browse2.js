@@ -312,7 +312,8 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {/* {row.value} */}
+              {row.value + " - " + row.original.ORF1p_variants[0].name}
             </div>
         </div>
         )
@@ -347,8 +348,7 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {console.log(row)}
-            {/* {row.value} */}
+            {row.value + " - " + row.original.ORF2p_variants[0].name}
             <div
               style={{
                 width: `${row.value}%`,

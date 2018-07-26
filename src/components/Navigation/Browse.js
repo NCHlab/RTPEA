@@ -329,7 +329,8 @@ check_expr_orf2 = (d) => {
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {/* {console.log(row)} */}
+              {row.value + " - " + row.original.ORF1p_variants[0].name}
             </div>
         </div>
         )
@@ -375,7 +376,8 @@ check_expr_orf2 = (d) => {
                 transition: 'all .2s ease-out'
               }}
             >
-              {row.value}
+              {/* {row.value} */}
+              {row.value + " - " + row.original.ORF2p_variants[0].name}
             </div>
         </div>
         )
