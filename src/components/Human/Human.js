@@ -116,7 +116,7 @@ class Human extends Component {
     return (
       // #8884d8
       <div >
-        <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign("http://localhost:3000/browse/"+urlstate)}>
+        <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign(this.props.urlSource2+"/browse/"+urlstate)}>
           <XAxis type="number" tick={this.state.whiteFill}/>
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
           <Tooltip cursor={{cursor:'pointer'}} wrapperStyle={{color:"black"}} itemStyle={{color:"#001fbf"}}/>
@@ -181,6 +181,7 @@ check_event = (e) =>{
 
     return (
       <div>
+        {/* {console.log(this.props)} */}
         {/* style={{cursor:'pointer'}} */}
         {/* <input checked data-toggle="toggle" type="checkbox"/> */}
       <button style={{float:"left", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Click Mode" : "Hover Mode"} </button>

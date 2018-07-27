@@ -151,7 +151,9 @@ class Home extends Component {
         <body2>
           <div className="container">
             {/* Displays the human image + data retrieved from the human component */}
-            <Human />
+            {/* {console.log("home")} */}
+            {/* {console.log(this.props)} */}
+            <Human urlSource2={this.props.urlSource2}/>
           </div>
         </body2>
         <div className="line-seperator" />

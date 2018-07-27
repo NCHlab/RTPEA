@@ -61,8 +61,10 @@ class App extends Component{
    this.state = {
     show: false,
     isLoading: true,
-    urlSource:"http://localhost:3001",
-    // urlSource:"http://rtpea.com"
+    urlSource:"http://localhost:3001", //The API Location domain
+    // urlSource:"https://nayamc.com"
+    urlSource2:"http://localhost:3000", // The current server frontend hosting domain
+    // urlSource2:"https://rtpea.com",
   };
   }
 
@@ -111,7 +113,7 @@ class App extends Component{
         <div className="paths">
           <Switch>
             <Route exact path={"/"} component={Homeredirect} />
-            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource}/>}/>
+            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2}/>}/>
             {/* <Route exact path={"/browse"} component={() => <Browse/>}/> */}
             <Route exact path={"/browse"} render={(props) => (<Browse {...props} urlSource={this.state.urlSource} />)}/>
             {/* <Route exact path="/browse/:id" component={Browse2} urlSource={this.state.urlSource}/> */}
