@@ -7,6 +7,7 @@ import Popup from "reactjs-popup";
 import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
+import DetectAdBlock from "./DetectAdBlock.js";
 
 class Table extends Component{
   constructor() {
@@ -574,6 +575,8 @@ const orf2p_column = [{
                 )}
               </Popup>
               </div>
+              <DetectAdBlock pathname={"/browse"} />
+              {/* {console.log(window.location.pathname)} */}
 
 
           <br />
