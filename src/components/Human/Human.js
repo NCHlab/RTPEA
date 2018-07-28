@@ -28,7 +28,7 @@ import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
 import Loader from "react-loader";
-import { LineChart, Line, BarChart, Bar, YAxis, XAxis,CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, BarChart, Bar, YAxis, XAxis,CartesianGrid, Tooltip, Legend, Cell } from 'recharts';
 import Browse from '../Navigation/Browse';
 
 
@@ -113,14 +113,21 @@ class Human extends Component {
     } else {
         data_type= this.state.general_data
       }
+    var data_color=["#53b4d8","#c60000","#c60000","#3ec629","#3ec629","#185bce","#185bce","#185bce","#cc7f28"]
+    // <Bar type="monotone" dataKey="Number" barSize={25} fill={["#53b4d8"]} onMouseOver={{cursor:'pointer'}}/>
     return (
-      // #8884d8
       <div >
         <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign(this.props.urlSource2+"/browse/"+urlstate)}>
           <XAxis type="number" tick={this.state.whiteFill}/>
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
           <Tooltip cursor={{cursor:'pointer'}} wrapperStyle={{color:"black"}} itemStyle={{color:"#001fbf"}}/>
-          <Bar type="monotone" dataKey="Number" barSize={25} fill="#53b4d8" onMouseOver={{cursor:'pointer'}}/>
+          <Bar dataKey="Number" type="monotone" barSize={25} onMouseOver={{cursor:'pointer'}}>
+           {
+             data_color.map((entry, index) => (
+               <Cell key={`cell-${index}`} fill={data_color[index]} />
+             ))
+           }
+         </Bar>
         </BarChart>
       </div>
     )
@@ -184,12 +191,15 @@ check_event = (e) =>{
         {/* {console.log(this.props)} */}
         {/* style={{cursor:'pointer'}} */}
         {/* <input checked data-toggle="toggle" type="checkbox"/> */}
+      <sup>Currently On:</sup>
+      <br/>
       <button style={{float:"left", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Click Mode" : "Hover Mode"} </button>
 
       {/* <input   type="button" data-on="Enabled" data-off="Disabled" checked={ this.state.checked } onClick={() => {this.handleChange()
       console.log(this.state.checked)}}/> */}
       <br/>
       <br/>
+
       <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>{this.state.checked ? this.state.hovertochange : this.state.clicktochange}</b></label>
         {/* <label style={{border:"2px" , borderStyle: "none none solid none" , borderColor:"#ffffff"}}><b>Enable to Browse by clicking tissue</b></label> */}
 
@@ -211,7 +221,10 @@ check_event = (e) =>{
           </div>
 {/* style={{background:"#d8ecff",Color:"white"} */}
 
+
           <div className="inline-img" >
+            <br/>
+            <br/>
             {this.detectSvg(this.state.svgType)}
           </div>
         </div>

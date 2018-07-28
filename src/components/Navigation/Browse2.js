@@ -7,6 +7,7 @@ import Popup from "reactjs-popup";
 import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
+import AdBlockDetect from 'react-ad-block-detect';
 
 
 class Table extends Component{
@@ -506,7 +507,7 @@ const orf2p_column = [{
             <button style={{float:"right", display: "inline"}} className="btn btn-danger" onClick={() => window.location = "../browse"}> Refresh Search </button>
 
               <div className="" style={{color:"black"}}>
-                <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
+                <Popup trigger={<button className="btn btn-primary"> Information! </button>} modal>
                   {close => (
                     <div className="">
                       <a className="close" onClick={close}>
@@ -540,6 +541,15 @@ const orf2p_column = [{
                 </Popup>
                 </div>
 
+                <AdBlockDetect>
+                  <div className="container">
+                    <p style={{color:"red"}}>
+                      <h1><b>Please Disable Your Adblocker to view the Data.</b></h1>
+                      <br/>
+                      There are <b>NO ADS</b> on this website, however Adblockers Detect (via regex) our data that is being recieved by another server to be foreign
+                    </p>
+                  </div>
+                </AdBlockDetect>
 
             <br />
 
@@ -611,7 +621,7 @@ const orf2p_column = [{
                     <ReactTable
                       data={row.original.sample}
                       columns={sec_columns}
-                      defaultPageSize={5}
+                      defaultPageSize={10}
                       showPagination={true}
                       minRows={0}
                       getTdProps={(state, rowInfo, column, instance) => {
@@ -644,7 +654,7 @@ const orf2p_column = [{
                               <ReactTable
                                 data={row.original.ORF1p_variants}
                                 columns={orf1p_column}
-                                defaultPageSize={5}
+                                defaultPageSize={10}
                                 showPageSizeOptions={false}
                                 pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
@@ -676,7 +686,7 @@ const orf2p_column = [{
                               <ReactTable
                                 data={row.original.ORF2p_variants}
                                 columns={orf2p_column}
-                                defaultPageSize={5}
+                                defaultPageSize={10}
                                 showPageSizeOptions={false}
                                 pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
