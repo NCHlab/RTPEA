@@ -23,7 +23,7 @@ import intestine_data from "../Files/intestine.json";
 import kidney_data from "../Files/kidney.json";
 import pancreas_data from "../Files/pancreas.json";
 import testes_data from "../Files/testes.json";
-import general_data from "../Files/general.json";
+import all_other_tissue_data from "../Files/all_other_tissue.json";
 import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
@@ -59,7 +59,7 @@ class Human extends Component {
       kidney_data:kidney_data,
       pancreas_data:pancreas_data,
       testes_data:testes_data,
-      general_data: general_data,
+      all_other_tissue_data: all_other_tissue_data,
       data_type: testes_data,
       clicktochange:"Hover over tissue to display graph",
       hovertochange:"Click on tissue to display graph",
@@ -111,7 +111,7 @@ class Human extends Component {
     }else if (svgType === "brain"){
       data_type = this.state.brain_data
     } else {
-        data_type= this.state.general_data
+        data_type= this.state.all_other_tissue_data
       }
     var data_color=["#53b4d8","#c60000","#c60000","#3ec629","#3ec629","#185bce","#185bce","#185bce","#cc7f28"]
     // <Bar type="monotone" dataKey="Number" barSize={25} fill={["#53b4d8"]} onMouseOver={{cursor:'pointer'}}/>
@@ -131,13 +131,13 @@ class Human extends Component {
               return (dataMax = 400)
 
             } else if (dataMax > 400 && dataMax <= 500){
-              return (dataMax = 500)
+              return (dataMax = 400)
             } else if (dataMax > 500 && dataMax <= 700){
-              return (dataMax = 700)
+              return (dataMax = 400)
             } else if (dataMax > 700 && dataMax <= 1000){
-              return (dataMax = 1000)
+              return (dataMax = 400)
             } else {
-              return (dataMax = 1000)
+              return (dataMax = 400)
             }
           }
           ]}/>
