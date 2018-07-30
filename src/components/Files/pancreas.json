@@ -3,7 +3,7 @@
 [
    {
       "name": "Total Samples",
-      "Number": 54
+      "Number": 463
    },
    {
       "name": "Disease datasets",
@@ -11,15 +11,15 @@
    },
    {
       "name": "Disease samples",
-      "Number": 34
+      "Number": 177
    },
    {
       "name": "Normal Datasets",
-      "Number": 76
+      "Number": 167
    },
    {
       "name": "Normal Samples",
-      "Number": 34
+      "Number": 286
    },
    {
       "name": "Samples w/ Protein Identifications",
@@ -35,7 +35,7 @@
    },
    {
       "name": "Size of Spectral Files Mined (Mb)",
-      "Number": 87
+      "Number": 510
    }
 ]
 

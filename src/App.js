@@ -62,7 +62,7 @@ class App extends Component{
     show: false,
     isLoading: true,
     urlSource:"http://localhost:3001", //The API Location domain
-    // urlSource:"https://nayamc.com"
+    // urlSource:"https://nayamc.com",
     urlSource2:"http://localhost:3000", // The current server frontend hosting domain
     // urlSource2:"https://rtpea.com",
   };

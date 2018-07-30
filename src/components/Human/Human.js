@@ -122,7 +122,39 @@ class Human extends Component {
         {/* <div style={{textAlign:"center",backgroundColor:"#a3d7ff",color:"#000000",borderLeft:"10px solid #ccc",borderColor:"#2196F3"}}><h3>Viewing: {this.state.svgType == "whole_human_img"  || this.state.svgType == undefined ? "Other Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div> */}
         <div style={{textAlign:"center",borderLeft:"10px solid #ccc",borderTop:"2px solid #ccc",borderRight:"10px solid #ccc",borderBottom:"2px solid #ccc",borderColor:"#bababa"}}><h3>Summary Data: {this.state.svgType == "whole_human_img"  || this.state.svgType == undefined ? "Other Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div>
         <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign(this.props.urlSource2+"/browse/"+urlstate)}>
-          <XAxis type="number" tick={this.state.whiteFill}/>
+          <XAxis type="number" tick={this.state.whiteFill} domain={[dataMin => (0), dataMax => {
+            if (dataMax <=200){
+              return (dataMax = 200)
+            } else if (dataMax > 200 && dataMax <= 300){
+              return (dataMax = 300)
+            } else if (dataMax > 300 && dataMax <= 400){
+              return (dataMax = 400)
+              
+            } else if (dataMax > 400 && dataMax <= 500){
+              return (dataMax = 500)
+            } else if (dataMax > 500 && dataMax <= 700){
+              return (dataMax = 700)
+            } else if (dataMax > 700 && dataMax <= 1000){
+              return (dataMax = 1000)
+            } else if (dataMax <= 1400) {
+              return (dataMax=1000)
+            {/* } else if (dataMax > 1400 && dataMax <= 2000){
+              return (dataMax = 1500)
+            } else if (dataMax > 2000 && dataMax <= 3000){
+              return (dataMax = 1500)
+            } else if (dataMax > 3000 && dataMax <= 4000){
+              return (dataMax = 1500)
+            } else if (dataMax > 4000 && dataMax <= 5000){
+              return (dataMax = 1500) */}
+            } else {
+              return (dataMax = 1000)
+            }
+          }
+          ]}/>
+
+
+
+
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
           <Tooltip cursor={{cursor:'pointer'}} wrapperStyle={{color:"black"}} itemStyle={{color:"#001fbf"}}/>
           <Bar dataKey="Number" type="monotone" barSize={25} onMouseOver={{cursor:'pointer'}}>
