@@ -42,10 +42,9 @@ class Sequence_view extends Component {
 			// 	var prot_seq = this.props.match.params.id
 			// }
 
-
 			// fetch("http://rtpea.com/sequence/" + this.state.prot_seq)
 			// fetch("http://localhost:3001/sequence/" + this.state.prot_seq)
-			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq)
+			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF1p" )
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data: data})})
 			.then(data => {
@@ -59,7 +58,7 @@ class Sequence_view extends Component {
 			"charsPerLine": 100,
 			"toolbar": false,
 			"search": false,
-			// "title" : "Sequence View",
+			"title" : "Protein Sequence ORF1p",
 			"sequenceMaxHeight": "500px",
 			"badge": false
 			});
@@ -97,6 +96,69 @@ class Sequence_view extends Component {
 			    }
 			);
 			seq1.onSubpartSelected(function(elem){
+			        console.log(elem.detail);
+			    }
+			);
+
+		}
+
+
+		)
+
+
+
+			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF2p" )
+			.then(response => response.json())
+			.then(data => {this.setState({seq_data: data})})
+			.then(data => {
+				// console.log(this.state.seq_data[0])
+
+			var seq2 = new Sequence(this.state.seq_data[0].Sequence);
+			// You can add some rendering options
+			seq2.render("#sequence-viewer2", {
+			"showLineNumbers": true,
+			"wrapAminoAcids": true,
+			"charsPerLine": 100,
+			"toolbar": false,
+			"search": false,
+			"title" : "Protein Sequence ORF2p",
+			"sequenceMaxHeight": "500px",
+			"badge": false
+			});
+			seq2.selection(20, 43, 'red');
+
+			var onclickFun = function(e) {
+			  console.log(e.target.textContent);
+			}
+
+			//Coverage list
+			var exampleSequenceCoverage = [
+			    {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
+			    {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
+			    {start: 47, end: 54, color: "#ff0000", underscore: true},
+			    {start: 54, end: 55, color: "#ff0000", underscore: false},
+			    {start: 55, end: 56, color: "black", underscore: false},
+			    {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
+			    {start: 89, end: 90, color: "black", underscore: false},
+			    {start: 1000, end: 1100, color: "#ff0000", underscore: false},
+					{start: 1200, end: 1240, color: "#7cff26", underscore: false}
+			];
+
+
+			seq2.coverage(exampleSequenceCoverage);
+
+			var exampleLegend = [
+		    {name: "???? Protein", color: "#ff0000", underscore: false},
+		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
+		    {name: "Synthetic peptide",color: "#fff",underscore: true}
+		    ];
+			seq2.addLegend(exampleLegend);
+
+			seq2.onMouseSelection(function(elem){
+        console.log(elem.detail);
+			    }
+			);
+			seq2.onSubpartSelected(function(elem){
 			        console.log(elem.detail);
 			    }
 			);
@@ -183,7 +245,7 @@ saveAs2 = (
 
 				<input
 					style={{"width" : "310px"}}
-          placeholder="e.g HS_1_ORF1p, LINE_1_HS_1_ORF1p"
+          placeholder="e.g HS_1, LINE_1_HS_1"
           onChange={e => this.setState({ prot_seq: e.target.value.slice(0,-1).toUpperCase()+e.target.value.slice(-1).toLowerCase() })}
           onKeyPress={e => {if (e.key === "Enter") {
 						if (window.location.pathname === "/sequence"){
@@ -225,6 +287,11 @@ saveAs2 = (
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}
       <div id="sequence-viewer" className="container black_text"></div>
+			<div className="container">
+				<hr style={{borderColor:"black"}}/>
+			</div>
+			<br />
+			<div id="sequence-viewer2" className="container black_text"></div>
 			<div className="container">
 				<hr style={{borderColor:"black"}}/>
 			</div>
@@ -275,9 +342,6 @@ saveAs2 = (
 					Download ALL PA
 				</button>
 			</div>
-			<br />
-			<br />
-			<br />
 			<br />
 			<br />
 			<br />
