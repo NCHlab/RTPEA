@@ -713,7 +713,7 @@ const orf2p_column = [{
                                        console.log(rowInfo.original.name)
                                        console.log(rowInfo.original.confidence)
                                        if (rowInfo.original.name !== "NA"){
-                                         window.location = "visualise/" + rowInfo.original.name.slice(0,5)
+                                         window.location = "../visualise/" + rowInfo.original.name.slice(0,5)
                                        }
                                        {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
@@ -743,11 +743,11 @@ const orf2p_column = [{
                                        console.log(rowInfo.original.name)
                                        console.log(rowInfo.original.confidence)
                                        if (rowInfo.original.name === "ORF2p_HS_58"){
-                                         window.location = "visualise/test2"
+                                         window.location = "../visualise/test2"
                                        } else if (rowInfo.original.name === "ORF2p_HS_111"){
-                                         window.location = "visualise/"
+                                         window.location = "../visualise/"
                                        } else if (rowInfo.original.name !== "NA"){
-                                         window.location = "visualise/" + rowInfo.original.name.slice(0,5)
+                                         window.location = "../visualise/" + rowInfo.original.name.slice(0,5)
                                        }
                                        {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
