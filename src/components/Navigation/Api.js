@@ -177,7 +177,7 @@ class Api extends Component {
           }}/>
 
 
-
+          &nbsp;
         <button className="btn btn-outline-primary" onClick={this.button_click}>Search Database</button>
         {/* <span className="glyphicon glyphicon-search">test</span> */}
 
@@ -202,7 +202,7 @@ class Api extends Component {
             onCopy={() => this.setState({ copied: true })}>
             <button className="btn btn-outline-info">Copy Data</button>
           </CopyToClipboard>
-
+          &nbsp;
           {/* If the data has been copied, then text tells the user the result */}
           {this.state.copied ? (
             <span style={{ color: "red" }}>Copied.</span>
