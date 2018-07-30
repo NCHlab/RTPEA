@@ -542,12 +542,10 @@ const orf2p_column = [{
                 </div>
 
                 <AdBlockDetect>
-                  <div className="container">
-                    <p style={{color:"red"}}>
-                      <h1><b>Please Disable Your Adblocker to view the Data.</b></h1>
+                  <div className="container alert alert-danger">
+                      <h4><strong>Please Disable Your Adblocker to view the Data.</strong></h4>
                       <br/>
-                      There are <b>NO ADS</b> on this website, however Adblockers Detect (via regex) our data that is being recieved by another server to be foreign
-                    </p>
+                      There are <b>NO ADS</b> on this website, however data cannot load with adblock turned on.
                   </div>
                 </AdBlockDetect>
 

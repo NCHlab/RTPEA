@@ -87,7 +87,7 @@ class Home extends Component {
         {/* {console.log(this.props.urlSource)} */}
         <p className="App-intro">
           <h1 className="container colour-white" style={{textAlign:"center"}}>
-            <b>Retroelement Protein Expression Atlas</b>
+            <b><span style={{color:"#a3a3a3"}}>R</span>e<span style={{color:"#a3a3a3"}}>t</span>roelement <span style={{color:"#a3a3a3"}}>P</span>rotein <span style={{color:"#a3a3a3"}}>E</span>xpression <span style={{color:"#a3a3a3"}}>A</span>tlas</b>
           </h1>
           {/* <hr style={{border:"2px solid rgba(43, 198, 255,1"}}/> */}
           <div className="line-seperator"></div>
