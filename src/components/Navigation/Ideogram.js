@@ -337,7 +337,9 @@ button_click_ideo = () => {
 				<div className="container">
 					{/* {console.log(jsontest)} */}
 					{/* {console.log(this.state.information1)} */}
-					<hr/>
+					<br/>
+					<div className="line-seperator"></div>
+				<br/>
 				</div>
 				Enter Family:
 				<input
@@ -362,7 +364,9 @@ button_click_ideo = () => {
 					 {/* <input type="checkbox"
 						 checked={ this.state.checked }
 						 onChange={e => this.setState({ prot_seq: PA2_fam })}/> */}
-						 <hr align="center" width="20%" />
+					 <br/>
+						 <div className="container line-seperator" style={{align:"center",width:"20%"}}></div>
+						 {/* <hr align="center" width="20%" /> */}
 						 <div style={{"color":"white"}}>Sort by Family:</div>
 			 <form onSubmit={this.handleSubmit}>
 	        <label>
@@ -380,7 +384,7 @@ button_click_ideo = () => {
 
 
 					<div className="container">
-						<hr/>
+						<div className="line-seperator"></div>
 					</div>
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>

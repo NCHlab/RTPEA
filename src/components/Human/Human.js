@@ -42,7 +42,7 @@ class Human extends Component {
       highlight: false,
       checked: false,
       index: "",
-      svgType: "",
+      svgType: "Other Tissues",
       x: 0,
       y: 0,
       chartWidth:800,
@@ -116,7 +116,11 @@ class Human extends Component {
     var data_color=["#53b4d8","#c60000","#c60000","#3ec629","#3ec629","#185bce","#185bce","#185bce","#cc7f28"]
     // <Bar type="monotone" dataKey="Number" barSize={25} fill={["#53b4d8"]} onMouseOver={{cursor:'pointer'}}/>
     return (
-      <div >
+    // style={{borderLeft:"2px solid #ccc",borderRight:"2px solid #ccc",borderBottom:"2px solid #ccc",borderColor:"#bababa"}}>
+      <div>
+        {/* <div className="text-justify" align="center" width="44%"> Now Viewing: {this.state.svgType}</div> */}
+        {/* <div style={{textAlign:"center",backgroundColor:"#a3d7ff",color:"#000000",borderLeft:"10px solid #ccc",borderColor:"#2196F3"}}><h3>Viewing: {this.state.svgType == "whole_human_img"  || this.state.svgType == undefined ? "Other Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div> */}
+        <div style={{textAlign:"center",borderLeft:"10px solid #ccc",borderTop:"2px solid #ccc",borderRight:"10px solid #ccc",borderBottom:"2px solid #ccc",borderColor:"#bababa"}}><h3>Viewing: {this.state.svgType == "whole_human_img"  || this.state.svgType == undefined ? "Other Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div>
         <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign(this.props.urlSource2+"/browse/"+urlstate)}>
           <XAxis type="number" tick={this.state.whiteFill}/>
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
@@ -191,9 +195,9 @@ check_event = (e) =>{
         {/* {console.log(this.props)} */}
         {/* style={{cursor:'pointer'}} */}
         {/* <input checked data-toggle="toggle" type="checkbox"/> */}
-      <sup>Currently On:</sup>
-      <br/>
-      <button style={{float:"left", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Click Mode" : "Hover Mode"} </button>
+      <sup>Currently On:</sup> &emsp;
+
+      <button style={{float:"", display: "inline"}} className="btn btn-outline-warning" onClick={() => {this.handleChange()}}> {this.state.checked ? "Click Mode" : "Hover Mode"} </button>
 
       {/* <input   type="button" data-on="Enabled" data-off="Disabled" checked={ this.state.checked } onClick={() => {this.handleChange()
       console.log(this.state.checked)}}/> */}
@@ -222,10 +226,11 @@ check_event = (e) =>{
 {/* style={{background:"#d8ecff",Color:"white"} */}
 
 
-          <div className="inline-img" >
+          <div className="inline-img"  >
             <br/>
             <br/>
             {this.detectSvg(this.state.svgType)}
+            {/* {console.log(this.state.svgType)} */}
           </div>
         </div>
         <br />

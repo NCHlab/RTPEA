@@ -86,9 +86,11 @@ class Home extends Component {
       <div className="">
         {/* {console.log(this.props.urlSource)} */}
         <p className="App-intro">
-          <h1 className="container colour-white">
-            Retroelement Protein Expression Atlas
+          <h1 className="container colour-white" style={{textAlign:"center"}}>
+            <b>Retroelement Protein Expression Atlas</b>
           </h1>
+          {/* <hr style={{border:"2px solid rgba(43, 198, 255,1"}}/> */}
+          <div className="line-seperator"></div>
         </p>
         {/* <div className="container" style={{color:"black"}}>
           <Popup trigger={<button className="btn btn-outline-primary"> Read Me!</button>} modal closeOnDocumentClick position="right center">

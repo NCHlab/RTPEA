@@ -227,7 +227,9 @@ class Visualisation extends Component {
 				<div className="container">
 					{/* {console.log(jsontest)} */}
 					{/* {console.log(this.state.information1)} */}
-					<hr/>
+					<br/>
+					<div className="line-seperator"></div>
+				<br/>
 				</div>
 				Enter Protein:
 				<input
@@ -253,7 +255,9 @@ class Visualisation extends Component {
 
 					<br/>
 					<div className="container">
-						<hr/>
+						<br/>
+						<div className="line-seperator"></div>
+					<br/>
 					</div>
 
 					{/* linear-gradient(to bottom, #9cb7e2, #bfd2ef) */}
