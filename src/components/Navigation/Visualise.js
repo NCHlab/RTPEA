@@ -276,7 +276,7 @@ class Visualisation extends Component {
 						{/* ProtVista Loads Here */}
 					</div>
 				</div>
-				<div style={{background:"linear-gradient(to bottom, #e0e0e0, #99cdff)"}}>
+				<div style={{background:"linear-gradient(to bottom, #e5e5e5, #99cdff)"}}>
 				<br/>
 				<br/>
 				<br/>
