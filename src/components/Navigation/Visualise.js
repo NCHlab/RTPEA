@@ -173,8 +173,10 @@ class Visualisation extends Component {
 										{/* {" "} */}
 										To view variants, click the variant tab.
 										<br/>
-										<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
-										<br />
+										<div className="alert alert-info">
+											<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
+										</div>
+
 										<img src={protvis_filter} alt="protvis_example!" />
 										<div className="header"></div>
 										<b>Colour Gradient:</b>
@@ -267,6 +269,10 @@ class Visualisation extends Component {
 					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
 						<br/>
 						<br/>
+						<div className="container alert alert-info alert-dismissible">
+							<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
+						</div>
 						<br/>
 						<br/>
 					</div>

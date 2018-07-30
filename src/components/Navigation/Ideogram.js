@@ -52,7 +52,7 @@ class Ideogram_c extends Component {
 			// var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
 			// Substring used to only search for LINE_1
 			// var url = this.props.urlSource+'/sequence/' + annot.name + "_ORF1p";
-			var url = 'http://rtpea.com/sequence/' + annot.name + "_ORF1p";
+			var url = 'http://rtpea.com/sequence/' + annot.name;
 			// var url = 'http://localhost:3001/sequence/' + annot.name + "_ORF1p";
 			annot.displayName =
 				'<a target="_blank" href="' + url + '">' + annot.name + '</a>';

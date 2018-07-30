@@ -129,23 +129,13 @@ class Human extends Component {
               return (dataMax = 300)
             } else if (dataMax > 300 && dataMax <= 400){
               return (dataMax = 400)
-              
+
             } else if (dataMax > 400 && dataMax <= 500){
               return (dataMax = 500)
             } else if (dataMax > 500 && dataMax <= 700){
               return (dataMax = 700)
             } else if (dataMax > 700 && dataMax <= 1000){
               return (dataMax = 1000)
-            } else if (dataMax <= 1400) {
-              return (dataMax=1000)
-            {/* } else if (dataMax > 1400 && dataMax <= 2000){
-              return (dataMax = 1500)
-            } else if (dataMax > 2000 && dataMax <= 3000){
-              return (dataMax = 1500)
-            } else if (dataMax > 3000 && dataMax <= 4000){
-              return (dataMax = 1500)
-            } else if (dataMax > 4000 && dataMax <= 5000){
-              return (dataMax = 1500) */}
             } else {
               return (dataMax = 1000)
             }

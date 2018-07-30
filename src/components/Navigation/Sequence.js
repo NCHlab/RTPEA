@@ -14,6 +14,9 @@ class Sequence_view extends Component {
 			seq_data: [{
 
 		}],
+		seq_data2: [{
+
+	}],
 		};
 		// if (this.state.seq_data[0].Sequence === undefined){
 		// 	this.setState({seq_data: {"Family":"NA",
@@ -109,11 +112,11 @@ class Sequence_view extends Component {
 
 			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF2p" )
 			.then(response => response.json())
-			.then(data => {this.setState({seq_data: data})})
+			.then(data => {this.setState({seq_data2: data})})
 			.then(data => {
 				// console.log(this.state.seq_data[0])
 
-			var seq2 = new Sequence(this.state.seq_data[0].Sequence);
+			var seq2 = new Sequence(this.state.seq_data2[0].Sequence);
 			// You can add some rendering options
 			seq2.render("#sequence-viewer2", {
 			"showLineNumbers": true,
@@ -187,7 +190,7 @@ class Sequence_view extends Component {
 // This function allows the user to save the data as a file.
 saveAs = (
 	content,
-	filename = this.state.seq_data[0].Family + ".fasta",
+	filename = this.state.prot_seq + ".fasta",
 	type = "application/json"
 ) => {
 	let blob = new Blob([content], { type });
@@ -259,23 +262,54 @@ saveAs2 = (
           }}/>
 
 {/* text={this.state.seq_data[0].Sequence}> */}
-
 					<CopyToClipboard
-            text={this.state.seq_data[0].Sequence}>
-            <button className="btn btn-outline-info">Copy Sequence</button>
+						text={this.state.seq_data[0].Sequence}>
+						<button className="btn btn-outline-info">Copy ORF1 Seq</button>
+					</CopyToClipboard>
+					&nbsp;
+					<CopyToClipboard
+            text={this.state.seq_data2[0].Sequence}>
+            <button className="btn btn-outline-info">Copy ORF2 Seq</button>
           </CopyToClipboard>
-
+					&nbsp;
 					<button className="btn btn-outline-info"
             onClick={e =>
-              this.saveAs(">"+this.state.seq_data[0].Family+"\n"+this.state.seq_data[0].Sequence)
+              this.saveAs(">"+this.state.seq_data[0].Family+"\n"+this.state.seq_data[0].Sequence+"\n"+">"+this.state.seq_data2[0].Family+"\n"+this.state.seq_data2[0].Sequence)
             }
           >
-            Download
+            	Download {this.state.prot_seq} Data
           </button>
 
+
+					{/* <button className="btn btn-outline-info"
+						onClick={e =>{
+							this.setState({hs_pa: this.state.prot_seq})
+							var list_data = []
+							fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF1p")
+							.then(response => response.json())
+							.then(data => {
+
+								for (var i = 0; i < data.length; i++) {
+									list_data.push(">"+data[i].Family+"\n"+data[i].Sequence)
+								}
+							})
+
+								fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF2p")
+								.then(response => response.json())
+								.then(data => {
+									for (var i = 0; i < data.length; i++) {
+										list_data.push(">"+data[i].Family+"\n"+data[i].Sequence)
+									}
+								 this.saveAs2(list_data.join().replace(/,/g,"\n"))
+						})
+					}
+					}
+					>
+						Download {this.state.prot_seq} Data
+					</button> */}
+
 					<br/>
-					<sup style={{"color":"black"}}>^ You must provide ORF1p or ORF2p at the end ^</sup>
-					<br/>
+					<sup style={{"color":"black"}}>Do not append with ORF1p / ORF2p</sup>
 
 					</div>
 					<div className="container">
@@ -318,7 +352,7 @@ saveAs2 = (
 				>
 					Download ALL HS
 				</button>
-
+				&nbsp;
 				<button className="btn btn-outline-info"
 					onClick={e =>{
 						this.setState({hs_pa: "PA"})
@@ -341,6 +375,7 @@ saveAs2 = (
 				>
 					Download ALL PA
 				</button>
+
 			</div>
 			<br />
 			<br />
