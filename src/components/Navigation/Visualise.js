@@ -263,11 +263,24 @@ class Visualisation extends Component {
 					{/* linear-gradient(to bottom, #9cb7e2, #bfd2ef) */}
 					{/* background:"linear-gradient(to bottom, #99cdff, #bfd2ef)" */}
 					{/* <div style={{background:"linear-gradient(to bottom, #7abeff, #bfd2ef)"}}> */}
-					<div style={{background:"linear-gradient(to bottom, #99cdff, #82b2e0)"}}>
+
+					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+					</div>
+					<div style={{background:"linear-gradient(to bottom, #f2f2f2, #e0e0e0)"}}>
 				<div className="container">
 					<div id="protvis">
 						{/* ProtVista Loads Here */}
 					</div>
+				</div>
+				<div style={{background:"linear-gradient(to bottom, #e0e0e0, #99cdff)"}}>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
 				</div>
 			</div>
 				{/* <button onClick={() => this.sortList()}>CLICK </button> */}
