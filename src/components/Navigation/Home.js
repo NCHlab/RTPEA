@@ -17,6 +17,7 @@ import onlineimg from "../Images/online.png";
 import offlineimg from "../Images/offline.png";
 import Popup from "reactjs-popup";
 import homepage_barchart from "../Files/homepage_barchart.json";
+import {isMobile} from 'react-device-detect';
 // import '../../App.css';
 
 // Displays the Home page using JSX
@@ -71,6 +72,17 @@ class Home extends Component {
         //     })
   };
 
+  renderWebpage = () => {
+    if (isMobile) {
+        return (
+          <div className="container alert alert-warning">
+            <strong>Attention!</strong> This Website is <strong>not suitable</strong> for Mobile devices and small Screen Sizes
+            <br/>
+          </div>
+          )
+    }
+  }
+
   render() {
     // const data = [
     //   { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
@@ -84,6 +96,7 @@ class Home extends Component {
 
     return (
       <div className="">
+        {this.renderWebpage()}
         {/* {console.log(this.props.urlSource)} */}
         <p className="App-intro">
           <h1 className="container colour-white" style={{textAlign:"center"}}>
