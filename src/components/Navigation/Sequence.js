@@ -264,12 +264,12 @@ saveAs2 = (
 {/* text={this.state.seq_data[0].Sequence}> */}
 					<CopyToClipboard
 						text={this.state.seq_data[0].Sequence}>
-						<button className="btn btn-outline-info">Copy ORF1 Seq</button>
+						<button className="btn btn-outline-info">Copy ORF1p Seq</button>
 					</CopyToClipboard>
 					&nbsp;
 					<CopyToClipboard
             text={this.state.seq_data2[0].Sequence}>
-            <button className="btn btn-outline-info">Copy ORF2 Seq</button>
+            <button className="btn btn-outline-info">Copy ORF2p Seq</button>
           </CopyToClipboard>
 					&nbsp;
 					<button className="btn btn-outline-info"

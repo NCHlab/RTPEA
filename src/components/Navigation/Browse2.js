@@ -526,15 +526,34 @@ const orf2p_column = [{
                         <img src={medconf} alt="Online!" /> = Med confidence
                         <br />
                         <img src={lowconf} alt="Online!" /> = Low Confidence
+                        <br />
+                        {"The NUMBER represents the confidence score calculated by PeptideShaker. This number ranges between 0 to 100 (highest) and indicates how confident we are that this protein is expressed in the given sample. The rate of false positive results is less than 1 in 1000 (FDR < 0.01)."}
+
                         <div className="header"></div>
+
                         <br />
-                        If Search Breaks; Refresh the page or click the <a href="/browse">Link</a> - Make sure to clear all search boxes if data not showing
-                        <br />
-                        The Table displays data by PXD (by default) which is a dataset identifier set by the PRIDE Database team
-                        <br />
-                        The first section of the table displays the sample number, along with and ORF1/2 Identifications
-                        <br />
-                        The sub-table for the samples display the variants that may occur
+                      If Search Breaks; Refresh the page or click the <a href="/browse">Link</a> - Make sure to clear all search boxes if data not showing
+                      {/* <div className="header"></div> */}
+                      <br />
+                      <br />
+                      The Table displays data by PXD (by default) which is a dataset identifier set by PRIDE (ProteomeExchange consortium)
+                      <br />
+                      The first section of the table displays the sample number, along with and ORF1/2p Identifications
+                      <br />
+                      The sub-table for the samples display the variants that may occur
+                      <br />
+                      <br />
+
+                      The table can be sorted by any column header simply by clicking on it
+                      <br />
+                      <br />
+
+                      We have given different variants of the same family a different name by simply adding an underscore followed by a number. (e.g: ORF1p_HS_10). The last number has no biological meaning.
+                      <br />
+                      <br />
+                      There could be protein results by three LINE-1 protein families: HS, PA2 and PA3.
+                      <br />
+                      And 3 different proteins by HERVs (the gag, pol and env groups)
                       </div>
                     </div>
                   )}
