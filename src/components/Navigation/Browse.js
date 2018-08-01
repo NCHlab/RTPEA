@@ -684,12 +684,31 @@ const orf2p_column = [{
                     <ReactTable
                       data={row.original.sample}
                       columns={sec_columns}
-                      defaultPageSize={10}
+                      defaultPageSize={300}
                       showPagination={true}
+                      pageSizeOptions={[5, 10, 20, 25, 50, 100, 200, 300]}
                       minRows={0}
+                      getTbodyProps={ (state, rowInfo, column, rtInstance) => {
+                        console.log(state)
+                        if (state.pageSize >10 && state.pageSize < 300) {
+                          return {
+                            style: {
+                              height: state.pageRows.length > 9 ? "auto" : "auto"
+                            }
+                          }
+                        }
+                        else {
+                        return {
+                          style: {
+                            height: state.pageRows.length > 9 ? "400px" : "auto"
+                          }
+                        }
+                        }
+                      }}
 
                       getTdProps={(state, rowInfo, column, instance) => {
                          return {
+
                            onClick: (e, handleOriginal) => {
                              {/* console.log("It was in this column:", column); */}
                              const { expanded } = state;
@@ -706,7 +725,9 @@ const orf2p_column = [{
                                }
                              });
                            }
-                         };
+
+                         }
+
                        }
                      }
 

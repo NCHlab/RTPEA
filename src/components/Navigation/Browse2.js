@@ -631,37 +631,59 @@ const orf2p_column = [{
                  };
                }
              }
-              SubComponent={row => {
-                return (
-                  <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(186, 0, 0)" }}>
-                    {/* {console.log(row.original.sample)} */}
-                    <ReactTable
-                      data={row.original.sample}
-                      columns={sec_columns}
-                      defaultPageSize={10}
-                      showPagination={true}
-                      minRows={0}
-                      getTdProps={(state, rowInfo, column, instance) => {
+             SubComponent={row => {
+               return (
+                 <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(186, 0, 0)" }}>
+                   {/* {console.log(row.original.sample)} */}
+                   <ReactTable
+                     data={row.original.sample}
+                     columns={sec_columns}
+                     defaultPageSize={300}
+                     showPagination={true}
+                     pageSizeOptions={[5, 10, 20, 25, 50, 100, 200, 300]}
+                     minRows={0}
+                     getTbodyProps={ (state, rowInfo, column, rtInstance) => {
+                       console.log(state)
+                       if (state.pageSize >10 && state.pageSize < 300) {
                          return {
-                           onClick: (e, handleOriginal) => {
-                             {/* console.log("It was in this column:", column); */}
-                             const { expanded } = state;
-                             const path = rowInfo.nestingPath[0];
-                             const diff = { [path]: expanded[path] ? false : true };
-                             {/* console.log(rowInfo) */}
-                              if (handleOriginal) {
-                                handleOriginal();
-                              }
-                             instance.setState({
-                               expanded: {
-                                 ...expanded,
-                                 ...diff
-                               }
-                             });
+                           style: {
+                             height: state.pageRows.length > 9 ? "auto" : "auto"
                            }
-                         };
+                         }
                        }
-                     }
+                       else {
+                       return {
+                         style: {
+                           height: state.pageRows.length > 9 ? "400px" : "auto"
+                         }
+                       }
+                       }
+                     }}
+
+                     getTdProps={(state, rowInfo, column, instance) => {
+                        return {
+
+                          onClick: (e, handleOriginal) => {
+                            {/* console.log("It was in this column:", column); */}
+                            const { expanded } = state;
+                            const path = rowInfo.nestingPath[0];
+                            const diff = { [path]: expanded[path] ? false : true };
+                            {/* console.log(rowInfo) */}
+                             if (handleOriginal) {
+                               handleOriginal();
+                             }
+                            instance.setState({
+                              expanded: {
+                                ...expanded,
+                                ...diff
+                              }
+                            });
+                          }
+
+                        }
+
+                      }
+                    }
 
                       SubComponent={row => {
                         return (
