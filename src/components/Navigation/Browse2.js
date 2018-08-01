@@ -26,7 +26,10 @@ class Table extends Component{
       background_conf_colour:"#dadada",
       button_msg: "Darkify",
       switched: true,
-      filtered1: window.location.href,
+      filtered1: window.location.href.slice(29),
+      filtered2: [],
+      filtered3: [],
+      filtered4: [],
     };
     // this.data = this.data.bind(this)
   }
@@ -107,6 +110,7 @@ class Table extends Component{
     accessor: (d) => d.PXD // String-based value accessors!
   }, {
     Header: <h4><b>STUDY</b></h4>,
+    id: "study",
     accessor: 'study'
   }, {
     Header: <h4><b>No. OF SAMPLES</b></h4>,
@@ -593,6 +597,7 @@ const orf2p_column = [{
   console.log(filtered)
 
   }} */}
+  <button onClick={()=>this.setState({ filtered1: [] })}> reset</button>
             <ReactTable
               loading={this.state.table_loading}
               data={this.state.data2}
@@ -604,9 +609,28 @@ const orf2p_column = [{
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
               filterable={true}
-              filtered = {[{
-                id: 'disease',
-                value: this.props.match.params.id}]
+              filtered = {[
+                {id: 'disease',
+                value: this.state.filtered1},
+                {id: 'data_num',
+                value: this.state.filtered2},
+                {id: 'data_pxd',
+                value: this.state.filtered3},
+                {id: 'study',
+                value: this.state.filtered4}]
+              }
+              onFilteredChange={(filtered, column, e) => {
+                {/* console.log(e) */}
+                if (column.id == "study"){
+                  this.setState({ filtered4:e });
+                } else if (column.id == "disease") {
+                this.setState({ filtered1:e });
+              } else if (column.id == "data_num") {
+                this.setState({ filtered2:e });
+              } else if (column.id == "data_pxd") {
+                this.setState({ filtered3:e });
+                }
+              }
               }
 
               minRows={0}
