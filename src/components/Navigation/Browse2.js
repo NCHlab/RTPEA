@@ -170,6 +170,12 @@ class Table extends Component{
     Header: <b>ORF1p</b>,
     id: "ORF1p_data",
     accessor: "ORF1p.confidence",
+  sortMethod: (a, b) => {
+    if (a.length === b.length) {
+      return a < b ? 1 : -1;
+    }
+    return a.length < b.length ? 1 : -1;
+  },
     Cell: row => (
           <div
             style={{
@@ -200,6 +206,12 @@ class Table extends Component{
     id: "ORF2p_data",
     accessor: "ORF2p.confidence",
     aggregate: vals => _.sum(vals),
+    sortMethod: (a, b) => {
+    if (a.length === b.length) {
+      return a < b ? 1 : -1;
+    }
+    return a.length < b.length ? 1 : -1;
+  },
     // Aggregated: row => (
     Cell: row => (
           <div
@@ -298,6 +310,12 @@ class Table extends Component{
       // this.check_expr_orf2(d)
 
     },
+    sortMethod: (a, b) => {
+      if (a.length === b.length) {
+        return a < b ? 1 : -1;
+      }
+      return a.length < b.length ? 1 : -1;
+    },
     Cell: row => (
           <div
             style={{
@@ -319,8 +337,10 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {/* {row.value} */}
-              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span>
+              {/* {console.log(row)} */}
+              {/* {row.value} <b> {row.original.ORF1p_variants[0].name}</b> */}
+              {/* {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span> */}
+                {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF1p_variants[0].name === "NA" ? row.original.ORF1p_variants[0].name : row.original.ORF1p_variants[0].name.slice(6) }</span>
             </div>
         </div>
         )
@@ -345,8 +365,13 @@ class Table extends Component{
       // this.check_expr_orf2(d)
 
     },
+    sortMethod: (a, b) => {
+      if (a.length === b.length) {
+        return a < b ? 1 : -1;
+      }
+      return a.length < b.length ? 1 : -1;
+    },
     Cell: row => (
-
           <div
             style={{
               width: '100%',
@@ -355,7 +380,7 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-
+            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -369,12 +394,12 @@ class Table extends Component{
             >
               {/* {row.value} */}
               {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
-              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name}</span>
-
+              {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF2p_variants[0].name === "NA" ? row.original.ORF2p_variants[0].name : row.original.ORF2p_variants[0].name.slice(6) }</span>
             </div>
         </div>
         )
   }]
+
 
 // const LoadingMS =
 
