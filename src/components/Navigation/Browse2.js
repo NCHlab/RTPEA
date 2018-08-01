@@ -718,31 +718,6 @@ const orf2p_column = [{
                       }
                     }
 
-                     getTdProps={(state, rowInfo, column, instance) => {
-                        return {
-
-                          onClick: (e, handleOriginal) => {
-                            {/* console.log("It was in this column:", column); */}
-                            const { expanded } = state;
-                            const path = rowInfo.nestingPath[0];
-                            const diff = { [path]: expanded[path] ? false : true };
-                            {/* console.log(rowInfo) */}
-                             if (handleOriginal) {
-                               handleOriginal();
-                             }
-                            instance.setState({
-                              expanded: {
-                                ...expanded,
-                                ...diff
-                              }
-                            });
-                          }
-
-                        }
-
-                      }
-                    }
-
                       SubComponent={row => {
                         return (
                           <div>
