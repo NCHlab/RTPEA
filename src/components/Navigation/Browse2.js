@@ -26,10 +26,10 @@ class Table extends Component{
       background_conf_colour:"#dadada",
       button_msg: "Darkify",
       switched: true,
-      filtered1: window.location.href.slice(29),
+      filtered1: [],
       filtered2: [],
       filtered3: [],
-      filtered4: [],
+      filtered4: window.location.pathname.slice(8),
     };
     // this.data = this.data.bind(this)
   }
@@ -499,6 +499,7 @@ const orf2p_column = [{
 
       return (
         <div>
+          {/* {console.log(window.location.pathname.slice(8))} */}
           {/* {console.log(this.props)} */}
           <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
@@ -611,24 +612,24 @@ const orf2p_column = [{
               filterable={true}
               filtered = {[
                 {id: 'disease',
-                value: this.state.filtered1},
+                value: this.state.filtered4},
                 {id: 'data_num',
-                value: this.state.filtered2},
-                {id: 'data_pxd',
                 value: this.state.filtered3},
+                {id: 'data_pxd',
+                value: this.state.filtered1},
                 {id: 'study',
-                value: this.state.filtered4}]
+                value: this.state.filtered2}]
               }
               onFilteredChange={(filtered, column, e) => {
                 {/* console.log(e) */}
                 if (column.id == "study"){
-                  this.setState({ filtered4:e });
+                  this.setState({ filtered2:e });
                 } else if (column.id == "disease") {
-                this.setState({ filtered1:e });
+                this.setState({ filtered4:e });
               } else if (column.id == "data_num") {
-                this.setState({ filtered2:e });
-              } else if (column.id == "data_pxd") {
                 this.setState({ filtered3:e });
+              } else if (column.id == "data_pxd") {
+                this.setState({ filtered1:e });
                 }
               }
               }
