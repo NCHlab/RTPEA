@@ -686,6 +686,7 @@ const orf2p_column = [{
                       columns={sec_columns}
                       defaultPageSize={300}
                       showPagination={true}
+                      showPageJump={false}
                       pageSizeOptions={[5, 10, 20, 25, 50, 100, 200, 300]}
                       minRows={0}
                       getTbodyProps={ (state, rowInfo, column, rtInstance) => {
@@ -705,7 +706,13 @@ const orf2p_column = [{
                         }
                         }
                       }}
-
+                      getPaginationProps={(state, rowInfo, column, rtInstance) => {
+                        return {
+                          style: {
+                            fontWeight: "bold"
+                          }
+                        }
+                      }}
                       getTdProps={(state, rowInfo, column, instance) => {
                          return {
 
