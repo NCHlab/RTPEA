@@ -184,12 +184,6 @@ check_expr_orf2 = (d) => {
     Header: <b>ORF1p</b>,
     id: "ORF1p_data",
     accessor: "ORF1p.confidence",
-  sortMethod: (a, b) => {
-    if (a.length === b.length) {
-      return a < b ? 1 : -1;
-    }
-    return a.length < b.length ? 1 : -1;
-  },
     Cell: row => (
           <div
             style={{
@@ -220,12 +214,6 @@ check_expr_orf2 = (d) => {
     id: "ORF2p_data",
     accessor: "ORF2p.confidence",
     aggregate: vals => _.sum(vals),
-    sortMethod: (a, b) => {
-    if (a.length === b.length) {
-      return a < b ? 1 : -1;
-    }
-    return a.length < b.length ? 1 : -1;
-  },
     // Aggregated: row => (
     Cell: row => (
           <div
@@ -324,12 +312,6 @@ check_expr_orf2 = (d) => {
       // this.check_expr_orf2(d)
 
     },
-    sortMethod: (a, b) => {
-      if (a.length === b.length) {
-        return a < b ? 1 : -1;
-      }
-      return a.length < b.length ? 1 : -1;
-    },
     Cell: row => (
           <div
             style={{
@@ -378,12 +360,6 @@ check_expr_orf2 = (d) => {
       return all_list2[0]
       // this.check_expr_orf2(d)
 
-    },
-    sortMethod: (a, b) => {
-      if (a.length === b.length) {
-        return a < b ? 1 : -1;
-      }
-      return a.length < b.length ? 1 : -1;
     },
     Cell: row => (
           <div
@@ -712,6 +688,7 @@ const orf2p_column = [{
                       showPagination={true}
                       showPageJump={false}
                       pageSizeOptions={[5, 10, 20, 25, 50, 100, 200, 300]}
+                      defaultSortDesc={true}
                       minRows={0}
                       getTbodyProps={ (state, rowInfo, column, rtInstance) => {
                         console.log(state)
@@ -776,6 +753,7 @@ const orf2p_column = [{
                                 showPagination={true}
                                 showPaginationTop={true}
                                 showPaginationBottom= {false}
+                                defaultSortDesc={true}
                                 minRows={0}
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
@@ -806,6 +784,7 @@ const orf2p_column = [{
                                 showPageSizeOptions={false}
                                 pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
+                                defaultSortDesc={true}
                                 minRows={0}
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {

@@ -170,12 +170,6 @@ class Table extends Component{
     Header: <b>ORF1p</b>,
     id: "ORF1p_data",
     accessor: "ORF1p.confidence",
-  sortMethod: (a, b) => {
-    if (a.length === b.length) {
-      return a < b ? 1 : -1;
-    }
-    return a.length < b.length ? 1 : -1;
-  },
     Cell: row => (
           <div
             style={{
@@ -206,12 +200,6 @@ class Table extends Component{
     id: "ORF2p_data",
     accessor: "ORF2p.confidence",
     aggregate: vals => _.sum(vals),
-    sortMethod: (a, b) => {
-    if (a.length === b.length) {
-      return a < b ? 1 : -1;
-    }
-    return a.length < b.length ? 1 : -1;
-  },
     // Aggregated: row => (
     Cell: row => (
           <div
@@ -310,12 +298,6 @@ class Table extends Component{
       // this.check_expr_orf2(d)
 
     },
-    sortMethod: (a, b) => {
-      if (a.length === b.length) {
-        return a < b ? 1 : -1;
-      }
-      return a.length < b.length ? 1 : -1;
-    },
     Cell: row => (
           <div
             style={{
@@ -337,10 +319,8 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {/* {console.log(row)} */}
-              {/* {row.value} <b> {row.original.ORF1p_variants[0].name}</b> */}
-              {/* {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span> */}
-                {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF1p_variants[0].name === "NA" ? row.original.ORF1p_variants[0].name : row.original.ORF1p_variants[0].name.slice(6) }</span>
+              {/* {row.value} */}
+              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span>
             </div>
         </div>
         )
@@ -365,13 +345,8 @@ class Table extends Component{
       // this.check_expr_orf2(d)
 
     },
-    sortMethod: (a, b) => {
-      if (a.length === b.length) {
-        return a < b ? 1 : -1;
-      }
-      return a.length < b.length ? 1 : -1;
-    },
     Cell: row => (
+
           <div
             style={{
               width: '100%',
@@ -380,7 +355,7 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
+
             <div
               style={{
                 width: `${row.value}%`,
@@ -394,12 +369,12 @@ class Table extends Component{
             >
               {/* {row.value} */}
               {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
-              {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF2p_variants[0].name === "NA" ? row.original.ORF2p_variants[0].name : row.original.ORF2p_variants[0].name.slice(6) }</span>
+              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name}</span>
+
             </div>
         </div>
         )
   }]
-
 
 // const LoadingMS =
 
@@ -691,6 +666,7 @@ const orf2p_column = [{
                      defaultPageSize={300}
                      showPagination={true}
                      showPageJump={false}
+                     defaultSortDesc={true}
                      pageSizeOptions={[5, 10, 20, 25, 50, 100, 200, 300]}
                      minRows={0}
                      getTbodyProps={ (state, rowInfo, column, rtInstance) => {
@@ -781,6 +757,7 @@ const orf2p_column = [{
                                 showPagination={true}
                                 showPaginationTop={true}
                                 showPaginationBottom= {false}
+                                defaultSortDesc={true}
                                 minRows={0}
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
@@ -811,6 +788,7 @@ const orf2p_column = [{
                                 showPageSizeOptions={false}
                                 pageSizeOptions={[3, 5, 10, 20, 25, 50]}
                                 showPagination={true}
+                                defaultSortDesc={true}
                                 minRows={0}
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
