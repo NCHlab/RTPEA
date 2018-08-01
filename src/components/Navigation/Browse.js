@@ -693,7 +693,7 @@ const orf2p_column = [{
                         if (state.pageSize >10 && state.pageSize < 300) {
                           return {
                             style: {
-                              height: state.pageRows.length > 9 ? "auto" : "auto"
+                              height: "auto"
                             }
                           }
                         }
