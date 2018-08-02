@@ -3,6 +3,7 @@ import JSONPretty from "react-json-pretty";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Loader from 'react-loader';
 import Switch from 'react-toggle-switch';
+import Popup from "reactjs-popup";
 import "react-toggle-switch/dist/css/switch.min.css";
 // ../../../node_modules/
 
@@ -161,10 +162,15 @@ class Api extends Component {
 
     return (
       <div className="ma4 mt0 background-body4-noalign container col-md-9" style={{backgroundColor: this.state.background_colour}}>
-        {this.state.isLoading ? console.log("yes") : console.log("no")}
-        {this.state.isLoading}
+        {/* {this.state.isLoading ? console.log("yes") : console.log("no")}
+        {this.state.isLoading} */}
 
-        <br />
+        <div className="container alert alert-info alert-dismissible">
+          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b>
+        </div>
+
+        
 
         {/* Searchbox which converts the text to uppercase and calls the button_click
            function upon enter button being pressed or button being clicked */}
@@ -179,6 +185,7 @@ class Api extends Component {
 
           &nbsp;
         <button className="btn btn-outline-primary" onClick={this.button_click}>Search Database</button>
+
         {/* <span className="glyphicon glyphicon-search">test</span> */}
 
         <br />
@@ -192,6 +199,25 @@ class Api extends Component {
 
 
         <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
+
+
+          {/* <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
+            {close => (
+              <div className="">
+                <a className="close" onClick={close}>
+                  &times;
+                </a>
+                <div className="header"> Programmatic Access</div>
+                <div className="content">
+                  For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a>
+
+                  <br />
+
+                  <div className="header"></div>
+                </div>
+              </div>
+            )}
+          </Popup> */}
           <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
             Data for: {this.state.url_id}
           </div>
