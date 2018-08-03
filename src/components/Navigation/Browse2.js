@@ -7,6 +7,7 @@ import Popup from "reactjs-popup";
 import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
+import matchSorter from 'match-sorter';
 // import AdBlockDetect from 'react-ad-block-detect';
 
 
@@ -107,18 +108,27 @@ class Table extends Component{
   columns: [{
     Header: <h4><b>PXD</b></h4>,
     id: "data_pxd",
-    accessor: (d) => d.PXD // String-based value accessors!
+    accessor: (d) => d.PXD, // String-based value accessors!
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["data_pxd"] }),
+                  filterAll: true
   }, {
     Header: <h4><b>STUDY</b></h4>,
     id: "study",
-    accessor: 'study'
+    accessor: 'study',
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["study"] }),
+                  filterAll: true
   }, {
     Header: <h4><b>No. OF SAMPLES</b></h4>,
     id: "data_num",
     accessor: (d) => d.sample.length
   }, {
     Header: <h4><b>DISEASE</b></h4>,
-    accessor: 'disease'
+    accessor: 'disease',
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["disease"] }),
+                  filterAll: true
   }
   // }, {
   //   Header: 'Tissue',
