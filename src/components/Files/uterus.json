@@ -34,8 +34,8 @@
       "Number": 8
    },
    {
-      "name": "Size of Spectral Files Mined (Mb)",
-      "Number": 251
+      "name": "Size of Spectral Files Mined (GB)",
+      "Number": 0.251
    }
 ]
 

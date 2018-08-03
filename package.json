@@ -7,6 +7,7 @@
     "ideogram": "^1.2.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
+    "match-sorter": "^2.2.3",
     "react": "^16.2.0",
     "react-ad-block-detect": "^1.0.1",
     "react-copy-to-clipboard": "^5.0.1",
