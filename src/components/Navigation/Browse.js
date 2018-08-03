@@ -7,7 +7,8 @@ import Popup from "reactjs-popup";
 import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
-import AdBlockDetect from 'react-ad-block-detect';
+import matchSorter from 'match-sorter'
+// import AdBlockDetect from 'react-ad-block-detect';
 // import DetectAdBlock from "./DetectAdBlock.js";
 
 class Table extends Component{
@@ -122,17 +123,27 @@ check_expr_orf2 = (d) => {
   columns: [{
     Header: <h4><b>PXD</b></h4>,
     id: "data_pxd",
-    accessor: (d) => d.PXD // String-based value accessors!
+    accessor: (d) => d.PXD, // String-based value accessors!
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["data_pxd"] }),
+                  filterAll: true
   }, {
     Header: <h4><b>STUDY</b></h4>,
-    accessor: 'study'
+    id: "study",
+    accessor: 'study',
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["study"] }),
+                  filterAll: true
   }, {
     Header: <h4><b>No. OF SAMPLES</b></h4>,
     id: "data_num",
     accessor: (d) => d.sample.length
   }, {
     Header: <h4><b>DISEASE</b></h4>,
-    accessor: 'disease'
+    accessor: 'disease',
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["disease"] }),
+                  filterAll: true
   }
   // }, {
   //   Header: 'Tissue',
@@ -596,13 +607,13 @@ const orf2p_column = [{
               </Popup>
               </div>
 
-              <AdBlockDetect>
+              {/* <AdBlockDetect>
                 <div className="container alert alert-danger">
                     <h4><strong>Please Disable Your Adblocker to view the Data.</strong></h4>
                     <br/>
                     There are <b>NO ADS</b> on this website, however data cannot load with adblock turned on.
                 </div>
-              </AdBlockDetect>
+              </AdBlockDetect> */}
               {/* <DetectAdBlock pathname={window.location.pathname} /> */}
               {/* {console.log(window.location.pathname)} */}
 

@@ -7,7 +7,7 @@ import Popup from "reactjs-popup";
 import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
-import AdBlockDetect from 'react-ad-block-detect';
+// import AdBlockDetect from 'react-ad-block-detect';
 
 
 class Table extends Component{
@@ -565,13 +565,13 @@ const orf2p_column = [{
                 </Popup>
                 </div>
 
-                <AdBlockDetect>
+                {/* <AdBlockDetect>
                   <div className="container alert alert-danger">
                       <h4><strong>Please Disable Your Adblocker to view the Data.</strong></h4>
                       <br/>
                       There are <b>NO ADS</b> on this website, however data cannot load with adblock turned on.
                   </div>
-                </AdBlockDetect>
+                </AdBlockDetect> */}
 
             <br />
 
@@ -598,7 +598,7 @@ const orf2p_column = [{
   console.log(filtered)
 
   }} */}
-  <button onClick={()=>this.setState({ filtered1: [] })}> reset</button>
+  {/* <button onClick={()=>this.setState({ filtered1: [] })}> reset</button> */}
             <ReactTable
               loading={this.state.table_loading}
               data={this.state.data2}
