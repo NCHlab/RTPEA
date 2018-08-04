@@ -168,9 +168,15 @@ class Api extends Component {
         <div className="container alert alert-info alert-dismissible">
           <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
           <b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b>
+          <hr/>
+          Example: "wget <a href="https://api.rtpea.com/api/PXD002211">https://api.rtpea.com/api/PXD002211</a>"
         </div>
+        {/* <div className="container alert alert-warning alert-dismissible">
+          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <b>Example: "wget https://api.rtpea.com/api/PXD002211"</b>
+        </div> */}
 
-        
+
 
         {/* Searchbox which converts the text to uppercase and calls the button_click
            function upon enter button being pressed or button being clicked */}
