@@ -141,6 +141,35 @@ body2 {
 }
 
 /* CONTACT US PAGE */
+
+.description_style {
+  position: absolute;
+  display: inline-block;
+  padding-left:auto;
+  padding-right:auto;
+  width:600px;
+  text-align:center;
+  border-left:10px solid #ccc;
+  border-top:2px solid #ccc;
+  border-right:10px solid #ccc;
+  border-bottom:2px solid #ccc;
+  border-color:#bababa;
+}
+
+.description_style2 {
+  /* position: absolute; */
+  /* display: inline-block; */
+  padding-left:auto;
+  padding-right:auto;
+  width:300px;
+  text-align:center;
+  border-left:10px solid #ccc;
+  border-top:2px solid #ccc;
+  border-right:10px solid #ccc;
+  border-bottom:2px solid #ccc;
+  border-color:#bababa;
+}
+
 .contact_container {
 	display: flex;
   position: relative;
