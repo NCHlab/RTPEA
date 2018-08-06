@@ -565,6 +565,11 @@ const orf2p_column = [{
                       {/* {" "} */}
                       Use your mouse! If you see it, you can probably click it
                       <br />
+                      <div className="container alert alert-info alert-dismissible">
+                        <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <b>For programmatic Access go to: <a href="https://api.rtpea.com/table">https://api.rtpea.com/table</a></b>
+                      </div>
+
                       <div className="header"></div>
                       Legend:
                       <br />
@@ -616,7 +621,6 @@ const orf2p_column = [{
               </AdBlockDetect> */}
               {/* <DetectAdBlock pathname={window.location.pathname} /> */}
               {/* {console.log(window.location.pathname)} */}
-
 
           <br />
 
@@ -835,6 +839,7 @@ const orf2p_column = [{
 
 {/* </div> */}
           </div>
+
         </div>
 )
   }
