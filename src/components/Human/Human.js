@@ -44,7 +44,7 @@ class Human extends Component {
       highlight: false,
       checked: false,
       index: "",
-      svgType: "Other Tissues",
+      svgType: undefined,
       x: 0,
       y: 0,
       chartWidth:800,
