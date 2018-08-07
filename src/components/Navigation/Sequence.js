@@ -65,7 +65,7 @@ class Sequence_view extends Component {
 			"sequenceMaxHeight": "500px",
 			"badge": false
 			});
-			seq1.selection(20, 43, 'red');
+			// seq1.selection(20, 43, 'red');
 
 			var onclickFun = function(e) {
 			  console.log(e.target.textContent);
@@ -85,14 +85,14 @@ class Sequence_view extends Component {
 			];
 
 
-			seq1.coverage(exampleSequenceCoverage);
+			// seq1.coverage(exampleSequenceCoverage);
 
 			var exampleLegend = [
 		    {name: "???? Protein", color: "#ff0000", underscore: false},
 		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
 		    {name: "Synthetic peptide",color: "#fff",underscore: true}
 		    ];
-			seq1.addLegend(exampleLegend);
+			// seq1.addLegend(exampleLegend);
 
 			seq1.onMouseSelection(function(elem){
         console.log(elem.detail);
@@ -128,7 +128,7 @@ class Sequence_view extends Component {
 			"sequenceMaxHeight": "500px",
 			"badge": false
 			});
-			seq2.selection(20, 43, 'red');
+			// seq2.selection(20, 43, 'red');
 
 			var onclickFun = function(e) {
 			  console.log(e.target.textContent);
@@ -148,14 +148,14 @@ class Sequence_view extends Component {
 			];
 
 
-			seq2.coverage(exampleSequenceCoverage);
+			// seq2.coverage(exampleSequenceCoverage);
 
 			var exampleLegend = [
 		    {name: "???? Protein", color: "#ff0000", underscore: false},
 		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
 		    {name: "Synthetic peptide",color: "#fff",underscore: true}
 		    ];
-			seq2.addLegend(exampleLegend);
+			// seq2.addLegend(exampleLegend);
 
 			seq2.onMouseSelection(function(elem){
         console.log(elem.detail);

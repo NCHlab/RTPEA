@@ -24,6 +24,8 @@ import kidney_data from "../Files/kidney.json";
 import pancreas_data from "../Files/pancreas.json";
 import testes_data from "../Files/testes.json";
 import all_other_tissue_data from "../Files/all_other_tissue.json";
+import all_data from "../Files/all_data.json";
+
 import "./Human.css";
 import $ from "jquery";
 import SVG from "react-inlinesvg";
@@ -60,7 +62,8 @@ class Human extends Component {
       pancreas_data:pancreas_data,
       testes_data:testes_data,
       all_other_tissue_data: all_other_tissue_data,
-      data_type: testes_data,
+      all_data: all_data,
+      testes_data: testes_data,
       clicktochange:"Hover over tissue to display graph",
       hovertochange:"Click on tissue to display graph",
 
@@ -110,6 +113,8 @@ class Human extends Component {
       urlstate = "breast"
     }else if (svgType === "brain"){
       data_type = this.state.brain_data
+    }else if (svgType === undefined){
+      data_type = this.state.all_data
     } else {
         data_type= this.state.all_other_tissue_data
       }
@@ -141,7 +146,9 @@ class Human extends Component {
           }
         }
         ]}/> */}
-        <div style={{textAlign:"center"}}><h3>Summary Metric: {this.state.svgType == "whole_human_img"  || this.state.svgType == undefined ? "Other Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div>
+        {/* <div style={{textAlign:"center"}}><h3>Summary Metric: {this.state.svgType == "whole_human_img"  || this.state.svgType == undefined ? "Other Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div> */}
+
+        <div style={{textAlign:"center"}}><h3>Summary Metric: {this.state.svgType == "whole_human_img" ? "Other Tissues" : this.state.svgType == undefined ? "All Tissues" : this.state.svgType.slice(0,1).toUpperCase()+this.state.svgType.slice(1)}</h3></div>
         <BarChart  layout="vertical"  width={this.state.chartWidth} height={this.state.chartHeight} data={data_type} onClick={() => window.location.assign(this.props.urlSource2+"/browse/"+urlstate)}>
           <XAxis type="number" tick={this.state.whiteFill} />
 
