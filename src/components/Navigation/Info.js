@@ -146,6 +146,13 @@ class Info extends Component {
         </div>
         <div className="line-seperator" />
         <div className="background-body">
+          <p>
+          <h1> Demo Video </h1>
+        </p>
+
+          <iframe width="1280" height="720"
+            src="https://www.youtube.com/embed/5FkMAEBXEfE">
+          </iframe>
           <br />
           <br />
           <br />
