@@ -57,17 +57,11 @@ const Project = () => (
         <br/>
       <button className="btn btn-outline-primary">Lead Dev</button> &nbsp;
       <button className="btn btn-outline-primary">Website Creator</button> &nbsp;
-      <button className="btn btn-outline-primary">JavaScript</button> &nbsp;
-      <button className="btn btn-outline-primary">ReactJS</button> &nbsp;
-      <button className="btn btn-outline-primary">MongoDB</button> &nbsp;
-      <button className="btn btn-outline-primary">HTML</button> &nbsp;
-      <button className="btn btn-outline-primary">CSS</button> &nbsp;
-      <button className="btn btn-outline-primary">????</button> &nbsp;
 
     </p>
     <p>
-      <span style={{paddingLeft:"250px"}}>
-      <button className="btn btn-outline-primary">Msc BioInformatics</button> &nbsp;
+      <span style={{paddingLeft:"0px"}}>
+      <button className="btn btn-outline-primary">Msc BioInformatics Project</button> &nbsp;
       <button className="btn btn-outline-primary">????</button> &nbsp;
       <button className="btn btn-outline-primary">????</button> &nbsp;
     </span>
@@ -98,11 +92,13 @@ const Project = () => (
 
       <p>
         <br/>
-      <button className="btn btn-outline-primary">Co-Dev Supervisor</button> &nbsp;
-      <button className="btn btn-outline-primary">RetroMiner Expert</button> &nbsp;
+      <button className="btn btn-outline-primary">Co-Dev</button> &nbsp;
+      <button className="btn btn-outline-primary">RetroMiner</button> &nbsp;
       <br/>
-      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <button className="btn btn-outline-primary">Data Generation</button> &nbsp;
+      <br/>
+      <button className="btn btn-outline-primary">Data Generator</button> &nbsp;
+      <button className="btn btn-outline-primary">Supervisor</button> &nbsp;
+
     </p>
 </div>
 <div class="col-sm">
@@ -122,8 +118,14 @@ const Project = () => (
 
       <p>
         <br/>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
       <button className="btn btn-outline-primary">MSc Supervisor</button> &nbsp;
+      <button className="btn btn-outline-primary">lab leader</button> &nbsp;
+      <br/>
+      <br/>
+      <button className="btn btn-outline-primary">Funding</button> &nbsp;
+
+
     </p>
     </div>
 
@@ -144,7 +146,10 @@ const Project = () => (
 
       <p>
         <br/>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        
+        <button className="btn btn-outline-primary">Retroelement collaborator</button> &nbsp;
+        <br/>
+        <br/>
       <button className="btn btn-outline-primary">Biological Insights</button> &nbsp;
     </p>
     </div>
