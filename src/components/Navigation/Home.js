@@ -18,6 +18,7 @@ import offlineimg from "../Images/offline.png";
 import Popup from "reactjs-popup";
 import homepage_barchart from "../Files/homepage_barchart.json";
 import {isMobile} from 'react-device-detect';
+import CounterData from '../Files/CounterData.json'
 // import '../../App.css';
 
 // Displays the Home page using JSX
@@ -192,19 +193,19 @@ class Home extends Component {
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={30} speed={4000} />
+                  <CountTo to={CounterData.prideDatasets} speed={4000} />
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
                   {/* # of Orf2: */}
-                  <CountTo to={1000} speed={4000} />
+                  <CountTo to={CounterData.samples} speed={4000} />
                   {/* onComplete={onHide} */}
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={300} speed={4000} /> GB
+                  <CountTo to={CounterData.specSize} speed={4000} /> GB
                 </h1>
               </div>
             </div>
