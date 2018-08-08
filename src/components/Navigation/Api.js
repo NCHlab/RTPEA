@@ -167,8 +167,7 @@ class Api extends Component {
 
         <div className="container alert alert-info alert-dismissible">
           <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b>
-          <hr/>
+          <p><b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b></p>
           Example: "wget <a href="https://api.rtpea.com/api/PXD002211">https://api.rtpea.com/api/PXD002211</a>"
         </div>
         {/* <div className="container alert alert-warning alert-dismissible">
