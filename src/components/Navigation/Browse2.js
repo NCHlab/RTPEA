@@ -110,14 +110,14 @@ class Table extends Component{
     id: "data_pxd",
     accessor: (d) => d.PXD, // String-based value accessors!
     filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["data_pxd"] }),
+                    matchSorter(rows, filter.value, { keys: ["data_pxd"],threshold: matchSorter.rankings.CONTAINS  }),
                   filterAll: true
   }, {
     Header: <h4><b>STUDY</b></h4>,
     id: "study",
     accessor: 'study',
     filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["study"] }),
+                    matchSorter(rows, filter.value, { keys: ["study"],threshold: matchSorter.rankings.CONTAINS  }),
                   filterAll: true
   }, {
     Header: <h4><b>No. OF SAMPLES</b></h4>,
@@ -127,7 +127,7 @@ class Table extends Component{
     Header: <h4><b>DISEASE</b></h4>,
     accessor: 'disease',
     filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["disease"] }),
+                    matchSorter(rows, filter.value, { keys: ["disease"],threshold: matchSorter.rankings.CONTAINS  }),
                   filterAll: true
   }
   // }, {
@@ -330,7 +330,7 @@ class Table extends Component{
               }}
             >
               {/* {row.value} */}
-              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF1p_variants[0].name}</span>
+              {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF1p_variants[0].name === "NA" ? row.original.ORF1p_variants[0].name : row.original.ORF1p_variants[0].name.slice(6) }</span>
             </div>
         </div>
         )
@@ -379,7 +379,7 @@ class Table extends Component{
             >
               {/* {row.value} */}
               {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
-              {row.value} <span style={{fontSize: "10px"}}> {row.original.ORF2p_variants[0].name}</span>
+              {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF2p_variants[0].name === "NA" ? row.original.ORF2p_variants[0].name : row.original.ORF2p_variants[0].name.slice(6) }</span>
 
             </div>
         </div>
@@ -731,7 +731,7 @@ const orf2p_column = [{
                       SubComponent={row => {
                         return (
                           <div>
-                            <div style={{ border: "4px", borderStyle: "solid solid none solid", borderColor: "rgb(214, 188, 0)" }}>
+                            <div style={{ border: "4px", borderStyle: "solid solid none solid", borderColor: "rgb(0, 0, 0)" }}>
                               {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF1p_variants}
@@ -764,7 +764,7 @@ const orf2p_column = [{
                                 showPageJump={false}
                                 className="-striped -highlight"/>
                             </div>
-                            <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(214, 188, 0)" }}>
+                            <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(0, 0, 0)" }}>
                               {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF2p_variants}

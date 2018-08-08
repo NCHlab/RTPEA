@@ -125,14 +125,14 @@ check_expr_orf2 = (d) => {
     id: "data_pxd",
     accessor: (d) => d.PXD, // String-based value accessors!
     filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["data_pxd"] }),
+                    matchSorter(rows, filter.value, { keys: ["data_pxd"],threshold: matchSorter.rankings.CONTAINS }),
                   filterAll: true
   }, {
     Header: <h4><b>STUDY</b></h4>,
     id: "study",
     accessor: 'study',
     filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["study"] }),
+                    matchSorter(rows, filter.value, { keys: ["study"],threshold: matchSorter.rankings.CONTAINS }),
                   filterAll: true
   }, {
     Header: <h4><b>No. OF SAMPLES</b></h4>,
@@ -142,7 +142,7 @@ check_expr_orf2 = (d) => {
     Header: <h4><b>DISEASE</b></h4>,
     accessor: 'disease',
     filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["disease"] }),
+                    matchSorter(rows, filter.value, { keys: ["disease"],threshold: matchSorter.rankings.CONTAINS }),
                   filterAll: true
   }
   // }, {
