@@ -94,8 +94,19 @@ class Sequence_view extends Component {
 		    ];
 			// seq1.addLegend(exampleLegend);
 
+
+				function copyToClipboard(element) {
+				 var inp =document.createElement('input');
+				 document.body.appendChild(inp)
+				 inp.value = element
+				 inp.select();
+				 document.execCommand('copy',false);
+				 inp.remove();
+				 }
+
 			seq1.onMouseSelection(function(elem){
         console.log(elem.detail);
+				copyToClipboard(elem.detail.selection)
 			    }
 			);
 			seq1.onSubpartSelected(function(elem){
@@ -156,9 +167,18 @@ class Sequence_view extends Component {
 		    {name: "Synthetic peptide",color: "#fff",underscore: true}
 		    ];
 			// seq2.addLegend(exampleLegend);
+			function copyToClipboard(element) {
+			 var inp =document.createElement('input');
+			 document.body.appendChild(inp)
+			 inp.value = element
+			 inp.select();
+			 document.execCommand('copy',false);
+			 inp.remove();
+			 }
 
 			seq2.onMouseSelection(function(elem){
         console.log(elem.detail);
+				copyToClipboard(elem.detail.selection)
 			    }
 			);
 			seq2.onSubpartSelected(function(elem){
@@ -317,6 +337,10 @@ saveAs2 = (
 					</div>
 				</div>
 			<div className="white-background">
+				<div className="container alert alert-warning alert-dismissible">
+					<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<b>Highlight any part of sequence to copy</b>
+				</div>
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}
