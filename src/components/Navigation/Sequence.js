@@ -95,18 +95,18 @@ class Sequence_view extends Component {
 			// seq1.addLegend(exampleLegend);
 
 
-				function copyToClipboard(element) {
-				 var inp =document.createElement('input');
-				 document.body.appendChild(inp)
-				 inp.value = element
-				 inp.select();
-				 document.execCommand('copy',false);
-				 inp.remove();
-				 }
+				// function copyToClipboard(element) {
+				//  var inp =document.createElement('input');
+				//  document.body.appendChild(inp)
+				//  inp.value = element
+				//  inp.select();
+				//  document.execCommand('copy',false);
+				//  inp.remove();
+				//  }
 
 			seq1.onMouseSelection(function(elem){
         console.log(elem.detail);
-				copyToClipboard(elem.detail.selection)
+				// copyToClipboard(elem.detail.selection)
 			    }
 			);
 			seq1.onSubpartSelected(function(elem){
@@ -167,18 +167,18 @@ class Sequence_view extends Component {
 		    {name: "Synthetic peptide",color: "#fff",underscore: true}
 		    ];
 			// seq2.addLegend(exampleLegend);
-			function copyToClipboard(element) {
-			 var inp =document.createElement('input');
-			 document.body.appendChild(inp)
-			 inp.value = element
-			 inp.select();
-			 document.execCommand('copy',false);
-			 inp.remove();
-			 }
+			// function copyToClipboard(element) {
+			//  var inp =document.createElement('input');
+			//  document.body.appendChild(inp)
+			//  inp.value = element
+			//  inp.select();
+			//  document.execCommand('copy',false);
+			//  inp.remove();
+			//  }
 
 			seq2.onMouseSelection(function(elem){
         console.log(elem.detail);
-				copyToClipboard(elem.detail.selection)
+				// copyToClipboard(elem.detail.selection)
 			    }
 			);
 			seq2.onSubpartSelected(function(elem){
