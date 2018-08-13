@@ -461,10 +461,16 @@ const orf1p_column = [{
           </div>
       </div>
       )
-},{
-  Header: '',
-  accessor: '-'
-},{
+    },{
+      Header: 'Sequence',
+      accessor: '-',
+      Cell: row => row.original.name != "NA"?
+        (
+          <div>
+            <a href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
+          </div>
+        ) : ""
+    },{
   Header: '',
   accessor: '-'
 },{
@@ -513,10 +519,17 @@ const orf2p_column = [{
           </div>
       </div>
       )
-},{
-  Header: '',
-  accessor: '-'
-},{
+    },{
+      Header: 'Sequence',
+      accessor: '-',
+      Cell: row => row.original.name != "NA"?
+        (
+          <div>
+            <a href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
+            {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
+          </div>
+        ) : ""
+    },{
   Header: '',
   accessor: '-'
 },{

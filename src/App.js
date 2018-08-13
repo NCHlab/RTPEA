@@ -115,9 +115,9 @@ class App extends Component{
             <Route exact path={"/"} component={Homeredirect} />
             <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2}/>}/>
             {/* <Route exact path={"/browse"} component={() => <Browse/>}/> */}
-            <Route exact path={"/browse"} render={(props) => (<Browse {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path={"/browse"} render={(props) => (<Browse {...props} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2}/>)}/>
             {/* <Route exact path="/browse/:id" component={Browse2} urlSource={this.state.urlSource}/> */}
-            <Route exact path="/browse/:id" render={(props) => (<Browse2 {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/browse/:id" render={(props) => (<Browse2 {...props} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2}/>)}/>
             {/* <Route exact path="/Visualise" component={Visualise} /> */}
             <Route exact path="/Visualise" render={(props) => (<Visualise {...props} urlSource={this.state.urlSource} />)}/>
             {/* <Route exact path="/Visualise/:id" component={Visualise} /> */}
