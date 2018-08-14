@@ -61,10 +61,10 @@ class App extends Component{
    this.state = {
     show: false,
     isLoading: true,
-    urlSource:"http://localhost:3001", //The API Location domain
-    // urlSource:"https://api.rtpea.com",
-    urlSource2:"http://localhost:3000", // The current server frontend hosting domain
-    // urlSource2:"https://rtpea.com",
+    // urlSource:"http://localhost:3001", //The API Location domain
+    urlSource:"https://api.rtpea.com",
+    //urlSource2:"http://localhost:3000", // The current server frontend hosting domain
+     urlSource2:"https://rtpea.com",
   };
   }
 
