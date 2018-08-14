@@ -400,6 +400,7 @@ const orf1p_column = [{
   accessor: '-'
 },{
   Header: <b>ORF1p Variants</b>,
+  id: "ORF1p_var_name",
   accessor: 'name'
 }, {
   Header: <b>ORF1p Confidence</b>,
@@ -458,6 +459,7 @@ const orf2p_column = [{
   accessor: '-'
 },{
   Header: <b>ORF2p Variants</b>,
+  id: "ORF2p_var_name",
   accessor: 'name'
 }, {
   Header: <b>ORF2p Confidence</b>,
@@ -760,10 +762,13 @@ const orf2p_column = [{
                                    return {
                                      onClick: (e, handleOriginal) => {
                                        {/* console.log("It was in this column:", column); */}
-                                       console.log(rowInfo.original.name)
-                                       console.log(rowInfo.original.confidence)
-                                       if (rowInfo.original.name !== "NA"){
-                                         window.location = "../visualise/" + rowInfo.original.name.slice(0,5)
+                                       {/* console.log(rowInfo.original.name)
+                                       console.log(rowInfo.original.confidence) */}
+                                       if (rowInfo.original.name !== "NA" && column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
+                                          window.open(
+                                            "../visualise/" + rowInfo.original.name.slice(0,5),
+                                            '_blank' // <- This is what makes it open in a new window.
+                                          );
                                        }
                                        {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
@@ -797,8 +802,12 @@ const orf2p_column = [{
                                          window.location = "../visualise/test2"
                                        } else if (rowInfo.original.name === "ORF2p_HS_111"){
                                          window.location = "../visualise/"
-                                       } else if (rowInfo.original.name !== "NA"){
-                                         window.location = "../visualise/" + rowInfo.original.name.slice(0,5)
+                                       } else if (rowInfo.original.name !== "NA" && column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
+                                          window.open(
+                                            "../visualise/" + rowInfo.original.name.slice(0,5),
+                                            '_blank' // <- This is what makes it open in a new window.
+                                          );
+
                                        }
                                        {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
