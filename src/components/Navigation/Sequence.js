@@ -337,10 +337,10 @@ saveAs2 = (
 					</div>
 				</div>
 			<div className="white-background">
-				<div className="container alert alert-warning alert-dismissible">
+				{/* <div className="container alert alert-warning alert-dismissible">
 					<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
 					<b>Highlight any part of sequence to copy</b>
-				</div>
+				</div> */}
 				{/* {JSON.stringify(this.state.annotation_data)}
 				<br/>
 				{JSON.stringify(this.state.annotation_data[0])} */}

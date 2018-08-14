@@ -15,7 +15,21 @@ body {
 body2 {
   background: #66B8F2,#B8DBF4;
 }
-
+/*Browse*/
+.browse-link-style{
+  background-color: #41a6f4;
+  padding: 0.3em 1.0em;
+  box-shadow: 0 5px 0 #005496;
+  color: #040704;
+  font-family: helvetica;
+  text-decoration: none;
+}
+.browse-link-style:hover {
+  text-decoration: none;
+  background-color: #005496;
+  box-shadow: 0 5px 0 #41a6f4;
+  color: #ffffff;
+}
 /*Sequence Viewer*/
 .white-darker-background {
   background: #edeaea;

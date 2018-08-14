@@ -436,7 +436,7 @@ const orf1p_column = [{
       Cell: row => row.original.name != "NA"?
         (
           <div>
-            <a href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
+            <a className="browse-link-style" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
           </div>
         ) : ""
     },{
@@ -494,7 +494,7 @@ const orf2p_column = [{
       Cell: row => row.original.name != "NA"?
         (
           <div>
-            <a href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
+            <a className="browse-link-style" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
           </div>
         ) : ""
     },{
