@@ -491,7 +491,14 @@ const orf2p_column = [{
 },{
   Header: <b>ORF2p Variants</b>,
   id: "ORF2p_var_name",
-  accessor: 'name'
+  accessor: 'name',
+  Cell: row => (
+      // <button className="btn btn-info" style={{height:30, fontSize:"1em"}}>{row.value}</button>
+      <div className="browse-link-style" style={{height:22}}>
+         {row.value}
+        {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
+      </div>
+  )
 }, {
   Header: <b>ORF2p Confidence</b>,
   id: "ORF2p_var",

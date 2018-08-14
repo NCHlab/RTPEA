@@ -29,6 +29,7 @@ body2 {
   background-color: #005496;
   box-shadow: 0 5px 0 #41a6f4;
   color: #ffffff;
+  cursor:pointer;
 }
 /*Sequence Viewer*/
 .white-darker-background {
