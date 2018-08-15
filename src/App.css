@@ -31,6 +31,22 @@ body2 {
   color: #ffffff;
   cursor:pointer;
 }
+
+.browse-var-style{
+  background-color: none;
+  padding: 0.3em 1.0em;
+  box-shadow: 0 2px 0 #005496;
+  color: #040704;
+  font-family: helvetica;
+  text-decoration: none;
+}
+.browse-var-style:hover {
+  text-decoration: none;
+  background-color: #005496;
+  box-shadow: 0 2px 0 #41a6f4;
+  color: #ffffff;
+  cursor:pointer;
+}
 /*Sequence Viewer*/
 .white-darker-background {
   background: #edeaea;

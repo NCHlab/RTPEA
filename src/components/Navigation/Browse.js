@@ -494,7 +494,7 @@ const orf2p_column = [{
   accessor: 'name',
   Cell: row => (
       // <button className="btn btn-info" style={{height:30, fontSize:"1em"}}>{row.value}</button>
-      <div className="browse-link-style" style={{height:22}}>
+      <div className="browse-var-style" style={{height:22}}>
          {row.value}
         {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
       </div>
@@ -534,7 +534,7 @@ const orf2p_column = [{
       Cell: row => row.original.name != "NA"?
         (
           <div>
-            <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
+            <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence =></a>
             {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
           </div>
         ) : ""
