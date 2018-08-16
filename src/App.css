@@ -5,10 +5,10 @@ html {
 
 body {
 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px Helvetica, Arial, sans-serif;
   background: #1F2830; /*linear-gradient(to bottom left, lightblue, skyblue);*/
   height: 1000px;
-  font-family: "Lucida Sans Unicode", serif, "Times New Roman";
+  font-family: "Lucida Sans Unicode",Helvetica,Arial,"Times New Roman",serif;
   color: #FFFFFF;
 }
 
@@ -34,8 +34,8 @@ body2 {
 
 .browse-var-style{
   background-color: none;
-  padding: 0.3em 1.0em;
-  box-shadow: 0 2px 0 #005496;
+  padding: 0.1em 1.0em;
+  box-shadow: 0px 2px 0px 0px #005496;
   color: #040704;
   font-family: helvetica;
   text-decoration: none;
