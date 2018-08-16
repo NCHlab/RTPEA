@@ -176,7 +176,7 @@ download_l1seq = () =>{
 
                 <tr>
                   <td>
-                    <button className="btn btn-outline-info">
+                    <button className="btn btn-outline-danger" disabled>
                       Download ProtVista Data
                     </button>
                   </td>
@@ -184,11 +184,21 @@ download_l1seq = () =>{
                 </tr>
                 <tr>
                   <td>
-                    <button className="btn btn-outline-info">
+                    <button className="btn btn-outline-danger" disabled>
                       Download Parameters
                     </button>
                   </td>
                   <td>Protein Experimental Parameters - Under Construction</td>
+                </tr>
+                <tr>
+                  <td>
+                    <button className="btn btn-info"
+                      onClick={e => {window.location = "../api"}}
+                          >
+                      Go to API
+                    </button>
+                  </td>
+                  <td>For Manual and Programmatic Access to the Application Programming Interface</td>
                 </tr>
               </table>
             </div>
