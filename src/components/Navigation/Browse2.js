@@ -401,7 +401,15 @@ const orf1p_column = [{
 },{
   Header: <b>ORF1p Variants</b>,
   id: "ORF1p_var_name",
-  accessor: 'name'
+  accessor: 'name',
+  Cell: row => ( row.original.name != "NA"?
+      <div className="browse-var-style" style={{height:22}}>
+         {row.value}
+      </div>:
+      <div>
+        {row.value}
+      </div>
+  )
 }, {
   Header: <b>ORF1p Confidence</b>,
   id: "ORF1p_var",
@@ -460,7 +468,15 @@ const orf2p_column = [{
 },{
   Header: <b>ORF2p Variants</b>,
   id: "ORF2p_var_name",
-  accessor: 'name'
+  accessor: 'name',
+  Cell: row => ( row.original.name != "NA"?
+      <div className="browse-var-style" style={{height:22}}>
+         {row.value}
+      </div>:
+      <div>
+        {row.value}
+      </div>
+  )
 }, {
   Header: <b>ORF2p Confidence</b>,
   id: "ORF2p_var",

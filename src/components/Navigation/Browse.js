@@ -432,7 +432,15 @@ const orf1p_column = [{
 },{
   Header: <b>ORF1p Variants</b>,
   id: "ORF1p_var_name",
-  accessor: 'name'
+  accessor: 'name',
+  Cell: row => ( row.original.name != "NA"?
+      <div className="browse-var-style" style={{height:22}}>
+         {row.value}
+      </div>:
+      <div>
+        {row.value}
+      </div>
+  )
 }, {
   Header: <b>ORF1p Confidence</b>,
   id: "ORF1p_var",
@@ -492,11 +500,14 @@ const orf2p_column = [{
   Header: <b>ORF2p Variants</b>,
   id: "ORF2p_var_name",
   accessor: 'name',
-  Cell: row => (
-      // <button className="btn btn-info" style={{height:30, fontSize:"1em"}}>{row.value}</button>
+  Cell: row => ( row.original.name != "NA"?
+  // <button className="btn btn-info" style={{height:30, fontSize:"1em"}}>{row.value}</button>
       <div className="browse-var-style" style={{height:22}}>
          {row.value}
-        {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
+         {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
+      </div>:
+      <div>
+        {row.value}
       </div>
   )
 }, {
