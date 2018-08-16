@@ -70,6 +70,10 @@ body2 {
     background-color: #4c7aaf;
     color: white;
 }
+.table-border{
+  border: 2px solid black;
+}
+
 /*Sequence Viewer*/
 .white-darker-background {
   background: #edeaea;

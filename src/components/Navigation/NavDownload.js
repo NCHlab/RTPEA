@@ -16,10 +16,6 @@ function NavDownload(props) {
             page: 'API',
             to: '/api'
         },
-        {
-            page: 'Prot Experimental Params',
-            to: '/exp_params'
-        }
     ];
 
 

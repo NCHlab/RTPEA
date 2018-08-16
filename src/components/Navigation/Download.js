@@ -26,12 +26,14 @@ class Download extends Component {
       text_colour: "#000000",
       text_colour_err: "#af0603",
       button_msg: "Darkify",
-      switched: true
+      switched: true,
+      name_of_file:"",
     };
     // This binding is necessary to make `this` work in the callback
 
     this.button_click = this.button_click.bind(this);
     this.download_table = this.download_table.bind(this);
+    this.download_l1seq = this.download_l1seq.bind(this);
 
   }
   componentDidMount = () => {
@@ -85,6 +87,7 @@ class Download extends Component {
   };
 
   download_table = () =>{
+    this.setState({name_of_file: "Table"})
     fetch(this.props.urlSource+"/table")
     .then(response => response.json())
     .then(data => {
@@ -92,10 +95,19 @@ class Download extends Component {
   })
 }
 
+download_l1seq = () =>{
+  this.setState({name_of_file: "Line-1_Sequences"})
+  fetch(this.props.urlSource+"/sequence/all")
+  .then(response => response.json())
+  .then(data => {
+     this.saveAs(JSON.stringify(data, null, 2))
+})
+}
+
   // This function allows the user to save the data as a file.
   saveAs = (
     content,
-    filename = "table" + ".json",
+    filename = this.state.name_of_file + ".json",
     type = "application/json"
   ) => {
     let blob = new Blob([content], { type });
@@ -135,7 +147,7 @@ class Download extends Component {
             <div class="container">
 
 
-              <table id="download_table">
+              <table id="download_table" className="table-border">
                 <tr>
                   <th>Download</th>
                   <th>Info</th>
@@ -143,7 +155,7 @@ class Download extends Component {
                 <tr>
                   <td>
                     <button
-                      className="btn btn-outline-info"
+                      className="btn btn-info"
                       onClick={e => this.download_table()}
                     >
                       Download Table Data
@@ -153,7 +165,9 @@ class Download extends Component {
                 </tr>
                 <tr>
                   <td>
-                    <button className="btn btn-outline-info">
+                    <button className="btn btn-info"
+                      onClick={e => this.download_l1seq()}
+                    >
                       Download all L1 Prot Sequences
                     </button>
                   </td>
@@ -167,6 +181,14 @@ class Download extends Component {
                     </button>
                   </td>
                   <td>Under Construction</td>
+                </tr>
+                <tr>
+                  <td>
+                    <button className="btn btn-outline-info">
+                      Download Parameters
+                    </button>
+                  </td>
+                  <td>Protein Experimental Parameters - Under Construction</td>
                 </tr>
               </table>
             </div>

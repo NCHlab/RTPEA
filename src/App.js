@@ -21,7 +21,6 @@ import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
 import Ideogram from './components/Navigation/Ideogram';
 import Sequence from './components/Navigation/Sequence';
-import ExpParams from './components/Navigation/ExpParams';
 import Download from './components/Navigation/Download';
 import Homeredirect from './components/Navigation/Homeredirect';
 
@@ -133,7 +132,6 @@ class App extends Component{
             {/* <Route exact path="/ideogram" component={Ideogram} /> */}
 
             <Route exact path="/Download" render={(props) => (<Download {...props} urlSource={this.state.urlSource} />)}/>
-            <Route exact path="/exp_params" render={(props) => (<ExpParams {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/ideogram" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
             {/* <Route exact path="/ideogram/:id" component={Ideogram} /> */}
             <Route exact path="/ideogram/:id" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
