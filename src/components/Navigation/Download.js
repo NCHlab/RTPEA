@@ -166,7 +166,7 @@ class Download extends Component {
                       Download all L1 Prot Sequences
                     </button>
                   </td>
-                  <td>Download all available Line-1 element data from db</td>
+                  <td>Download all available Line-1 element data in <b><a href="../sequence">Sequence page</a></b> from database </td>
                 </tr>
 
                 <tr>
@@ -206,6 +206,7 @@ class Download extends Component {
                     <button
                       className="btn btn-info"
                       onClick={e => {
+                        window.location = "https://api.rtpea.com/api";
                       }}
                     >
                       Programmatic API

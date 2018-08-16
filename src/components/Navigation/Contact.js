@@ -8,15 +8,11 @@ import nayam from "../ContactUs/nayam.png";
 import nazrath from "../ContactUs/nazrath.png";
 import conrad from "../ContactUs/conrad.png";
 import miguel from "../ContactUs/miguel.png";
+import Particles from 'react-particles-js';
 
-const Project = () => (
+const Project = (particlesOptions) => (
   <div>
-    {/* <div className="contact_h1">
-      <h1>Website Created by: Nayam Chowdhury</h1>
-    </div>
-    <div className="contact_h1">
-      <h1>with help from Nazrath Nawaz</h1>
-    </div> */}
+    <Particles className="particles" params={particlesOptions} />
     <div className="container col-lg-2">
       <h1>Contact Us</h1>
     </div>
@@ -146,7 +142,7 @@ const Project = () => (
 
       <p>
         <br/>
-        
+
         <button className="btn btn-outline-primary">Retroelement collaborator</button> &nbsp;
         <br/>
         <br/>

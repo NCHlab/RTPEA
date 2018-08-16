@@ -127,8 +127,11 @@ class App extends Component{
             {/* <Route exact path="/BrowseDemo" component={BrowseDemo} /> */}
             {/* <Route exact path={"/api"} component={Api} /> */}
             <Route exact path="/api" render={(props) => (<Api {...props} urlSource={this.state.urlSource} />)}/>
-            <Route exact path="/info" component={Info} />
-            <Route exact path="/contact" component={Contact} />
+            {/* <Route exact path="/info" component={Info} /> */}
+            <Route exact path="/info" render={(props) => (<Info {...props}/>)}/>
+            <Route exact path="/contact" render={(props) => (<Contact {...props} particlesOptions={particlesOptions}/>)}/>
+            {/* <Route exact path={"/contact"} component={() => <Contact show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2} particlesOptions={particlesOptions}/>}/> */}
+            {/* <Route exact path="/contact" component={Contact} particlesOptions={particlesOptions}/> */}
             {/* <Route exact path="/ideogram" component={Ideogram} /> */}
 
             <Route exact path="/Download" render={(props) => (<Download {...props} urlSource={this.state.urlSource} />)}/>
