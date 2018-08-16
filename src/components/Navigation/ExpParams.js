@@ -8,7 +8,7 @@ import "react-toggle-switch/dist/css/switch.min.css";
 import NavDownload from "./NavDownload.js";
 // ../../../node_modules/
 
-class Api extends Component {
+class ExpParams extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +39,7 @@ class Api extends Component {
 
   //Sets the title bar upon loading of the page
   componentWillMount = () => {
-    document.title = "RTPEA - API";
+    document.title = "RTPEA - Experiment Params";
   };
 
   //Sets the title bar after leaving the page
@@ -317,4 +317,4 @@ class Api extends Component {
   }
 }
 
-export default Api;
+export default ExpParams;

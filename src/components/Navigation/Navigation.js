@@ -24,8 +24,10 @@ function Navigation(props) {
             to: '/visualise'
         },
         {
-            page: 'API',
-            to: '/api'
+            page: 'Download',
+            to: '/download',
+            ex1:"api",
+            ex2:"exp_params"
         },
         {
             page: 'Info',
@@ -51,10 +53,12 @@ function Navigation(props) {
 
           <ul class="menu">
             <li><a>
-                {links.map(({ page, to }) => (
+                {links.map(({ page, to, ex1, ex2 }) => (
+                  window.location.href.includes(ex1) || window.location.href.includes(ex2) ? <a href={to} className="active">{page}</a> :
                   window.location.href.includes(to)
                   ? <a href={to} className="active">{page}</a>
                   : <Link to={to}>{page}</Link>))}
+
                 </a>
               </li>
             </ul>

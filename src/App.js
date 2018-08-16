@@ -21,6 +21,8 @@ import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
 import Ideogram from './components/Navigation/Ideogram';
 import Sequence from './components/Navigation/Sequence';
+import ExpParams from './components/Navigation/ExpParams';
+import Download from './components/Navigation/Download';
 import Homeredirect from './components/Navigation/Homeredirect';
 
 import Loading from 'react-loading-bar'
@@ -105,7 +107,7 @@ class App extends Component{
           <Navigation />
 
           {/* Displays the particles that was defined earlier */}
-          <Particles className="particles" params={particlesOptions} />
+          {/* <Particles className="particles" params={particlesOptions} /> */}
         </div>
 
         {/* Route defined, different paths lead to different JS files to be displayed.
@@ -113,7 +115,7 @@ class App extends Component{
         <div className="paths">
           <Switch>
             <Route exact path={"/"} component={Homeredirect} />
-            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2}/>}/>
+            <Route exact path={"/home"} component={() => <Home show={this.state.show} onShow={this.onShow} onHide={this.onHide} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2} particlesOptions={particlesOptions}/>}/>
             {/* <Route exact path={"/browse"} component={() => <Browse/>}/> */}
             <Route exact path={"/browse"} render={(props) => (<Browse {...props} urlSource={this.state.urlSource} urlSource2={this.state.urlSource2}/>)}/>
             {/* <Route exact path="/browse/:id" component={Browse2} urlSource={this.state.urlSource}/> */}
@@ -129,6 +131,9 @@ class App extends Component{
             <Route exact path="/info" component={Info} />
             <Route exact path="/contact" component={Contact} />
             {/* <Route exact path="/ideogram" component={Ideogram} /> */}
+
+            <Route exact path="/Download" render={(props) => (<Download {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/exp_params" render={(props) => (<ExpParams {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/ideogram" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
             {/* <Route exact path="/ideogram/:id" component={Ideogram} /> */}
             <Route exact path="/ideogram/:id" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>

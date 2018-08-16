@@ -19,6 +19,7 @@ import Popup from "reactjs-popup";
 import homepage_barchart from "../Files/homepage_barchart.json";
 import {isMobile} from 'react-device-detect';
 import CounterData from '../Files/CounterData.json'
+import Particles from 'react-particles-js';
 // import '../../App.css';
 
 // Displays the Home page using JSX
@@ -96,6 +97,8 @@ class Home extends Component {
     // ];
 
     return (
+      <div>
+      <Particles className="particles" params={this.props.particlesOptions} />
       <div className="">
         {this.renderWebpage()}
         {/* {console.log(this.props.urlSource)} */}
@@ -438,6 +441,7 @@ class Home extends Component {
 
         <div className="background-body3" />
       </div>
+    </div>
     );
   }
 }
