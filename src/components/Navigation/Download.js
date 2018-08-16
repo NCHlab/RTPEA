@@ -249,9 +249,7 @@ for (var i = 0; i < List_of_PXD.length; i++){
           console.log("File has been created");
       })
       });
-}
-
-                    `}
+}                  `}
                   </Highlight>
                 </TabPanel>
                 <TabPanel>
