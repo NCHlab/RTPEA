@@ -169,19 +169,7 @@ class ExpParams extends Component {
       <div className="line-seperator"></div>
 
       <div className="ma4 mt0 background-body4-noalign container col-md-9" style={{backgroundColor: this.state.background_colour}}>
-        {/* {this.state.isLoading ? console.log("yes") : console.log("no")}
-        {this.state.isLoading} */}
-
-        <div className="container alert alert-info alert-dismissible">
-          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <p><b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b></p>
-          Example: "wget <a href="https://api.rtpea.com/api/PXD002211">https://api.rtpea.com/api/PXD002211</a>"
-        </div>
-        {/* <div className="container alert alert-warning alert-dismissible">
-          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <b>Example: "wget https://api.rtpea.com/api/PXD002211"</b>
-        </div> */}
-
+    
 
 
         {/* Searchbox which converts the text to uppercase and calls the button_click
@@ -213,26 +201,7 @@ class ExpParams extends Component {
         <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
 
 
-          {/* <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
-            {close => (
-              <div className="">
-                <a className="close" onClick={close}>
-                  &times;
-                </a>
-                <div className="header"> Programmatic Access</div>
-                <div className="content">
-                  For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a>
 
-                  <br />
-
-                  <div className="header"></div>
-                </div>
-              </div>
-            )}
-          </Popup> */}
-          <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
-            Data for: {this.state.url_id}
-          </div>
 
           {/* Copies the displayed data (data in the state component) to the users clipboard */}
           <CopyToClipboard
@@ -256,57 +225,7 @@ class ExpParams extends Component {
             Download
           </button>
 
-          {/* If error_msg is true, then the colour is changed to red and the
-            data is displayed
-            otherwise the data is displayed in black */}
-          <Loader loaded={this.state.loaded} options={options} className="spinner">
 
-            {/* <div className="progress">
-             <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width:"100%"}}>
-               100%
-             </div>
-            </div> */}
-
-
-
-
-
-
-
-
-          {this.state.error_msg ? (
-            <JSONPretty
-              style={{ fontSize: "1.6em", color: this.state.text_colour_err }}
-              id="json-pretty"
-              json={JSON.stringify(this.state.data2)}
-            />
-          ) : (
-            <JSONPretty
-              style={{ fontSize: "1.2em", color: this.state.text_colour }}
-              id="json-pretty"
-              json={JSON.stringify(this.state.data2)}
-            />
-          )}
-          </Loader>
-
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </div>
 
         <br />
