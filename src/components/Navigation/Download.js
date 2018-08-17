@@ -137,10 +137,11 @@ class Download extends Component {
           style={{ backgroundColor: this.state.background_colour }}
         >
           <div
-            className="background-body4"
+            className="background-body4-download"
             style={{ backgroundColor: this.state.data_background_colour }}
           >
             <div class="container">
+              <div style={{textAlign:"center"}}><h3><u>Download from Database</u></h3> </div>
               <table id="download_table" className="table-border">
                 <tr>
                   <th>Download</th>
@@ -179,14 +180,6 @@ class Download extends Component {
                 </tr>
                 <tr>
                   <td>
-                    <button className="btn btn-outline-danger" disabled>
-                      Download Parameters
-                    </button>
-                  </td>
-                  <td>Protein Experimental Parameters - Under Construction</td>
-                </tr>
-                <tr>
-                  <td>
                     <button
                       className="btn btn-info"
                       onClick={e => {
@@ -221,11 +214,40 @@ class Download extends Component {
             <br/>
               <Tabs>
                 <TabList>
+                  <Tab>Simple API Call</Tab>
+                  <Tab>API multiple</Tab>
                   <Tab>Python</Tab>
                   <Tab>javaScript</Tab>
                   <Tab>R</Tab>
                 </TabList>
 
+
+                <TabPanel>
+                  <Highlight language="bash">
+                  {`
+wget "https://api.rtpea.com/api/PXD002211"
+
+or
+
+curl "https://api.rtpea.com/api/PXD002211"
+                  `}
+                </Highlight>
+                </TabPanel>
+                <TabPanel>
+                  <Highlight language="bash">
+                  {`
+## declare an array variable
+declare -a arr=("PXD002211","PXD002212","PXD004682","PXD003407","PXD003409","PXD003552","PXD005733","PXD004818")
+
+## now loop through the above array
+for i in "$\{arr[@]}"
+do
+    wget "https://api.rtpea.com/api/"$i
+done
+
+                  `}
+                </Highlight>
+                </TabPanel>
                 <TabPanel>
                   <Highlight language="python">
                     {`
@@ -296,7 +318,31 @@ for (i in List_of_PXD){
                 </TabPanel>
               </Tabs>
 
-            </div>
+
+              <div style={{textAlign:"center"}}><h3><u>Proteomic Parameters</u></h3> </div>
+            <table id="download_table" className="table-border">
+              <tr>
+                <th>Download</th>
+                <th>Info</th>
+              </tr>
+              <tr>
+                <td>
+                <button className="btn btn-outline-danger" disabled>
+                  Download Experimental Parameters
+                </button>
+              </td>
+              <td>Protein Experimental Parameters - Under Construction</td>
+            </tr>
+            <tr>
+              <td>
+              <button className="btn btn-outline-danger" disabled>
+                Download Mass Spec Parameters
+              </button>
+            </td>
+            <td>Mass spectrometryparameters - Under Construction</td>
+          </tr>
+          </table>
+          </div>
           </div>
           <br />
           <br />

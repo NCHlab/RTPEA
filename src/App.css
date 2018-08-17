@@ -135,6 +135,15 @@ body2 {
     overflow-y: auto;
 }
 
+.background-body4-download {
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-color: #dddddd;
+    text-align:  justify;
+    color: #000000;
+    overflow-y: auto;
+}
+
 .background-body4-nojson {
     font-size: 1.4em;
     font-weight: bold;
