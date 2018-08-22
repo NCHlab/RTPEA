@@ -170,13 +170,21 @@ class Download extends Component {
                   <td>Download all available Line-1 element data in <b><a href="../sequence">Sequence page</a></b> from database </td>
                 </tr>
 
-                <tr>
+                {/* <tr>
                   <td>
                     <button className="btn btn-outline-danger" disabled>
                       Download ProtVista Data
                     </button>
                   </td>
                   <td>Under Construction</td>
+                </tr> */}
+                <tr>
+                  <td>
+                    <button className="btn btn-info">
+                      Download ProtVista Data
+                    </button>
+                  </td>
+                  <td>Download all variant data held for ProtVista</td>
                 </tr>
                 <tr>
                   <td>
@@ -217,7 +225,7 @@ class Download extends Component {
                   <Tab>Simple API Call</Tab>
                   <Tab>API multiple</Tab>
                   <Tab>Python</Tab>
-                  <Tab>javaScript</Tab>
+                  <Tab>JavaScript</Tab>
                   <Tab>R</Tab>
                 </TabList>
 
@@ -339,7 +347,7 @@ for (i in List_of_PXD){
                 Download Mass Spec Parameters
               </button>
             </td>
-            <td>Mass spectrometryparameters - Under Construction</td>
+            <td>Mass spectrometry parameters - Under Construction</td>
           </tr>
           </table>
           </div>
