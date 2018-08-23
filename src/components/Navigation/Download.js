@@ -104,6 +104,15 @@ class Download extends Component {
       });
   };
 
+  download_protvista = () => {
+    this.setState({ name_of_file: "ProtVista" });
+    fetch(this.props.urlSource + "/visualise_all")
+      .then(response => response.json())
+      .then(data => {
+        this.saveAs(JSON.stringify(data, null, 2));
+      });
+  };
+
   // This function allows the user to save the data as a file.
   saveAs = (
     content,
@@ -180,7 +189,9 @@ class Download extends Component {
                 </tr> */}
                 <tr>
                   <td>
-                    <button className="btn btn-info">
+                    <button className="btn btn-info"
+                      onClick={e => this.download_protvista()}
+                    >
                       Download ProtVista Data
                     </button>
                   </td>
