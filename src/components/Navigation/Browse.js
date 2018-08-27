@@ -690,6 +690,7 @@ const orf2p_column = [{
         desc: true
       }
     ]} */}
+    {/* "../visualise/" + rowInfo.original.name.slice(0,5), */}
             <ReactTable
               loading={this.state.table_loading}
               data={this.state.data2}
@@ -811,7 +812,7 @@ const orf2p_column = [{
                                        console.log(rowInfo.original.confidence) */}
                                        if (rowInfo.original.name !== "NA" && column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
                                           window.open(
-                                            "../visualise/" + rowInfo.original.name.slice(0,5),
+                                            "../visualise/" + rowInfo.original.name,
                                             '_blank' // <- This is what makes it open in a new window.
                                           );
 
@@ -845,13 +846,14 @@ const orf2p_column = [{
                                        {/* console.log(rowInfo.original.name)
                                        console.log(rowInfo.original.confidence)
                                        console.log(column) */}
-                                       if (rowInfo.original.name === "ORF2p_HS_58"){
+                                       {/* if (rowInfo.original.name === "ORF2p_HS_58"){
                                          window.location = "../visualise/test2"
                                        } else if (rowInfo.original.name === "ORF2p_HS_111"){
-                                         window.location = "../visualise/"
-                                       } else if (rowInfo.original.name !== "NA" && column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
+                                         window.location = "../visualise/" */}
+                                       {/* } else  */}
+                                       if (rowInfo.original.name !== "NA" && column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
                                           window.open(
-                                            "../visualise/" + rowInfo.original.name.slice(0,5),
+                                            "../visualise/" + rowInfo.original.name,
                                             '_blank' // <- This is what makes it open in a new window.
                                           );
 
