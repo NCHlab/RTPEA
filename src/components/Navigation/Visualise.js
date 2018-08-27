@@ -268,6 +268,23 @@ class Visualisation extends Component {
 
 					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
 						<br/>
+						<button
+                      className="btn btn-info"
+                      onClick={e => {
+                        window.location = "../visualise/ORF1P";
+                      }}
+                    >
+                      ORF1p
+                    </button>
+					&nbsp;
+					<button
+                      className="btn btn-info"
+                      onClick={e => {
+                        window.location = "../visualise/ORF2P";
+                      }}
+                    >
+                      ORF2p
+                    </button>
 						<br/>
 						<div className="container alert alert-info alert-dismissible">
 							<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -277,6 +294,7 @@ class Visualisation extends Component {
 						<br/>
 					</div>
 					<div style={{background:"linear-gradient(to bottom, #f2f2f2, #e0e0e0)"}}>
+					
 				<div className="container">
 					<div id="protvis">
 						{/* ProtVista Loads Here */}
