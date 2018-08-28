@@ -375,13 +375,11 @@ button_click_ideo = () => {
 							<option value="ALL">ALL</option>
 							<option value="HS">HS</option>
 						  <option value="PA2">PA2</option>
-						  <option value="PA1">PA1</option>
-						  <option value="HA">HA</option>
+
 						</select>
 					</label>
 			<input type="submit" value="Submit" />
 		</form>
-
 
 
 					<div className="container">
