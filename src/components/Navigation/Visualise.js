@@ -269,7 +269,7 @@ class Visualisation extends Component {
 					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
 						<br/>
 						<button
-                      className="btn btn-info"
+                      className="btn btn-primary"
                       onClick={e => {
                         window.location = "../visualise/ORF1P";
                       }}
@@ -278,7 +278,7 @@ class Visualisation extends Component {
                     </button>
 					&nbsp;
 					<button
-                      className="btn btn-info"
+                      className="btn btn-primary"
                       onClick={e => {
                         window.location = "../visualise/ORF2P";
                       }}
@@ -290,6 +290,8 @@ class Visualisation extends Component {
 							<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
 							<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
 						</div>
+
+						{window.location.pathname === "/visualise" || window.location.pathname === "/visualise/TEST" ? <button className="btn btn-outline-danger" disabled>You are observing test data, click ORF1/2p above for real datasets</button>:""}
 						<br/>
 						<br/>
 					</div>
