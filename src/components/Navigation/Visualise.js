@@ -293,7 +293,7 @@ class Visualisation extends Component {
 							<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
 						</div>
 
-						{window.location.pathname === "/visualise" || window.location.pathname === "/visualise/TEST" ? <button className="btn btn-outline-danger" disabled>You are observing test data, click ORF1/2p above for real datasets</button>:""}
+						{window.location.pathname === "/visualise/TEST" ? <button className="btn btn-outline-danger" disabled>You are observing test data, click ORF1/2p above for real datasets</button>:""}
 						<br/>
 						<br/>
 					</div>
