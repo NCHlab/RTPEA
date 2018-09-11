@@ -33,7 +33,7 @@ class Table extends Component{
 
 
   searchURL = () => {
-    let { url_id } = this.state;
+    // let { url_id } = this.state;
     let url = this.props.urlSource+"/table/"
     return url
   }
@@ -85,10 +85,6 @@ class Table extends Component{
 
 
   render (){
-
-
-  const mynum = 20
-  const blank_data = "-"
 
   const main_columns = [{
     Header: 'Data by Study',
@@ -313,7 +309,7 @@ const orf1p_column = [{
   Header: <b>ORF1p Variants</b>,
   id: "ORF1p_var_name",
   accessor: 'name',
-  Cell: row => ( row.original.name != "NA"?
+  Cell: row => ( row.original.name !== "NA"?
       <div className="browse-var-style" style={{height:22}}>
          {row.value}
       </div>:
@@ -353,7 +349,7 @@ const orf1p_column = [{
     },{
       Header: 'Sequence',
       accessor: 'protein_seq',
-      Cell: row => row.original.name != "NA"?
+      Cell: row => row.original.name !== "NA"?
         (
           <div>
             <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence ⇗</a>
@@ -380,7 +376,7 @@ const orf2p_column = [{
   Header: <b>ORF2p Variants</b>,
   id: "ORF2p_var_name",
   accessor: 'name',
-  Cell: row => ( row.original.name != "NA"?
+  Cell: row => ( row.original.name !== "NA"?
       <div className="browse-var-style" style={{height:22}}>
          {row.value}
       </div>:
@@ -420,7 +416,7 @@ const orf2p_column = [{
     },{
       Header: 'Sequence',
       accessor: 'protein_seq',
-      Cell: row => row.original.name != "NA"?
+      Cell: row => row.original.name !== "NA"?
         (
           <div>
             <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence ⇗</a>
@@ -459,7 +455,7 @@ const orf2p_column = [{
                       Use your mouse! If you see it, you can probably click it
                       <br />
                       <div className="container alert alert-info alert-dismissible">
-                        <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <a href="" className="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <b>For programmatic Access go to: <a href="https://api.rtpea.com/table">https://api.rtpea.com/table</a></b>
                       </div>
 
@@ -524,11 +520,11 @@ const orf2p_column = [{
               getTdProps={(state, rowInfo, column, instance) => {
                  return {
                    onClick: (e, handleOriginal) => {
-                     {/* console.log("It was in this column:", column); */}
+
                      const { expanded } = state;
                      const path = rowInfo.nestingPath[0];
                      const diff = { [path]: expanded[path] ? false : true };
-                     {/* console.log(rowInfo) */}
+
                       if (handleOriginal) {
                         handleOriginal();
                       }
@@ -620,7 +616,7 @@ const orf2p_column = [{
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
                                      onClick: (e, handleOriginal) => {
-                                       if (rowInfo.original.name !== "NA" && column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
+                                       if (rowInfo.original.name !== "NA" & column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
                                           window.open(
                                             "../visualise/" + rowInfo.original.name,
                                             '_blank' // <- This is what makes it open in a new window.
@@ -651,7 +647,7 @@ const orf2p_column = [{
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
                                      onClick: (e, handleOriginal) => {
-                                       if (rowInfo.original.name !== "NA" && column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
+                                       if (rowInfo.original.name !== "NA" & column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
                                           window.open(
                                             "../visualise/" + rowInfo.original.name,
                                             '_blank' // <- This is what makes it open in a new window.

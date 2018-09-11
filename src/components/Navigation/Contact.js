@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import github_logo from "../ContactUs/github.png";
-import linkedin_logo from "../ContactUs/linkedin.png";
-import nchlab from "../ContactUs/github_nchlab.png";
-import nazrath10r from "../ContactUs/github_nazrath10r.png";
+import React from "react";
+// import github_logo from "../ContactUs/github.png";
+// import linkedin_logo from "../ContactUs/linkedin.png";
+// import nchlab from "../ContactUs/github_nchlab.png";
+// import nazrath10r from "../ContactUs/github_nazrath10r.png";
 import qmul_logo from "../ContactUs/QMUL_SBCS.png";
 import nayam from "../ContactUs/nayam.png";
 import nazrath from "../ContactUs/nazrath.png";
@@ -36,6 +36,7 @@ const Project = (particlesOptions) => (
     <div className="container" style={{marginLeft:"20%"}}>
 
       <img
+        alt="Nayam"
         className="contact_img"
         src={nayam}
         width="300px"
@@ -73,6 +74,7 @@ const Project = (particlesOptions) => (
       <div class="row">
     <div class="col-sm">
       <img
+        alt="Nazrath"
         style={{marginLeft:"20%"}}
         className="contact_img"
         src={nazrath}
@@ -99,6 +101,7 @@ const Project = (particlesOptions) => (
 </div>
 <div class="col-sm">
       <img
+        alt="Conrad"
         style={{marginLeft:"20%"}}
         className="contact_img"
         src={conrad}
@@ -127,6 +130,7 @@ const Project = (particlesOptions) => (
 
     <div class="col-sm">
       <img
+        alt="Miguel"
         style={{marginLeft:"20%"}}
         className="contact_img"
         src={miguel}
@@ -154,62 +158,7 @@ const Project = (particlesOptions) => (
 
     <div className="container">
       <hr />
-    </div>
-
-
-
-    <div className="contact_container">
-      <div className="contact_img">
-        <div className="contact_h1">
-          <h1>Website Created by: Nayam Chowdhury</h1>
-        </div>
-        <div className="nchlab_container">
-          <a href="http://github.com/nchlab">
-            <img
-              className="contact_img"
-              src={nchlab}
-              width="500px"
-              height="250px"
-            />
-          </a>
-          <img
-            className="contact_img"
-            src={linkedin_logo}
-            width="500px"
-            height="250px"
-          />
-        </div>
-        <br />
-      </div>
-
-      <div className="contact_container">
-        <div className="contact_img">
-          <div className="contact_h1">
-            <h1>Assistance from: Nazrath Nawaz</h1>
-          </div>
-          <div className="nazrath10r_container">
-            <a href="http://github.com/nazrath10r">
-              <img
-                className="contact_img"
-                src={nazrath10r}
-                width="500px"
-                height="250px"
-              />
-            </a>
-            <img
-              className="contact_img"
-              src={linkedin_logo}
-              width="500px"
-              height="250px"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div className="container">
-      <hr />
-      <img className="contact_img" src={qmul_logo} />
+      <img alt="QMUL" className="contact_img" src={qmul_logo} />
       <h2>Created at Queen Mary University of London, @BessantLab, SBCS</h2>
 
       <h2>MSC - BioInformatics</h2>

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import JSONPretty from "react-json-pretty";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import Loader from "react-loader";
-import Switch from "react-toggle-switch";
-import Popup from "reactjs-popup";
+// import JSONPretty from "react-json-pretty";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
+// import Loader from "react-loader";
+// import Switch from "react-toggle-switch";
+// import Popup from "reactjs-popup";
 import "react-toggle-switch/dist/css/switch.min.css";
 import NavDownload from "./NavDownload.js";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";

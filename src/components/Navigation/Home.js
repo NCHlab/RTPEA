@@ -4,7 +4,6 @@ import CountTo from "react-count-to";
 import {
   LineChart,
   Line,
-  BarChart,
   YAxis,
   XAxis,
   CartesianGrid,

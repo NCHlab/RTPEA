@@ -1,10 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavVis.css";
 
 function NavVis(props) {
-    const { location } = props;
+    // const { location } = props;
     const links = [
         {
             page: 'Protein Centric',

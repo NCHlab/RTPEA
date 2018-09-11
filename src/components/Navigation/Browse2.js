@@ -36,7 +36,7 @@ class Table extends Component{
 
 
   searchURL = () => {
-    let { url_id } = this.state;
+    // let { url_id } = this.state;
     let url = this.props.urlSource+"/table/"
     return url
   }
@@ -88,8 +88,8 @@ class Table extends Component{
 
 
   render (){
-  const mynum = 20
-  const blank_data = "-"
+  // const mynum = 20
+  // const blank_data = "-"
 
   const main_columns = [{
     Header: 'Data by Study',
@@ -316,7 +316,7 @@ const orf1p_column = [{
   Header: <b>ORF1p Variants</b>,
   id: "ORF1p_var_name",
   accessor: 'name',
-  Cell: row => ( row.original.name != "NA"?
+  Cell: row => ( row.original.name !== "NA"?
       <div className="browse-var-style" style={{height:22}}>
          {row.value}
       </div>:
@@ -356,7 +356,7 @@ const orf1p_column = [{
     },{
       Header: 'Sequence',
       accessor: '-',
-      Cell: row => row.original.name != "NA"?
+      Cell: row => row.original.name !== "NA"?
         (
           <div>
             <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
@@ -383,7 +383,7 @@ const orf2p_column = [{
   Header: <b>ORF2p Variants</b>,
   id: "ORF2p_var_name",
   accessor: 'name',
-  Cell: row => ( row.original.name != "NA"?
+  Cell: row => ( row.original.name !== "NA"?
       <div className="browse-var-style" style={{height:22}}>
          {row.value}
       </div>:
@@ -423,7 +423,7 @@ const orf2p_column = [{
     },{
       Header: 'Sequence',
       accessor: '-',
-      Cell: row => row.original.name != "NA"?
+      Cell: row => row.original.name !== "NA"?
         (
           <div>
             <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>{row.original.name.slice(6)} Sequence</a>
@@ -527,14 +527,14 @@ const orf2p_column = [{
                 value: this.state.filtered2}]
               }
               onFilteredChange={(filtered, column, e) => {
-                {/* console.log(e) */}
-                if (column.id == "study"){
+                
+                if (column.id === "study"){
                   this.setState({ filtered2:e });
-                } else if (column.id == "disease") {
+                } else if (column.id === "disease") {
                 this.setState({ filtered4:e });
-              } else if (column.id == "data_num") {
+              } else if (column.id === "data_num") {
                 this.setState({ filtered3:e });
-              } else if (column.id == "data_pxd") {
+              } else if (column.id === "data_pxd") {
                 this.setState({ filtered1:e });
                 }
               }
@@ -544,11 +544,11 @@ const orf2p_column = [{
               getTdProps={(state, rowInfo, column, instance) => {
                  return {
                    onClick: (e, handleOriginal) => {
-                     {/* console.log("It was in this column:", column); */}
+
                      const { expanded } = state;
                      const path = rowInfo.nestingPath[0];
                      const diff = { [path]: expanded[path] ? false : true };
-                     {/* console.log(rowInfo) */}
+
                       if (handleOriginal) {
                         handleOriginal();
                       }
@@ -603,11 +603,11 @@ const orf2p_column = [{
                         return {
 
                           onClick: (e, handleOriginal) => {
-                            {/* console.log("It was in this column:", column); */}
+
                             const { expanded } = state;
                             const path = rowInfo.nestingPath[0];
                             const diff = { [path]: expanded[path] ? false : true };
-                            {/* console.log(rowInfo) */}
+
                              if (handleOriginal) {
                                handleOriginal();
                              }
@@ -644,13 +644,12 @@ const orf2p_column = [{
                                    return {
                                      onClick: (e, handleOriginal) => {
 
-                                       if (rowInfo.original.name !== "NA" && column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
+                                       if (rowInfo.original.name !== "NA" & column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
                                           window.open(
                                             "../visualise/" + rowInfo.original.name.slice(0,5),
                                             '_blank' // <- This is what makes it open in a new window.
                                           );
                                        }
-                                       {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
                                           handleOriginal();
                                         }
@@ -675,21 +674,19 @@ const orf2p_column = [{
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
                                      onClick: (e, handleOriginal) => {
-                                       {/* console.log("It was in this column:", column); */}
                                        console.log(rowInfo.original.name)
                                        console.log(rowInfo.original.confidence)
                                        if (rowInfo.original.name === "ORF2p_HS_58"){
                                          window.location = "../visualise/test2"
                                        } else if (rowInfo.original.name === "ORF2p_HS_111"){
                                          window.location = "../visualise/"
-                                       } else if (rowInfo.original.name !== "NA" && column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
+                                       } else if (rowInfo.original.name !== "NA" & column.id === "ORF2p_var_name" || column.id === "ORF2p_var"){
                                           window.open(
                                             "../visualise/" + rowInfo.original.name.slice(0,5),
                                             '_blank' // <- This is what makes it open in a new window.
                                           );
 
                                        }
-                                       {/* console.log(rowInfo) */}
                                         if (handleOriginal) {
                                           handleOriginal();
                                         }

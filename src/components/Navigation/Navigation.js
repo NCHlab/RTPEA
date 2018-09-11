@@ -1,13 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navigation.css";
 import '../Logo/Logo.css';
 import retrologo from '../Logo/Logo.png';
 import Tilt from 'react-tilt'
 
 function Navigation(props) {
-    const { location } = props;
+    // const { location } = props;
     const links = [
             {
             page: 'Home',

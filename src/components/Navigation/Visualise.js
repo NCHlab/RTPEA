@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
 import 'react-tabs/style/react-tabs.css';
-import Ideogram from './Ideogram';
-import Sequence from './Sequence';
+// import Ideogram from './Ideogram';
+// import Sequence from './Sequence';
 import NavVis from "./NavVis.js";
 import Popup from "reactjs-popup";
 import protvis_example from "../Images/protvis_example.png"
@@ -26,8 +26,9 @@ class Visualisation extends Component {
 
 	componentDidMount = () => {
 			 var yourDiv = document.getElementById('protvis');
-       var instance = new ProtVista({
-            el: yourDiv,
+       // var instance = new ProtVista({
+			 new ProtVista({
+			 			el: yourDiv,
             uniprotacc: this.state.uniprotacc,
 						selectedFeature: {
             begin: 166,
@@ -210,7 +211,7 @@ class Visualisation extends Component {
                     </button>
 						<br/>
 						<div className="container alert alert-info alert-dismissible">
-							<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<a href="" className="close" data-dismiss="alert" aria-label="close">&times;</a>
 							<b>To filter by tissue type, <u>DOUBLE CLICK</u> the tissue (or click each one once to show multiple)</b>
 						</div>
 

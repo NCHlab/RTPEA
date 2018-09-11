@@ -3,7 +3,7 @@ import JSONPretty from "react-json-pretty";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Loader from 'react-loader';
 import Switch from 'react-toggle-switch';
-import Popup from "reactjs-popup";
+// import Popup from "reactjs-popup";
 import "react-toggle-switch/dist/css/switch.min.css";
 import NavDownload from "./NavDownload.js";
 
@@ -170,7 +170,7 @@ class Api extends Component {
       <div className="ma4 mt0 background-body4-noalign container col-md-9" style={{backgroundColor: this.state.background_colour}}>
 
         <div className="container alert alert-info alert-dismissible">
-          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <a href="" className="close" data-dismiss="alert" aria-label="close">&times;</a>
           <p><b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b></p>
           Example: "wget <a href="https://api.rtpea.com/api/PXD002211">https://api.rtpea.com/api/PXD002211</a>"
         </div>

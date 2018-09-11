@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Sequence from "sequence-viewer";
-import NavVis from "./NavVis.js";
+// import NavVis from "./NavVis.js";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 
@@ -40,31 +40,32 @@ class Sequence_view extends Component {
 			});
 			// seq1.selection(20, 43, 'red');
 
-			var onclickFun = function(e) {
-			  console.log(e.target.textContent);
-			}
+			// var onclickFun = function(e) {
+			//   console.log(e.target.textContent);
+			// }
 
 			//Coverage list
-			var exampleSequenceCoverage = [
-			    {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
-			    {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
-			    {start: 47, end: 54, color: "#ff0000", underscore: true},
-			    {start: 54, end: 55, color: "#ff0000", underscore: false},
-			    {start: 55, end: 56, color: "black", underscore: false},
-			    {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
-			    {start: 89, end: 90, color: "black", underscore: false},
-			    {start: 1000, end: 1100, color: "#ff0000", underscore: false},
-					{start: 1200, end: 1240, color: "#7cff26", underscore: false}
-			];
+			// var exampleSequenceCoverage = [
+			//     {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
+			//     {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
+			//     {start: 47, end: 54, color: "#ff0000", underscore: true},
+			//     {start: 54, end: 55, color: "#ff0000", underscore: false},
+			//     {start: 55, end: 56, color: "black", underscore: false},
+			//     {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
+			//     {start: 89, end: 90, color: "black", underscore: false},
+			//     {start: 1000, end: 1100, color: "#ff0000", underscore: false},
+			// 		{start: 1200, end: 1240, color: "#7cff26", underscore: false}
+			// ];
 
 
 			// seq1.coverage(exampleSequenceCoverage);
 
-			var exampleLegend = [
-		    {name: "???? Protein", color: "#ff0000", underscore: false},
-		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
-		    {name: "Synthetic peptide",color: "#fff",underscore: true}
-		    ];
+			// var exampleLegend = [
+		  //   {name: "???? Protein", color: "#ff0000", underscore: false},
+		  //   {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
+		  //   {name: "Synthetic peptide",color: "#fff",underscore: true}
+		  //   ];
+
 			// seq1.addLegend(exampleLegend);
 				// function copyToClipboard(element) {
 				//  var inp =document.createElement('input');
@@ -109,29 +110,29 @@ class Sequence_view extends Component {
 			"badge": false
 			});
 
-			var onclickFun = function(e) {
-			  console.log(e.target.textContent);
-			}
+			// var onclickFun = function(e) {
+			//   console.log(e.target.textContent);
+			// }
 
 			//Coverage list
-			var exampleSequenceCoverage = [
-			    {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
-			    {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
-			    {start: 47, end: 54, color: "#ff0000", underscore: true},
-			    {start: 54, end: 55, color: "#ff0000", underscore: false},
-			    {start: 55, end: 56, color: "black", underscore: false},
-			    {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
-			    {start: 89, end: 90, color: "black", underscore: false},
-			    {start: 1000, end: 1100, color: "#ff0000", underscore: false},
-					{start: 1200, end: 1240, color: "#7cff26", underscore: false}
-			];
+			// var exampleSequenceCoverage = [
+			//     {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
+			//     {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
+			//     {start: 47, end: 54, color: "#ff0000", underscore: true},
+			//     {start: 54, end: 55, color: "#ff0000", underscore: false},
+			//     {start: 55, end: 56, color: "black", underscore: false},
+			//     {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
+			//     {start: 89, end: 90, color: "black", underscore: false},
+			//     {start: 1000, end: 1100, color: "#ff0000", underscore: false},
+			// 		{start: 1200, end: 1240, color: "#7cff26", underscore: false}
+			// ];
 
 
-			var exampleLegend = [
-		    {name: "???? Protein", color: "#ff0000", underscore: false},
-		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
-		    {name: "Synthetic peptide",color: "#fff",underscore: true}
-		    ];
+			// var exampleLegend = [
+		  //   {name: "???? Protein", color: "#ff0000", underscore: false},
+		  //   {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
+		  //   {name: "Synthetic peptide",color: "#fff",underscore: true}
+		  //   ];
 
 
 			seq2.onMouseSelection(function(elem){
@@ -234,7 +235,7 @@ saveAs2 = (
 					&nbsp;
 					<button className="btn btn-outline-info"
             onClick={e =>
-              this.saveAs(">"+this.state.seq_data[0].Family+"\n"+this.state.seq_data[0].Sequence+"\n"+">"+this.state.seq_data2[0].Family+"\n"+this.state.seq_data2[0].Sequence)
+              this.saveAs(">"+this.state.seq_data[0].Family+"\n"+this.state.seq_data[0].Sequence+"\n>"+this.state.seq_data2[0].Family+"\n"+this.state.seq_data2[0].Sequence)
             }
           >
             	Download {this.state.prot_seq} Data

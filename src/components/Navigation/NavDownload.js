@@ -1,10 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavDownload.css";
 
 function NavDownload(props) {
-    const { location } = props;
+    // const { location } = props;
     const links = [
         {
             page: 'Download',

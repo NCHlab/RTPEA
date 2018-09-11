@@ -145,7 +145,7 @@ class Info extends Component {
           <h1> Demo Video </h1>
         </p>
 
-          <iframe width="1280" height="720"
+          <iframe title="RTPEA Tutorial" width="1280" height="720"
             src="https://www.youtube.com/embed/5FkMAEBXEfE">
           </iframe>
           <br />

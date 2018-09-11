@@ -1,12 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./Footer.css";
 import retrologo from '../Logo/Logo.png';
 import '../Logo/Logo.css';
 
 function Footer(props) {
-    const { location } = props;
+    // const { location } = props;
     const links = [
             {
             page: 'Home',
