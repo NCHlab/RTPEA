@@ -8,7 +8,6 @@ import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
 import matchSorter from 'match-sorter';
-// import AdBlockDetect from 'react-ad-block-detect';
 
 
 class Table extends Component{
@@ -32,7 +31,6 @@ class Table extends Component{
       filtered3: [],
       filtered4: window.location.pathname.slice(8),
     };
-    // this.data = this.data.bind(this)
   }
 
 
@@ -40,14 +38,11 @@ class Table extends Component{
   searchURL = () => {
     let { url_id } = this.state;
     let url = this.props.urlSource+"/table/"
-    // let url = "http://localhost:3001/table/"
-    // let url = "http://rtpea.com/table/"
     return url
   }
 
     componentDidMount = () => {
       fetch(this.searchURL())
-      // "http://localhost:3001/api/PXD002233"
         .then(response => response.json())
         .then(data => {
           if (data.hasOwnProperty("Status")){
@@ -70,7 +65,6 @@ class Table extends Component{
             switched: !prevState.switched
           };
           });
-          // this.setState({colour_dark: !this.state.color_black})
           if (this.state.background_colour === "linear-gradient(to bottom, #9cb7e2, #bfd2ef)"){
             this.setState({background_colour: "#444444"})
             this.setState({text_colour: "#ffffff"})
@@ -91,14 +85,9 @@ class Table extends Component{
           }
       };
 
-  // data = () => {[
-  //   JSON.stringify(this.state.data2)
-  // ]}
+
 
   render (){
-  // accessor: "sample.0.1.0.file_name"
-  // accessor: "0.sample[0].1[0].file_name"
-
   const mynum = 20
   const blank_data = "-"
 
@@ -130,24 +119,6 @@ class Table extends Component{
                     matchSorter(rows, filter.value, { keys: ["disease"],threshold: matchSorter.rankings.CONTAINS  }),
                   filterAll: true
   }
-  // }, {
-  //   Header: 'Tissue',
-  //   id: "tiss",
-  //   accessor: data => {var mylist=[]
-  //                         for (var i in data.sample[0]){
-  //                           if (i === "tissue_type"){
-  //                             mylist.push([i])
-  //                             console.log([i.key])
-  //                           }
-  //
-  //
-  //                       }
-  //
-  //                         console.log(mylist)
-  //                         return mylist
-  //                       }
-  //
-  // }]
 ]
   }]
 
@@ -161,21 +132,9 @@ class Table extends Component{
     Header: <b>Sample Number</b>,
     id: "Sample_num",
     accessor: "Snumber"
-
-                        // console.log(data.sample.length);
-                        // data.sample[0][1][0].replicate
-    // }, {
-    // Header: 'Disease',
-    // accessor: 'disease'
   }, {
     Header: <b>Tissue</b>,
     accessor: "tissue_type"
-    // id: "tiss_data",
-    // accessor: data =>{
-    //   // console.log(data.sample[0][1][0].tissue_type)
-    //                     return data[1][0].tissue_type
-    //                   }
-    // accessor: 'sample[0].1[0].tissue_type'
   }, {
     Header: <b>ORF1p</b>,
     id: "ORF1p_data",
@@ -236,39 +195,7 @@ class Table extends Component{
             </div>
         </div>
         )
-    }
-    // "sample[0].1[0].ORF1p.confidence" && "sample[0].1[0].ORF2p.confidence"
-  // , {
-  //   Header: <b>ORF0</b>,
-  //   id:"ORF0_data",
-  //   accessor: "ORF0.confidence",
-  //   Cell: row => (
-  //         <div
-  //           style={{
-  //             width: '100%',
-  //             height: '100%',
-  //             backgroundColor: this.state.background_conf_colour,
-  //             borderRadius: '2px'
-  //           }}
-  //         >
-  //           {/* {row.value} */}
-  //           <div
-  //             style={{
-  //               width: `${row.value}%`,
-  //               height: '100%',
-  //               backgroundColor: row.value > 80 ? this.state.high_conf_colour
-  //                 : row.value > 40 ? this.state.med_conf_colour
-  //                 : this.state.low_conf_colour,
-  //               borderRadius: '2px',
-  //               transition: 'all .2s ease-out'
-  //             }}
-  //           >
-  //             {row.value}
-  //           </div>
-  //       </div>
-  //       )
-  // }
-  , {
+    }, {
     Header: <b>HERV</b>,
     id:"HERV_data",
     accessor: "HERV.confidence",
@@ -339,20 +266,10 @@ class Table extends Component{
     id: "top_expr_orf2",
     accessor: (d) => {
       //Only looking at [0] because data already ordered highest to lowest
-      // console.log(d.ORF2p_variants)
-      // console.log(d.ORF2p_variants[0].confidence)
-      // console.log(d.ORF2p_variants[1].confidence)
-    //   for (var i = 0; i < 109; i++) {
-    //   console.log(d.ORF2p_variants[i].confidence)
-    // }
-
-
-      // console.log(d)s
       var all_list2 = []
       all_list2.push(d.ORF2p_variants[0].confidence)
       all_list2.sort(function(a, b){return b - a});
       return all_list2[0]
-      // this.check_expr_orf2(d)
 
     },
     Cell: row => (
@@ -377,8 +294,6 @@ class Table extends Component{
                 transition: 'all .2s ease-out'
               }}
             >
-              {/* {row.value} */}
-              {/* {row.value + " - " + row.original.ORF2p_variants[0].name} */}
               {row.value} &emsp;-&emsp; <span style={{fontSize: "11px"}}> {row.original.ORF2p_variants[0].name === "NA" ? row.original.ORF2p_variants[0].name : row.original.ORF2p_variants[0].name.slice(6) }</span>
 
             </div>
@@ -386,7 +301,6 @@ class Table extends Component{
         )
   }]
 
-// const LoadingMS =
 
 
 const orf1p_column = [{
@@ -523,32 +437,14 @@ const orf2p_column = [{
   accessor: '-'
 }]
 
-// const tri_column = [{
-//   Header: 'ORF1p Variant Name',
-//   accessor: 'ORF1p_variants.name' // String-based value accessors!
-// }, {
-//   Header: 'ORF1p Confidence',
-//   accessor: 'ORF1p_variants.confidence'
-// },{
-//   Header: 'ORF2p Variant Name',
-//   accessor: 'ORF2p_variants.name' // String-based value accessors!
-// }, {
-//   Header: 'ORF2p Confidence',
-//   accessor: 'ORF2p_variants.confidence'
-// }]
-
       return (
         <div>
-          {/* {console.log(window.location.pathname.slice(8))} */}
-          {/* {console.log(this.props)} */}
-          <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
-            {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
-            {/* <button type="button" className="btn btn-default" onClick={() => this.changeColour()}>{this.state.button_msg}</button> */}
+          <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
+
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
             <br/>
-            {/* <hr style={{borderColor:"black"}}/> */}
-            {/* If Search Function is not working: Click <a href="../browse">HERE</a> */}
+
             <button style={{float:"right", display: "inline"}} className="btn btn-danger" onClick={() => window.location = "../browse"}> Refresh Search </button>
 
               <div className="" style={{color:"black"}}>
@@ -560,7 +456,7 @@ const orf2p_column = [{
                       </a>
                       <div className="header"> Using the Table </div>
                       <div className="content">
-                        {/* {" "} */}
+
                         Use your mouse! If you see it, you can probably click it
                         <br />
                         <div className="header"></div>
@@ -578,7 +474,7 @@ const orf2p_column = [{
 
                         <br />
                       If Search Breaks; Refresh the page or click the <a href="/browse">Link</a> - Make sure to clear all search boxes if data not showing
-                      {/* <div className="header"></div> */}
+
                       <br />
                       <br />
                       The Table displays data by PXD (by default) which is a dataset identifier set by PRIDE (ProteomeExchange consortium)
@@ -605,40 +501,10 @@ const orf2p_column = [{
                 </Popup>
                 </div>
 
-                {/* <AdBlockDetect>
-                  <div className="container alert alert-danger">
-                      <h4><strong>Please Disable Your Adblocker to view the Data.</strong></h4>
-                      <br/>
-                      There are <b>NO ADS</b> on this website, however data cannot load with adblock turned on.
-                  </div>
-                </AdBlockDetect> */}
+
 
             <br />
 
-            {/* getTdProps={(state, rowInfo, column, instance) => {
-          return {
-            onMouseEnter: e =>
-              console.log("Cell - onMouseEnter", {
-                state,
-                rowInfo,
-                column,
-                instance,
-                event: e
-              })
-          };
-        }} */}
-        {/* pivotBy={["Sample_num", "ORF_data"]} */}
-{/* pivotBy={["disease"]} */}
-{/* 0, 83, 140 */}
-
-
-
-{/* onFilteredChange={(filtered, column) => {
-  this.setState({filtered1: filtered.value})
-  console.log(filtered)
-
-  }} */}
-  {/* <button onClick={()=>this.setState({ filtered1: [] })}> reset</button> */}
             <ReactTable
               loading={this.state.table_loading}
               data={this.state.data2}
@@ -777,9 +643,7 @@ const orf2p_column = [{
                                 getTdProps={(state, rowInfo, column, instance) => {
                                    return {
                                      onClick: (e, handleOriginal) => {
-                                       {/* console.log("It was in this column:", column); */}
-                                       {/* console.log(rowInfo.original.name)
-                                       console.log(rowInfo.original.confidence) */}
+
                                        if (rowInfo.original.name !== "NA" && column.id === "ORF1p_var_name" || column.id === "ORF1p_var"){
                                           window.open(
                                             "../visualise/" + rowInfo.original.name.slice(0,5),
@@ -844,11 +708,6 @@ const orf2p_column = [{
                 );
               }}
             />
-  {/* resolveData={data => data.map(row => row)} */}
-{/* data={row.row._original[0]} */}
-
-
-{/* </div> */}
           </div>
         </div>
 )
@@ -856,17 +715,3 @@ const orf2p_column = [{
 
 }
 export default Table;
-
-// {/* {JSON.stringify(this.state.data2)} */}
-//
-// {/* {this.state.data2.map((item) => {
-//   {item.PXD}
-//      })} */}
-//
-// {/* {typeof this.state.data2}
-// {console.log(this.state.data2[0])} */}
-// {/* try to get the whole object into table */}
-//
-// {/* data={json_data} */}
-// {/* resolveData={json_data.map(data => data)} */}
-// {/* resolveData={json_data.map(data => data.PXD)} */}

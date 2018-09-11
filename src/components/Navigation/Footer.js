@@ -5,8 +5,6 @@ import "./Footer.css";
 import retrologo from '../Logo/Logo.png';
 import '../Logo/Logo.css';
 
-
-// const Footer = (props) => {
 function Footer(props) {
     const { location } = props;
     const links = [
@@ -47,32 +45,28 @@ function Footer(props) {
 				</div>
        <div className="footer">
 
-            <li><a>
+            <li>
                 {links.map(({ page, to }) => (
                   window.location.href.includes(to)
-                  ? <a href={to}>{page}</a>
-                  : <Link to={to}>{page}</Link>))}
-                </a>
+                  ? <a key={page} href={to}>{page}</a>
+                  : <Link key={page} to={to}>{page}</Link>))}
+
               </li>
 
 					</div>
 
 					<div className="footer2">
 
-	             <li><a>
+	             <li>
 	                 {links2.map(({ page, to }) => (
 	                   window.location.href.includes(to)
-	                   ? <a href={to}>{page}</a>
-	                   : <Link to={to}>{page}</Link>))}
-	                 </a>
+	                   ? <a key={page} href={to}>{page}</a>
+	                   : <Link key={page} to={to}>{page}</Link>))}
+
 	               </li>
 
 	 					</div>
 				</div>
-
-
-
     )};
-
 
 export default withRouter(Footer);

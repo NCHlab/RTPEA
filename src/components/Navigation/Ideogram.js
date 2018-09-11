@@ -11,15 +11,9 @@ class Ideogram_c extends Component {
 			checked: false,
 			value:"",
 			prot_seq: this.props.match.params.id,
-			// prot_seq: this.props.match.params.id  == undefined ? 1 : this.props.match.params.id,
 			annotation_data: [{
 
 	    }],
-			// annotationTracks:[
-      // {id: 'pathogenicTrack', displayName: 'Pathogenic', color: '#F00', shape: "Triangle"},
-      // {id: 'uncertainSignificanceTrack', displayName: 'Uncertain significance', color: '#CCC', shape: "Triangle"},
-      // {id: 'benignTrack',  displayName: 'Benign', color: '#8D4', shape: "Triangle"}],
-
 		};
 
 		this.PA2_family = this.PA2_family.bind(this);
@@ -28,39 +22,15 @@ class Ideogram_c extends Component {
 		this.button_click_ideo = this.button_click_ideo.bind(this);
 
 	}
-	// [{
-	// 	"_id": "5b364f11cf72732a72cb47c1",
-	// 	"name": "BRCA1",
-	// 	"chr": "17",
-	// 	"start": 43044294,
-	// 	"stop": 43125482
-	// }]
+
 
 		componentDidMount = () => {
-			// var annotationTracks =
-
-	// 	function 	hyperlinkProtein(annot) {
-  //   // var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
-	// 	// Substring used to only search for LINE_1
-  //   var url = 'https://www.uniprot.org/uniprot/?query=' + annot.name.substring(0,6) + '&sort=score';
-  //   annot.displayName =
-  //     '<a target="_blank" href="' + url + '">' + annot.name + '</a>';
-	// 		// console.log(annot.testdata)
-  //   return annot
-  // }
 			function 	hyperlinkProtein(annot) {
-			// var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
-			// Substring used to only search for LINE_1
-			// var url = this.props.urlSource+'/sequence/' + annot.name + "_ORF1p";
 			var url = 'http://rtpea.com/sequence/' + annot.name;
-			// var url = 'http://localhost:3001/sequence/' + annot.name + "_ORF1p";
 			annot.displayName =
 				'<a target="_blank" href="' + url + '">' + annot.name + '</a>';
-				// console.log(annot.testdata)
 			return annot
 		}
-			// fetch("http://rtpea.com/sequence/ideogram/" + this.state.prot_seq)
-			// fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
 			fetch(this.props.urlSource+"/ideogram/" + this.state.prot_seq)
 			.then(response => response.json())
 			.then(data => {this.setState({annotation_data: data})})
@@ -72,39 +42,15 @@ class Ideogram_c extends Component {
 			annotationsLayout: "tracks",
 			onWillShowAnnotTooltip: hyperlinkProtein,
 			rotatable: true,
-
-			// chrHeight: 400,
-			// chromosome: "10",
-			// orientation: 'vertical',
-			// showBandLabels: true,
-			// brush: 'chr1',
-
-			// brush: 'chr10:104325484-119977655',
-			// annotationsDisplayedTracks: [0,1, 2,3],
-			// annotationTracks: this.state.annotationTracks,
-			// annotationsPath: "http://localhost:3001/ideogram",
-			// annotationsColor: "#F00",
-			// annotationsLayout: annotationTracks,
-		// 	annotations: [{
-		// 	"_id": "5b364f11cf72732a72cb47c1",
-    //   "name": "BRCA1",
-    //   "chr": "17",
-    //   "start": 43044294,
-    //   "stop": 43125482
-    // }],
       container: '#ideo-container'
     });
 		})
   }
 
 	PA2_family = () => {
-
    this.setState({
 		 checked: !this.state.checked
    })
-		 // this.props.history.push('/ideogram/'+PA2_fam)
-		 // window.location = '/ideogram/'+PA2_fam
-
 }
 
 button_click_ideo = () => {
@@ -292,13 +238,7 @@ button_click_ideo = () => {
 	}
 	}
 
-
-
-
-
   render() {
-
-
     return (
 			<div className="background-body-vis">
 
@@ -335,8 +275,6 @@ button_click_ideo = () => {
 						</div>
 				</div>
 				<div className="container">
-					{/* {console.log(jsontest)} */}
-					{/* {console.log(this.state.information1)} */}
 					<br/>
 					<div className="line-seperator"></div>
 				<br/>
@@ -359,11 +297,6 @@ button_click_ideo = () => {
 					<br/>
 				  <sup style={{"color":"white"}}>^ Separate families with comma or space ^</sup>
 
-					{/* <br/> */}
-{/* onChange={() => this.PA2_family()}/> */}
-					 {/* <input type="checkbox"
-						 checked={ this.state.checked }
-						 onChange={e => this.setState({ prot_seq: PA2_fam })}/> */}
 					 <br/>
 						 <div className="container line-seperator" style={{align:"center",width:"20%"}}></div>
 						 {/* <hr align="center" width="20%" /> */}
@@ -385,9 +318,7 @@ button_click_ideo = () => {
 					<div className="container">
 						<div className="line-seperator"></div>
 					</div>
-				{/* {JSON.stringify(this.state.annotation_data)}
-				<br/>
-				{JSON.stringify(this.state.annotation_data[0])} */}
+
       <div id="ideo-container" className="black_text margin-left-ideogram"></div>
 			<br />
 			<br />
@@ -400,8 +331,4 @@ button_click_ideo = () => {
     );
   }
 }
-
-
-
-
 export default Ideogram_c;

@@ -9,7 +9,7 @@ import NavDownload from "./NavDownload.js";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Highlight from "react-highlight";
 import "../Highlight/styles/vs2015.css";
-// ../../../node_modules/
+
 
 class Download extends Component {
   constructor(props) {
@@ -33,7 +33,6 @@ class Download extends Component {
       name_of_file: ""
     };
     // This binding is necessary to make `this` work in the callback
-
     this.button_click = this.button_click.bind(this);
     this.download_table = this.download_table.bind(this);
     this.download_l1seq = this.download_l1seq.bind(this);
@@ -55,9 +54,7 @@ class Download extends Component {
   // retrieves the url_id from the state component and returns the new url
   searchURL = () => {
     let { url_id } = this.state;
-    // let url = "http://localhost:3001/api/" + url_id;
     let url = this.props.urlSource + "/api/" + url_id;
-    // let url = "http://rtpea.com/api/" + url_id;
     return url;
   };
 
@@ -149,9 +146,10 @@ class Download extends Component {
             className="background-body4-download"
             style={{ backgroundColor: this.state.data_background_colour }}
           >
-            <div class="container">
+            <div className="container">
               <div style={{textAlign:"center"}}><h3><u>Download from Database</u></h3> </div>
               <table id="download_table" className="table-border">
+                <tbody>
                 <tr>
                   <th>Download</th>
                   <th>Info</th>
@@ -179,14 +177,6 @@ class Download extends Component {
                   <td>Download all available Line-1 element data in <b><a href="../sequence">Sequence page</a></b> from database </td>
                 </tr>
 
-                {/* <tr>
-                  <td>
-                    <button className="btn btn-outline-danger" disabled>
-                      Download ProtVista Data
-                    </button>
-                  </td>
-                  <td>Under Construction</td>
-                </tr> */}
                 <tr>
                   <td>
                     <button className="btn btn-info"
@@ -229,6 +219,7 @@ class Download extends Component {
                     Programming Interface. API code examples given below.
                   </td>
                 </tr>
+              </tbody>
               </table>
             <br/>
               <Tabs>
@@ -340,6 +331,7 @@ for (i in List_of_PXD){
 
               <div style={{textAlign:"center"}}><h3><u>Proteomic Parameters</u></h3> </div>
             <table id="download_table" className="table-border">
+              <tbody>
               <tr>
                 <th>Download</th>
                 <th>Info</th>
@@ -360,42 +352,13 @@ for (i in List_of_PXD){
             </td>
             <td>Mass spectrometry parameters - Under Construction</td>
           </tr>
+        </tbody>
           </table>
           </div>
           </div>
           <br />
           <br />
         </div>
-        {/* <div class="row">
-      <div class="col-md-4">
-        <button className="btn btn-outline-info"
-          onClick={e =>
-            this.saveAs(JSON.stringify(this.state.data2, null, 2))
-          }
-        >
-          Download Table Data
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button className="btn btn-outline-info">
-          Download all L1 Prot Sequences
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button className="btn btn-outline-info">
-          Download ProtVista Data
-        </button>
-      </div>
-      <div class="col-md-4">
-        Contains data found in the table
-      </div>
-      <div class="col-md-4">
-        download all available Line-1 element data <br/> from db
-      </div>
-      <div class="col-md-4">
-        Under Construction
-      </div>
-    </div> */}
       </div>
     );
   }

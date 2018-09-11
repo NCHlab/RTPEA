@@ -11,11 +11,7 @@ let Soft_map = {
     { shape: "rect", coords: [450, 21, 749, 600] /* Model */ }
   ]
 };
-//[Left,Top,Right,Bottom]
 
-// { shape: "rect", coords: [1,21,320,440],  /* View */ },
-// { shape: "rect", coords: [322,21,480,440],  /* Controller */ },
-// { shape: "rect", coords: [481,20,800,440],  /* Model */ },
 class Info extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +29,6 @@ class Info extends Component {
       loading: "true",
       index: index
     });
-    // console.log(index);
   };
 
   MouseLeave = () => {
@@ -178,12 +173,3 @@ class Info extends Component {
 }
 
 export default Info;
-
-{
-  /* <div className="container">
-	<h2>RTPEA Flowchart</h2>
-	<h2>{this.ImageArray(this.state.index)}</h2>
-	<ImageMapper src={Flowchart}  map={Soft_map} fillColor="rgba(0, 0, 0, 0.1)" className="pb6" alt="" height={"500"} width={"908"} onMouseEnter={this.MouseEnter} />
-	{/* <img src={Flowchart} alt="FlowChart" height="600px" width="1090px" />
-</div> */
-}

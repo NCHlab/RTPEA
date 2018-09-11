@@ -5,9 +5,7 @@ import "./Navigation.css";
 import '../Logo/Logo.css';
 import retrologo from '../Logo/Logo.png';
 import Tilt from 'react-tilt'
-//
 
-// const Navigation = (props) => {
 function Navigation(props) {
     const { location } = props;
     const links = [
@@ -51,22 +49,17 @@ function Navigation(props) {
 
           </div>
 
-          <ul class="menu">
-            <li><a>
+          <ul className="menu">
+            <li>
                 {links.map(({ page, to, ex1, ex_vis }) => (
                   window.location.href.includes(ex1) || window.location.href.includes(ex_vis)? <a href={to} className="active">{page}</a> :
                   window.location.href.includes(to)
-                  ? <a href={to} className="active">{page}</a>
-                  : <Link to={to}>{page}</Link>))}
-
-                </a>
+                  ? <a key={page} href={to} className="active">{page}</a>
+                  : <Link key={page} to={to}>{page}</Link>))}
               </li>
             </ul>
 
           </nav>
-
-
     )};
-
 
 export default withRouter(Navigation);

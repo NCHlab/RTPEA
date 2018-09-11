@@ -20,10 +20,7 @@ import homepage_barchart from "../Files/homepage_barchart.json";
 import {isMobile} from 'react-device-detect';
 import CounterData from '../Files/CounterData.json'
 import Particles from 'react-particles-js';
-// import '../../App.css';
 
-// Displays the Home page using JSX
-// const  = ({ onShow, onHide }) => {
 
 class Home extends Component {
   constructor(props) {
@@ -35,8 +32,6 @@ class Home extends Component {
   }
 
   componentDidMount = () => {
-    // fetch("http://rtpea.com/dbcheck")
-    // fetch("http://localhost:3001/dbcheck")
     fetch(this.props.urlSource+"/dbcheck")
       .then(response => {
         if (response.status === 200){
@@ -53,25 +48,6 @@ class Home extends Component {
           this.setState({mongodb_status: "Offline"})
         }
       })
-
-        // fetch("http://localhost:3001/dbcheck")
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     if (data.Status === "Online"){
-        //       this.setState({mongodb_status: "Online"})
-        //     } else {
-        //       this.setState({mongodb_status: "Offline"})
-        //     }
-        //   })
-        //
-        //   fetch("http://localhost:3001/")
-        //     .then(response => {
-        //       if (response.status === 200){
-        //         this.setState({api_status: "Online"})
-        //       } else {
-        //         this.setState({api_status: "Offline"})
-        //       }
-        //     })
   };
 
   renderWebpage = () => {
@@ -86,36 +62,19 @@ class Home extends Component {
   }
 
   render() {
-    // const data = [
-    //   { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-    //   { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-    //   { name: "Page C", uv: 1000, pv: 9800, amt: 2290 },
-    //   { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-    //   { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-    //   { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-    //   { name: "Page G", uv: 3490, pv: 4300, amt: 2100 }
-    // ];
 
     return (
       <div>
       <Particles className="particles" params={this.props.particlesOptions} />
       <div className="">
         {this.renderWebpage()}
-        {/* {console.log(this.props.urlSource)} */}
+
         <p className="App-intro">
           <h1 className="container colour-white" style={{textAlign:"center"}}>
-            {/* <b><span style={{color:"#639fff"}}>R</span>e<span style={{color:"#639fff"}}>t</span>roelement <span style={{color:"#639fff"}}>P</span>rotein <span style={{color:"#639fff"}}>E</span>xpression <span style={{color:"#639fff"}}>A</span>tlas</b> */}
             <b>Retroelement Protein Expression Atlas</b>
           </h1>
-          {/* <hr style={{border:"2px solid rgba(43, 198, 255,1"}}/> */}
           <div className="line-seperator"></div>
         </p>
-        {/* <div className="container" style={{color:"black"}}>
-          <Popup trigger={<button className="btn btn-outline-primary"> Read Me!</button>} modal closeOnDocumentClick position="right center">
-            <div style={{color:"black"}}>Popup content here !! say whatever you need it to say</div>
-          </Popup>
-        </div> */}
-
           <div className="container" style={{color:"black"}}>
             <Popup trigger={<button style={{float:"right", display: "inline"}} className="btn btn-outline-warning"> Information! </button>} modal>
               {close => (
@@ -125,7 +84,7 @@ class Home extends Component {
                   </a>
                   <div className="header"> How to use Interactive Human Atlas </div>
                   <div className="content">
-                    {/* {" "} */}
+
                     By Default you can hover over the images to visualise the graph
                     <br />
 
@@ -140,28 +99,6 @@ class Home extends Component {
                     <br />
 
                   </div>
-                  {/* <div className="actions">
-                    <Popup
-                      trigger={<button className="button"> Trigger </button>}
-                      position="top center"
-                      closeOnDocumentClick
-                    >
-                      <span>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
-                        nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
-                        deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.
-                      </span>
-                    </Popup>
-                    <button
-                      className="button"
-                      onClick={() => {
-                        console.log('modal closed ')
-                        close()
-                      }}
-                    >
-                      close modal
-                    </button>
-                 </div> */}
                 </div>
               )}
             </Popup>
@@ -172,17 +109,11 @@ class Home extends Component {
 
         <body2>
           <div className="container">
-            {/* Displays the human image + data retrieved from the human component */}
-            {/* {console.log("home")} */}
-            {/* {console.log(this.props)} */}
             <Human urlSource2={this.props.urlSource2}/>
           </div>
         </body2>
         <div className="line-seperator" />
         <div className="background-body">
-          {/* <button type="button" onClick={onShow}>
-          show
-        </button> */}
           <div className="container">
             <div className="row">
               <div className="col-md-4">
@@ -360,12 +291,7 @@ class Home extends Component {
                       <Line type="monotone" dataKey="ORF1p variant" stroke="#0fcbed" />
                       <Line type="monotone" dataKey="ORF2p variant" stroke="#00a03c" />
                     </LineChart>
-                    {/* <Line
-                      type="monotone"
-                      dataKey="pv"
-                      stroke="#8884d8"
-                      activeDot={{ r: 8 }}
-                    /> */}
+
                   </div>
                     <br />
                     <div align="left" style={{paddingLeft: "60px"}}>
@@ -376,15 +302,6 @@ class Home extends Component {
                     <br />
                   </div>
 
-
-
-
-
-                  {/* Server Status:
-                  <br />
-                  API Server: <img src={onlineimg} alt="Online!" />
-                  <br />
-                  MongoDB Server: <img src={onlineimg} alt="Offline" /> */}
                 </div>
               </div>
             </div>

@@ -15,7 +15,7 @@ import Browse2 from './components/Navigation/Browse2';
 // import BrowseDemo from './components/Navigation/Browse-demo';
 import Visualise from './components/Navigation/Visualise';
 // import Visualisedemo from './components/Navigation/Visualisedemo';
-import Expression_Atlas from './components/Navigation/Expression_Atlas';
+// import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
