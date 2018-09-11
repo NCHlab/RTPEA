@@ -304,7 +304,7 @@ button_click_ideo = () => {
 			 <form onSubmit={this.handleSubmit}>
 	        <label>
 						<select value={this.state.value} onChange={this.handleChange}>
-							<option selected value=""></option>
+							<option defaultValue =""></option>
 							<option value="ALL">ALL</option>
 							<option value="HS">HS</option>
 						  <option value="PA2">PA2</option>

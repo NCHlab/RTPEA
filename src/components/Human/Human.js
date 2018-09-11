@@ -116,7 +116,7 @@ class Human extends Component {
           <XAxis type="number" tick={this.state.whiteFill} />
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill} />
           <Tooltip cursor={{cursor:'pointer'}} wrapperStyle={{color:"black"}} itemStyle={{color:"#001fbf"}}/>
-          <Bar dataKey="Number" type="monotone" barSize={25} onMouseOver={{cursor:'pointer'}}>
+          <Bar dataKey="Number" type="monotone" barSize={25} onMouseOver={() => {cursor:'pointer'}}>
            {
              data_color.map((entry, index) => (
                <Cell key={`cell-${index}`} fill={data_color[index]} />

@@ -71,8 +71,8 @@ const Project = (particlesOptions) => (
     </div>
 
     <div className="container" style={{marginLeft:"20%"}}>
-      <div class="row">
-    <div class="col-sm">
+      <div className="row">
+    <div className="col-sm">
       <img
         alt="Nazrath"
         style={{marginLeft:"20%"}}
@@ -99,7 +99,7 @@ const Project = (particlesOptions) => (
 
     </p>
 </div>
-<div class="col-sm">
+<div className="col-sm">
       <img
         alt="Conrad"
         style={{marginLeft:"20%"}}
@@ -128,7 +128,7 @@ const Project = (particlesOptions) => (
     </p>
     </div>
 
-    <div class="col-sm">
+    <div className="col-sm">
       <img
         alt="Miguel"
         style={{marginLeft:"20%"}}

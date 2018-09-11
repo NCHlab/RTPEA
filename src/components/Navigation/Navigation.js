@@ -52,7 +52,7 @@ function Navigation(props) {
           <ul className="menu">
             <li>
                 {links.map(({ page, to, ex1, ex_vis }) => (
-                  window.location.href.includes(ex1) || window.location.href.includes(ex_vis)? <a href={to} className="active">{page}</a> :
+                  window.location.href.includes(ex1) || window.location.href.includes(ex_vis)? <a key={page} href={to} className="active">{page}</a> :
                   window.location.href.includes(to)
                   ? <a key={page} href={to} className="active">{page}</a>
                   : <Link key={page} to={to}>{page}</Link>))}

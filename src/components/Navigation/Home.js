@@ -68,12 +68,13 @@ class Home extends Component {
       <div className="">
         {this.renderWebpage()}
 
-        <p className="App-intro">
+        <span className="App-intro">
           <h1 className="container colour-white" style={{textAlign:"center"}}>
             <b>Retroelement Protein Expression Atlas</b>
           </h1>
           <div className="line-seperator"></div>
-        </p>
+          <br/>
+        </span>
           <div className="container" style={{color:"black"}}>
             <Popup trigger={<button style={{float:"right", display: "inline"}} className="btn btn-outline-warning"> Information! </button>} modal>
               {close => (
@@ -106,11 +107,11 @@ class Home extends Component {
 
 
 
-        <body2>
+        {/* <body2> */}
           <div className="container">
             <Human urlSource2={this.props.urlSource2}/>
           </div>
-        </body2>
+        {/* </body2> */}
         <div className="line-seperator" />
         <div className="background-body">
           <div className="container">
@@ -126,19 +127,19 @@ class Home extends Component {
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={CounterData.prideDatasets} speed={4000} />
+                  <CountTo to={parseInt(CounterData.prideDatasets, 10)} speed={4000} />
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
                   {/* # of Orf2: */}
-                  <CountTo to={CounterData.samples} speed={4000} />
+                  <CountTo to={parseInt(CounterData.samples, 10)} speed={4000} />
                   {/* onComplete={onHide} */}
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={CounterData.specSize} speed={4000} /> GB
+                  <CountTo to={parseInt(CounterData.specSize, 10)} speed={4000} /> GB
                 </h1>
               </div>
             </div>
@@ -171,6 +172,7 @@ class Home extends Component {
                   <br />
                   <hr style={{ borderColor: "#000000" }} />
                   <table>
+                    <tbody>
                     <tr>
                       <th />
                       <th />
@@ -230,6 +232,7 @@ class Home extends Component {
                         -<i>Reach out to us for bugs, suggestions, any features you’d like to see or any specific requests you have</i>
                       </td>
                     </tr>
+                  </tbody>
                   </table>
                   <br />
                   <hr style={{ borderColor: "#000000" }} />
@@ -239,6 +242,7 @@ class Home extends Component {
                 </div>
                 <div className="col-md-6">
                   <table className="text-justify" align="center" width="44%" border="4" >
+                    <tbody>
                     <tr>
                       <th> Server </th>
                       <th> Status</th>
@@ -267,6 +271,7 @@ class Home extends Component {
                         <img src={onlineimg} alt="Online!" />
                       </td>
                     </tr>
+                  </tbody>
                   </table>
                   <br />
                   <br />
