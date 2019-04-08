@@ -8,7 +8,12 @@ import nayam from "../ContactUs/nayam.png";
 import nazrath from "../ContactUs/nazrath.png";
 import conrad from "../ContactUs/conrad.png";
 import miguel from "../ContactUs/miguel.png";
+import paul from "../ContactUs/paul.png";
 import Particles from 'react-particles-js';
+import facebook from "../Images/facebook.png";
+import linkedin from "../Images/linkedin.png";
+import githubsmall from "../Images/mark-github.svg";
+import mail from "../Images/mail.svg";
 
 const Project = (particlesOptions) => (
   <div>
@@ -72,7 +77,7 @@ const Project = (particlesOptions) => (
 
     <div className="container" style={{marginLeft:"20%"}}>
       <div className="row">
-    <div className="col-sm">
+    <div className="col-md">
       <img
         alt="Nazrath"
         style={{marginLeft:"20%"}}
@@ -87,6 +92,9 @@ const Project = (particlesOptions) => (
       </div>
       <div className="contact_img description_style2" style={{top:"900px"}}> Linkedin</div>
       <div className="contact_img description_style2" style={{top:"950px"}}> m.n.mohamednawaz@qmul.ac.uk</div>
+      <img alt="mail" src={mail} height="25px" width={"auto"}/>
+      <img alt="gb" src={githubsmall}/>
+      <img alt="in" src={linkedin}/>
 
       <p>
         <br/>
@@ -99,7 +107,7 @@ const Project = (particlesOptions) => (
 
     </p>
 </div>
-<div className="col-sm">
+<div className="col-md">
       <img
         alt="Conrad"
         style={{marginLeft:"20%"}}
@@ -127,8 +135,9 @@ const Project = (particlesOptions) => (
 
     </p>
     </div>
-
-    <div className="col-sm">
+    </div>
+  <div className="row">
+    <div className="col-md">
       <img
         alt="Miguel"
         style={{marginLeft:"20%"}}
@@ -150,6 +159,30 @@ const Project = (particlesOptions) => (
         <button className="btn btn-outline-primary">Retroelement collaborator</button> &nbsp;
         <br/>
         <br/>
+      <button className="btn btn-outline-primary">Biological Insights</button> &nbsp;
+    </p>
+    </div>
+
+
+    <div className="col-md">
+      <img
+        alt="Miguel"
+        style={{marginLeft:"20%"}}
+        className="contact_img"
+        src={paul}
+        width="200px"
+        height="200px"
+      />
+
+      <div className="contact_img description_style2" style={{top:"850px"}}>
+        <a href="https://github.com/">Github - Paul</a>
+      </div>
+      <div className="contact_img description_style2" style={{top:"900px"}}> Linkedin</div>
+      <div className="contact_img description_style2" style={{top:"950px"}}> p.j.hurd@qmul.ac.uk</div>
+
+      <p>
+        <br/>
+
       <button className="btn btn-outline-primary">Biological Insights</button> &nbsp;
     </p>
     </div>

@@ -7,6 +7,7 @@ import Popup from "reactjs-popup";
 import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
+import newwindow from "../Images/new-window.png";
 import matchSorter from 'match-sorter'
 
 
@@ -352,7 +353,7 @@ const orf1p_column = [{
       Cell: row => row.original.name !== "NA"?
         (
           <div>
-            <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence ⇗</a>
+            <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence <img alt="newwindow" src={newwindow} height={"16px"} width={"auto"}/></a>
           </div>
         ) : ""
     },{
@@ -419,7 +420,7 @@ const orf2p_column = [{
       Cell: row => row.original.name !== "NA"?
         (
           <div>
-            <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence ⇗</a>
+            <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence <img alt="newwindow" src={newwindow} height={"16px"} width={"auto"}/></a>
           </div>
         ) : ""
     },{
