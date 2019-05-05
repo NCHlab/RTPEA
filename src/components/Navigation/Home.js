@@ -54,24 +54,6 @@ class Home extends Component {
         }
       })
 
-        // fetch("http://localhost:3001/dbcheck")
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     if (data.Status === "Online"){
-        //       this.setState({mongodb_status: "Online"})
-        //     } else {
-        //       this.setState({mongodb_status: "Offline"})
-        //     }
-        //   })
-        //
-        //   fetch("http://localhost:3001/")
-        //     .then(response => {
-        //       if (response.status === 200){
-        //         this.setState({api_status: "Online"})
-        //       } else {
-        //         this.setState({api_status: "Offline"})
-        //       }
-        //     })
   };
 
   renderWebpage = () => {
@@ -86,15 +68,6 @@ class Home extends Component {
   }
 
   render() {
-    // const data = [
-    //   { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-    //   { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-    //   { name: "Page C", uv: 1000, pv: 9800, amt: 2290 },
-    //   { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-    //   { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-    //   { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-    //   { name: "Page G", uv: 3490, pv: 4300, amt: 2100 }
-    // ];
 
     return (
       <div>
@@ -140,28 +113,7 @@ class Home extends Component {
                     <br />
 
                   </div>
-                  {/* <div className="actions">
-                    <Popup
-                      trigger={<button className="button"> Trigger </button>}
-                      position="top center"
-                      closeOnDocumentClick
-                    >
-                      <span>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
-                        nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
-                        deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.
-                      </span>
-                    </Popup>
-                    <button
-                      className="button"
-                      onClick={() => {
-                        console.log('modal closed ')
-                        close()
-                      }}
-                    >
-                      close modal
-                    </button>
-                 </div> */}
+
                 </div>
               )}
             </Popup>
