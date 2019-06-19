@@ -35,6 +35,11 @@
   background: linear-gradient(#1F2830, #1f3647);
 }
 
+.footer_logo{
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
 div .footer {
   margin: 38px 10px 0 0;
   padding: 0;
