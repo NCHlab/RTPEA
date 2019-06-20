@@ -53,13 +53,14 @@ div:onhover {
   transition: 0.1s;
 }
 
+.organ-svg-clicked{
+  opacity:1;
+}
 
-
-.human-img:hover{
+/* .human-img:hover{
   opacity: 1;
   transition: 2s;
-  /* transform: translateX(-1000px); */
-}
+} */
 
 .inline-img{
   display:inline;
