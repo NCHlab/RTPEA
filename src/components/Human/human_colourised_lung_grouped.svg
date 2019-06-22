@@ -3067,8 +3067,9 @@ l-4,5.4l-2.6,0.3L778.4,229.2z"
 
 <g>
   <!-- Testes -->
-  <path class="st17 testes" d="M734.4,228.1" />
+  
   <g class="organ-svg testes">
+  <path class="st17 testes" d="M734.4,228.1" />
     <path
       class="st13 testes"
       d="M508.5,408.9c1-0.2,1.5-1.1,0.8-3.3c-0.8-2.1-0.2-3,0.7-5.1c0.1-1.2,0.6-2.1,1-2.6c-0.3,0-0.6,0-1,0.1
