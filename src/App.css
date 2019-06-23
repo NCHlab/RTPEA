@@ -15,6 +15,16 @@ body {
 body2 {
   background: #66B8F2,#B8DBF4;
 }
+
+.padding {
+  padding-bottom: 50px;
+}
+
+
+.paddingTop{
+  padding-top: 50px;
+}
+
 /*Browse*/
 .browse-link-style{
   background-color: #41a6f4;
@@ -207,7 +217,11 @@ body2 {
   border: 1px solid #cfcece;
 }
 
-/* CONTACT US PAGE */
+/**//**//**//**//* CONTACT US PAGE *//**//**//**//**/
+
+.padding_n_leftt{
+    padding-left: 60px;
+}
 
 .description_style {
   position: absolute;
@@ -264,9 +278,17 @@ body2 {
 	margin: 10px;
   opacity: 0.6;
   transition: all 1s;
+}
 
+.contact_img_small {
+  background: #1F2830;
+  margin: 10px;
+  opacity: 0.6;
+  transition: all 1s;
+  margin-left: 150px;
 
 }
+
 
 .contact_img:hover {
 	transform: scale(1.1);
