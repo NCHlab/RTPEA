@@ -103,11 +103,9 @@ class Home extends Component {
                     <br />
 
                     <div className="header"></div>
-                    ON HOVER MODE:
-                    Hovering over each tissue changes the bar chart. By default, it displays the metrics for the total database
+                    Clicking on a tissue will highlight that tissue and keep it hightlighted.
                     <br />
-                    ON CLICK MODE:
-                    You can select each tissue without the bar charts changing when moved away.
+                    To revert back to hovering over tissues, refresh the page or <a href='/home'>Click Here</a>
                     <br />
                     You can also <b>click the graph</b> to transfer you to the table to view the datasets for the tissue type selected.
                     <br />
