@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import onlineimg from "../Images/online.png";
 import offlineimg from "../Images/offline.png";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 
 class Status extends Component {
   constructor(props) {
