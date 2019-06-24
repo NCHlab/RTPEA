@@ -83,25 +83,34 @@ class Human extends Component {
     var urlstate = "";
     if (svgType === "liver") {
       data_type = this.state.liver_data;
+      urlstate = "liver";
     } else if (svgType === "lung") {
       data_type = this.state.lung_data;
+      urlstate = "lung";
     } else if (svgType === "uterus") {
       data_type = this.state.uterus_data;
+      urlstate = "uterus";
     } else if (svgType === "testes") {
       data_type = this.state.testes_data;
+      urlstate = "testes";
     } else if (svgType === "pancreas") {
       data_type = this.state.pancreas_data;
+      urlstate = "pancreas";
     } else if (svgType === "kidney") {
       data_type = this.state.kidney_data;
+      urlstate = "kidney";
     } else if (svgType === "intestine") {
       data_type = this.state.intestine_data;
+      urlstate = "intestine";
     } else if (svgType === "heart") {
       data_type = this.state.heart_data;
+      urlstate = "heart";
     } else if (svgType === "breasts") {
       data_type = this.state.breast_data;
       urlstate = "breast";
     } else if (svgType === "brain") {
       data_type = this.state.brain_data;
+      urlstate = "brain";
     } else if (svgType === undefined) {
       data_type = this.state.all_data;
     } else {
