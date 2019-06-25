@@ -124,7 +124,7 @@ const Project = (particlesOptions) => (
           <a href="http://linkedin.com">
             <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
           </a>
-          <a href="http://qmul.ac.uk">
+          <a href="https://www.qmul.ac.uk/sbcs/staff/nazrathnawaz.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
           </a>
 
@@ -137,14 +137,14 @@ const Project = (particlesOptions) => (
         <div className="carousel-item">
           <img className="contact_img_small" src={conrad} alt="nazrath" width="200px" height="200px"/>
           <img className="contact_img" src={conrad_text} alt="RetroMiner / Data Gen" height="160px"/>
-          <a href="http://linkedin.com">
+          <a href="https://bezzlab.github.io/">
             <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
           </a>
           <a href="http://twitter.com">
             <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
           </a>
 
-          <a href="http://qmul.ac.uk">
+          <a href="https://www.qmul.ac.uk/sbcs/staff/conradbessant.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
           </a>
           {/* <div className="carousel-caption">
@@ -162,7 +162,7 @@ const Project = (particlesOptions) => (
             <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
           </a>
 
-          <a href="http://qmul.ac.uk">
+          <a href="https://www.qmul.ac.uk/blizard/staff/centre-for-genomics-and-child-health/staff/miguel-branco.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
           </a>
           {/* <div className="carousel-caption">
@@ -181,7 +181,7 @@ const Project = (particlesOptions) => (
             <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
           </a>
 
-          <a href="http://qmul.ac.uk">
+          <a href="https://www.qmul.ac.uk/sbcs/staff/paulhurd.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
           </a>
           {/* <div className="carousel-caption">
