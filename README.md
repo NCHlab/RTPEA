@@ -19,3 +19,5 @@ Development Ongoing | Development Version | Production Version
 :--- | :---: | :---:
 
 :white_check_mark: | v1.1 | v1.0
+
+:--- | :---: | :---:
