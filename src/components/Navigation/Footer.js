@@ -9,65 +9,20 @@ import '../Logo/Logo.css';
 // const Footer = (props) => {
 function Footer(props) {
     const { location } = props;
-    const links = [
-            {
-            page: 'Home',
-            to: '/'
-        },
-        {
-            page: 'Browse',
-            to: '/browse'
-        },
-        {
-            page: 'Visualise',
-            to: '/visualise'
-        }
-    ];
-
-		const links2 = [
-            {
-            page: 'API',
-            to: '/api'
-        },
-        {
-            page: 'Info',
-            to: '/info'
-        },
-        {
-            page: 'Contact Us',
-            to: '/contact'
-        }
-    ];
-
 
     return (
 			<div className="whole-footer">
+      
 				<div id="" className="footer_logo">
-					<Link to="/"><img src={retrologo} height={100} width={250} className="pb6" alt="logo"/></Link>
+					<Link to="/"><img src={retrologo} height={80} width={200} className="pb6" alt="logo"/></Link>
 				</div>
        <div className="footer">
 
-            <li><a>
-                {links.map(({ page, to }) => (
-                  window.location.href.includes(to)
-                  ? <a href={to}>{page}</a>
-                  : <Link to={to}>{page}</Link>))}
-                </a>
-              </li>
+          This website was created as part of the individual project for the MSc Bioinformatics course at QMUL. <br/>
+          For more information, check the <Link to="/info">info</Link> and <Link to="/contact">contact us page</Link>. The accompanying paper will be published soon.
 
 					</div>
 
-					<div className="footer2">
-
-	             <li><a>
-	                 {links2.map(({ page, to }) => (
-	                   window.location.href.includes(to)
-	                   ? <a href={to}>{page}</a>
-	                   : <Link to={to}>{page}</Link>))}
-	                 </a>
-	               </li>
-
-	 					</div>
 				</div>
 
 

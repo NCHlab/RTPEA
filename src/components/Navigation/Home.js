@@ -70,8 +70,8 @@ class Home extends Component {
   render() {
 
     return (
-      <div>
-      <Particles className="particles" params={this.props.particlesOptions} />
+      <div className="mainBody">
+      <Particles className="particles" params={this.props.particlesOptions}/>
       <div className="">
         {this.renderWebpage()}
         {/* {console.log(this.props.urlSource)} */}
@@ -128,6 +128,7 @@ class Home extends Component {
             <Human urlSource2={this.props.urlSource2}/>
           </div>
         </body2>
+
         <div className="line-seperator" />
         <div className="background-body">
           {/* <button type="button" onClick={onShow}>
@@ -387,9 +388,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="line-seperator" />
 
-        <div className="background-body3" />
       </div>
     </div>
     );
