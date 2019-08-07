@@ -110,6 +110,12 @@ body2 {
   border: 2px solid rgba(43, 198, 255,0.5);
 }
 
+.footer-line-seperator{
+  border: 2px solid rgba(43, 198, 255,0.5);
+  /* margin-top: 50px;
+  background-color: #1f2b35; */
+}
+
 .background-body {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -218,9 +224,21 @@ body2 {
 }
 
 /**//**//**//**//* CONTACT US PAGE *//**//**//**//**/
+.main_user_border{
+  border: 5px solid #295895;
+  /* margin-bottom: 5px; */
+  /* background-color: grey; */
+}
 
-.padding_n_leftt{
+/* .secondary_user_border{
+  border-left: 2px dashed white;
+  border-right: 2px dashed white;
+  border-bottom: 2px dashed white;
+} */
+.padding_contact_center{
+  padding-top: 50px;
     padding-left: 60px;
+    padding-bottom: 50px;
 }
 
 .description_style {
@@ -285,7 +303,7 @@ body2 {
   margin: 10px;
   opacity: 0.6;
   transition: all 1s;
-  margin-left: 150px;
+  /* margin-left: 150px; */
 
 }
 
