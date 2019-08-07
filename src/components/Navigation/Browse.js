@@ -126,7 +126,9 @@ check_expr_orf2 = (d) => {
     accessor: (d) => d.PXD, // String-based value accessors!
     filterMethod: (filter, rows) =>
                     matchSorter(rows, filter.value, { keys: ["data_pxd"],threshold: matchSorter.rankings.CONTAINS }),
-                  filterAll: true
+                  filterAll: true,
+    Cell: row => ( <a href={"https://www.ebi.ac.uk/pride/archive/projects/"+row.original.PXD} target="_blank" style={{color:'black'}}><u>{row.original.PXD}</u></a> )
+
   }, {
     Header: <h4><b>STUDY</b></h4>,
     id: "study",
@@ -570,11 +572,12 @@ const orf2p_column = [{
 //   Header: 'ORF2p Confidence',
 //   accessor: 'ORF2p_variants.confidence'
 // }]
+  // {console.log(this.state.data2)}
 
       return (
         <div>
 
-          {console.log(this.state.data2)}
+
 
           <div className="col-md-10 offset-md-1" style={{background: this.state.background_colour, color: this.state.text_colour}}>
             {/* <div className="col-md-10 offset-md-1" style={{background: 'linear-gradient(to bottom, #d9e0e2, #abadad)', color: this.state.text_colour}}> */}
@@ -697,7 +700,7 @@ const orf2p_column = [{
               columns={main_columns}
               noDataText="No Data Has been found, Please re-filter your search parameters."
               loadingText="Please Wait. Data is Loading....If no data is returned the API server may be down."
-              defaultPageSize={10}
+              defaultPageSize={25}
               showPaginationTop={false}
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
@@ -729,7 +732,7 @@ const orf2p_column = [{
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(186, 0, 0)" }}>
-                    {/* {console.log(row.original.sample)} */}
+                    {/* {console.log(row.original.sample)} console.log(state)*/}
                     <ReactTable
                       data={row.original.sample}
                       columns={sec_columns}
@@ -740,7 +743,7 @@ const orf2p_column = [{
                       defaultSortDesc={true}
                       minRows={0}
                       getTbodyProps={ (state, rowInfo, column, rtInstance) => {
-                        console.log(state)
+
                         if (state.pageSize >10 && state.pageSize < 300) {
                           return {
                             style: {
