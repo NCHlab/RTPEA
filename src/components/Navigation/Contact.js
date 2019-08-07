@@ -33,28 +33,42 @@ const Project = (particlesOptions) => (
         <li data-target="#carouselControls" data-slide-to="0" className="active"></li>
         <li data-target="#carouselControls" data-slide-to="1"></li>
         <li data-target="#carouselControls" data-slide-to="2"></li>
+        <li data-target="#carouselControls" data-slide-to="3"></li>
       </ol>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img className="d-block w-100" src={background_dark} alt="Second slide" height='100px'/>
-          <div className="carousel-caption">
-            <h3>Email</h3>
-            m.a.n.chowdhury@se17.qmul.ac.uk / m.n.mohamednawaz@qmul.ac.uk / c.bessant@qmul.ac.uk
-          </div>
 
+      <div className="carousel-item">
+        <img className="d-block w-100" src={qmul_logo} alt="First slide" height='100px' width='120px'/>
+        <div className="carousel-caption">
+          <h3>MSC - BioInformatics</h3>
+          Created at Queen Mary University of London, @BessantLab, SBCS
         </div>
+      </div>
+
         <div className="carousel-item">
           <img className="d-block w-100" src={background_dark} alt="Second slide" height='100px'/>
+          <div className="carousel-caption">
+            <h3>GitHub Repository</h3>
+            <a href="https://github.com/NCHlab/RTPEA">https://github.com/NCHlab/RTPEA</a>
+          </div>
+        </div>
+
+
+        <div className="carousel-item active">
+          <img className="d-block w-100" src={background_dark} alt="Third slide" height='100px'/>
+          <div className="carousel-caption">
+            <h3>Email</h3>
+            admin@rtpea.com
+          </div>
+             {/*m.a.n.chowdhury@se17.qmul.ac.uk / m.n.mohamednawaz@qmul.ac.uk / c.bessant@qmul.ac.uk*/}
+
+        </div>
+
+        <div className="carousel-item">
+          <img className="d-block w-100" src={background_dark} alt="fourth slide" height='100px'/>
           <div className="carousel-caption">
             <h3>Location:</h3>
             Queen Mary University of London, Mile End Rd, London E1 4NS
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img className="d-block w-100" src={qmul_logo} alt="Third slide" height='100px' width='120px'/>
-          <div className="carousel-caption">
-            <h3>MSC - BioInformatics</h3>
-            Created at Queen Mary University of London, @BessantLab, SBCS
           </div>
         </div>
       </div>
@@ -70,137 +84,97 @@ const Project = (particlesOptions) => (
 
 
 
-    <div className="padding padding_n_leftt">
-      <img className="contact_img" src={nayam} alt="nayam" width="300px" height="300px"/>
+    <div className="padding_contact_center">
+    <div className="main_user_border">
+      <img className="contact_img" src={nayam} alt="nayam" width="250px" height="250px"/>
       <a href="http://nayamc.com">
-        <img className="contact_img" src={nayam_text} alt="Lead Dev" height="180px"/>
+        <img className="contact_img" src={nayam_text} alt="Lead Dev" height="170px"/>
       </a>
       <a href="http://github.com/nchlab">
-        <img className="contact_img" src={nchlab} alt="github" height="120px"/>
+        <img className="contact_img" src={nchlab} alt="github" height="170px"/>
       </a>
       <a href="http://linkedin.com">
-        <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
+        <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
       </a>
       <a href="http://twitter.com">
-        <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
+        <img className="contact_img" src={twitter_logo} alt="twitter" height="170px"/>
       </a>
-
-      {/* <a href="http://qmul.ac.uk">
-        <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
-      </a> */}
+      </div>
 
 
-
-      <br/>
-      {/* <div className="button_layout" style={{marginLeft:'350px'}}>
-        <button className="btn btn-outline-primary">Lead Developer</button>
-        <button className="btn btn-outline-primary" style={{marginLeft:'20px'}}>Website Creator</button>
-      </div> */}
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <div id="carousel2Controls" className="carousel slide" data-ride="carousel">
-      <ol className="carousel-indicators">
-        <li data-target="#carousel2Controls" data-slide-to="0" className="active"></li>
-        <li data-target="#carousel2Controls" data-slide-to="1"></li>
-        <li data-target="#carousel2Controls" data-slide-to="2"></li>
-        <li data-target="#carousel2Controls" data-slide-to="3"></li>
-      </ol>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img className="contact_img_small" src={nazrath} alt="nazrath" width="200px" height="200px"/>
-          <img className="contact_img" src={nazrath_text} alt="RetroMiner / Data Gen" height="160px"/>
+      <div className="secondary_user_border">
+          <img className="contact_img" src={nazrath} alt="nazrath" width="250px" height="250px"/>
+          <img className="contact_img" src={nazrath_text} alt="RetroMiner / Data Gen" height="170px"/>
           <a href="http://github.com/nazrath10r">
-            <img className="contact_img" src={nazrath10r} alt="github" height="120px"/>
+            <img className="contact_img" src={nazrath10r} alt="github" height="170px"/>
           </a>
           <a href="http://linkedin.com">
-            <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
+            <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
           </a>
           <a href="https://www.qmul.ac.uk/sbcs/staff/nazrathnawaz.html">
-            <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
+            <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
+
 
           {/* <div className="carousel-caption">
             <h3>Email</h3>
             m.a.n.chowdhury@se17.qmul.ac.uk / m.n.mohamednawaz@qmul.ac.uk / c.bessant@qmul.ac.uk
           </div> */}
 
-        </div>
-        <div className="carousel-item">
-          <img className="contact_img_small" src={conrad} alt="nazrath" width="200px" height="200px"/>
-          <img className="contact_img" src={conrad_text} alt="RetroMiner / Data Gen" height="160px"/>
+
+          <img className="contact_img" src={conrad} alt="conrad" width="250px" height="250px"/>
+          <img className="contact_img" src={conrad_text} alt="RetroMiner / Data Gen" height="170px"/>
           <a href="https://bezzlab.github.io/">
-            <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
+            <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
           </a>
           <a href="http://twitter.com">
-            <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
+            <img className="contact_img" src={twitter_logo} alt="twitter" height="170px"/>
           </a>
 
           <a href="https://www.qmul.ac.uk/sbcs/staff/conradbessant.html">
-            <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
+            <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
           {/* <div className="carousel-caption">
             <h3>Location:</h3>
             Queen Mary University of London, Mile End Rd, London E1 4NS
           </div> */}
-        </div>
-        <div className="carousel-item">
-          <img className="contact_img_small" src={miguel} alt="miguel" width="200px" height="200px"/>
-          <img className="contact_img" src={miguel_text} alt="RetroMiner / Data Gen" height="160px"/>
-          <a href="http://linkedin.com">
-            <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
-          </a>
-          <a href="http://twitter.com">
-            <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
-          </a>
 
+          <img className="contact_img" src={miguel} alt="miguel" width="250px" height="250px"/>
+          <img className="contact_img" src={miguel_text} alt="RetroMiner / Data Gen" height="170px"/>
           <a href="https://www.qmul.ac.uk/blizard/staff/centre-for-genomics-and-child-health/staff/miguel-branco.html">
-            <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
+            <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
           {/* <div className="carousel-caption">
             <h3>MSC - BioInformatics</h3>
             Created at Queen Mary University of London, @BessantLab, SBCS
           </div> */}
-        </div>
+          <br/>
 
-        <div className="carousel-item">
-          <img className="contact_img_small" src={paul} alt="paul hurd" width="200px" height="200px"/>
-          <img className="contact_img" src={paul_text} alt="RetroMiner / Data Gen" height="160px"/>
-          <a href="http://linkedin.com">
-            <img className="contact_img" src={linkedin_logo} alt="linkedin" height="120px"/>
-          </a>
-          <a href="http://twitter.com">
-            <img className="contact_img" src={twitter_logo} alt="twitter" height="120px"/>
-          </a>
-
+          <img className="contact_img" src={paul} alt="paul hurd" width="250px" height="250px"/>
+          <img className="contact_img" src={paul_text} alt="RetroMiner / Data Gen" height="170px"/>
           <a href="https://www.qmul.ac.uk/sbcs/staff/paulhurd.html">
-            <img className="contact_img" src={sbcs_logo} alt="twitter" height="120px"/>
+            <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
           {/* <div className="carousel-caption">
             <h3>MSC - BioInformatics</h3>
             Created at Queen Mary University of London, @BessantLab, SBCS
           </div> */}
+          </div>
         </div>
-      </div>
-      <a className="carousel-control-prev" href="#carousel2Controls" role="button" data-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
-      </a>
-      <a className="carousel-control-next" href="#carousel2Controls" role="button" data-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span classNameName="sr-only">Next</span>
-      </a>
-    </div>
 
-
+      {/*
+        <a href="http://linkedin.com">
+          <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
+        </a>
+        <a href="http://twitter.com">
+          <img className="contact_img" src={twitter_logo} alt="twitter" height="170px"/>
+        </a>
+        <a href="http://linkedin.com">
+          <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
+        </a>
+        <a href="http://twitter.com">
+          <img className="contact_img" src={twitter_logo} alt="twitter" height="170px"/>
+        </a>*/}
 
 
 
