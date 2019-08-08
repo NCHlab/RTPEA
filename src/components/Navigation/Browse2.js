@@ -111,7 +111,8 @@ class Table extends Component{
     accessor: (d) => d.PXD, // String-based value accessors!
     filterMethod: (filter, rows) =>
                     matchSorter(rows, filter.value, { keys: ["data_pxd"],threshold: matchSorter.rankings.CONTAINS  }),
-                  filterAll: true
+                  filterAll: true,
+    Cell: row => ( <a href={"https://www.ebi.ac.uk/pride/archive/projects/"+row.original.PXD} target="_blank" style={{color:'black'}}><u>{row.original.PXD}</u></a> )
   }, {
     Header: <h4><b>STUDY</b></h4>,
     id: "study",
@@ -645,7 +646,7 @@ const orf2p_column = [{
               columns={main_columns}
               noDataText="No Data Has been found, Please re-filter your search parameters."
               loadingText="Please Wait. Data is Loading....If no data is returned the API server may be down."
-              defaultPageSize={10}
+              defaultPageSize={25}
               showPaginationTop={false}
               className="-striped -highlight"
               pageSizeOptions={[5, 10, 20, 25, 50, 100, 200]}
