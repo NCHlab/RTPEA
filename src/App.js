@@ -124,7 +124,7 @@ class App extends Component{
           </Switch>
 
         </div>
-        <div className="line-seperator"></div>
+        <div className="footer-line-seperator"></div>
         <Footer />
       </div>
     </Router>
