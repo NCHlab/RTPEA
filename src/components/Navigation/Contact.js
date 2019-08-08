@@ -23,9 +23,10 @@ import paul from "../ContactUs/paul.png";
 
 const Project = (particlesOptions) => (
   <div className="container">
-    {/* <Particles className="particles" params={particlesOptions} /> */}
+    {/* <Particles className="particles" params={particlesOptions} />
+    <h1>Contact Us</h1>*/}
     <div className="container col-lg-3 padding">
-      <h1>Contact Us</h1>
+
     </div>
 
     <div id="carouselControls" className="carousel slide" data-ride="carousel">
@@ -37,7 +38,7 @@ const Project = (particlesOptions) => (
       </ol>
       <div className="carousel-inner">
 
-      <div className="carousel-item">
+      <div className="carousel-item active">
         <img className="d-block w-100" src={qmul_logo} alt="First slide" height='100px' width='120px'/>
         <div className="carousel-caption">
           <h3>MSC - BioInformatics</h3>
@@ -54,7 +55,7 @@ const Project = (particlesOptions) => (
         </div>
 
 
-        <div className="carousel-item active">
+        <div className="carousel-item">
           <img className="d-block w-100" src={background_dark} alt="Third slide" height='100px'/>
           <div className="carousel-caption">
             <h3>Email</h3>
@@ -74,7 +75,7 @@ const Project = (particlesOptions) => (
       </div>
       <a className="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
+        <span classNameName="sr-only">Previous</span>
       </a>
       <a className="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
