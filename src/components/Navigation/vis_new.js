@@ -20,198 +20,78 @@ class Visualisation extends Component {
 		this.state = {
 			uniprotacc: this.props.match.params.id,
 			data_info: "",
-			// tissue_type: "breast cell line diseased",
-			// state_type: "healthy",
-			// orf_type: "ORF2P",
-			tissue_type: "",
-			state_type: "",
-			orf_type: "",
-			tissue_dropdown:[],
-			orf_dropdown:[],
 		};
 
 		this.SortVariantList = this.SortVariantList.bind(this);
 		this.WaitingTime = this.WaitingTime.bind(this);
-		this.genDropDown = this.genDropDown.bind(this);
-		this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-
 	}
 
 
 	componentDidMount = () => {
+        // const script = document.createElement("script");
+				//
+        // script.src = "https://use.typekit.net/foobar.js";
+        // script.async = true;
+				//
+        // document.body.appendChild(script);
+				// fetch("http://localhost:3001/P05067.json")
+				// .then(response => response.json())
+				// .then(data => this.setState({information1: data}))
 
-			// console.log(this.state.uniprotacc)
-			 // var yourDiv = document.getElementById('protvis');
-       // var instance = new ProtVista({
-       //      el: yourDiv,
-       //      uniprotacc: this.state.uniprotacc,
-				// 		selectedFeature: {
-       //      begin: 166,
-       //      end: 166,
-       //      type: "variant",
-				// 		alternativeSequence:"Q"
-				// 	},
-				// 		// uniprotacc : 'P05067',
-				// 		// defaultSources: false
-				// 		exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
-				// 		// categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
-				// 		// selectedFeature: {
-       //      // begin: 96,
-       //      // end: 110,
-       //      // type: 'REGION'
-       //      // }
-				// 		//Default sources will **not** be included
-			 //
-				// 		// customDataSource: {
-		   //      // url: './externalFeatures_',
-		   //      // source: 'P05067',
-		   //      // useExtension: true
-				// 		// },
-				// 		// overwritePredictions: true,
-			 //
-				// 		defaultSources: false,
-				// 		customDataSource: {
-				// 		// url: 'https://rtpea.com/visualise/',
-		   //      // url: 'http://localhost:3001/visualise/',
-				// 		// url: this.props.urlSource+'/visualise/',
-				// 		// url: this.props.urlSource+'/newvis/ORF2P/breast cell line diseased/normal',
-				// 		url: this.props.urlSource+'/newvis/'+this.state.orf_type+'/'+this.state.tissue_type+'/'+this.state.state_type,
-				// 		// url: this.props.urlSource+'/newvis/ORF2P/jurkat cells/breast cancer',
-		   //      source: 'Proteomics_QMUL',
-		   //      useExtension: false,
-				// 		overwritePredictions: true
-				// 	},
-				// 		// customConfig: "ProtVista/src/config.json"
-				// 		// customConfig: 'https://rtpea.com/visualise_config.json/'
-				// 		// customConfig: 'http://localhost:3001/visualise_config.json/'
-				// 		customConfig: this.props.urlSource+'/visualise_config.json/'
-				// 		// customConfig: './data/externalConfig.json',
-       //  });
+
+				// .then(data =>{return
+			// fetch("http://localhost:3001/visualise/" + this.props.match.params.id)
+			// .then(response => response.json())
+			// .then(data => this.setState({data_info: data}))
+
+
+
+			 var yourDiv = document.getElementById('protvis');
+       var instance = new ProtVista({
+            el: yourDiv,
+            uniprotacc: this.state.uniprotacc,
+						selectedFeature: {
+            begin: 166,
+            end: 166,
+            type: "variant",
+						alternativeSequence:"Q"
+					},
+						// uniprotacc : 'P05067',
+						// defaultSources: false
+						exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
+						// categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
+						// selectedFeature: {
+            // begin: 96,
+            // end: 110,
+            // type: 'REGION'
+            // }
+						//Default sources will **not** be included
+
+						// customDataSource: {
+		        // url: './externalFeatures_',
+		        // source: 'P05067',
+		        // useExtension: true
+						// },
+						// overwritePredictions: true,
+
+						defaultSources: false,
+						customDataSource: {
+						// url: 'https://rtpea.com/visualise/',
+		        // url: 'http://localhost:3001/visualise/',
+						url: this.props.urlSource+'/visualise/',
+		        source: 'Proteomics_QMUL',
+		        useExtension: false,
+						overwritePredictions: true
+					},
+						// customConfig: "ProtVista/src/config.json"
+						// customConfig: 'https://rtpea.com/visualise_config.json/'
+						// customConfig: 'http://localhost:3001/visualise_config.json/'
+						customConfig: this.props.urlSource+'/visualise_config.json/'
+						// customConfig: './data/externalConfig.json',
+        });
 			// }))
 				//
 				// instance.selectFeature('variant', 108, 108, 'K')
-
-				fetch(this.props.urlSource+'/select_data')
-				.then(response => response.json())
-				.then(data => { //console.log(data['Tissue'])
-					this.setState({tissue_dropdown: data['Tissue']})
-			})
-
-			fetch(this.props.urlSource+'/orfnames')
-				.then(response => response.json())
-				.then(data => {
-					this.setState({orf_dropdown:data})
-				})
-
-
-}
-
-handleCheckboxChange = (e) => {
-	var healthy_checkbox = document.getElementById("healthy").checked
-	var disease_checkbox = document.getElementById("diseased").checked
-
-	if (healthy_checkbox === true && disease_checkbox === true){
-		this.setState({state_type: "both"})
-	} else if (healthy_checkbox === true){
-		this.setState({state_type: "healthy"})
-	} else {
-		this.setState({state_type: "diseased"})
-	}
-}
-
-
-genDropDown = () => {
-
-	const tissueListItems = this.state.tissue_dropdown.map((tissue) => <option value={tissue}>{tissue}</option>);
-	const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
-
-return (
-	<div>
-		<select id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
-			<option value="">-</option>
-			{tissueListItems}
-		</select>
-
-		<select id="orf_dropdown" onChange={e => this.setState({orf_type:e.target.value})}>
-			<option value="">-</option>
-			{orfListItems}
-		</select>
-
-		<input id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy
-		<input id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
-
-		<button onClick={e => this.runAgain()}>Search</button>
-	</div>
-)
-}
-
-
-runAgain = () => {
-			// const script = document.createElement("script");
-			//
-			// script.src = "https://use.typekit.net/foobar.js";
-			// script.async = true;
-			//
-			// document.body.appendChild(script);
-			// fetch("http://localhost:3001/P05067.json")
-			// .then(response => response.json())
-			// .then(data => this.setState({information1: data}))
-
-
-			// .then(data =>{return
-		// fetch("http://localhost:3001/visualise/" + this.props.match.params.id)
-		// .then(response => response.json())
-		// .then(data => this.setState({data_info: data}))
-
-		var yourDiv = document.getElementById('protvis');
-		var instance = new ProtVista({
-				 el: yourDiv,
-				 uniprotacc: this.state.uniprotacc,
-				 selectedFeature: {
-				 begin: 166,
-				 end: 166,
-				 type: "variant",
-				 alternativeSequence:"Q"
-			 },
-				 // uniprotacc : 'P05067',
-				 // defaultSources: false
-				 exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
-				 // categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
-				 // selectedFeature: {
-				 // begin: 96,
-				 // end: 110,
-				 // type: 'REGION'
-				 // }
-				 //Default sources will **not** be included
-
-				 // customDataSource: {
-				 // url: './externalFeatures_',
-				 // source: 'P05067',
-				 // useExtension: true
-				 // },
-				 // overwritePredictions: true,
-
-				 defaultSources: false,
-				 customDataSource: {
-				 // url: 'https://rtpea.com/visualise/',
-				 // url: 'http://localhost:3001/visualise/',
-				 // url: this.props.urlSource+'/visualise/',
-				 // url: this.props.urlSource+'/newvis/ORF2P/breast cell line diseased/normal',
-				 url: this.props.urlSource+'/newvis/'+this.state.orf_type+'/'+this.state.tissue_type+'/'+this.state.state_type,
-				 // url: this.props.urlSource+'/newvis/ORF2P/jurkat cells/breast cancer',
-				 source: 'Proteomics_QMUL',
-				 useExtension: false,
-				 overwritePredictions: true
-			 },
-				 // customConfig: "ProtVista/src/config.json"
-				 // customConfig: 'https://rtpea.com/visualise_config.json/'
-				 // customConfig: 'http://localhost:3001/visualise_config.json/'
-				 customConfig: this.props.urlSource+'/visualise_config.json/'
-				 // customConfig: './data/externalConfig.json',
-		 });
-		// }))
-			//
-			// instance.selectFeature('variant', 108, 108, 'K')
 
 }
 
@@ -275,16 +155,12 @@ runAgain = () => {
 		return (
 			<div>
 
-				{/* {console.log(this.state.data_info)} {console.log(window.location)}*/}
-
+				{/* {console.log(this.state.data_info)} */}
+				{console.log(window.location)}
 
 
 			<div className="background-body-vis">
 				<NavVis/>
-				<button onClick={e => {
-					document.getElementById('protvis').innerHTML = ''
-					this.runAgain()}}>test</button>
-
 				<div className="text-center">
 					<h1>ProtVista Protein Viewer</h1>
 					<div className="" style={{color:"black"}}>
@@ -359,13 +235,6 @@ runAgain = () => {
 					<div className="line-seperator"></div>
 				<br/>
 				</div>
-
-
-				{this.genDropDown()}
-
-
-
-				{/*
 				Enter Protein:
 				<input
           placeholder="e.g. ORF1p"
@@ -378,7 +247,7 @@ runAgain = () => {
 						}
 
             }
-          }}/>*/}
+          }}/>
 
 					{/* <input
 	          placeholder=""
