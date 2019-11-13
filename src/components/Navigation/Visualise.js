@@ -29,7 +29,7 @@ class Visualisation extends Component {
 			tissue_dropdown:[],
 			orf_dropdown:[],
 			noFilterData: false,
-			siftScore: 0,
+			siftScore: 80,
 		};
 
 		this.SortVariantList = this.SortVariantList.bind(this);
@@ -112,7 +112,7 @@ handleCheckboxChange = (e) => {
 	var healthy_checkbox = document.getElementById("healthy").checked
 	var disease_checkbox = document.getElementById("diseased").checked
 
-	if (healthy_checkbox === true && disease_checkbox === true){
+	if (healthy_checkbox === true && disease_checkbox === true || healthy_checkbox === false && disease_checkbox === false){
 		this.setState({state_type: "both"})
 	} else if (healthy_checkbox === true){
 		this.setState({state_type: "healthy"})
@@ -128,21 +128,45 @@ genDropDown = () => {
 	// const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
 
 return (
-	<div>
-		<select id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
-			<option value="">-</option>
-			{tissueListItems}
-		</select>
+	<div className="container" style={{paddingLeft:'22%'}}>
+	<table style={{borderSpacing: '50px 0'}}>
+		<tr>
+			<th>Tissue</th>
+			<th>State</th>
+			<th>Score</th>
+		</tr>
+		<tr>
+			<td style={{padding: '0px 20px'}}>
+				<select id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
+					<option value="">-</option>
+					{tissueListItems}
+				</select>
+			</td>
+
+			<td style={{padding: '0px 20px'}}>
+				<input id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy <br/>
+				<input id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
+			</td>
+
+			<td style={{padding: '0px 20px'}}>
+				<select id="siftScore" onChange={e => this.setState({siftScore: e.target.value})}>
+					<option value="80">High Confidence</option>
+					<option value="60">Med Confidence</option>
+					<option value="0">Low Confidence</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
 
 		{/*}<select id="orf_dropdown" onChange={e => this.setState({orf_type:e.target.value})}>
 			<option value="">-</option>
 			{orfListItems}
 		</select>*/}
 
-		<input id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy
-		<input id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
 
-		<input id="siftScore" type="text" style={{width:'50px'}} onChange={e => this.setState({siftScore: e.target.value})} value={this.state.siftScore}/>
+
+
 
 		{/*<button onClick={e => this.runAgain()}>Search</button>*/}
 	</div>
