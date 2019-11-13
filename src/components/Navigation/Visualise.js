@@ -24,10 +24,12 @@ class Visualisation extends Component {
 			// state_type: "healthy",
 			// orf_type: "ORF2P",
 			tissue_type: "",
-			state_type: "",
+			state_type: "both",
 			orf_type: "",
 			tissue_dropdown:[],
 			orf_dropdown:[],
+			noFilterData: false,
+			siftScore: 0,
 		};
 
 		this.SortVariantList = this.SortVariantList.bind(this);
@@ -97,11 +99,11 @@ class Visualisation extends Component {
 					this.setState({tissue_dropdown: data['Tissue']})
 			})
 
-			fetch(this.props.urlSource+'/orfnames')
-				.then(response => response.json())
-				.then(data => {
-					this.setState({orf_dropdown:data})
-				})
+			// fetch(this.props.urlSource+'/orfnames')
+			// 	.then(response => response.json())
+			// 	.then(data => {
+			// 		this.setState({orf_dropdown:data})
+			// 	})
 
 
 }
@@ -123,7 +125,7 @@ handleCheckboxChange = (e) => {
 genDropDown = () => {
 
 	const tissueListItems = this.state.tissue_dropdown.map((tissue) => <option value={tissue}>{tissue}</option>);
-	const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
+	// const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
 
 return (
 	<div>
@@ -132,21 +134,37 @@ return (
 			{tissueListItems}
 		</select>
 
-		<select id="orf_dropdown" onChange={e => this.setState({orf_type:e.target.value})}>
+		{/*}<select id="orf_dropdown" onChange={e => this.setState({orf_type:e.target.value})}>
 			<option value="">-</option>
 			{orfListItems}
-		</select>
+		</select>*/}
 
 		<input id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy
 		<input id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
 
-		<button onClick={e => this.runAgain()}>Search</button>
+		<input id="siftScore" type="text" style={{width:'50px'}} onChange={e => this.setState({siftScore: e.target.value})} value={this.state.siftScore}/>
+
+		{/*<button onClick={e => this.runAgain()}>Search</button>*/}
 	</div>
 )
 }
 
 
-runAgain = () => {
+runAgain = (e,orf) => {
+
+
+	fetch(this.props.urlSource+'/newvis/'+orf+'/'+this.state.tissue_type+'/'+this.state.state_type+'/'+this.state.siftScore)
+	.then(response => response.json())
+	.then(data =>{
+			if (data[0]['features'].length < 1){
+				this.setState({noFilterData: true})
+			} else {
+				this.setState({noFilterData: false})
+			}
+
+
+		})
+
 			// const script = document.createElement("script");
 			//
 			// script.src = "https://use.typekit.net/foobar.js";
@@ -184,7 +202,7 @@ runAgain = () => {
 
 				 defaultSources: false,
 				 customDataSource: {
-				 url: this.props.urlSource+'/newvis/'+this.state.orf_type+'/'+this.state.tissue_type+'/'+this.state.state_type,
+				 url: this.props.urlSource+'/newvis/'+orf+'/'+this.state.tissue_type+'/'+this.state.state_type+'/'+this.state.siftScore,
 				 source: 'Proteomics_QMUL',
 				 useExtension: false,
 				 overwritePredictions: true
@@ -194,6 +212,7 @@ runAgain = () => {
 		// }))
 			//
 			// instance.selectFeature('variant', 108, 108, 'K')
+		setTimeout(() => this.removeOldList(), 500)
 
 }
 
@@ -286,9 +305,9 @@ runAgain = () => {
 
 			<div className="background-body-vis">
 				<NavVis/>
-				<button onClick={e => {
+				{/*}<button onClick={e => {
 					document.getElementById('protvis').innerHTML = ''
-					this.runAgain()}}>test</button>
+					this.runAgain()}}>test</button>*/}
 
 				<div className="text-center">
 					<h1>ProtVista Protein Viewer</h1>
@@ -406,10 +425,13 @@ runAgain = () => {
 
 					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
 						<br/>
+						{this.state.noFilterData === true ? 'There are 0 results for selected filters' : ''}
+						<br/>
 						<button
                       className="btn btn-primary"
                       onClick={e => {
-                        window.location = "../visualise/ORF1P";
+                        // window.location = "../visualise/ORF1P";
+												this.runAgain(e,'ORF1P')
                       }}
                     >
                       ORF1p
@@ -418,7 +440,8 @@ runAgain = () => {
 					<button
                       className="btn btn-primary"
                       onClick={e => {
-                        window.location = "../visualise/ORF2P";
+                        // window.location = "../visualise/ORF2P";
+												this.runAgain(e,'ORF2P')
                       }}
                     >
                       ORF2p
