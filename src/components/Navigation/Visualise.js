@@ -163,51 +163,33 @@ runAgain = () => {
 		// .then(response => response.json())
 		// .then(data => this.setState({data_info: data}))
 
+		// document.getElementById('protvis').innerHTML = '';
+		var instance = new ProtVista({})
+
 		var yourDiv = document.getElementById('protvis');
 		var instance = new ProtVista({
 				 el: yourDiv,
-				 uniprotacc: this.state.uniprotacc,
-				 selectedFeature: {
-				 begin: 166,
-				 end: 166,
-				 type: "variant",
-				 alternativeSequence:"Q"
-			 },
+				 // uniprotacc: this.state.uniprotacc,
+				//  selectedFeature: {
+				//  begin: 166,
+				//  end: 166,
+				//  type: "variant",
+				//  alternativeSequence:"Q"
+			 // },
 				 // uniprotacc : 'P05067',
 				 // defaultSources: false
 				 exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
 				 // categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
-				 // selectedFeature: {
-				 // begin: 96,
-				 // end: 110,
-				 // type: 'REGION'
-				 // }
-				 //Default sources will **not** be included
 
-				 // customDataSource: {
-				 // url: './externalFeatures_',
-				 // source: 'P05067',
-				 // useExtension: true
-				 // },
-				 // overwritePredictions: true,
 
 				 defaultSources: false,
 				 customDataSource: {
-				 // url: 'https://rtpea.com/visualise/',
-				 // url: 'http://localhost:3001/visualise/',
-				 // url: this.props.urlSource+'/visualise/',
-				 // url: this.props.urlSource+'/newvis/ORF2P/breast cell line diseased/normal',
 				 url: this.props.urlSource+'/newvis/'+this.state.orf_type+'/'+this.state.tissue_type+'/'+this.state.state_type,
-				 // url: this.props.urlSource+'/newvis/ORF2P/jurkat cells/breast cancer',
 				 source: 'Proteomics_QMUL',
 				 useExtension: false,
 				 overwritePredictions: true
 			 },
-				 // customConfig: "ProtVista/src/config.json"
-				 // customConfig: 'https://rtpea.com/visualise_config.json/'
-				 // customConfig: 'http://localhost:3001/visualise_config.json/'
 				 customConfig: this.props.urlSource+'/visualise_config.json/'
-				 // customConfig: './data/externalConfig.json',
 		 });
 		// }))
 			//
@@ -216,6 +198,7 @@ runAgain = () => {
 }
 
 		SortVariantList = () => {
+
 			try {
 			  var list, i, switching, b, shouldSwitch;
 			  list = document.getElementById("orderthelist");
@@ -253,8 +236,30 @@ runAgain = () => {
 			}
 		}
 
+
+		removeOldList = () => {
+			var tissue_dropdown = document.getElementById("tissue_dropdown").value
+				var list, i, switching, b, shouldSwitch;
+				list = document.getElementById("orderthelist");
+				if (list !== null){
+					// console.log(list)
+					b = list.getElementsByTagName("LI");
+					// console.log(b)
+					//Loop through all list-items:
+					for (i = 1; i < (b.length); i++) {
+						// console.log(b[i])
+						// console.log(b[i].className)
+						if (b[i].className !== tissue_dropdown){
+							document.getElementsByClassName(b[i].className)[0].innerHTML = ''
+						}
+				}
+			}
+		}
+
 	WaitingTime= () => {
-  setTimeout(() => this.SortVariantList(), 500);
+  setTimeout(() => {this.SortVariantList()
+		setTimeout(() => this.removeOldList(), 500)}, 500)
+
 }
 
 
