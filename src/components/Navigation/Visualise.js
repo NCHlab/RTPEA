@@ -124,7 +124,7 @@ handleCheckboxChange = (e) => {
 
 genDropDown = () => {
 
-	const tissueListItems = this.state.tissue_dropdown.map((tissue) => <option value={tissue}>{tissue}</option>);
+	const tissueListItems = this.state.tissue_dropdown.sort().map((tissue) => <option value={tissue}>{tissue}</option>);
 	// const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
 
 return (
@@ -137,19 +137,21 @@ return (
 		</tr>
 		<tr>
 			<td style={{padding: '0px 20px'}}>
-				<select id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
-					<option value="">-</option>
-					{tissueListItems}
-				</select>
+
+					 <select className="form-control" id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
+					 	<option value="">-</option>
+						{tissueListItems}
+					 </select>
+
 			</td>
 
 			<td style={{padding: '0px 20px'}}>
-				<input id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy <br/>
-				<input id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
+				<input className="form-check-input" id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy <br/>
+				<input className="form-check-input" id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
 			</td>
 
 			<td style={{padding: '0px 20px'}}>
-				<select id="siftScore" onChange={e => this.setState({siftScore: e.target.value})}>
+				<select className="form-control" id="siftScore" onChange={e => this.setState({siftScore: e.target.value})}>
 					<option value="80">High Confidence</option>
 					<option value="60">Med Confidence</option>
 					<option value="0">Low Confidence</option>
@@ -293,17 +295,17 @@ runAgain = (e,orf) => {
 						// console.log(b[i])
 
 						if (b[i].className !== tissue_dropdown && b[i].className !== tissue_dropdown + " diseased" && b[i].className !== tissue_dropdown + " meta_missing"){
-							var test = document.getElementsByClassName(b[i].className)
-							for (k = 0; k < test.length; k++){
+							var listRow = document.getElementsByClassName(b[i].className)
+							for (k = 0; k < listRow.length; k++){
 								// if (b[i].className.includes('breast') && test[k].className !==)
 								if (b[i].className.includes('breast')){
-									if (b[i].className === 'breast' && test[k].className !== 'breast cell line' && test[k].className !== 'breast cell line diseased'){
-										test[k].innerHTML = ""
-									} else if (b[i].className === 'breast cell line' && test[k].className !== 'breast' && test[k].className !== 'breast diseased'){
-										test[k].innerHTML = ""
+									if (b[i].className === 'breast' && listRow[k].className !== 'breast cell line' && listRow[k].className !== 'breast cell line diseased'){
+										listRow[k].innerHTML = ""
+									} else if (b[i].className === 'breast cell line' && listRow[k].className !== 'breast' && listRow[k].className !== 'breast diseased'){
+										listRow[k].innerHTML = ""
 										}
 								} else {
-									test[k].innerHTML = ""
+									listRow[k].innerHTML = ""
 								}
 
 						}
