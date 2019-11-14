@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "ProtVista": "^2.0.9",
-    "ideogram": "^1.2.0",
+    "ideogram": "^1.13.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "match-sorter": "^2.2.3",

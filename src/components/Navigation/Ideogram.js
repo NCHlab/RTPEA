@@ -67,9 +67,14 @@ class Ideogram_c extends Component {
 			.then( data => {
     return new Ideogram({
       organism: 'human',
-      dataDir: 'https://unpkg.com/ideogram@0.13.0/dist/data/bands/native/',
+      dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
 			annotations: this.state.annotation_data,
 			annotationsLayout: "tracks",
+			annotationTracks:[
+      {id: 'pathogenicTrack', displayName: 'Pathogenic', color: '#F00', shape: 'triangle'},
+      {id: 'uncertainSignificanceTrack', displayName: 'Uncertain significance', color: '#CCC', shape: 'triangle'},
+      {id: 'benignTrack',  displayName: 'Benign', color: '#8D4', shape: 'triangle'}
+    ],
 			onWillShowAnnotTooltip: hyperlinkProtein,
 			rotatable: true,
 
