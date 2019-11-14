@@ -128,7 +128,7 @@ genDropDown = () => {
 	// const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
 
 return (
-	<div className="container" style={{paddingLeft:'22%'}}>
+	<div className="container" style={{paddingLeft:'17%'}}>
 	<table style={{borderSpacing: '50px 0'}}>
 		<tr>
 			<th>Tissue</th>
@@ -282,7 +282,7 @@ runAgain = (e,orf) => {
 
 		removeOldList = () => {
 			var tissue_dropdown = document.getElementById("tissue_dropdown").value
-				var list, i, switching, b, shouldSwitch;
+				var list, i,j,k, switching, b, shouldSwitch;
 				list = document.getElementById("orderthelist");
 				if (list !== null){
 					// console.log(list)
@@ -291,9 +291,46 @@ runAgain = (e,orf) => {
 					//Loop through all list-items:
 					for (i = 1; i < (b.length); i++) {
 						// console.log(b[i])
-						// console.log(b[i].className)
-						if (b[i].className !== tissue_dropdown){
-							document.getElementsByClassName(b[i].className)[0].innerHTML = ''
+
+						if (b[i].className !== tissue_dropdown && b[i].className !== tissue_dropdown + " diseased" && b[i].className !== tissue_dropdown + " meta_missing"){
+							var test = document.getElementsByClassName(b[i].className)
+							for (k = 0; k < test.length; k++){
+								// if (b[i].className.includes('breast') && test[k].className !==)
+								if (b[i].className.includes('breast')){
+									if (b[i].className === 'breast' && test[k].className !== 'breast cell line' && test[k].className !== 'breast cell line diseased'){
+										test[k].innerHTML = ""
+									} else if (b[i].className === 'breast cell line' && test[k].className !== 'breast' && test[k].className !== 'breast diseased'){
+										test[k].innerHTML = ""
+										}
+								} else {
+									test[k].innerHTML = ""
+								}
+
+						}
+
+							// 	if (b[i].className === 'breast' && test[k].className !== 'breast cell line' && test[k].className !== 'breast cell line diseased'){
+							// 		test[k].innerHTML = ""
+							// 	} else if (b[i].className === 'breast cell line' && test[k].className !== 'breast' && test[k].className !== 'breast diseased'){
+							// 		test[k].innerHTML = ""
+							//
+							// }
+							// for (j = 0; j <= document.getElementsByClassName(b[i].className); j++){
+							// 	document.getElementsByClassName(b[i].className)[j].innerHTML = ''
+							// }
+
+						// 	if (b[i].className.includes('breast cell line')){
+						// 		if (test[k].className === 'breast' || test[k].className === 'breast diseased'){
+						// 			test[k].innerHTML = ""
+						// 		}
+						// 	} else {
+						// 		test[k].innerHTML = ""
+						// 	}
+						// }
+
+							// console.log(b[i].className)
+							// console.log(document.getElementsByClassName(b[i].className)[0].innerHTML)
+							// document.getElementsByClassName(b[i].className)[0].innerHTML = ''
+							// document.getElementsByClassName(b[i].className)[1].innerHTML = ''
 						}
 				}
 			}
@@ -301,7 +338,7 @@ runAgain = (e,orf) => {
 
 	WaitingTime= () => {
   setTimeout(() => {this.SortVariantList()
-		setTimeout(() => this.removeOldList(), 500)}, 500)
+	}, 500)//setTimeout(() => this.removeOldList(), 500)
 
 }
 
