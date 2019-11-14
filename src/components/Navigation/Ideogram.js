@@ -61,46 +61,89 @@ class Ideogram_c extends Component {
 		}
 			// fetch("http://rtpea.com/sequence/ideogram/" + this.state.prot_seq)
 			// fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
-			fetch(this.props.urlSource+"/ideogram/" + this.state.prot_seq)
-			.then(response => response.json())
-			.then(data => {this.setState({annotation_data: data})})
-			.then( data => {
-    return new Ideogram({
-      organism: 'human',
-      dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-			annotations: this.state.annotation_data,
-			annotationsLayout: "tracks",
-			annotationTracks:[
-      {id: 'pathogenicTrack', displayName: 'Pathogenic', color: '#F00', shape: 'triangle'},
-      {id: 'uncertainSignificanceTrack', displayName: 'Uncertain significance', color: '#CCC', shape: 'triangle'},
-      {id: 'benignTrack',  displayName: 'Benign', color: '#8D4', shape: 'triangle'}
-    ],
-			onWillShowAnnotTooltip: hyperlinkProtein,
-			rotatable: true,
+	// 		fetch(this.props.urlSource+"/ideogram/" + this.state.prot_seq)
+	// 		.then(response => response.json())
+	// 		.then(data => {
+  //   return new Ideogram({
+  //     organism: 'human',
+  //     dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
+	// 		annotations: data,
+	// 		annotationsLayout: "tracks",
+	// 		onWillShowAnnotTooltip: hyperlinkProtein,
+	// 		rotatable: true,
+  //     container: '#ideo-container'
+  //   });
+	// 	})
+  // }
 
-			// chrHeight: 400,
-			// chromosome: "10",
-			// orientation: 'vertical',
-			// showBandLabels: true,
-			// brush: 'chr1',
 
-			// brush: 'chr10:104325484-119977655',
-			// annotationsDisplayedTracks: [0,1, 2,3],
-			// annotationTracks: this.state.annotationTracks,
-			// annotationsPath: "http://localhost:3001/ideogram",
-			// annotationsColor: "#F00",
-			// annotationsLayout: annotationTracks,
-		// 	annotations: [{
-		// 	"_id": "5b364f11cf72732a72cb47c1",
-    //   "name": "BRCA1",
-    //   "chr": "17",
-    //   "start": 43044294,
-    //   "stop": 43125482
-    // }],
-      container: '#ideo-container'
-    });
-		})
-  }
+
+// return new Ideogram({
+// 	organism: 'human',
+// 	dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
+// 	annotations: this.props.urlSource+"/ideogram/" + this.state.prot_seq+".json",
+// 	annotationsLayout: "tracks",
+// 	onWillShowAnnotTooltip: hyperlinkProtein,
+// 	rotatable: true,
+// 	container: '#ideo-container'
+// });
+
+		// var config = {
+		// 		  organism: 'human',
+		// 		  // dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
+		// 			dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
+		// 	    annotationsPath: this.props.urlSource+'/ideogram2/s.json',
+		// 			annotationsLayout: 'tracks',
+		// 			// onWillShowAnnotTooltip: hyperlinkProtein,
+		// 			rotatable: true,
+		// 			// assembly: 'GRCh37',
+		// 			chrHeight: 600,
+		// 			container: '#ideo-container',
+		// 			orientation: 'vertical',
+		//
+		//   };
+
+		var annotHeight = 3.5
+
+		// 	var annotationTracks = [
+    //   {id: 'test1', displayName: 'Pathogenic', color: '#F00', shape: 'm1,1 l 2 ' + (10 * annotHeight) +'l ' + (2*annotHeight) + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
+    //   {id: 'test32', displayName: 'Uncertain significance', color: '#CCC', shape: 'circle'},
+    //   {id: 'test45',  displayName: 'Benign', color: '#8D4', shape: 'm0,0 l 0 ' + (2 * annotHeight) +'l ' + annotHeight/2 + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
+		// 	{id: 'test245',  displayName: 'Benign', color: '#000000', shape: 'm0,0 l 0 ' + (2 * annotHeight) +'l ' + annotHeight/2 + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
+    // ];
+
+	// 	var annotationTracks = [
+	// 	{id: 'test1', displayName: 'Pathogenic', color: '#F00', shape: 'rectangle'},
+	// 	{id: 'test32', displayName: 'Uncertain significance', color: '#CCC', shape: 'rectangle'},
+	// 	{id: 'test45',  displayName: 'Benign', color: '#8D4', shape: 'rectangle'},
+	// 	{id: 'test245',  displayName: 'Benign', color: '#000000', shape:'rectangle'},
+	// ];
+
+
+			var config = {
+					 organism: 'human',
+					 orientation: 'vertical',
+					 container: '#ideo-container',
+					 annotationsLayout: 'tracks',
+					 // chrWidth: 8,
+					 chrHeight: 600,
+					 annotationsPath: this.props.urlSource+'/ideogram2/s.json',
+					 dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
+					 // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
+					 // annotationTracks: annotationTracks,
+					 annotationHeight: 3.5,
+					 onWillShowAnnotTooltip: hyperlinkProtein,
+				 };
+		var	ideogram = new Ideogram(config);
+				// })
+
+
+
+
+			}
+
+
+
 
 	PA2_family = () => {
 
