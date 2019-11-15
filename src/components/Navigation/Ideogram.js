@@ -103,7 +103,7 @@ class Ideogram_c extends Component {
 		//
 		//   };
 
-		var annotHeight = 3.5
+		// var annotHeight = 3.5
 
 		// 	var annotationTracks = [
     //   {id: 'test1', displayName: 'Pathogenic', color: '#F00', shape: 'm1,1 l 2 ' + (10 * annotHeight) +'l ' + (2*annotHeight) + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
@@ -134,7 +134,7 @@ class Ideogram_c extends Component {
 					 annotationHeight: 3.5,
 					 onWillShowAnnotTooltip: hyperlinkProtein,
 				 };
-		var	ideogram = new Ideogram(config);
+		return new Ideogram(config);
 				// })
 
 

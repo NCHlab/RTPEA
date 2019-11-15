@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 // import github_logo from "../ContactUs/github.png";
 import linkedin_logo from "../ContactUs/linkedin1.png";
 import nchlab from "../ContactUs/github_nchlab1.png";

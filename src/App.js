@@ -7,16 +7,16 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Navigation/Footer';
-import Particles from 'react-particles-js';
-import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { withRouter, Switch } from 'react-router-dom';
+// import Particles from 'react-particles-js';
+// import { render } from 'react-dom'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch } from 'react-router-dom';
 import Home from './components/Navigation/Home';
 import Api from './components/Navigation/Api';
 import Browse from './components/Navigation/Browse';
 import Browse2 from './components/Navigation/Browse2';
 import Visualise from './components/Navigation/Visualise';
-import Expression_Atlas from './components/Navigation/Expression_Atlas';
+// import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
@@ -26,9 +26,9 @@ import Download from './components/Navigation/Download';
 import Homeredirect from './components/Navigation/Homeredirect';
 
 import Loading from 'react-loading-bar'
-import JSONPretty from 'react-json-pretty';
-import SVG from 'react-inlinesvg';
-import Loader from 'react-loader';
+// import JSONPretty from 'react-json-pretty';
+// import SVG from 'react-inlinesvg';
+// import Loader from 'react-loader';
 
 
 import './App.css';

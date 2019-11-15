@@ -150,7 +150,7 @@ class Info extends Component {
           <h1> Demo Video </h1>
         </p>
 
-          <iframe width="1280" height="720"
+          <iframe title="ytVid" width="1280" height="720"
             src="https://www.youtube.com/embed/5FkMAEBXEfE">
           </iframe>
           <br />
@@ -178,12 +178,3 @@ class Info extends Component {
 }
 
 export default Info;
-
-{
-  /* <div className="container">
-	<h2>RTPEA Flowchart</h2>
-	<h2>{this.ImageArray(this.state.index)}</h2>
-	<ImageMapper src={Flowchart}  map={Soft_map} fillColor="rgba(0, 0, 0, 0.1)" className="pb6" alt="" height={"500"} width={"908"} onMouseEnter={this.MouseEnter} />
-	{/* <img src={Flowchart} alt="FlowChart" height="600px" width="1090px" />
-</div> */
-}
