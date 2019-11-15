@@ -8,6 +8,7 @@ import highconf from "../Images/highconf.png";
 import medconf from "../Images/medconf.png";
 import lowconf from "../Images/lowconf.png";
 import matchSorter from 'match-sorter'
+import BrowseOtherSpecies from './BrowseOtherSpecies.js'
 // import AdBlockDetect from 'react-ad-block-detect';
 // import DetectAdBlock from "./DetectAdBlock.js";
 
@@ -146,25 +147,15 @@ check_expr_orf2 = (d) => {
     filterMethod: (filter, rows) =>
                     matchSorter(rows, filter.value, { keys: ["disease"],threshold: matchSorter.rankings.CONTAINS }),
                   filterAll: true
+  }, {
+    Header: <h4><b>Organ</b></h4>,
+    accessor: 'organ',
+    filterMethod: (filter, rows) =>
+                    matchSorter(rows, filter.value, { keys: ["organ"],threshold: matchSorter.rankings.CONTAINS }),
+                  filterAll: true,
+    show: false
   }
-  // }, {
-  //   Header: 'Tissue',
-  //   id: "tiss",
-  //   accessor: data => {var mylist=[]
-  //                         for (var i in data.sample[0]){
-  //                           if (i === "tissue_type"){
-  //                             mylist.push([i])
-  //                             console.log([i.key])
-  //                           }
-  //
-  //
-  //                       }
-  //
-  //                         console.log(mylist)
-  //                         return mylist
-  //                       }
-  //
-  // }]
+
 ]
   }]
 
@@ -886,7 +877,8 @@ const orf2p_column = [{
 
 {/* </div> */}
           </div>
-
+<br/>
+<BrowseOtherSpecies/>
         </div>
 )
   }

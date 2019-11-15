@@ -222,7 +222,7 @@ runAgain = (e,orf) => {
 			 // },
 				 // uniprotacc : 'P05067',
 				 // defaultSources: false
-				 exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
+				 // exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
 				 // categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
 
 

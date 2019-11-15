@@ -104,9 +104,9 @@ class Ideogram_c extends Component {
 		//   };
 
 		// var annotHeight = 3.5
-
+		//
 		// 	var annotationTracks = [
-    //   {id: 'test1', displayName: 'Pathogenic', color: '#F00', shape: 'm1,1 l 2 ' + (10 * annotHeight) +'l ' + (2*annotHeight) + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
+    //   {id: 'test1', displayName: 'Pathogenic', color: '#FFF', shape: 'm1,1 l 2 ' + (10 * annotHeight) +'l ' + (2*annotHeight) + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
     //   {id: 'test32', displayName: 'Uncertain significance', color: '#CCC', shape: 'circle'},
     //   {id: 'test45',  displayName: 'Benign', color: '#8D4', shape: 'm0,0 l 0 ' + (2 * annotHeight) +'l ' + annotHeight/2 + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
 		// 	{id: 'test245',  displayName: 'Benign', color: '#000000', shape: 'm0,0 l 0 ' + (2 * annotHeight) +'l ' + annotHeight/2 + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
@@ -120,23 +120,50 @@ class Ideogram_c extends Component {
 	// ];
 
 
+			// var config = {
+			// 		 organism: 'human',
+			// 		 orientation: 'vertical',
+			// 		 container: '#ideo-container',
+			// 		 annotationsLayout: 'tracks',
+			// 		 // annotationsColor:'#fff',
+			// 		 // chrWidth: 8,
+			// 		 chrHeight: 600,
+			// 		 annotationsPath: this.props.urlSource+'/ideogram2/s.json',
+			// 		 dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
+			// 		 // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
+			// 		 // annotationTracks: annotationTracks,
+			// 		 annotationHeight: 3.5,
+			// 		 onWillShowAnnotTooltip: hyperlinkProtein,
+			// 	 };
+
+			// var myannotations =  [
+      //     {name: 'APOB', chr: '2', start: 21001429, stop: 24044073, shape: 'm4,1 l0 5l 5 0l 0 -5z', color: '#F00'},
+      //     {name: 'CTLA4', chr: '2', start: 203867788, stop: 203873960, shape: 'm4,1 l0 290l 5 0l 0 -290z', color: '#FFF'}
+      //   ]
+			fetch(this.props.urlSource+"/ideogram2/s.json")
+			.then(response => response.json())
+			.then(data => {
 			var config = {
 					 organism: 'human',
 					 orientation: 'vertical',
 					 container: '#ideo-container',
 					 annotationsLayout: 'tracks',
+					 // annotationsColor:'#fff',
 					 // chrWidth: 8,
+					 annotations: data,
 					 chrHeight: 600,
-					 annotationsPath: this.props.urlSource+'/ideogram2/s.json',
+					 // annotationsPath: this.props.urlSource+'/ideogram2/s.json',
 					 dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
 					 // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
 					 // annotationTracks: annotationTracks,
 					 annotationHeight: 3.5,
 					 onWillShowAnnotTooltip: hyperlinkProtein,
 				 };
+
+
 		return new Ideogram(config);
 				// })
-
+})
 
 
 

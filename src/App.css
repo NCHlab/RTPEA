@@ -96,7 +96,16 @@ body2 {
 
 .margin-left-ideogram {
   margin-left: 12%;
+
 }
+
+/* #_ideogramOuterWrap {
+  margin-left: 12%;
+}
+
+#chr1-9606-chromosome-set {
+  overflow: visible;
+} */
 
 .switch-colour{
   background: #000000;
