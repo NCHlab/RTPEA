@@ -543,12 +543,6 @@ const orf2p_column = [{
             {/* If Search Function is not working: Click <a href="../browse">HERE</a> */}
             <button style={{float:"right", display: "inline"}} className="btn btn-danger" onClick={() => window.location = "../browse"}> Refresh Search </button>
 
-            <select onChange={e => this.setState({filtered5: e.target.value})}>
-              <option value="intestine">intestine</option>
-              <option value="lung">lung</option>
-              <option value="meta_missing">meta_missing</option>
-            </select>
-
               <div className="" style={{color:"black"}}>
                 <Popup trigger={<button className="btn btn-primary"> Information! </button>} modal>
                   {close => (
@@ -601,6 +595,20 @@ const orf2p_column = [{
                     </div>
                   )}
                 </Popup>
+
+                <select className="form-control" id="organ_dropdown" style={{width:'150px'}} defaultValue={this.state.filtered5} onChange={e => this.setState({filtered5: e.target.value})}>
+                  <option value="brain">Brain</option>
+                  <option value="breast">Breast</option>
+                  <option value="heart">Heart</option>
+                  <option value="intestine">Intestine</option>
+                  <option value="kidney">Kidney</option>
+                  <option value="liver">Liver</option>
+                  <option value="lung">Lung</option>
+                  <option value="pancreas">Pancreas</option>
+                  <option value="testes">Testes</option>
+                  <option value="uterus">Uterus</option>
+                  <option value="meta_missing">Meta_missing</option>
+                </select>
                 </div>
 
                 {/* <AdBlockDetect>
