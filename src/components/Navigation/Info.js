@@ -133,8 +133,8 @@ class Info extends Component {
                   fillColor="rgba(0, 0, 0, 0.1)"
                   className="pb6"
                   alt=""
-                  height={"413"}
-                  width={"750"}
+                  height={413}
+                  width={750}
                   onMouseEnter={this.MouseEnter}
                 />
               </div>
@@ -146,9 +146,9 @@ class Info extends Component {
         </div>
         <div className="line-seperator" />
         <div className="background-body">
-          <p>
+
           <h1> Demo Video </h1>
-        </p>
+    
 
           <iframe title="ytVid" width="1280" height="720"
             src="https://www.youtube.com/embed/5FkMAEBXEfE">

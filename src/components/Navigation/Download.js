@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import JSONPretty from "react-json-pretty";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import Loader from "react-loader";
-import Switch from "react-toggle-switch";
-import Popup from "reactjs-popup";
 import "react-toggle-switch/dist/css/switch.min.css";
 import NavDownload from "./NavDownload.js";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Highlight from "react-highlight";
 import "../Highlight/styles/vs2015.css";
-// ../../../node_modules/
 
 class Download extends Component {
   constructor(props) {
@@ -149,9 +143,10 @@ class Download extends Component {
             className="background-body4-download"
             style={{ backgroundColor: this.state.data_background_colour }}
           >
-            <div class="container">
+            <div className="container">
               <div style={{textAlign:"center"}}><h3><u>Download from Database</u></h3> </div>
               <table id="download_table" className="table-border">
+              <tbody>
                 <tr>
                   <th>Download</th>
                   <th>Info</th>
@@ -229,6 +224,7 @@ class Download extends Component {
                     Programming Interface. API code examples given below.
                   </td>
                 </tr>
+                </tbody>
               </table>
             <br/>
               <Tabs>
@@ -340,6 +336,7 @@ for (i in List_of_PXD){
 
               <div style={{textAlign:"center"}}><h3><u>Proteomic Parameters</u></h3> </div>
             <table id="download_table" className="table-border">
+            <tbody>
               <tr>
                 <th>Download</th>
                 <th>Info</th>
@@ -360,6 +357,7 @@ for (i in List_of_PXD){
             </td>
             <td>Mass spectrometry parameters - Under Construction</td>
           </tr>
+          </tbody>
           </table>
           </div>
           </div>

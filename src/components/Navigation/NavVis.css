@@ -40,7 +40,7 @@
   color: #FFAA39;
 }
 
-.nav2 .menu li a .active {
+.nav2 .menu li .active {
   color: #FFAA39;
   border-bottom: 3px solid #ffffff;
     /* padding: 10px; */

@@ -12,7 +12,7 @@ function Footer(props) {
 
     return (
 			<div className="whole-footer">
-      
+
 				<div id="" className="footer_logo">
 					<Link to="/"><img src={retrologo} height={80} width={200} className="pb6" alt="logo"/></Link>
 				</div>

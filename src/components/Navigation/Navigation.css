@@ -41,7 +41,7 @@ nav .menu li a {
 
 }
 
-nav .menu li a .active {
+nav .menu li .active {
   font-size: 26px;
   font-weight: bold;
   border-bottom: 3px solid #ffffff;

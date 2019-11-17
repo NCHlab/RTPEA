@@ -74,20 +74,12 @@ class Home extends Component {
       <Particles className="particles" params={this.props.particlesOptions}/>
       <div className="">
         {this.renderWebpage()}
-        {/* {console.log(this.props.urlSource)} */}
-        <p className="App-intro">
+        <div className="App-intro" style={{paddingBottom:"20px"}}>
           <h1 className="container colour-white" style={{textAlign:"center"}}>
-            {/* <b><span style={{color:"#639fff"}}>R</span>e<span style={{color:"#639fff"}}>t</span>roelement <span style={{color:"#639fff"}}>P</span>rotein <span style={{color:"#639fff"}}>E</span>xpression <span style={{color:"#639fff"}}>A</span>tlas</b> */}
             <b>Retroelement Protein Expression Atlas</b>
           </h1>
-          {/* <hr style={{border:"2px solid rgba(43, 198, 255,1"}}/> */}
           <div className="line-seperator"></div>
-        </p>
-        {/* <div className="container" style={{color:"black"}}>
-          <Popup trigger={<button className="btn btn-outline-primary"> Read Me!</button>} modal closeOnDocumentClick position="right center">
-            <div style={{color:"black"}}>Popup content here !! say whatever you need it to say</div>
-          </Popup>
-        </div> */}
+        </div>
 
           <div className="container" style={{color:"black"}}>
             <Popup trigger={<button style={{float:"right", display: "inline"}} className="btn btn-outline-warning"> Information! </button>} modal>
@@ -147,19 +139,19 @@ class Home extends Component {
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={CounterData.prideDatasets} speed={4000} />
+                  <CountTo to={parseInt(CounterData.prideDatasets)} speed={4000} />
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
                   {/* # of Orf2: */}
-                  <CountTo to={CounterData.samples} speed={4000} />
+                  <CountTo to={parseInt(CounterData.samples)} speed={4000} />
                   {/* onComplete={onHide} */}
                 </h1>
               </div>
               <div className="col-md-4">
                 <h1>
-                  <CountTo to={CounterData.specSize} speed={4000} /> GB
+                  <CountTo to={parseInt(CounterData.specSize)} speed={4000} /> GB
                 </h1>
               </div>
             </div>
@@ -192,6 +184,7 @@ class Home extends Component {
                   <br />
                   <hr style={{ borderColor: "#000000" }} />
                   <table>
+                  <tbody>
                     <tr>
                       <th />
                       <th />
@@ -251,6 +244,7 @@ class Home extends Component {
                         -<i>Reach out to us for bugs, suggestions, any features you’d like to see or any specific requests you have</i>
                       </td>
                     </tr>
+                    </tbody>
                   </table>
                   <br />
                   <hr style={{ borderColor: "#000000" }} />
@@ -260,6 +254,7 @@ class Home extends Component {
                 </div>
                 <div className="col-md-6">
                   <table className="text-justify" align="center" width="44%" border="4" >
+                  <tbody>
                     <tr>
                       <th> Server </th>
                       <th> Status</th>
@@ -288,6 +283,7 @@ class Home extends Component {
                         <img src={onlineimg} alt="Online!" />
                       </td>
                     </tr>
+                    </tbody>
                   </table>
                   <br />
                   <br />

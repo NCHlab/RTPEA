@@ -27,12 +27,12 @@ function NavVis(props) {
 
       <div className="nav2">
           <ul className="menu  Tabs tab">
-            <li><a>
+            <li>
               {links.map(({ page, to }) => (
                window.location.href.includes(to)
-               ? <a href={to} className="active">{page}</a>
-                : <NavLink to={to}>{page}</NavLink>))}
-               </a>
+               ? <a key={to} href={to} className="active">{page}</a>
+                : <NavLink key={to} to={to}>{page}</NavLink>))}
+
               </li>
             </ul>
 

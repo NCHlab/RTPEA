@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 import Svg3 from "./human_colourised_lung_grouped.svg";
-import L1Chart from "../Images/L1-Identifications.png";
+
 
 import brain_data from "../Files/brain.json";
 import lung_data from "../Files/lung.json";
@@ -18,22 +16,17 @@ import all_other_tissue_data from "../Files/all_other_tissue.json";
 import all_data from "../Files/all_data.json";
 
 import "./Human.css";
-import $ from "jquery";
 import SVG from "react-inlinesvg";
-import Loader from "react-loader";
+
 import {
-  LineChart,
-  Line,
   BarChart,
   Bar,
   YAxis,
   XAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   Cell
 } from "recharts";
-import Browse from "../Navigation/Browse";
+
 
 class Human extends Component {
   constructor(props) {
@@ -63,13 +56,10 @@ class Human extends Component {
       testes_data: testes_data,
       all_other_tissue_data: all_other_tissue_data,
       all_data: all_data,
-      testes_data: testes_data,
       clicktochange: "Hover over tissue to display graph",
       hovertochange: "Click on tissue to display graph"
     };
 
-    // this.handleInputChange = this.handleInputChange.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
     this.detectSvg = this.detectSvg.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
     this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
@@ -134,7 +124,7 @@ class Human extends Component {
         <div style={{ textAlign: "center" }}>
           <h3>
             Summary Metric:{" "}
-            {this.state.svgType == "whole_human_img" ? "Other Tissues" : this.state.svgType == undefined
+            {this.state.svgType === "whole_human_img" ? "Other Tissues" : this.state.svgType === undefined
               ? "All Tissues" : this.state.svgType.slice(0, 1).toUpperCase() + this.state.svgType.slice(1)}
           </h3>
         </div>
@@ -147,18 +137,12 @@ class Human extends Component {
           <XAxis type="number" tick={this.state.whiteFill}/>
           <YAxis dataKey="name" type="category" width={this.state.yWidth} tick={this.state.whiteFill}/>
           <Tooltip cursor={{ cursor: "pointer" }} wrapperStyle={{ color: "black" }} itemStyle={{ color: "#001fbf" }}/>
-          <Bar dataKey="Number" type="monotone" barSize={25} onMouseOver={{ cursor: "pointer" }}>
+          <Bar dataKey="Number" type="monotone" barSize={25}> {/*onMouseOver={{ cursor: "pointer" }}*/}
             {data_color.map((entry, index) => (<Cell key={`cell-${index}`} fill={data_color[index]} />))}</Bar>
         </BarChart>
       </div>
     );
   };
-
-  // handleChange = () => {
-  //   this.setState({
-  //     checked: !this.state.checked
-  //   });
-  // };
 
 
   makeActive = e =>  {
@@ -166,7 +150,7 @@ class Human extends Component {
     // Removing active colour for the current active tissue
       var ClassNameChange = document.getElementsByClassName(this.state.current_active_tissue)[0]
       if (ClassNameChange !== undefined && ClassNameChange !== 'whole_human_img'){
-        ClassNameChange.attributes.class.value = ClassNameChange.attributes.class.value.replace(/\organ-svg-clicked\b/g, "")
+        ClassNameChange.attributes.class.value = ClassNameChange.attributes.class.value.replace(/organ-svg-clicked\b/g, "")
         }
     }
 

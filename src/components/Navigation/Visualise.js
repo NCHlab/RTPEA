@@ -124,12 +124,13 @@ handleCheckboxChange = (e) => {
 
 genDropDown = () => {
 
-	const tissueListItems = this.state.tissue_dropdown.sort().map((tissue) => <option value={tissue}>{tissue}</option>);
+	const tissueListItems = this.state.tissue_dropdown.sort().map((tissue) => <option key={tissue} value={tissue}>{tissue}</option>);
 	// const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
 
 return (
 	<div className="container" style={{paddingLeft:'17%'}}>
 	<table style={{borderSpacing: '50px 0'}}>
+	<tbody>
 		<tr>
 			<th>Tissue</th>
 			<th>State</th>
@@ -158,6 +159,7 @@ return (
 				</select>
 			</td>
 		</tr>
+	</tbody>
 	</table>
 
 
