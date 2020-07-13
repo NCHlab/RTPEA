@@ -20,9 +20,6 @@ class Visualisation extends Component {
 		this.state = {
 			uniprotacc: this.props.match.params.id,
 			data_info: "",
-			// tissue_type: "breast cell line diseased",
-			// state_type: "healthy",
-			// orf_type: "ORF2P",
 			tissue_type: "",
 			state_type: "both",
 			orf_type: "",
@@ -31,348 +28,192 @@ class Visualisation extends Component {
 			noFilterData: false,
 			siftScore: 80,
 		};
+		// Example States:
+		// tissue_type: "breast cell line diseased",
+		// state_type: "healthy",
+		// orf_type: "ORF2P",
 
 		this.SortVariantList = this.SortVariantList.bind(this);
 		this.WaitingTime = this.WaitingTime.bind(this);
 		this.genDropDown = this.genDropDown.bind(this);
 		this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-
 	}
 
 
 	componentDidMount = () => {
+		// Get the tissue data thats available for both ORF1p & ORF2p
+		fetch(this.props.urlSource+'/select_data')
+		.then(response => response.json())
+		.then(data => {this.setState({tissue_dropdown: data['Tissue']})})
+	}
 
-			// console.log(this.state.uniprotacc)
-			 // var yourDiv = document.getElementById('protvis');
-       // var instance = new ProtVista({
-       //      el: yourDiv,
-       //      uniprotacc: this.state.uniprotacc,
-				// 		selectedFeature: {
-       //      begin: 166,
-       //      end: 166,
-       //      type: "variant",
-				// 		alternativeSequence:"Q"
-				// 	},
-				// 		// uniprotacc : 'P05067',
-				// 		// defaultSources: false
-				// 		exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
-				// 		// categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
-				// 		// selectedFeature: {
-       //      // begin: 96,
-       //      // end: 110,
-       //      // type: 'REGION'
-       //      // }
-				// 		//Default sources will **not** be included
-			 //
-				// 		// customDataSource: {
-		   //      // url: './externalFeatures_',
-		   //      // source: 'P05067',
-		   //      // useExtension: true
-				// 		// },
-				// 		// overwritePredictions: true,
-			 //
-				// 		defaultSources: false,
-				// 		customDataSource: {
-				// 		// url: 'https://rtpea.com/visualise/',
-		   //      // url: 'http://localhost:3001/visualise/',
-				// 		// url: this.props.urlSource+'/visualise/',
-				// 		// url: this.props.urlSource+'/newvis/ORF2P/breast cell line diseased/normal',
-				// 		url: this.props.urlSource+'/newvis/'+this.state.orf_type+'/'+this.state.tissue_type+'/'+this.state.state_type,
-				// 		// url: this.props.urlSource+'/newvis/ORF2P/jurkat cells/breast cancer',
-		   //      source: 'Proteomics_QMUL',
-		   //      useExtension: false,
-				// 		overwritePredictions: true
-				// 	},
-				// 		// customConfig: "ProtVista/src/config.json"
-				// 		// customConfig: 'https://rtpea.com/visualise_config.json/'
-				// 		// customConfig: 'http://localhost:3001/visualise_config.json/'
-				// 		customConfig: this.props.urlSource+'/visualise_config.json/'
-				// 		// customConfig: './data/externalConfig.json',
-       //  });
-			// }))
-				//
-				// instance.selectFeature('variant', 108, 108, 'K')
 
-				fetch(this.props.urlSource+'/select_data')
-				.then(response => response.json())
-				.then(data => { //console.log(data['Tissue'])
-					this.setState({tissue_dropdown: data['Tissue']})
+	handleCheckboxChange = (e) => {
+		var healthy_checkbox = document.getElementById("healthy").checked
+		var disease_checkbox = document.getElementById("diseased").checked
+
+		if (healthy_checkbox === true && disease_checkbox === true || healthy_checkbox === false && disease_checkbox === false){
+			this.setState({state_type: "both"})
+		} else if (healthy_checkbox === true){
+			this.setState({state_type: "healthy"})
+		} else {
+			this.setState({state_type: "diseased"})
+		}
+	}
+
+
+	genDropDown = () => {
+		const tissueListItems = this.state.tissue_dropdown.sort().map((tissue) => <option key={tissue} value={tissue}>{tissue}</option>);
+		return (
+			<div className="container" style={{paddingLeft:'17%'}}>
+			<table style={{borderSpacing: '50px 0'}}>
+			<tbody>
+				<tr>
+					<th>Tissue</th>
+					<th>State</th>
+					<th>Score</th>
+				</tr>
+				<tr>
+					<td style={{padding: '0px 20px'}}>
+						<select className="form-control" id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
+							<option value="">-</option>
+							{tissueListItems}
+						</select>
+					</td>
+
+					<td style={{padding: '0px 20px'}}>
+						<input className="form-check-input" id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy <br/>
+						<input className="form-check-input" id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
+					</td>
+
+					<td style={{padding: '0px 20px'}}>
+						<select className="form-control" id="siftScore" onChange={e => this.setState({siftScore: e.target.value})}>
+							<option value="80">High Confidence</option>
+							<option value="60">Med Confidence</option>
+							<option value="0">Low Confidence</option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			</div>
+		)
+	}
+
+
+	runAgain = (e,orf) => {
+
+		fetch(this.props.urlSource+'/newvis/'+orf+'/'+this.state.tissue_type+'/'+this.state.state_type+'/'+this.state.siftScore)
+		.then(response => response.json())
+		.then(data =>{
+				if (data[0]['features'].length < 1){
+					this.setState({noFilterData: true})
+				} else {
+					this.setState({noFilterData: false})
+				}
 			})
 
-			// fetch(this.props.urlSource+'/orfnames')
-			// 	.then(response => response.json())
-			// 	.then(data => {
-			// 		this.setState({orf_dropdown:data})
-			// 	})
-
-
-}
-
-handleCheckboxChange = (e) => {
-	var healthy_checkbox = document.getElementById("healthy").checked
-	var disease_checkbox = document.getElementById("diseased").checked
-
-	if (healthy_checkbox === true && disease_checkbox === true || healthy_checkbox === false && disease_checkbox === false){
-		this.setState({state_type: "both"})
-	} else if (healthy_checkbox === true){
-		this.setState({state_type: "healthy"})
-	} else {
-		this.setState({state_type: "diseased"})
-	}
-}
-
-
-genDropDown = () => {
-
-	const tissueListItems = this.state.tissue_dropdown.sort().map((tissue) => <option key={tissue} value={tissue}>{tissue}</option>);
-	// const orfListItems = this.state.orf_dropdown.map((orf) => <option value={orf}>{orf}</option>);
-
-return (
-	<div className="container" style={{paddingLeft:'17%'}}>
-	<table style={{borderSpacing: '50px 0'}}>
-	<tbody>
-		<tr>
-			<th>Tissue</th>
-			<th>State</th>
-			<th>Score</th>
-		</tr>
-		<tr>
-			<td style={{padding: '0px 20px'}}>
-
-					 <select className="form-control" id="tissue_dropdown" onChange={e => this.setState({tissue_type:e.target.value})}>
-					 	<option value="">-</option>
-						{tissueListItems}
-					 </select>
-
-			</td>
-
-			<td style={{padding: '0px 20px'}}>
-				<input className="form-check-input" id="healthy" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Healthy <br/>
-				<input className="form-check-input" id="diseased" type="checkbox" onChange={e => this.handleCheckboxChange()}/> Diseased
-			</td>
-
-			<td style={{padding: '0px 20px'}}>
-				<select className="form-control" id="siftScore" onChange={e => this.setState({siftScore: e.target.value})}>
-					<option value="80">High Confidence</option>
-					<option value="60">Med Confidence</option>
-					<option value="0">Low Confidence</option>
-				</select>
-			</td>
-		</tr>
-	</tbody>
-	</table>
-
-
-		{/*}<select id="orf_dropdown" onChange={e => this.setState({orf_type:e.target.value})}>
-			<option value="">-</option>
-			{orfListItems}
-		</select>*/}
-
-
-
-
-
-		{/*<button onClick={e => this.runAgain()}>Search</button>*/}
-	</div>
-)
-}
-
-
-runAgain = (e,orf) => {
-
-
-	fetch(this.props.urlSource+'/newvis/'+orf+'/'+this.state.tissue_type+'/'+this.state.state_type+'/'+this.state.siftScore)
-	.then(response => response.json())
-	.then(data =>{
-			if (data[0]['features'].length < 1){
-				this.setState({noFilterData: true})
-			} else {
-				this.setState({noFilterData: false})
-			}
-
-
-		})
-
-			// const script = document.createElement("script");
-			//
-			// script.src = "https://use.typekit.net/foobar.js";
-			// script.async = true;
-			//
-			// document.body.appendChild(script);
-			// fetch("http://localhost:3001/P05067.json")
-			// .then(response => response.json())
-			// .then(data => this.setState({information1: data}))
-
-
-			// .then(data =>{return
-		// fetch("http://localhost:3001/visualise/" + this.props.match.params.id)
-		// .then(response => response.json())
-		// .then(data => this.setState({data_info: data}))
-
-		// document.getElementById('protvis').innerHTML = '';
 		var instance = new ProtVista({})
-
 		var yourDiv = document.getElementById('protvis');
 		var instance = new ProtVista({
-				 el: yourDiv,
-				 // uniprotacc: this.state.uniprotacc,
-				//  selectedFeature: {
-				//  begin: 166,
-				//  end: 166,
-				//  type: "variant",
-				//  alternativeSequence:"Q"
-			 // },
-				 // uniprotacc : 'P05067',
-				 // defaultSources: false
-				 // exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
-				 // categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
-
-
-				 defaultSources: false,
-				 customDataSource: {
-				 url: this.props.urlSource+'/newvis/'+orf+'/'+this.state.tissue_type+'/'+this.state.state_type+'/'+this.state.siftScore,
-				 source: 'Proteomics_QMUL',
-				 useExtension: false,
-				 overwritePredictions: true
-			 },
-				 customConfig: this.props.urlSource+'/visualise_config.json/'
-		 });
-		// }))
-			//
-			// instance.selectFeature('variant', 108, 108, 'K')
+					el: yourDiv,
+					defaultSources: false,
+					customDataSource: {
+					url: this.props.urlSource+'/newvis/'+orf+'/'+this.state.tissue_type+'/'+this.state.state_type+'/'+this.state.siftScore,
+					source: 'Proteomics_QMUL',
+					useExtension: false,
+					overwritePredictions: true
+				},
+					customConfig: this.props.urlSource+'/visualise_config.json/'
+			});
 		setTimeout(() => this.removeOldList(), 500)
 
-}
+	}
 
-		SortVariantList = () => {
 
-			try {
-			  var list, i, switching, b, shouldSwitch;
-			  list = document.getElementById("orderthelist");
-			  switching = true;
-			  /*Make a loop that will continue until
-			  no switching has been done:*/
-			  while (switching) {
-				//start by saying: no switching is done:
-				switching = false;
-				b = list.getElementsByTagName("LI");
-				//Loop through all list-items:
-				for (i = 1; i < (b.length - 1); i++) {
-				  //start by saying there should be no switching:
-				  shouldSwitch = false;
-				  /*check if the next item should
-				  switch place with the current item:*/
-				  if (b[i].innerText.toLowerCase() > b[i + 1].innerText.toLowerCase()) {
-					/*if next item is alphabetically
-					lower than current item, mark as a switch
-					and break the loop:*/
-					shouldSwitch = true;
-					break;
-				  }
+	SortVariantList = () => {
+
+		try {
+			var list, i, switching, b, shouldSwitch;
+			list = document.getElementById("orderthelist");
+			switching = true;
+			/*Make a loop that will continue until
+			no switching has been done:*/
+			while (switching) {
+			//start by saying: no switching is done:
+			switching = false;
+			b = list.getElementsByTagName("LI");
+			//Loop through all list-items:
+			for (i = 1; i < (b.length - 1); i++) {
+				//start by saying there should be no switching:
+				shouldSwitch = false;
+				/*check if the next item should
+				switch place with the current item:*/
+				if (b[i].innerText.toLowerCase() > b[i + 1].innerText.toLowerCase()) {
+				/*if next item is alphabetically
+				lower than current item, mark as a switch
+				and break the loop:*/
+				shouldSwitch = true;
+				break;
 				}
-				if (shouldSwitch) {
-				  /*If a switch has been marked, make the switch
-				  and mark the switch as done:*/
-				  b[i].parentNode.insertBefore(b[i + 1], b[i]);
-				  switching = true;
-				}
-			  }
 			}
-			catch(err){
-
+			if (shouldSwitch) {
+				/*If a switch has been marked, make the switch
+				and mark the switch as done:*/
+				b[i].parentNode.insertBefore(b[i + 1], b[i]);
+				switching = true;
+			}
 			}
 		}
+		catch(err){
+
+		}
+	}
 
 
-		removeOldList = () => {
-			var tissue_dropdown = document.getElementById("tissue_dropdown").value
-				var list, i,j,k, switching, b, shouldSwitch;
-				list = document.getElementById("orderthelist");
-				if (list !== null){
-					// console.log(list)
-					b = list.getElementsByTagName("LI");
-					// console.log(b)
-					//Loop through all list-items:
-					for (i = 1; i < (b.length); i++) {
-						// console.log(b[i])
+	removeOldList = () => {
+		var tissue_dropdown = document.getElementById("tissue_dropdown").value
+		var list, i,j,k, switching, b, shouldSwitch;
+		list = document.getElementById("orderthelist");
+		if (list !== null){
+			b = list.getElementsByTagName("LI");
 
-						if (b[i].className !== tissue_dropdown && b[i].className !== tissue_dropdown + " diseased" && b[i].className !== tissue_dropdown + " meta_missing"){
-							var listRow = document.getElementsByClassName(b[i].className)
-							for (k = 0; k < listRow.length; k++){
-								// if (b[i].className.includes('breast') && test[k].className !==)
-								if (b[i].className.includes('breast')){
-									if (b[i].className === 'breast' && listRow[k].className !== 'breast cell line' && listRow[k].className !== 'breast cell line diseased'){
-										listRow[k].innerHTML = ""
-									} else if (b[i].className === 'breast cell line' && listRow[k].className !== 'breast' && listRow[k].className !== 'breast diseased'){
-										listRow[k].innerHTML = ""
-										}
-								} else {
-									listRow[k].innerHTML = ""
+			//Loop through all list-items:
+			for (i = 1; i < (b.length); i++) {
+
+				if (b[i].className !== tissue_dropdown && b[i].className !== tissue_dropdown + " diseased" && b[i].className !== tissue_dropdown + " meta_missing"){
+					var listRow = document.getElementsByClassName(b[i].className)
+					for (k = 0; k < listRow.length; k++){
+						if (b[i].className.includes('breast')){
+							if (b[i].className === 'breast' && listRow[k].className !== 'breast cell line' && listRow[k].className !== 'breast cell line diseased'){
+								listRow[k].innerHTML = ""
+							} else if (b[i].className === 'breast cell line' && listRow[k].className !== 'breast' && listRow[k].className !== 'breast diseased'){
+								listRow[k].innerHTML = ""
 								}
-
+						} else {
+							listRow[k].innerHTML = ""
 						}
-
-							// 	if (b[i].className === 'breast' && test[k].className !== 'breast cell line' && test[k].className !== 'breast cell line diseased'){
-							// 		test[k].innerHTML = ""
-							// 	} else if (b[i].className === 'breast cell line' && test[k].className !== 'breast' && test[k].className !== 'breast diseased'){
-							// 		test[k].innerHTML = ""
-							//
-							// }
-							// for (j = 0; j <= document.getElementsByClassName(b[i].className); j++){
-							// 	document.getElementsByClassName(b[i].className)[j].innerHTML = ''
-							// }
-
-						// 	if (b[i].className.includes('breast cell line')){
-						// 		if (test[k].className === 'breast' || test[k].className === 'breast diseased'){
-						// 			test[k].innerHTML = ""
-						// 		}
-						// 	} else {
-						// 		test[k].innerHTML = ""
-						// 	}
-						// }
-
-							// console.log(b[i].className)
-							// console.log(document.getElementsByClassName(b[i].className)[0].innerHTML)
-							// document.getElementsByClassName(b[i].className)[0].innerHTML = ''
-							// document.getElementsByClassName(b[i].className)[1].innerHTML = ''
-						}
+					}
 				}
 			}
 		}
+	}
+
 
 	WaitingTime= () => {
-  setTimeout(() => {this.SortVariantList()
-	}, 500)//setTimeout(() => this.removeOldList(), 500)
-
-}
+		setTimeout(() => {this.SortVariantList()}, 500)
+	}
 
 
-
-
-
-		// componentDidUpdate = () => {
-		// 	instance.selectFeature("variant", 125, 128, 'VAS');
-		// }
-
-
-  button_click = (event) => {
-		// console.log(e)
+	button_click = (event) => {
 		this.setState({ uniprotacc: event })
 	}
 
 	render() {
 		return (
 			<div>
-
-				{/* {console.log(this.state.data_info)} {console.log(window.location)}*/}
-
-
-
 			<div className="background-body-vis">
 				<NavVis/>
-				{/*}<button onClick={e => {
-					document.getElementById('protvis').innerHTML = ''
-					this.runAgain()}}>test</button>*/}
 
 				<div className="text-center">
 					<h1>ProtVista Protein Viewer</h1>
@@ -421,29 +262,8 @@ runAgain = (e,orf) => {
 						</div>
 				</div>
 
-				{/* <Tabs>
-			    <TabList>
-			      <Tab>Protein Centric</Tab>
-			      <Tab>Chromosome Centric</Tab>
-						<Tab>Sequence Viewer</Tab>
-			    </TabList> */}
-
-			    {/* <TabPanel forceRender={true}> */}
-
-
-				{/* <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-				  <Tab eventKey={1} title="Protein Centric">
-				    Tab 1 content
-				  </Tab>
-				  <Tab eventKey={2} title="Chromosome Centric">
-				    tea
-				  </Tab>
-				</Tabs> */}
-				{/* {console.log(configFile)} */}
 
 				<div className="container">
-					{/* {console.log(jsontest)} */}
-					{/* {console.log(this.state.information1)} */}
 					<br/>
 					<div className="line-seperator"></div>
 				<br/>
@@ -454,28 +274,6 @@ runAgain = (e,orf) => {
 
 
 
-				{/*
-				Enter Protein:
-				<input
-          placeholder="e.g. ORF1p"
-          onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
-          onKeyPress={event => {if (event.key === "Enter") {
-						if (window.location.pathname === "/visualise"){
-							window.location = "visualise/" + event.target.value.toUpperCase();
-						} else {
-							window.location = event.target.value.toUpperCase();
-						}
-
-            }
-          }}/>*/}
-
-					{/* <input
-	          placeholder=""
-	          onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
-	          onKeyPress={event => {if (event.key === "Enter") {
-	              this.button_click(event.target.value.toUpperCase());
-	            }
-	          }}/> */}
 
 					<br/>
 					<div className="container">
@@ -484,9 +282,7 @@ runAgain = (e,orf) => {
 					<br/>
 					</div>
 
-					{/* linear-gradient(to bottom, #9cb7e2, #bfd2ef) */}
-					{/* background:"linear-gradient(to bottom, #99cdff, #bfd2ef)" */}
-					{/* <div style={{background:"linear-gradient(to bottom, #7abeff, #bfd2ef)"}}> */}
+	
 
 					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
 						<br/>
@@ -494,20 +290,14 @@ runAgain = (e,orf) => {
 						<br/>
 						<button
                       className="btn btn-primary"
-                      onClick={e => {
-                        // window.location = "../visualise/ORF1P";
-												this.runAgain(e,'ORF1P')
-                      }}
+                      onClick={e => {this.runAgain(e,'ORF1P')}}
                     >
                       ORF1p
                     </button>
 					&nbsp;
 					<button
                       className="btn btn-primary"
-                      onClick={e => {
-                        // window.location = "../visualise/ORF2P";
-												this.runAgain(e,'ORF2P')
-                      }}
+                      onClick={e => {this.runAgain(e,'ORF2P')}}
                     >
                       ORF2p
                     </button>
@@ -535,9 +325,9 @@ runAgain = (e,orf) => {
 				<br/>
 				</div>
 			</div>
-				{/* <button onClick={() => this.sortList()}>CLICK </button> */}
+				
 				{window.onload = this.WaitingTime()}
-				{/* {console.log(this.props.match.params.id)} */}
+				
 
 
 
@@ -554,14 +344,6 @@ runAgain = (e,orf) => {
 				<br/>
 				<br/>
 				<br/>
-			{/* </TabPanel>
-			<TabPanel>
-			<Ideogram/>
-			</TabPanel>
-			<TabPanel>
-			<Sequence/>
-			</TabPanel>
-		</Tabs> */}
 			</div>
 		</div>
 		);

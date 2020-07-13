@@ -697,7 +697,7 @@ const orf2p_column = [{
             />
           </div>
 <br/>
-<BrowseOtherSpecies tableData={this.state.data2}
+{/* <BrowseOtherSpecies tableData={this.state.data2}
                     loading={this.state.table_loading}
                     background_colour={this.state.background_colour}
                     text_colour={this.state.text_colour}
@@ -705,7 +705,7 @@ const orf2p_column = [{
                     high_conf_colour={this.state.high_conf_colour}
                     med_conf_colour={this.state.med_conf_colour}
                     low_conf_colour={this.state.low_conf_colour}
-                    background_conf_colour={this.state.background_conf_colour}/>
+                    background_conf_colour={this.state.background_conf_colour}/> */}
 
         </div>
 )
