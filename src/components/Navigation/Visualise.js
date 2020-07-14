@@ -71,7 +71,7 @@ class Visualisation extends Component {
 				<tr>
 					<th>Tissue</th>
 					<th>State</th>
-					<th>Score</th>
+					<th>Minimum Score</th>
 				</tr>
 				<tr>
 					<td style={{padding: '0px 20px'}}>

@@ -11,184 +11,69 @@ class Ideogram_c extends Component {
 			checked: false,
 			value:"",
 			prot_seq: this.props.match.params.id,
-			// prot_seq: this.props.match.params.id  == undefined ? 1 : this.props.match.params.id,
-			annotation_data: [{
-
-	    }],
-			// annotationTracks:[
-      // {id: 'pathogenicTrack', displayName: 'Pathogenic', color: '#F00', shape: "Triangle"},
-      // {id: 'uncertainSignificanceTrack', displayName: 'Uncertain significance', color: '#CCC', shape: "Triangle"},
-      // {id: 'benignTrack',  displayName: 'Benign', color: '#8D4', shape: "Triangle"}],
-
+			
 		};
 
 		this.PA2_family = this.PA2_family.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    	this.handleSubmit = this.handleSubmit.bind(this);
 		this.button_click_ideo = this.button_click_ideo.bind(this);
 
 	}
-	// [{
-	// 	"_id": "5b364f11cf72732a72cb47c1",
-	// 	"name": "BRCA1",
-	// 	"chr": "17",
-	// 	"start": 43044294,
-	// 	"stop": 43125482
-	// }]
 
-		componentDidMount = () => {
-			// var annotationTracks =
-
-	// 	function 	hyperlinkProtein(annot) {
-  //   // var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
-	// 	// Substring used to only search for LINE_1
-  //   var url = 'https://www.uniprot.org/uniprot/?query=' + annot.name.substring(0,6) + '&sort=score';
-  //   annot.displayName =
-  //     '<a target="_blank" href="' + url + '">' + annot.name + '</a>';
-	// 		// console.log(annot.testdata)
-  //   return annot
-  // }
-			function 	hyperlinkProtein(annot) {
-			// var term = '(' + annot.name + '[gene])+AND+(Homo+sapiens[orgn])';
-			// Substring used to only search for LINE_1
-			// var url = this.props.urlSource+'/sequence/' + annot.name + "_ORF1p";
-			var url = 'http://rtpea.com/sequence/' + annot.name;
-			// var url = 'http://localhost:3001/sequence/' + annot.name + "_ORF1p";
-			annot.displayName =
-				'<a target="_blank" href="' + url + '">' + annot.name + '</a>';
-				// console.log(annot.testdata)
-			return annot
+	componentDidMount = () => {
+		function hyperlinkProtein(annot) {
+		  // Substring used to only search for LINE_1
+		  // var url = this.props.urlSource+'/sequence/' + annot.name + "_ORF1p";
+		  var url = "http://rtpea.com/sequence/" + annot.name;
+	  
+		  annot.displayName =
+			'<a target="_blank" href="' + url + '">' + annot.name + "</a>";
+	  
+		  return annot;
 		}
-			// fetch("http://rtpea.com/sequence/ideogram/" + this.state.prot_seq)
-			// fetch("http://localhost:3001/ideogram/" + this.state.prot_seq)
-	// 		fetch(this.props.urlSource+"/ideogram/" + this.state.prot_seq)
-	// 		.then(response => response.json())
-	// 		.then(data => {
-  //   return new Ideogram({
-  //     organism: 'human',
-  //     dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-	// 		annotations: data,
-	// 		annotationsLayout: "tracks",
-	// 		onWillShowAnnotTooltip: hyperlinkProtein,
-	// 		rotatable: true,
-  //     container: '#ideo-container'
-  //   });
-	// 	})
-  // }
-
-
-
-// return new Ideogram({
-// 	organism: 'human',
-// 	dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-// 	annotations: this.props.urlSource+"/ideogram/" + this.state.prot_seq+".json",
-// 	annotationsLayout: "tracks",
-// 	onWillShowAnnotTooltip: hyperlinkProtein,
-// 	rotatable: true,
-// 	container: '#ideo-container'
-// });
-
-		// var config = {
-		// 		  organism: 'human',
-		// 		  // dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-		// 			dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-		// 	    annotationsPath: this.props.urlSource+'/ideogram2/s.json',
-		// 			annotationsLayout: 'tracks',
-		// 			// onWillShowAnnotTooltip: hyperlinkProtein,
-		// 			rotatable: true,
-		// 			// assembly: 'GRCh37',
-		// 			chrHeight: 600,
-		// 			container: '#ideo-container',
-		// 			orientation: 'vertical',
-		//
-		//   };
-
-		// var annotHeight = 3.5
-		//
-		// 	var annotationTracks = [
-    //   {id: 'test1', displayName: 'Pathogenic', color: '#FFF', shape: 'm1,1 l 2 ' + (10 * annotHeight) +'l ' + (2*annotHeight) + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
-    //   {id: 'test32', displayName: 'Uncertain significance', color: '#CCC', shape: 'circle'},
-    //   {id: 'test45',  displayName: 'Benign', color: '#8D4', shape: 'm0,0 l 0 ' + (2 * annotHeight) +'l ' + annotHeight/2 + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
-		// 	{id: 'test245',  displayName: 'Benign', color: '#000000', shape: 'm0,0 l 0 ' + (2 * annotHeight) +'l ' + annotHeight/2 + ' 0' +'l 0 -' + (2 * annotHeight) + 'z'},
-    // ];
-
-	// 	var annotationTracks = [
-	// 	{id: 'test1', displayName: 'Pathogenic', color: '#F00', shape: 'rectangle'},
-	// 	{id: 'test32', displayName: 'Uncertain significance', color: '#CCC', shape: 'rectangle'},
-	// 	{id: 'test45',  displayName: 'Benign', color: '#8D4', shape: 'rectangle'},
-	// 	{id: 'test245',  displayName: 'Benign', color: '#000000', shape:'rectangle'},
-	// ];
-
-
-			// var config = {
-			// 		 organism: 'human',
-			// 		 orientation: 'vertical',
-			// 		 container: '#ideo-container',
-			// 		 annotationsLayout: 'tracks',
-			// 		 // annotationsColor:'#fff',
-			// 		 // chrWidth: 8,
-			// 		 chrHeight: 600,
-			// 		 annotationsPath: this.props.urlSource+'/ideogram2/s.json',
-			// 		 dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-			// 		 // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
-			// 		 // annotationTracks: annotationTracks,
-			// 		 annotationHeight: 3.5,
-			// 		 onWillShowAnnotTooltip: hyperlinkProtein,
-			// 	 };
-
-			// var myannotations =  [
-      //     {name: 'APOB', chr: '2', start: 21001429, stop: 24044073, shape: 'm4,1 l0 5l 5 0l 0 -5z', color: '#F00'},
-      //     {name: 'CTLA4', chr: '2', start: 203867788, stop: 203873960, shape: 'm4,1 l0 290l 5 0l 0 -290z', color: '#FFF'}
-      //   ]
-			fetch(this.props.urlSource+"/ideogram2/s.json")
-			.then(response => response.json())
-			.then(data => {
+	  
+		fetch(this.props.urlSource + "/ideogram2/" + this.state.prot_seq)
+		  .then((response) => response.json())
+		  .then((data) => {
 			var config = {
-					 organism: 'human',
-					 orientation: 'vertical',
-					 container: '#ideo-container',
-					 annotationsLayout: 'tracks',
-					 // annotationsColor:'#fff',
-					 // chrWidth: 8,
-					 annotations: data,
-					 chrHeight: 600,
-					 // annotationsPath: this.props.urlSource+'/ideogram2/s.json',
-					 dataDir: 'https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/',
-					 // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
-					 // annotationTracks: annotationTracks,
-					 annotationHeight: 3.5,
-					 onWillShowAnnotTooltip: hyperlinkProtein,
-				 };
-
-
-		return new Ideogram(config);
-				// })
-})
-
-
-
-			}
+			  organism: "human",
+			  orientation: "vertical",
+			  container: "#ideo-container",
+			  annotationsLayout: "tracks",
+			  // annotationsColor:'#fff',
+			  // chrWidth: 8,
+			  annotations: data,
+			  chrHeight: 600,
+			  // annotationsPath: this.props.urlSource+'/ideogram2/s.json',
+			  dataDir: "https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/",
+			  // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
+			  // annotationTracks: annotationTracks,
+			  annotationHeight: 3.5,
+			  onWillShowAnnotTooltip: hyperlinkProtein,
+			};
+	  
+			return new Ideogram(config);
+		  });
+	  };
+	  
 
 
 
+	  PA2_family = () => {
+		this.setState({
+		  checked: !this.state.checked,
+		});
+	  };
+	  
 
-	PA2_family = () => {
-
-   this.setState({
-		 checked: !this.state.checked
-   })
-		 // this.props.history.push('/ideogram/'+PA2_fam)
-		 // window.location = '/ideogram/'+PA2_fam
-
-}
-
-button_click_ideo = () => {
-	if (window.location.pathname === "/ideogram"){
-		window.location = "ideogram/" + this.state.prot_seq;
-	} else {
-		window.location = this.state.prot_seq;
+	button_click_ideo = () => {
+		if (window.location.pathname === "/ideogram"){
+			window.location = "ideogram/" + this.state.prot_seq;
+		} else {
+			window.location = this.state.prot_seq;
+		}
 	}
-}
 
 	 handleChange = (event) => {
 	  this.setState({value: event.target.value});
@@ -419,7 +304,7 @@ button_click_ideo = () => {
 				Enter Family:
 				<input
 					style={{"width" : "400px"}}
-          placeholder="e.g LINE_1_HS_101, HS_4, PA2_34, LINE_1_PA2_25_ORF1p"
+          placeholder="e.g HS_94, HS_4, PA2_34, PA2_25"
           onChange={e => this.setState({ prot_seq: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
 						if (window.location.pathname === "/ideogram"){
