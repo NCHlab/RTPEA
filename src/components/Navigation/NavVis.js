@@ -15,11 +15,11 @@ function NavVis(props) {
         {
             page: 'Chromosome Centric',
             to: '/ideogram'
-        }
-        // {
-        //     page: 'Sequence Viewer',
-        //     to: '/sequence'
-        // }
+        },
+        {
+          page: 'Chromosome Expected',
+          to: '/newideogram_expected'
+      }
     ];
 
 
@@ -37,61 +37,6 @@ function NavVis(props) {
             </ul>
 
           </div>
-
-      // <div className="nav2">
-      //     <ul className="menu">
-      //       <li><a>
-      //         <NavLink to="/visualise" activeClassName="active">Protein Centric</NavLink>
-      //           <NavLink to="/ideogram" activeClassName="active">Chromosome Centric</NavLink>
-      //            <NavLink to="/sequence" activeClassName="active">Sequence Viewer</NavLink>
-      //          </a>
-      //         </li>
-      //       </ul>
-      //
-      //     </div>
-
-      // <div className="nav2">
-      //     <ul className="menu">
-      //       <li><a>
-      //         {links.map(({ page, to }) => (
-      //          window.location.href.includes(to)
-      //          ? <NavLink to={to} activeClassName="active">{page}</NavLink>
-      //           : <a href={to}>{page}</a>))}
-      //          </a>
-      //         </li>
-      //       </ul>
-      //
-      //     </div>
-
-
-
-      // <div className="nav2">
-      //     <ul className="menu">
-      //       <li><a>
-      //           {links.map(({ page, to }) => (
-      //             window.location.href.includes(to)
-      //             ? <a href={to}>{page}</a>
-      //             : <NavLink to={to} activeClassName="active">{page}</NavLink>))}
-      //           </a>
-      //         </li>
-      //       </ul>
-      //
-      //     </div>
-
-
-      // <div className="nav2">
-      //     <ul className="menu">
-      //       <li><a>
-      //         <NavLink to="/visualise" activeClassName="active">Protein Centric</NavLink>
-      //           <NavLink to="/ideogram" activeClassName="active">Chromosome Centric</NavLink>
-      //            <NavLink to="/sequence" activeClassName="active">Sequence Viewer</NavLink>
-      //          </a>
-      //         </li>
-      //       </ul>
-      //
-      //     </div>
-
-
     )};
 
 
