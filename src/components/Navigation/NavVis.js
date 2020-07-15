@@ -17,8 +17,8 @@ function NavVis(props) {
             to: '/ideogram'
         },
         {
-          page: 'Chromosome Expected',
-          to: '/newideogram_expected'
+          page: 'All Loci',
+          to: '/loci_ideogram'
       }
     ];
 

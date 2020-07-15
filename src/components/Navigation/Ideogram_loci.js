@@ -31,7 +31,7 @@ class Ideogram_d extends Component {
           return annot;
         }
       
-        fetch(this.props.urlSource + "/ideogram/" + this.state.prot_seq)
+        fetch(this.props.urlSource + "/ideogram_loci/" + this.state.prot_seq)
           .then((response) => response.json())
           .then((data) => {
             var config = {
@@ -57,8 +57,8 @@ class Ideogram_d extends Component {
       };
 
     button_click_ideo = () => {
-        if (window.location.pathname === "/newideogram_expected"){
-            window.location = "newideogram_expected/" + this.state.prot_seq;
+        if (window.location.pathname === "/loci_ideogram"){
+            window.location = "loci_ideogram/" + this.state.prot_seq;
         } else {
             window.location = this.state.prot_seq;
         }
@@ -233,11 +233,11 @@ class Ideogram_d extends Component {
   "HS_99"
 ]
 	if (this.state.value === "PA2"){
-		this.props.history.push('/newideogram_expected/'+PA2_fam)
+		this.props.history.push('/loci_ideogram/'+PA2_fam)
 	} else if (this.state.value === "HS"){
-		this.props.history.push('/newideogram_expected/'+HS_fam)
+		this.props.history.push('/loci_ideogram/'+HS_fam)
 	} else {
-		this.props.history.push('/newideogram_expected/')
+		this.props.history.push('/loci_ideogram/')
 	}
 	}
 
@@ -253,7 +253,7 @@ class Ideogram_d extends Component {
 
 				<NavVis/>
 				<div className="text-center">
-					<h1>Chromosome Expected</h1>
+					<h1>Chromosome - All Loci</h1>
 					<div className="" style={{color:"black"}}>
 						<Popup trigger={<button className="btn btn-outline-warning"> Information! </button>} modal>
 							{close => (
@@ -294,8 +294,8 @@ class Ideogram_d extends Component {
           placeholder="e.g LINE_1_HS_101, HS_4, PA2_34, LINE_1_PA2_25_ORF1p"
           onChange={e => this.setState({ prot_seq: e.target.value.toUpperCase() })}
           onKeyPress={event => {if (event.key === "Enter") {
-						if (window.location.pathname === "/newideogram_expected"){
-							window.location = "newideogram_expected/" + event.target.value.toUpperCase();
+						if (window.location.pathname === "/loci_ideogram"){
+							window.location = "loci_ideogram/" + event.target.value.toUpperCase();
 						} else {
 							window.location = event.target.value.toUpperCase();
 						}

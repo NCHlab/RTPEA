@@ -21,7 +21,7 @@ import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
 import Ideogram from './components/Navigation/Ideogram';
-import Ideogram_expected from './components/Navigation/Ideogram_expected';
+import Ideogram_loci from './components/Navigation/Ideogram_loci';
 import Sequence from './components/Navigation/Sequence';
 import Download from './components/Navigation/Download';
 import Homeredirect from './components/Navigation/Homeredirect';
@@ -116,8 +116,8 @@ class App extends Component{
             <Route exact path="/Download" render={(props) => (<Download {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/ideogram" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/ideogram/:id" render={(props) => (<Ideogram {...props} urlSource={this.state.urlSource} />)}/>
-            <Route exact path="/newideogram_expected" render={(props) => (<Ideogram_expected {...props} urlSource={this.state.urlSource} />)}/>
-            <Route exact path="/newideogram_expected/:id" render={(props) => (<Ideogram_expected {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/loci_ideogram" render={(props) => (<Ideogram_loci {...props} urlSource={this.state.urlSource} />)}/>
+            <Route exact path="/loci_ideogram/:id" render={(props) => (<Ideogram_loci {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/sequence" render={(props) => (<Sequence {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/sequence/:id" render={(props) => (<Sequence {...props} urlSource={this.state.urlSource} />)}/>
             <Route exact path="/status" render={(props) => (<Status {...props} error_code={200} urlSource={this.state.urlSource} />)}/>

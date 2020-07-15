@@ -33,7 +33,7 @@ class Ideogram_c extends Component {
 		  return annot;
 		}
 	  
-		fetch(this.props.urlSource + "/ideogram2/" + this.state.prot_seq)
+		fetch(this.props.urlSource + "/ideogram/" + this.state.prot_seq)
 		  .then((response) => response.json())
 		  .then((data) => {
 			var config = {
