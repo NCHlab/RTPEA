@@ -10,136 +10,67 @@ class Sequence_view extends Component {
 		this.state = {
 			prot_seq: this.props.match.params.id,
 			hs_pa: "",
-			// prot_seq: this.props.match.params.id === undefined ? this.setState({prot_seq:"1"}) : this.props.match.params.id,
-			seq_data: [{
-
-		}],
-		seq_data2: [{
-
-	}],
+			seq_data: [{}],
+			seq_data2: [{}],
 		};
-		// if (this.state.seq_data[0].Sequence === undefined){
-		// 	this.setState({seq_data: {"Family":"NA",
-		// 															"Sequence":"You Did Not Request Any Data"}})
-		// }
-
-		// this.searchURL = this.searchURL.bind(this)
-
 	}
-	// [{
-	// 	"_id": "5b364f11cf72732a72cb47c1",
-	// 	"name": "BRCA1",
-	// 	"chr": "17",
-	// 	"start": 43044294,
-	// 	"stop": 43125482
-	// }]
+
 
 		componentDidMount = () => {
-			// var annotationTracks =
-			// console.log("http://localhost:3001/sequence/" + this.state.prot_seq)
-			// var prot_seq = (this.props.match.params.id === undefined) ? "1" : this.props.match.params.id
-			// console.log(this.props)
-			// if (this.props === null){
-			// 	var prot_seq = "1"
-			// } else {
-			// 	var prot_seq = this.props.match.params.id
-			// }
 
-			// fetch("http://rtpea.com/sequence/" + this.state.prot_seq)
-			// fetch("http://localhost:3001/sequence/" + this.state.prot_seq)
 			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF1p" )
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data: data})})
 			.then(data => {
-				// console.log(this.state.seq_data[0])
 
 			var seq1 = new Sequence(this.state.seq_data[0].Sequence);
 			// You can add some rendering options
 			seq1.render("#sequence-viewer", {
-			"showLineNumbers": true,
-			"wrapAminoAcids": true,
-			"charsPerLine": 100,
-			"toolbar": false,
-			"search": false,
-			"title" : "Protein Sequence ORF1p",
-			"sequenceMaxHeight": "500px",
-			"badge": false
+				"showLineNumbers": true,
+				"wrapAminoAcids": true,
+				"charsPerLine": 100,
+				"toolbar": false,
+				"search": false,
+				"title" : "Protein Sequence ORF1p",
+				"sequenceMaxHeight": "500px",
+				"badge": false
 			});
-			// seq1.selection(20, 43, 'red');
 
-			var onclickFun = function(e) {
-			  console.log(e.target.textContent);
-			}
-
-			//Coverage list
-			// var exampleSequenceCoverage = [
-			//     {start: 0, end: 25, color: "black", underscore: false, bgcolor: "#ffd891"},
-			//     {start: 25, end: 47, color: "#ff0000", underscore: false, tooltip: "this is a tooltip"},
-			//     {start: 47, end: 54, color: "#ff0000", underscore: true},
-			//     {start: 54, end: 55, color: "#ff0000", underscore: false},
-			//     {start: 55, end: 56, color: "black", underscore: false},
-			//     {start: 56, end: 89, color: "#69CC33", underscore: false, onclick:onclickFun},
-			//     {start: 89, end: 90, color: "black", underscore: false},
-			//     {start: 1000, end: 1100, color: "#ff0000", underscore: false},
-			// 		{start: 1200, end: 1240, color: "#7cff26", underscore: false}
-			// ];
-
-
-			// seq1.coverage(exampleSequenceCoverage);
-
-			// var exampleLegend = [
-		  //   {name: "???? Protein", color: "#ff0000", underscore: false},
-		  //   {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
-		  //   {name: "Synthetic peptide",color: "#fff",underscore: true}
-		  //   ];
-			// seq1.addLegend(exampleLegend);
-
-
-				// function copyToClipboard(element) {
-				//  var inp =document.createElement('input');
-				//  document.body.appendChild(inp)
-				//  inp.value = element
-				//  inp.select();
-				//  document.execCommand('copy',false);
-				//  inp.remove();
-				//  }
-
-			seq1.onMouseSelection(function(elem){
-        console.log(elem.detail);
+			var onclickFun = function (e) {
+				console.log(e.target.textContent);
+			};
+			  
+			seq1.onMouseSelection(function (elem) {
+				console.log(elem.detail);
 				// copyToClipboard(elem.detail.selection)
-			    }
-			);
-			seq1.onSubpartSelected(function(elem){
-			        console.log(elem.detail);
-			    }
-			);
-
+			});
+			  
+			seq1.onSubpartSelected(function (elem) {
+				console.log(elem.detail);
+			});
+			  
 		}
 
-
 		)
-
 
 
 			fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF2p" )
 			.then(response => response.json())
 			.then(data => {this.setState({seq_data2: data})})
 			.then(data => {
-				// console.log(this.state.seq_data[0])
 
 			var seq2 = new Sequence(this.state.seq_data2[0].Sequence);
-			// You can add some rendering options
-			seq2.render("#sequence-viewer2", {
-			"showLineNumbers": true,
-			"wrapAminoAcids": true,
-			"charsPerLine": 100,
-			"toolbar": false,
-			"search": false,
-			"title" : "Protein Sequence ORF2p",
-			"sequenceMaxHeight": "500px",
-			"badge": false
+				// You can add some rendering options
+				seq2.render("#sequence-viewer2", {
+				"showLineNumbers": true,
+				"wrapAminoAcids": true,
+				"charsPerLine": 100,
+				"toolbar": false,
+				"search": false,
+				"title" : "Protein Sequence ORF2p",
+				"sequenceMaxHeight": "500px",
+				"badge": false
 			});
-			// seq2.selection(20, 43, 'red');
 
 			var onclickFun = function(e) {
 			  console.log(e.target.textContent);
@@ -159,54 +90,27 @@ class Sequence_view extends Component {
 			];
 
 
-			// seq2.coverage(exampleSequenceCoverage);
 
 			var exampleLegend = [
 		    {name: "???? Protein", color: "#ff0000", underscore: false},
 		    {name: "Proteotypic peptide", color: "#69CC33", underscore: false},
 		    {name: "Synthetic peptide",color: "#fff",underscore: true}
 		    ];
-			// seq2.addLegend(exampleLegend);
-			// function copyToClipboard(element) {
-			//  var inp =document.createElement('input');
-			//  document.body.appendChild(inp)
-			//  inp.value = element
-			//  inp.select();
-			//  document.execCommand('copy',false);
-			//  inp.remove();
-			//  }
 
 			seq2.onMouseSelection(function(elem){
-        console.log(elem.detail);
+        		console.log(elem.detail);
 				// copyToClipboard(elem.detail.selection)
-			    }
-			);
+			});
+
 			seq2.onSubpartSelected(function(elem){
-			        console.log(elem.detail);
-			    }
-			);
+			    console.log(elem.detail);
+			});
 
-		// 	fetch("http://localhost:3001/ideogram")
-		// 	.then(response => response.json())
-		// 	.then(data => {this.setState({annotation_data: data})})
-		// 	.then( data => {
-    // return new Ideogram({
-    //   organism: 'human',
-    //   dataDir: 'https://unpkg.com/ideogram@0.13.0/dist/data/bands/native/',
-		// 	annotations: this.state.annotation_data,
-		// 	annotationsLayout: "tracks",
-		// 	onWillShowAnnotTooltip: hyperlinkProtein,
-		// 	rotatable: true,
-		//
-    //   container: '#ideo-container'
-    // });
-		// })
 	}
-
-
 )
 
 }
+
 // This function allows the user to save the data as a file.
 saveAs = (
 	content,
@@ -249,9 +153,8 @@ saveAs2 = (
 	}
 };
 
+
   render() {
-
-
 
     return (
 			<div className="white-background">
@@ -281,7 +184,6 @@ saveAs2 = (
             }
           }}/>
 
-{/* text={this.state.seq_data[0].Sequence}> */}
 					<CopyToClipboard
 						text={this.state.seq_data[0].Sequence}>
 						<button className="btn btn-outline-info">Copy ORF1p Seq</button>
@@ -301,32 +203,6 @@ saveAs2 = (
           </button>
 
 
-					{/* <button className="btn btn-outline-info"
-						onClick={e =>{
-							this.setState({hs_pa: this.state.prot_seq})
-							var list_data = []
-							fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF1p")
-							.then(response => response.json())
-							.then(data => {
-
-								for (var i = 0; i < data.length; i++) {
-									list_data.push(">"+data[i].Family+"\n"+data[i].Sequence)
-								}
-							})
-
-								fetch(this.props.urlSource+"/sequence/" + this.state.prot_seq + "_ORF2p")
-								.then(response => response.json())
-								.then(data => {
-									for (var i = 0; i < data.length; i++) {
-										list_data.push(">"+data[i].Family+"\n"+data[i].Sequence)
-									}
-								 this.saveAs2(list_data.join().replace(/,/g,"\n"))
-						})
-					}
-					}
-					>
-						Download {this.state.prot_seq} Data
-					</button> */}
 
 					<br/>
 					<sup style={{"color":"black"}}>Do not append with ORF1p / ORF2p</sup>
@@ -337,13 +213,7 @@ saveAs2 = (
 					</div>
 				</div>
 			<div className="white-background">
-				{/* <div className="container alert alert-warning alert-dismissible">
-					<a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
-					<b>Highlight any part of sequence to copy</b>
-				</div> */}
-				{/* {JSON.stringify(this.state.annotation_data)}
-				<br/>
-				{JSON.stringify(this.state.annotation_data[0])} */}
+
       <div id="sequence-viewer" className="container black_text"></div>
 			<div className="container">
 				<hr style={{borderColor:"black"}}/>
@@ -358,8 +228,7 @@ saveAs2 = (
 					onClick={e =>{
 						this.setState({hs_pa: "HS"})
 						fetch(this.props.urlSource+"/sequence/Hs")
-						// fetch("http://localhost:3001/sequence/Hs")
-						// fetch("http://rtpea.com/sequence/Hs")
+						
 						.then(response => response.json())
 						.then(data => {
 							var list_data = []
@@ -381,8 +250,7 @@ saveAs2 = (
 					onClick={e =>{
 						this.setState({hs_pa: "PA"})
 						fetch(this.props.urlSource+"/sequence/Pa")
-						// fetch("http://localhost:3001/sequence/Pa")
-						// fetch("http://rtpea.com/sequence/Pa")
+						
 						.then(response => response.json())
 						.then(data => {
 							var list_data = []
@@ -424,8 +292,5 @@ saveAs2 = (
     );
   }
 }
-
-
-
 
 export default Sequence_view;

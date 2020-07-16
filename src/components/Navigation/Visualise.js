@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Ideogram from './Ideogram';
 import Sequence from './Sequence';
@@ -11,8 +10,6 @@ import protvis_example from "../Images/protvis_example.png"
 import protvis_filter from "../Images/protvis_filter.png"
 import protvis_conf from "../Images/protvis_conf.png"
 
-// import configFile from "./config.json"
-// import jsontest from "./externalFeatures_P05067.json";
 
 class Visualisation extends Component {
 	constructor(props) {
@@ -28,10 +25,7 @@ class Visualisation extends Component {
 			noFilterData: false,
 			siftScore: 80,
 		};
-		// Example States:
-		// tissue_type: "breast cell line diseased",
-		// state_type: "healthy",
-		// orf_type: "ORF2P",
+
 
 		this.SortVariantList = this.SortVariantList.bind(this);
 		this.WaitingTime = this.WaitingTime.bind(this);

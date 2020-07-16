@@ -6,7 +6,6 @@ import Switch from 'react-toggle-switch';
 import Popup from "reactjs-popup";
 import "react-toggle-switch/dist/css/switch.min.css";
 import NavDownload from "./NavDownload.js";
-// ../../../node_modules/
 
 class Api extends Component {
   constructor(props) {
@@ -169,19 +168,12 @@ class Api extends Component {
       <div className="line-seperator"></div>
 
       <div className="ma4 mt0 background-body4-noalign container col-md-9" style={{backgroundColor: this.state.background_colour}}>
-        {/* {this.state.isLoading ? console.log("yes") : console.log("no")}
-        {this.state.isLoading} */}
 
         <div className="container alert alert-info alert-dismissible">
           <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
           <p><b>For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a></b></p>
-          Example: "wget <a href="https://api.rtpea.com/api/PXD002211">https://api.rtpea.com/api/PXD002211</a>"
+          Example: "curl <a href="https://api.rtpea.com/api/PXD002211">https://api.rtpea.com/api/PXD002211</a>"
         </div>
-        {/* <div className="container alert alert-warning alert-dismissible">
-          <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <b>Example: "wget https://api.rtpea.com/api/PXD002211"</b>
-        </div> */}
-
 
 
         {/* Searchbox which converts the text to uppercase and calls the button_click
@@ -198,38 +190,13 @@ class Api extends Component {
           &nbsp;
         <button className="btn btn-outline-primary" onClick={this.button_click}>Search Database</button>
 
-        {/* <span className="glyphicon glyphicon-search">test</span> */}
-
         <br />
         <br />
 
-         {/* <button type="button" className="btn btn-outline-primary" onClick={() => this.changeColour()}>{this.state.button_msg}</button>
-         <br/> */}
-
-
-         <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
-
+        <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
 
         <div className="background-body4" style={{backgroundColor: this.state.data_background_colour}}>
 
-
-          {/* <Popup trigger={<button className="btn btn-outline-primary"> Information! </button>} modal>
-            {close => (
-              <div className="">
-                <a className="close" onClick={close}>
-                  &times;
-                </a>
-                <div className="header"> Programmatic Access</div>
-                <div className="content">
-                  For programmatic Access go to: <a href="https://api.rtpea.com/api">https://api.rtpea.com/api</a>
-
-                  <br />
-
-                  <div className="header"></div>
-                </div>
-              </div>
-            )}
-          </Popup> */}
           <div className="background-body4-nojson" style={{color: this.state.text_colour}}>
             Data for: {this.state.url_id}
           </div>
@@ -260,19 +227,6 @@ class Api extends Component {
             data is displayed
             otherwise the data is displayed in black */}
           <Loader loaded={this.state.loaded} options={options} className="spinner">
-
-            {/* <div className="progress">
-             <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width:"100%"}}>
-               100%
-             </div>
-            </div> */}
-
-
-
-
-
-
 
 
           {this.state.error_msg ? (

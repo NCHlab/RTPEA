@@ -1,22 +1,16 @@
-// import Logo from './components/Logo/Logo';
-// import Loadingbar from './components/Loading-bar/Loadingbar';
-// import BrowseDemo from './components/Navigation/Browse-demo';
-// import Visualisedemo from './components/Navigation/Visualisedemo';
-// import 'tachyons/css/tachyons.css';
-
 import React, { Component } from 'react';
-import Navigation from './components/Navigation/Navigation';
-import Footer from './components/Navigation/Footer';
-// import Particles from 'react-particles-js';
-// import { render } from 'react-dom'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch } from 'react-router-dom';
+import Loading from 'react-loading-bar'
+
+import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Navigation/Footer';
 import Home from './components/Navigation/Home';
+import Homeredirect from './components/Navigation/Homeredirect';
 import Api from './components/Navigation/Api';
 import Browse from './components/Navigation/Browse';
 import Browse2 from './components/Navigation/Browse2';
 import Visualise from './components/Navigation/Visualise';
-// import Expression_Atlas from './components/Navigation/Expression_Atlas';
 import Info from './components/Navigation/Info';
 import Contact from './components/Navigation/Contact';
 import Status from './components/Navigation/Status';
@@ -24,13 +18,6 @@ import Ideogram from './components/Navigation/Ideogram';
 import Ideogram_loci from './components/Navigation/Ideogram_loci';
 import Sequence from './components/Navigation/Sequence';
 import Download from './components/Navigation/Download';
-import Homeredirect from './components/Navigation/Homeredirect';
-
-import Loading from 'react-loading-bar'
-// import JSONPretty from 'react-json-pretty';
-// import SVG from 'react-inlinesvg';
-// import Loader from 'react-loader';
-
 
 import './App.css';
 import 'react-loading-bar/dist/index.css'
@@ -80,8 +67,7 @@ class App extends Component{
   onHide = () => {
     this.setState({ show: false })
   }
-
-    // <Table show={this.state.show} onShow={this.onShow} onHide={this.onHide}/>
+  
   render(){
     return(
     <Router>

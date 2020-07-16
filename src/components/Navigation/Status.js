@@ -13,8 +13,6 @@ class Status extends Component {
   }
 
   componentDidMount = () => {
-    // fetch("http://rtpea.com/dbcheck")
-    // fetch("http://localhost:3001/dbcheck")
     fetch(this.props.urlSource+"/dbcheck")
       .then(response => {
         if (response.status === 200) {
@@ -84,7 +82,6 @@ class Status extends Component {
     return (
       <div className="container background-body2">
         <div>
-          {/* {this.props.error_code} */}
           {this.Error_code(this.props.error_code)}
         </div>
 

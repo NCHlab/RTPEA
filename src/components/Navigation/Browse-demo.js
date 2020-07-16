@@ -21,10 +21,7 @@ class Table extends Component{
       button_msg: "Darkify",
       switched: true
     };
-    // this.data = this.data.bind(this)
   }
-
-
 
   searchURL = () => {
     let { url_id } = this.state;
@@ -34,7 +31,6 @@ class Table extends Component{
 
     componentDidMount = () => {
       fetch(this.searchURL())
-      // "http://localhost:3001/api/PXD002233"
         .then(response => response.json())
         .then(data => {
           if (data.hasOwnProperty("Status")){
@@ -43,7 +39,6 @@ class Table extends Component{
             this.setState({error_msg: true})
             this.setState({table_loading: false})
           } else {
-          // console.log(data[0])
           this.setState({ data2:data});
           this.setState({error_msg: false})
           this.setState({table_loading: false})
@@ -57,7 +52,6 @@ class Table extends Component{
             switched: !prevState.switched
           };
           });
-          // this.setState({colour_dark: !this.state.color_black})
           if (this.state.background_colour === "#edf1f4"){
             this.setState({background_colour: "#5f6060"})
             this.setState({text_colour: "#ffffff"})
@@ -78,14 +72,7 @@ class Table extends Component{
           }
       };
 
-  // data = () => {[
-  //   JSON.stringify(this.state.data2)
-  // ]}
-
   render (){
-  // accessor: "sample.0.1.0.file_name"
-  // accessor: "0.sample[0].1[0].file_name"
-
   const mynum = 20
   const blank_data = "-"
 
@@ -123,18 +110,9 @@ class Table extends Component{
     Header: 'Sample Number',
     id: "Sample_num",
     accessor: "Snumber"
-
-                        // console.log(data.sample.length);
-                        // data.sample[0][1][0].replicate
     }, {
     Header: 'Tissue',
     accessor: "tissue_type"
-    // id: "tiss_data",
-    // accessor: data =>{
-    //   // console.log(data.sample[0][1][0].tissue_type)
-    //                     return data[1][0].tissue_type
-    //                   }
-    // accessor: 'sample[0].1[0].tissue_type'
   }, {
   Header: 'ORF1p',
   id: "ORF1_data",
@@ -148,7 +126,6 @@ class Table extends Component{
             borderRadius: '2px'
           }}
         >
-          {/* {row.value} */}
           <div
             style={{
               width: `${row.value}%`,
@@ -177,7 +154,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -194,7 +170,6 @@ class Table extends Component{
         </div>
         )
     }
-    // "sample[0].1[0].ORF1p.confidence" && "sample[0].1[0].ORF2p.confidence"
   , {
   Header: 'ORF0',
   id:"ORF0_data",
@@ -208,7 +183,6 @@ class Table extends Component{
             borderRadius: '2px'
           }}
         >
-          {/* {row.value} */}
           <div
             style={{
               width: `${row.value}%`,
@@ -237,7 +211,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -266,7 +239,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -295,7 +267,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -312,8 +283,6 @@ class Table extends Component{
         </div>
         )
   }]
-
-// const LoadingMS =
 
 
 const orf1p_column = [{
@@ -341,7 +310,6 @@ const orf1p_column = [{
             borderRadius: '2px'
           }}
         >
-          {/* {row.value} */}
           <div
             style={{
               width: `${row.value}%`,
@@ -393,7 +361,6 @@ const orf2p_column = [{
             borderRadius: '2px'
           }}
         >
-          {/* {row.value} */}
           <div
             style={{
               width: `${row.value}%`,
@@ -420,44 +387,15 @@ const orf2p_column = [{
   accessor: '-'
 }]
 
-// const tri_column = [{
-//   Header: 'ORF1p Variant Name',
-//   accessor: 'ORF1p_variants.name' // String-based value accessors!
-// }, {
-//   Header: 'ORF1p Confidence',
-//   accessor: 'ORF1p_variants.confidence'
-// },{
-//   Header: 'ORF2p Variant Name',
-//   accessor: 'ORF2p_variants.name' // String-based value accessors!
-// }, {
-//   Header: 'ORF2p Confidence',
-//   accessor: 'ORF2p_variants.confidence'
-// }]
 
       return (
         <div>
 
           <div className="col-md-10 offset-md-1" style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}>
-            {/* <div style={{backgroundColor: this.state.background_colour, color: this.state.text_colour}}> */}
 
             <Switch onClick={this.changeColour} on={this.state.switched} className='switch-colour'/>
             <br />
 
-            {/* getTdProps={(state, rowInfo, column, instance) => {
-          return {
-            onMouseEnter: e =>
-              console.log("Cell - onMouseEnter", {
-                state,
-                rowInfo,
-                column,
-                instance,
-                event: e
-              })
-          };
-        }} */}
-        {/* pivotBy={["Sample_num", "ORF_data"]} */}
-{/* pivotBy={["disease"]} */}
-{/* 0, 83, 140 */}
             <ReactTable
               loading={this.state.table_loading}
               data={this.state.data2}
@@ -473,7 +411,6 @@ const orf2p_column = [{
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(1, 111, 186)" }}>
-                    {/* {console.log(row.original.sample)} */}
                     <ReactTable
                       data={row.original.sample}
                       columns={sec_columns}
@@ -484,7 +421,6 @@ const orf2p_column = [{
                         return (
                           <div>
                             <div style={{ border: "4px", borderStyle: "solid none solid none", borderColor: "rgb(5, 183, 112)" }}>
-                              {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF1p_variants}
                                 columns={orf1p_column}
@@ -499,7 +435,6 @@ const orf2p_column = [{
                                 className="-striped -highlight"/>
                             </div>
                             <div style={{ border: "4px", borderStyle: "none none solid none", borderColor: "rgb(5, 183, 112)" }}>
-                              {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF2p_variants}
                                 columns={orf2p_column}
@@ -520,11 +455,6 @@ const orf2p_column = [{
                 );
               }}
             />
-  {/* resolveData={data => data.map(row => row)} */}
-{/* data={row.row._original[0]} */}
-
-
-
           </div>
         </div>
 )
@@ -532,17 +462,3 @@ const orf2p_column = [{
 
 }
 export default Table;
-
-// {/* {JSON.stringify(this.state.data2)} */}
-//
-// {/* {this.state.data2.map((item) => {
-//   {item.PXD}
-//      })} */}
-//
-// {/* {typeof this.state.data2}
-// {console.log(this.state.data2[0])} */}
-// {/* try to get the whole object into table */}
-//
-// {/* data={json_data} */}
-// {/* resolveData={json_data.map(data => data)} */}
-// {/* resolveData={json_data.map(data => data.PXD)} */}

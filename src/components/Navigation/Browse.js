@@ -35,16 +35,12 @@ class Table extends Component{
 
 
   searchURL = () => {
-
     let url = this.props.urlSource+"/table/"
-    // let url = "http://localhost:3001/table/"
-    // let url = "http://rtpea.com/table/"
     return url
   }
 
     componentDidMount = () => {
       fetch(this.searchURL())
-      // "http://localhost:3001/api/PXD002233"
         .then(response => response.json())
         .then(data => {
           if (data.hasOwnProperty("Status")){
@@ -86,12 +82,7 @@ class Table extends Component{
           }
       };
 
-
-
   render (){
-
-
-
 
   const main_columns = [{
     Header: 'Data by Study',
@@ -160,7 +151,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -190,7 +180,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -219,7 +208,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -254,7 +242,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -288,7 +275,6 @@ class Table extends Component{
               borderRadius: '2px'
             }}
           >
-            {/* {row.value} */}
             <div
               style={{
                 width: `${row.value}%`,
@@ -342,7 +328,6 @@ const orf1p_column = [{
             borderRadius: '2px'
           }}
         >
-          {/* {row.value} */}
           <div
             style={{
               width: `${row.value}%`,
@@ -391,7 +376,6 @@ const orf2p_column = [{
   Cell: row => ( row.original.name !== "NA"?
       <div className="browse-var-style" style={{height:22}}>
          {row.value}
-         {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
       </div>:
       <div>
         {row.value}
@@ -410,7 +394,6 @@ const orf2p_column = [{
             borderRadius: '2px'
           }}
         >
-          {/* {row.value} */}
           <div
             style={{
               width: `${row.value}%`,
@@ -433,7 +416,6 @@ const orf2p_column = [{
         (
           <div>
             <a className="browse-link-style" target="_blank" href={this.props.urlSource2+"/sequence/"+row.original.name.slice(6)}>Sequence ⇗</a>
-            {/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
           </div>
         ) : ""
     },{
@@ -555,7 +537,6 @@ const orf2p_column = [{
               SubComponent={row => {
                 return (
                   <div style={{ border: "4px", borderStyle: "solid solid solid solid", borderColor: "rgb(186, 0, 0)" }}>
-                    {/* {console.log(row.original.sample)} console.log(state)*/}
                     <ReactTable
                       data={row.original.sample}
                       columns={sec_columns}
@@ -618,7 +599,6 @@ const orf2p_column = [{
                         return (
                           <div>
                             <div style={{ border: "4px", borderStyle: "solid solid none solid", borderColor: "rgb(0,0,0)" }}>
-                              {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF1p_variants}
                                 columns={orf1p_column}
@@ -655,7 +635,6 @@ const orf2p_column = [{
                                 className="-striped -highlight"/>
                             </div>
                             <div style={{ border: "4px", borderStyle: "none solid solid solid", borderColor: "rgb(0,0,0)" }}>
-                              {/* {console.log(row.original)} */}
                               <ReactTable
                                 data={row.original.ORF2p_variants}
                                 columns={orf2p_column}

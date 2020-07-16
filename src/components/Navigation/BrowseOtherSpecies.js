@@ -139,7 +139,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -173,7 +172,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -206,7 +204,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -246,7 +243,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -292,7 +288,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -359,7 +354,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -432,7 +426,6 @@ class BrowseOtherSpecies extends Component {
 					row.original.name != "NA" ? (
 						<div className="browse-var-style" style={{ height: 22 }}>
 							{row.value}
-							{/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
 						</div>
 					) : (
 						<div>{row.value}</div>
@@ -451,7 +444,6 @@ class BrowseOtherSpecies extends Component {
 							borderRadius: "2px",
 						}}
 					>
-						{/* {row.value} */}
 						<div
 							style={{
 								width: `${row.value}%`,
@@ -488,7 +480,6 @@ class BrowseOtherSpecies extends Component {
 							>
 								Sequence ⇗
 							</a>
-							{/* <button className="btn btn-primary" onClick={() => window.location = "/sequence/"+row.original.name.slice(6)}> Sequence </button> */}
 						</div>
 					) : (
 						""
@@ -529,15 +520,11 @@ class BrowseOtherSpecies extends Component {
 						getTdProps={(state, rowInfo, column, instance) => {
 							return {
 								onClick: (e, handleOriginal) => {
-									{
-										/* console.log("It was in this column:", column); */
-									}
+									
 									const { expanded } = state;
 									const path = rowInfo.nestingPath[0];
 									const diff = { [path]: expanded[path] ? false : true };
-									{
-										/* console.log(rowInfo) */
-									}
+									
 									if (handleOriginal) {
 										handleOriginal();
 									}
@@ -559,7 +546,6 @@ class BrowseOtherSpecies extends Component {
 										borderColor: "rgb(186, 0, 0)",
 									}}
 								>
-									{/* {console.log(row.original.sample)} console.log(state)*/}
 									<ReactTable
 										data={row.original.sample}
 										columns={sec_columns}
@@ -600,17 +586,13 @@ class BrowseOtherSpecies extends Component {
 										getTdProps={(state, rowInfo, column, instance) => {
 											return {
 												onClick: (e, handleOriginal) => {
-													{
-														/* console.log("It was in this column:", column); */
-													}
+												
 													const { expanded } = state;
 													const path = rowInfo.nestingPath[0];
 													const diff = {
 														[path]: expanded[path] ? false : true,
 													};
-													{
-														/* console.log(rowInfo) */
-													}
+													
 													if (handleOriginal) {
 														handleOriginal();
 													}
@@ -633,7 +615,6 @@ class BrowseOtherSpecies extends Component {
 															borderColor: "rgb(0,0,0)",
 														}}
 													>
-														{/* {console.log(row.original)} */}
 														<ReactTable
 															data={row.original.ORF1p_variants}
 															columns={orf1p_column}
@@ -653,13 +634,7 @@ class BrowseOtherSpecies extends Component {
 															) => {
 																return {
 																	onClick: (e, handleOriginal) => {
-																		{
-																			/* console.log("It was in this column:", column); */
-																		}
-																		{
-																			/* console.log(rowInfo.original.name)
-																			 console.log(rowInfo.original.confidence) */
-																		}
+																	
 																		if (
 																			(rowInfo.original.name !== "NA" &&
 																				column.id === "ORF1p_var_name") ||
@@ -670,9 +645,7 @@ class BrowseOtherSpecies extends Component {
 																				"_blank" // <- This is what makes it open in a new window.
 																			);
 																		}
-																		{
-																			/* console.log(rowInfo) */
-																		}
+																	
 																		if (handleOriginal) {
 																			handleOriginal();
 																		}
@@ -690,7 +663,6 @@ class BrowseOtherSpecies extends Component {
 															borderColor: "rgb(0,0,0)",
 														}}
 													>
-														{/* {console.log(row.original)} */}
 														<ReactTable
 															data={row.original.ORF2p_variants}
 															columns={orf2p_column}
@@ -718,9 +690,7 @@ class BrowseOtherSpecies extends Component {
 																				"_blank" // <- This is what makes it open in a new window.
 																			);
 																		}
-																		{
-																			/* console.log(rowInfo) */
-																		}
+															
 																		if (handleOriginal) {
 																			handleOriginal();
 																		}
@@ -744,5 +714,6 @@ class BrowseOtherSpecies extends Component {
 			</div>
 		);
 	}
-}
+};
+
 export default BrowseOtherSpecies;

@@ -20,10 +20,7 @@ import homepage_barchart from "../Files/homepage_barchart.json";
 import {isMobile} from 'react-device-detect';
 import CounterData from '../Files/CounterData.json'
 import Particles from 'react-particles-js';
-// import '../../App.css';
 
-// Displays the Home page using JSX
-// const  = ({ onShow, onHide }) => {
 
 class Home extends Component {
   constructor(props) {
@@ -35,8 +32,6 @@ class Home extends Component {
   }
 
   componentDidMount = () => {
-    // fetch("http://rtpea.com/dbcheck")
-    // fetch("http://localhost:3001/dbcheck")
     fetch(this.props.urlSource+"/dbcheck")
       .then(response => {
         if (response.status === 200){
@@ -115,17 +110,13 @@ class Home extends Component {
         <body2>
           <div className="container">
             {/* Displays the human image + data retrieved from the human component */}
-            {/* {console.log("home")} */}
-            {/* {console.log(this.props)} */}
             <Human urlSource2={this.props.urlSource2}/>
           </div>
         </body2>
 
         <div className="line-seperator" />
         <div className="background-body">
-          {/* <button type="button" onClick={onShow}>
-          show
-        </button> */}
+
           <div className="container">
             <div className="row">
               <div className="col-md-4">
@@ -146,7 +137,6 @@ class Home extends Component {
                 <h1>
                   {/* # of Orf2: */}
                   <CountTo to={parseInt(CounterData.samples)} speed={4000} />
-                  {/* onComplete={onHide} */}
                 </h1>
               </div>
               <div className="col-md-4">
@@ -288,7 +278,6 @@ class Home extends Component {
                   <br />
                   <br />
                   <div className="font-italic">
-                    {/* onClick={e => this.check_event(e)} */}
                     <LineChart
                       width={600}
                       height={300}
@@ -307,12 +296,7 @@ class Home extends Component {
                       <Line type="monotone" dataKey="ORF1p variant" stroke="#0fcbed" />
                       <Line type="monotone" dataKey="ORF2p variant" stroke="#00a03c" />
                     </LineChart>
-                    {/* <Line
-                      type="monotone"
-                      dataKey="pv"
-                      stroke="#8884d8"
-                      activeDot={{ r: 8 }}
-                    /> */}
+   
                   </div>
                     <br />
                     <div align="left" style={{paddingLeft: "60px"}}>
@@ -324,14 +308,6 @@ class Home extends Component {
                   </div>
 
 
-
-
-
-                  {/* Server Status:
-                  <br />
-                  API Server: <img src={onlineimg} alt="Online!" />
-                  <br />
-                  MongoDB Server: <img src={onlineimg} alt="Offline" /> */}
                 </div>
               </div>
             </div>
@@ -390,4 +366,5 @@ class Home extends Component {
     );
   }
 }
+
 export default Home;

@@ -5,9 +5,7 @@ import "./Navigation.css";
 import '../Logo/Logo.css';
 import retrologo from '../Logo/Logo.png';
 import Tilt from 'react-tilt'
-//
 
-// const Navigation = (props) => {
 function Navigation(props) {
     const { location } = props;
     const links = [
@@ -48,8 +46,7 @@ function Navigation(props) {
              <Link to="/"><img src={retrologo} height={100} width={250} className="pb6" alt="logo"/></Link>
            </div>
           </Tilt>
-
-          </div>
+        </div>
 
           <ul className="menu">
             <li>
@@ -58,15 +55,9 @@ function Navigation(props) {
                   window.location.href.includes(to)
                   ? <a key={to} href={to} className="active">{page}</a>
                   : <Link key={to} to={to}>{page}</Link>))}
-
-
-              </li>
-            </ul>
-
-          </nav>
-
-
+            </li>
+          </ul>
+      </nav>
     )};
-
 
 export default withRouter(Navigation);

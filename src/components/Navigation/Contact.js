@@ -1,5 +1,4 @@
 import React from "react";
-// import github_logo from "../ContactUs/github.png";
 import linkedin_logo from "../ContactUs/linkedin1.png";
 import nchlab from "../ContactUs/github_nchlab1.png";
 import nazrath10r from "../ContactUs/github_nazrath10r_1.png";
@@ -19,12 +18,9 @@ import nazrath from "../ContactUs/nazrath.png";
 import conrad from "../ContactUs/conrad.png";
 import miguel from "../ContactUs/miguel.png";
 import paul from "../ContactUs/paul.png";
-// import Particles from 'react-particles-js';
 
-const Project = (particlesOptions) => (
+const ContactUs = (particlesOptions) => (
   <div className="container">
-    {/* <Particles className="particles" params={particlesOptions} />
-    <h1>Contact Us</h1>*/}
     <div className="container col-lg-3 padding">
 
     </div>
@@ -61,7 +57,6 @@ const Project = (particlesOptions) => (
             <h3>Email</h3>
             admin@rtpea.com
           </div>
-             {/*m.a.n.chowdhury@se17.qmul.ac.uk / m.n.mohamednawaz@qmul.ac.uk / c.bessant@qmul.ac.uk*/}
 
         </div>
 
@@ -117,11 +112,6 @@ const Project = (particlesOptions) => (
           </a>
 
 
-          {/* <div className="carousel-caption">
-            <h3>Email</h3>
-            m.a.n.chowdhury@se17.qmul.ac.uk / m.n.mohamednawaz@qmul.ac.uk / c.bessant@qmul.ac.uk
-          </div> */}
-
 
           <img className="contact_img" src={conrad} alt="conrad" width="250px" height="250px"/>
           <img className="contact_img" src={conrad_text} alt="RetroMiner / Data Gen" height="170px"/>
@@ -135,20 +125,14 @@ const Project = (particlesOptions) => (
           <a href="https://www.qmul.ac.uk/sbcs/staff/conradbessant.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
-          {/* <div className="carousel-caption">
-            <h3>Location:</h3>
-            Queen Mary University of London, Mile End Rd, London E1 4NS
-          </div> */}
+ 
 
           <img className="contact_img" src={miguel} alt="miguel" width="250px" height="250px"/>
           <img className="contact_img" src={miguel_text} alt="RetroMiner / Data Gen" height="170px"/>
           <a href="https://www.qmul.ac.uk/blizard/staff/centre-for-genomics-and-child-health/staff/miguel-branco.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
-          {/* <div className="carousel-caption">
-            <h3>MSC - BioInformatics</h3>
-            Created at Queen Mary University of London, @BessantLab, SBCS
-          </div> */}
+
           <br/>
 
           <img className="contact_img" src={paul} alt="paul hurd" width="250px" height="250px"/>
@@ -156,53 +140,10 @@ const Project = (particlesOptions) => (
           <a href="https://www.qmul.ac.uk/sbcs/staff/paulhurd.html">
             <img className="contact_img" src={sbcs_logo} alt="twitter" height="170px"/>
           </a>
-          {/* <div className="carousel-caption">
-            <h3>MSC - BioInformatics</h3>
-            Created at Queen Mary University of London, @BessantLab, SBCS
-          </div> */}
+
           </div>
         </div>
-
-      {/*
-        <a href="http://linkedin.com">
-          <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
-        </a>
-        <a href="http://twitter.com">
-          <img className="contact_img" src={twitter_logo} alt="twitter" height="170px"/>
-        </a>
-        <a href="http://linkedin.com">
-          <img className="contact_img" src={linkedin_logo} alt="linkedin" height="170px"/>
-        </a>
-        <a href="http://twitter.com">
-          <img className="contact_img" src={twitter_logo} alt="twitter" height="170px"/>
-        </a>*/}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {/* <div className="container">
-      <hr />
-      <img className="contact_img" src={qmul_logo} />
-      <h2>Created at Queen Mary University of London, @BessantLab, SBCS</h2>
-
-      <h2>MSC - BioInformatics</h2>
-    </div> */}
-
   </div>
 );
 
-export default Project;
+export default ContactUs;

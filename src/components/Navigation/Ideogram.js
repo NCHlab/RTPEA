@@ -41,14 +41,9 @@ class Ideogram_c extends Component {
 			  orientation: "vertical",
 			  container: "#ideo-container",
 			  annotationsLayout: "tracks",
-			  // annotationsColor:'#fff',
-			  // chrWidth: 8,
 			  annotations: data,
 			  chrHeight: 600,
-			  // annotationsPath: this.props.urlSource+'/ideogram2/s.json',
 			  dataDir: "https://unpkg.com/ideogram@1.13.0/dist/data/bands/native/",
-			  // annotationsPath: 'https://unpkg.com/ideogram@1.13.0/dist/data/annotations/1000_virtual_snvs.json',
-			  // annotationTracks: annotationTracks,
 			  annotationHeight: 3.5,
 			  onWillShowAnnotTooltip: hyperlinkProtein,
 			};
@@ -295,8 +290,6 @@ class Ideogram_c extends Component {
 						</div>
 				</div>
 				<div className="container">
-					{/* {console.log(jsontest)} */}
-					{/* {console.log(this.state.information1)} */}
 					<br/>
 					<div className="line-seperator"></div>
 				<br/>
@@ -319,14 +312,8 @@ class Ideogram_c extends Component {
 					<br/>
 				  <sup style={{"color":"white"}}>^ Separate families with comma or space ^</sup>
 
-					{/* <br/> */}
-{/* onChange={() => this.PA2_family()}/> */}
-					 {/* <input type="checkbox"
-						 checked={ this.state.checked }
-						 onChange={e => this.setState({ prot_seq: PA2_fam })}/> */}
 					 <br/>
 						 <div className="container line-seperator" style={{align:"center",width:"20%"}}></div>
-						 {/* <hr align="center" width="20%" /> */}
 						 <div style={{"color":"white"}}>Sort by Family:</div>
 			 <form onSubmit={this.handleSubmit}>
 	        <label>
@@ -345,9 +332,7 @@ class Ideogram_c extends Component {
 					<div className="container">
 						<div className="line-seperator"></div>
 					</div>
-				{/* {JSON.stringify(this.state.annotation_data)}
-				<br/>
-				{JSON.stringify(this.state.annotation_data[0])} */}
+
       <div id="ideo-container" className="black_text margin-left-ideogram"></div>
 			<br />
 			<br />

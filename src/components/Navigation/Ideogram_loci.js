@@ -342,7 +342,4 @@ class Ideogram_d extends Component {
   }
 }
 
-
-
-
 export default Ideogram_d;

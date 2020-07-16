@@ -174,14 +174,7 @@ class Download extends Component {
                   <td>Download all available Line-1 element data in <b><a href="../sequence">Sequence page</a></b> from database </td>
                 </tr>
 
-                {/* <tr>
-                  <td>
-                    <button className="btn btn-outline-danger" disabled>
-                      Download ProtVista Data
-                    </button>
-                  </td>
-                  <td>Under Construction</td>
-                </tr> */}
+
                 <tr>
                   <td>
                     <button className="btn btn-info"
@@ -364,38 +357,9 @@ for (i in List_of_PXD){
           <br />
           <br />
         </div>
-        {/* <div class="row">
-      <div class="col-md-4">
-        <button className="btn btn-outline-info"
-          onClick={e =>
-            this.saveAs(JSON.stringify(this.state.data2, null, 2))
-          }
-        >
-          Download Table Data
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button className="btn btn-outline-info">
-          Download all L1 Prot Sequences
-        </button>
-      </div>
-      <div class="col-md-4">
-        <button className="btn btn-outline-info">
-          Download ProtVista Data
-        </button>
-      </div>
-      <div class="col-md-4">
-        Contains data found in the table
-      </div>
-      <div class="col-md-4">
-        download all available Line-1 element data <br/> from db
-      </div>
-      <div class="col-md-4">
-        Under Construction
-      </div>
-    </div> */}
       </div>
     );
   }
 }
+
 export default Download;

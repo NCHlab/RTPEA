@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ProtVista from "ProtVista";
 import 'ProtVista/style/main.css';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Ideogram from './Ideogram';
 import Sequence from './Sequence';
@@ -11,8 +10,6 @@ import protvis_example from "../Images/protvis_example.png"
 import protvis_filter from "../Images/protvis_filter.png"
 import protvis_conf from "../Images/protvis_conf.png"
 
-// import configFile from "./config.json"
-// import jsontest from "./externalFeatures_P05067.json";
 
 class Visualisation extends Component {
 	constructor(props) {
@@ -28,73 +25,34 @@ class Visualisation extends Component {
 
 
 	componentDidMount = () => {
-        // const script = document.createElement("script");
-				//
-        // script.src = "https://use.typekit.net/foobar.js";
-        // script.async = true;
-				//
-        // document.body.appendChild(script);
-				// fetch("http://localhost:3001/P05067.json")
-				// .then(response => response.json())
-				// .then(data => this.setState({information1: data}))
-
-
-				// .then(data =>{return
-			// fetch("http://localhost:3001/visualise/" + this.props.match.params.id)
-			// .then(response => response.json())
-			// .then(data => this.setState({data_info: data}))
-
-
-
-			 var yourDiv = document.getElementById('protvis');
-       var instance = new ProtVista({
-            el: yourDiv,
-            uniprotacc: this.state.uniprotacc,
-						selectedFeature: {
-            begin: 166,
-            end: 166,
-            type: "variant",
-						alternativeSequence:"Q"
-					},
-						// uniprotacc : 'P05067',
-						// defaultSources: false
-						exclusions: ['SEQUENCE_INFORMATION', 'STRUCTURAL', 'TOPOLOGY', 'MUTAGENESIS', 'MOLECULE_PROCESSING'],
-						// categoryOrder: ['DOMAINS_AND_SITES', 'VARIATION', 'PTM'],
-						// selectedFeature: {
-            // begin: 96,
-            // end: 110,
-            // type: 'REGION'
-            // }
-						//Default sources will **not** be included
-
-						// customDataSource: {
-		        // url: './externalFeatures_',
-		        // source: 'P05067',
-		        // useExtension: true
-						// },
-						// overwritePredictions: true,
-
-						defaultSources: false,
-						customDataSource: {
-						// url: 'https://rtpea.com/visualise/',
-		        // url: 'http://localhost:3001/visualise/',
-						url: this.props.urlSource+'/visualise/',
-		        source: 'Proteomics_QMUL',
-		        useExtension: false,
-						overwritePredictions: true
-					},
-						// customConfig: "ProtVista/src/config.json"
-						// customConfig: 'https://rtpea.com/visualise_config.json/'
-						// customConfig: 'http://localhost:3001/visualise_config.json/'
-						customConfig: this.props.urlSource+'/visualise_config.json/'
-						// customConfig: './data/externalConfig.json',
-        });
-			// }))
-				//
-				// instance.selectFeature('variant', 108, 108, 'K')
-
-}
-
+		var yourDiv = document.getElementById("protvis");
+		var instance = new ProtVista({
+		  el: yourDiv,
+		  uniprotacc: this.state.uniprotacc,
+		  selectedFeature: {
+			begin: 166,
+			end: 166,
+			type: "variant",
+			alternativeSequence: "Q",
+		  },
+		  exclusions: [
+			"SEQUENCE_INFORMATION",
+			"STRUCTURAL",
+			"TOPOLOGY",
+			"MUTAGENESIS",
+			"MOLECULE_PROCESSING",
+		  ],
+		  defaultSources: false,
+		  customDataSource: {
+			url: this.props.urlSource + "/visualise/",
+			source: "Proteomics_QMUL",
+			useExtension: false,
+			overwritePredictions: true,
+		  },
+		  customConfig: this.props.urlSource + "/visualise_config.json/",
+		});
+	  };
+	  
 		SortVariantList = () => {
 			try {
 			  var list, i, switching, b, shouldSwitch;
@@ -134,30 +92,19 @@ class Visualisation extends Component {
 		}
 
 	WaitingTime= () => {
-  setTimeout(() => this.SortVariantList(), 500);
-}
+  		setTimeout(() => this.SortVariantList(), 500);
+	}
 
-
-
-
-
-		// componentDidUpdate = () => {
-		// 	instance.selectFeature("variant", 125, 128, 'VAS');
-		// }
 
 
   button_click = (event) => {
-		// console.log(e)
 		this.setState({ uniprotacc: event })
 	}
 
 	render() {
 		return (
 			<div>
-
-				{/* {console.log(this.state.data_info)} */}
 				{console.log(window.location)}
-
 
 			<div className="background-body-vis">
 				<NavVis/>
@@ -208,29 +155,8 @@ class Visualisation extends Component {
 						</div>
 				</div>
 
-				{/* <Tabs>
-			    <TabList>
-			      <Tab>Protein Centric</Tab>
-			      <Tab>Chromosome Centric</Tab>
-						<Tab>Sequence Viewer</Tab>
-			    </TabList> */}
-
-			    {/* <TabPanel forceRender={true}> */}
-
-
-				{/* <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-				  <Tab eventKey={1} title="Protein Centric">
-				    Tab 1 content
-				  </Tab>
-				  <Tab eventKey={2} title="Chromosome Centric">
-				    tea
-				  </Tab>
-				</Tabs> */}
-				{/* {console.log(configFile)} */}
-
 				<div className="container">
-					{/* {console.log(jsontest)} */}
-					{/* {console.log(this.state.information1)} */}
+
 					<br/>
 					<div className="line-seperator"></div>
 				<br/>
@@ -249,14 +175,7 @@ class Visualisation extends Component {
             }
           }}/>
 
-					{/* <input
-	          placeholder=""
-	          onChange={e => this.setState({ uniprotacc: e.target.value.toUpperCase() })}
-	          onKeyPress={event => {if (event.key === "Enter") {
-	              this.button_click(event.target.value.toUpperCase());
-	            }
-	          }}/> */}
-
+				
 					<br/>
 					<div className="container">
 						<br/>
@@ -264,9 +183,6 @@ class Visualisation extends Component {
 					<br/>
 					</div>
 
-					{/* linear-gradient(to bottom, #9cb7e2, #bfd2ef) */}
-					{/* background:"linear-gradient(to bottom, #99cdff, #bfd2ef)" */}
-					{/* <div style={{background:"linear-gradient(to bottom, #7abeff, #bfd2ef)"}}> */}
 
 					<div style={{background:"linear-gradient(to bottom, #598bb7, #f2f2f2)"}}>
 						<br/>
@@ -311,33 +227,24 @@ class Visualisation extends Component {
 				<br/>
 				</div>
 			</div>
-				{/* <button onClick={() => this.sortList()}>CLICK </button> */}
+				
 				{window.onload = this.WaitingTime()}
-				{/* {console.log(this.props.match.params.id)} */}
+				
 
 
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
 
-
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-			{/* </TabPanel>
-			<TabPanel>
-			<Ideogram/>
-			</TabPanel>
-			<TabPanel>
-			<Sequence/>
-			</TabPanel>
-		</Tabs> */}
 			</div>
 		</div>
 		);

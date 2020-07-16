@@ -6,7 +6,6 @@ import retrologo from '../Logo/Logo.png';
 import '../Logo/Logo.css';
 
 
-// const Footer = (props) => {
 function Footer(props) {
     const { location } = props;
 
@@ -22,12 +21,7 @@ function Footer(props) {
           For more information, check the <Link to="/info">info</Link> and <Link to="/contact">contact us page</Link>. The accompanying paper will be published soon.
 
 					</div>
-
 				</div>
-
-
-
     )};
-
 
 export default withRouter(Footer);
